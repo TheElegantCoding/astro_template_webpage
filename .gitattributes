@@ -1,0 +1,101 @@
+# set default behaviour to automatically normalize line endings.
+* text=auto
+
+# source code
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.bash text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.svg text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.sh text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.xml text eol=lf
+*.webmanifest text eol=lf
+*.astro text eol=lf
+
+# config
+.env text eol=lf
+.editorconfig text eol=lf
+.gitattributes text eol=lf
+.htaccess text eol=lf
+.browserslist text eol=lf
+
+# rc files (like .babelrc or .eslintrc)
+*.*rc text eol=lf
+
+# ignore files (like .npmignore or .gitignore)
+*.*ignore text eol=lf
+
+# archives
+*.7z binary
+*.gz binary
+*.jar binary
+*.rar binary
+*.tar binary
+*.zip binary
+
+# documents
+*.pdf binary
+*.psd binary
+*.ai binary
+
+# images
+*.gif binary
+*.ico binary
+*.jpg binary
+*.png binary
+*.webp binary
+*.avif bianry
+
+# video
+*.3gpp binary
+*.3gp binary
+*.as binary
+*.asf binary
+*.asx binary
+*.avi binary
+*.fla binary
+*.flv binary
+*.m4v binary
+*.mng binary
+*.mov binary
+*.mp4 binary
+*.mpeg binary
+*.mpg binary
+*.ogv binary
+*.swc binary
+*.swf binary
+*.webm binary
+
+# audio
+*.kar binary
+*.m4a binary
+*.mid binary
+*.midi binary
+*.mp3 binary
+*.ogg binary
+*.ra binary
+
+# fonts
+*.ttf  binary
+*.eot binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# executable
+*.exe binary
+

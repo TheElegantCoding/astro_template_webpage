@@ -1,0 +1,16 @@
+name: 📝 Documentation suggestion
+description: Suggestions on how we can improve the documentation.
+labels: ['📝 documentation']
+title: '[📝]'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out docs suggestion!
+  - type: textarea
+    id: description
+    attributes:
+      description: 'A clear and concise description of your suggestion to improve the docs.'
+      label: Suggestion
+    validations:
+      required: true

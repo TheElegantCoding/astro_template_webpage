@@ -1,0 +1,21 @@
+# misc
+.DS_Store
+*.pem
+
+# dependencies
+node_modules
+
+# generated types
+.astro/
+
+# build
+dist
+
+# env files
+.env.*
+
+# debug
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
