@@ -6,8 +6,8 @@
   - [x] feature request
   - [x] questions
 
-- [ ] vscode
-  - [ ] recommended extension
+- [x] vscode
+  - [x] recommended extension
   - [x] default settings
 
 - [x] configuration files
@@ -28,8 +28,8 @@
   - [ ] markdown linter md
   - [ ] stylelint css, scss
 
-- [ ] package manager
-  - [ ] only pnpm
+- [x] package manager
+  - [x] only pnpm
 
 - [ ] compress
   - [ ] compress html

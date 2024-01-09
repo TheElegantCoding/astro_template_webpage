@@ -1,15 +1,34 @@
 {
-  "name": "steadfast-sphere",
+  "name": "astro_template_webpage",
+  "description": "",
+  "author": "Luis Monsalve <TheElegantCoder>",
+  "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "engines": {
+    "node": "^20.10.0",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "pnpm": ">=8.2.0"
+  },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "prod": "astro preview",
+    "build": "astro check && pnpm lint  && astro build",
+    "lint": "pnpm lint-eslint && pnpm lint-stylelint && pnpm lint-prettier",
+    "lint-eslint": "eslint . --fix",
+    "lint-prettier": "prettier . --write",
+    "lint-stylelint": "stylelint ./src/**/*.{scss,css} --fix"
   },
   "dependencies": {
-    "astro": "^4.0.8"
+    "@astrojs/check": "^0.4.1",
+    "astro": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "eslint-config-elegant-coding": "5.0.2",
+    "sass": "1.69.7",
+    "typescript": "^5.3.3"
   }
 }

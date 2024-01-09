@@ -18,6 +18,7 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
 
   // linter
+  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
   "[javascriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
