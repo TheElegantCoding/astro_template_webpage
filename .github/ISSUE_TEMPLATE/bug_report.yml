@@ -1,15 +1,14 @@
-name: '🐛 Bug report'
+name: 🐛 Bug report
 description: Create a report to help us improve
-labels: ['🐛 bug']
+labels: [ 🐛 bug ]
 title: '[🐛]'
 body:
   - type: markdown
     attributes:
       value: |
         Thank you for reporting an issue :pray:.
-
-        Before submitting a new bug/issue, please check the links below to see if there is a solution or question posted there already
-
+        Before submitting a new bug/issue,
+        please check the links below to see if there is a solution or question posted there already
         The more information you fill in, the better the community can help you.
   - type: textarea
     id: description

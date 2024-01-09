@@ -1,6 +1,6 @@
-name: '✨ Feature request'
+name: ✨ Feature request
 description: Request a new feature
-labels: ['✨ feature']
+labels: [ ✨ feature ]
 title: '[✨]'
 body:
   - type: markdown
@@ -11,9 +11,8 @@ body:
     id: problem
     attributes:
       label: Describe the problem
-      description:
-        Please provide a clear and concise description the problem this feature would solve. The more information you
-        can provide here, the better.
+      description: Please provide a clear and concise description the problem this feature would solve.
+        The more information you can provide here, the better.
       placeholder: I would like to...
     validations:
       required: true

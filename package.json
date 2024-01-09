@@ -1,6 +1,6 @@
 {
   "name": "astro_template_webpage",
-  "description": "",
+  "description": "📦️ This repository that contains an Astro template ready for any website you can imagine. It's like a Swiss Army knife for developers, offering pre-built modules and flexible configurations to kickstart your project, regardless of its type.",
   "author": "Luis Monsalve <TheElegantCoder>",
   "version": "0.0.0",
   "private": true,
@@ -16,9 +16,8 @@
     "dev": "astro dev",
     "prod": "astro preview",
     "build": "astro check && pnpm lint  && astro build",
-    "lint": "pnpm lint-eslint && pnpm lint-stylelint && pnpm lint-prettier",
+    "lint": "pnpm lint-eslint && pnpm lint-stylelint",
     "lint-eslint": "eslint . --fix",
-    "lint-prettier": "prettier . --write",
     "lint-stylelint": "stylelint ./src/**/*.{scss,css} --fix"
   },
   "dependencies": {
@@ -27,8 +26,10 @@
   },
   "devDependencies": {
     "eslint": "8.56.0",
-    "eslint-config-elegant-coding": "5.0.2",
+    "eslint-config-elegant-coding": "6.0.2",
     "sass": "1.69.7",
+    "stylelint": "16.1.0",
+    "stylelint-config-elegant-coding": "4.0.0",
     "typescript": "^5.3.3"
   }
 }

@@ -13,20 +13,16 @@
 - [x] configuration files
   - [x] gitignore
   - [x] gitattributes
-  - [ ] eslint ignore
-  - [ ] stylelint ignore
-  - [x] prettier ignore
+  - [x] stylelint ignore
   - [x] npm config
-  - [ ] package.json
+  - [x] package.json
   - [x] browserslist
   - [x] tsconfig.json
 
-- [ ] linter and formatting
+- [x] linter and formatting
   - [x] editor config
-  - [ ] eslint js, jsx, ts, tsx
-  - [x] prettier html, yml, json
-  - [ ] markdown linter md
-  - [ ] stylelint css, scss
+  - [x] eslint
+  - [x] stylelint css, scss
 
 - [x] package manager
   - [x] only pnpm
