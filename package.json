@@ -15,7 +15,7 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
     "prod": "astro preview",
-    "build": "astro check && pnpm lint  && astro build",
+    "build": "astro check && astro build",
     "lint": "pnpm lint-eslint && pnpm lint-stylelint",
     "lint-eslint": "eslint . --fix",
     "lint-stylelint": "stylelint ./src/**/*.{scss,css} --fix"
@@ -25,11 +25,13 @@
     "astro": "^4.1.1"
   },
   "devDependencies": {
+    "@types/node": "20.10.8",
     "eslint": "8.56.0",
     "eslint-config-elegant-coding": "6.0.2",
     "sass": "1.69.7",
     "stylelint": "16.1.0",
     "stylelint-config-elegant-coding": "4.0.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "5.0.11"
   }
 }

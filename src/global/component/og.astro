@@ -1,0 +1,78 @@
+---
+type Props =
+{
+  title: string;
+  image: string;
+  locale: string;
+  siteName: string;
+  description: string;
+  type?: 'website' | 'article';
+};
+
+const {
+  description,
+  image,
+  locale,
+  siteName,
+  title,
+  type = 'website'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<meta
+  property='og:type'
+  content={type}
+/>
+<meta
+  property='og:url'
+  content={canonicalURL}
+/>
+<meta
+  property='og:title'
+  content={title}
+/>
+<meta
+  property='og:image'
+  content={`${Astro.site}${image}`}
+/>
+<meta
+  property='og:description'
+  content={description}
+/>
+<meta
+  property='og:site_name'
+  content={siteName}
+/>
+<meta
+  property='og:locale'
+  content={locale}
+/>
+<meta
+  property='og:image:width'
+  content='1200'
+/>
+<meta
+  property='og:image:height'
+  content='630'
+/>
+<meta
+  name='twitter:card'
+  content='summary'
+/>
+<meta
+  name='twitter:url'
+  content={canonicalURL}
+/>
+<meta
+  name='twitter:title'
+  content={title}
+/>
+<meta
+  name='twitter:description'
+  content={description}
+/>
+<meta
+  name='twitter:image'
+  content={`${Astro.site}${image}`}
+/>
