@@ -1,0 +1,56 @@
+@mixin responsive($breakpoint)
+{
+  @if $breakpoint == small_phone
+  {
+    @media screen and (min-width: 20em)
+    {
+      /* 320px */
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone
+  {
+    @media screen and (min-width: 30em)
+    {
+      /* 480px */
+      @content;
+    }
+  }
+
+  @if $breakpoint == small_tablet
+  {
+    @media screen and (min-width: 37.5em)
+    {
+      /* 600px */
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet
+  {
+    @media screen and (min-width: 50em)
+    {
+      /* 800px */
+      @content;
+    }
+  }
+
+  @if $breakpoint == small_desktop
+  {
+    @media screen and (min-width: 64.06em)
+    {
+      /* 1025px */
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop
+  {
+    @media screen and (min-width: 80em)
+    {
+      /* 1280px */
+      @content;
+    }
+  }
+}

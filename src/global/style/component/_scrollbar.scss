@@ -1,0 +1,22 @@
+::-webkit-scrollbar
+{
+  width: $spacing_12;
+  height: $spacing_12;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background-color: $primary_400;
+  border-radius: $rounded_medium;
+
+  &:hover
+  {
+    background-color: $primary_500;
+  }
+}
+
+::-webkit-scrollbar-track
+{
+  background-color: $gray_300;
+  border-radius: $rounded_medium;
+}

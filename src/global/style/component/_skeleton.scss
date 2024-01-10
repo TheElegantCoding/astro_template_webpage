@@ -1,0 +1,45 @@
+.skeleton
+{
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  background-color: $gray_300;
+  border-radius: $rounded_small;
+  transition: opacity 0.5s, visibility 0.5s;
+
+  &::before
+  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-100%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, $transparent 0%, $skeleton 50%, $transparent 100%);
+    animation: 2s shimmer infinite;
+  }
+}
+
+.skeleton--loading
+{
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes skeleton-loading
+{
+  100%
+  {
+    background-position-x: -20%;
+  }
+}
+
+@keyframes shimmer
+{
+  100%
+  {
+    transform: translateX(100%);
+  }
+}

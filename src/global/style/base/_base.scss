@@ -1,0 +1,14 @@
+html
+{
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body
+{
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  font-size: $h6;
+  color: $gray_950;
+  background-color: $gray_50;
+}

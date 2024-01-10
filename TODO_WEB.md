@@ -25,5 +25,6 @@
 ## Css
 
 - [ ] Mobile first
+- [ ] Reset css
 
 ## Fonts

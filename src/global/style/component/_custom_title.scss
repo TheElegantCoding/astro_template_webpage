@@ -1,0 +1,24 @@
+.custom-title
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.custom-title__text
+{
+  @include responsive(phone)
+  {
+    @include title('xl');
+  }
+
+  @include title('h1');
+
+  position: relative;
+
+  &::before
+  {
+    bottom: -$spacing_8;
+  }
+}

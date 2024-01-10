@@ -1,0 +1,78 @@
+.divider
+{
+  position: relative;
+
+  &::before
+  {
+    content: '';
+    position: absolute;
+    background-color: $primary_500;
+    border-radius: $rounded_medium;
+  }
+}
+
+.divider--horizontal::before
+{
+  bottom: 0;
+  width: 50%;
+  height: $spacing_3;
+}
+
+.divider--center::before
+{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.divider--left::before
+{
+  left: 0;
+}
+
+.divider--right::before
+{
+  right: 0;
+}
+
+.divider--vertical::before
+{
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: $spacing_3;
+  height: 100%;
+}
+
+@mixin divider($orientation: null)
+{
+  &::before
+  {
+    content: '';
+    position: absolute;
+    background-color: $primary_500;
+    border-radius: $rounded_medium;
+  }
+
+  @if (orientation == 'vertical')
+  {
+    &::before
+    {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: $spacing_3;
+      height: 100%;
+    }
+  }
+  @else
+  {
+    &::before
+    {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: $spacing_3;
+    }
+  }
+}
