@@ -5,6 +5,7 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
 import { BASE_URL } from '@global/constant/base';
 
 import './../style/main.scss';
+import Font from '@global/component/font.astro';
 
 type Props =
 {
@@ -68,13 +69,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       href=`${BASE_URL}/sitemap-index.xml`
     />
     <link rel="alternate" type="application/rss+xml" title={siteConfiguration.siteName} href={`${BASE_URL}/rss.xml`}>
-    <Favicon />
-    <Og
-      title={title}
-      description={description}
-      image='/asset/og/home.png'
-      locale={locale}
-    />
     <link
       rel='alternate'
       href={canonicalURL}
@@ -84,6 +78,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       rel='canonical'
       href={canonicalURL}
     />
+    <Favicon />
+    <Og
+      title={title}
+      description={description}
+      image='/asset/og/home.png'
+      locale={locale}
+    />
+
+    <Font />
     <title>{title}</title>
   </head>
   <body>

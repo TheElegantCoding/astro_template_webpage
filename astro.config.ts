@@ -4,8 +4,6 @@ import { loadEnv } from 'vite';
 
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
 
-console.log('URL', environment.BASE_URL);
-
 export default defineConfig({
   build:
   {

@@ -1,7 +1,7 @@
 @use 'sass:list';
 @use 'sass:string';
 
-@mixin font_face($name, $path, $weight: null, $style: null, $extension: ttf woff2 woff, $local_name: null)
+@mixin font_face($name, $path, $weight: null, $style: null, $extension: woff2 woff ttf, $local_name: null)
 {
   $source: null;
   $local: null;

@@ -38,6 +38,8 @@
 ## Fonts
 
 - [ ] transform font to woff, woff2
+- [x] preload font
+- [x] font face in css
 
 ## SEO
 

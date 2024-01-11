@@ -16,6 +16,10 @@
   - [x] stylelint ignore
   - [x] npm config
   - [x] package.json
+    - [x] only pnpm
+    - [x] title
+    - [x] description
+    - [x] scripts
   - [x] browserslist
   - [x] tsconfig.json
 
@@ -23,12 +27,6 @@
   - [x] editor config
   - [x] eslint
   - [x] stylelint css, scss
-
-- [x] package.json
-  - [x] only pnpm
-  - [x] title
-  - [x] description
-  - [x] scripts
 
 - [ ] compress
   - [ ] compress html
@@ -56,12 +54,12 @@
   - [ ] title modification
   - [ ] description modification
   - [ ] favicon generator <https://realfavicongenerator.net>
-  - [x] canonical for each page
+  - [ ] canonical for each page
   - [ ] general 404 page
-  - [x] sitemap generator
+  - [ ] sitemap generator
   - [ ] add google analytics
-  - [x] HSTS strict transport security header
-  - [x] SPF records test
+  - [ ] HSTS strict transport security header
+  - [ ] SPF records test
   - [ ] ads.txt Authorized Digital Sellers
 
 - [ ] i18n multi language
@@ -69,9 +67,5 @@
   - [ ] link alternate language and x default
   - [ ] og locale
 
-- [ ] postcss
-- [ ] vite
 - [ ] readme
-- [ ] index.html
-
 - [ ] validate env
