@@ -14,24 +14,31 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
-    "prod": "astro preview",
+    "staging": "pnpm build-dev && astro preview --mode staging",
+    "build-dev": "astro check && astro build --mode staging",
     "build": "astro check && astro build",
     "lint": "pnpm lint-eslint && pnpm lint-stylelint",
     "lint-eslint": "eslint . --fix",
     "lint-stylelint": "stylelint ./src/**/*.{scss,css} --fix"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "astro": "^4.1.1"
+    "@astrojs/check": "0.4.1",
+    "@astrojs/rss": "4.0.2",
+    "@astrojs/sitemap": "3.0.4",
+    "astro": "4.1.1"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "5.0.0",
+    "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
     "@types/node": "20.10.8",
+    "autoprefixer": "10.4.16",
     "eslint": "8.56.0",
     "eslint-config-elegant-coding": "6.0.2",
+    "postcss": "8.4.33",
     "sass": "1.69.7",
     "stylelint": "16.1.0",
     "stylelint-config-elegant-coding": "4.0.0",
-    "typescript": "^5.3.3",
+    "typescript": "5.3.3",
     "vite": "5.0.11"
   }
 }

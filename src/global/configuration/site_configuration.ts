@@ -3,6 +3,7 @@ const siteConfiguration =
   author: '',
   authorEmail: '',
   authorWeb: '',
+  description: '',
   siteName: ''
 };
 

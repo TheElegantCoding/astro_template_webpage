@@ -1,10 +1,12 @@
 ---
+import { siteConfiguration } from '@global/configuration/site_configuration';
+import { BASE_URL } from '@global/constant/base';
+
 type Props =
 {
   title: string;
   image: string;
   locale: string;
-  siteName: string;
   description: string;
   type?: 'website' | 'article';
 };
@@ -13,12 +15,11 @@ const {
   description,
   image,
   locale,
-  siteName,
   title,
   type = 'website'
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { siteName } = siteConfiguration;
 ---
 <meta
   property='og:type'
@@ -26,7 +27,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 />
 <meta
   property='og:url'
-  content={canonicalURL}
+  content={BASE_URL}
 />
 <meta
   property='og:title'
@@ -34,7 +35,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 />
 <meta
   property='og:image'
-  content={`${Astro.site}${image}`}
+  content={`${BASE_URL}${image}`}
 />
 <meta
   property='og:description'
@@ -62,7 +63,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 />
 <meta
   name='twitter:url'
-  content={canonicalURL}
+  content={BASE_URL}
 />
 <meta
   name='twitter:title'
@@ -74,5 +75,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 />
 <meta
   name='twitter:image'
-  content={`${Astro.site}${image}`}
+  content={`${BASE_URL}${image}`}
 />

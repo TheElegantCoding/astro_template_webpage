@@ -24,8 +24,11 @@
   - [x] eslint
   - [x] stylelint css, scss
 
-- [x] package manager
+- [x] package.json
   - [x] only pnpm
+  - [x] title
+  - [x] description
+  - [x] scripts
 
 - [ ] compress
   - [ ] compress html
@@ -53,9 +56,9 @@
   - [ ] title modification
   - [ ] description modification
   - [ ] favicon generator <https://realfavicongenerator.net>
-  - [ ] canonical for each page
+  - [x] canonical for each page
   - [ ] general 404 page
-  - [ ] sitemap generator
+  - [x] sitemap generator
   - [ ] add google analytics
   - [x] HSTS strict transport security header
   - [x] SPF records test
@@ -70,6 +73,5 @@
 - [ ] vite
 - [ ] readme
 - [ ] index.html
-- [ ] package.json
 
 - [ ] validate env

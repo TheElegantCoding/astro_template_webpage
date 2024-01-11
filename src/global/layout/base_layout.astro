@@ -2,6 +2,7 @@
 import Favicon from '@global/component/favicon.astro';
 import Og from '@global/component/og.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
+import { BASE_URL } from '@global/constant/base';
 
 import './../style/main.scss';
 
@@ -23,9 +24,10 @@ const {
 const {
   author,
   authorEmail,
-  authorWeb,
-  siteName
+  authorWeb
 } = siteConfiguration;
+
+console.log()
 
 const locale = 'es';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -61,13 +63,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       name='keywords'
       content={keywords}
     />
+    <link
+      rel='sitemap'
+      href=`${BASE_URL}/sitemap-index.xml`
+    />
+    <link rel="alternate" type="application/rss+xml" title={siteConfiguration.siteName} href={`${BASE_URL}/rss.xml`}>
     <Favicon />
     <Og
       title={title}
       description={description}
-      image='asset/og/home.png'
+      image='/asset/og/home.png'
       locale={locale}
-      siteName={siteName}
     />
     <link
       rel='alternate'
@@ -81,8 +87,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
   </head>
   <body>
-    <h2>{canonicalURL}</h2>
-    <h2>{Astro.site}</h2>
     <slot />
   </body>
 </html>

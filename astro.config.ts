@@ -1,17 +1,31 @@
+import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
 
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
 
+console.log('URL', environment.BASE_URL);
+
 export default defineConfig({
-  build: {
-    assetsPrefix: 'https://cdn.example.com',
+  build:
+  {
+    assetsPrefix: process.env.NODE_ENV === 'production' ? environment.BASE_URL : undefined,
     inlineStylesheets: 'never'
   },
-  site: environment.VITE_BASE_URL,
+  integrations: [ sitemap() ],
+  site: environment.BASE_URL,
   vite:
   {
-    base: environment.VITE_BASE_URL,
-    envDir: './src/global/env'
+    envDir: './src/global/env',
+    preview:
+    {
+      host: true,
+      open: true
+    },
+    server:
+    {
+      host: true,
+      open: true
+    }
   }
 });
