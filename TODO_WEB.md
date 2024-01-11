@@ -21,10 +21,12 @@
 - [ ] 404 page
 - [ ] Semantic elements
 - [ ] Noopener if target="_blank"
+- [ ] RSS feed
+- [x] CSS order in head
 
 ## Css
 
-- [ ] Mobile first
-- [ ] Reset css
+- [x] Mobile first
+- [x] Reset css
 
 ## Fonts

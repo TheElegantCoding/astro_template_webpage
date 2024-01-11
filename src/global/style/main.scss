@@ -38,16 +38,6 @@
 
 // 7. Components
 @import
-  './component/button',
-  './component/ripple',
-  './component/divider',
   './component/skeleton',
   './component/custom_image',
-  './component/custom_title',
-  './component/scrollbar',
-  './component/input',
-  './component/input_checkbox',
-  './component/footer_copyright';
-
-@import
-  './page/presentation';
+  './component/scrollbar';
