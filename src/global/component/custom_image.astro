@@ -63,3 +63,38 @@ const imageUrl = `${BASE_URL}${source}`;
     class:list={[ classImage ]}
   />
 </picture>
+
+<script>
+  const picture = document.querySelectorAll(".custom-image") as NodeListOf<HTMLPictureElement>;
+
+  picture.forEach((element) =>
+  {
+    const image = element.querySelector("img")
+
+    const loaded = () =>
+    {
+      const skeleton = element.querySelector("div");
+
+      skeleton?.classList.remove('skeleton--active');
+
+      console.log('yes')
+    }
+
+    const error = (event) =>
+    {
+      event.target.src = image?.src;
+      //image?.src = event.currentTarget.src;
+    }
+
+    if(image?.complete)
+    {
+      loaded();
+    }
+    else
+    {
+      image?.addEventListener("load", loaded)
+      image?.addEventListener("error", error)
+    }
+  })
+
+</script>
