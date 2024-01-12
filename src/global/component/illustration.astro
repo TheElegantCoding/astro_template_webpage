@@ -1,0 +1,33 @@
+---
+type Props =
+{
+  name: string;
+  title?: string;
+  class?: string;
+};
+
+const {
+  class: classIcon,
+  name,
+  title
+} = Astro.props;
+
+const icon = await import(`./../asset/illustration/${name}.svg?raw`);
+
+const iconContent = icon.default.slice(icon.default.indexOf('>') + 1, icon.default.indexOf('</svg>')) as string;
+const iconWidth = icon.default.match(/width="(.*?)(?="|$)/u)[1];
+const iconHeight = icon.default.match(/height="(.*?)(?="|$)/u)[1];
+
+// eslint-disable-next-line github/unescaped-html-literal
+const iconRaw = title ? `<title>${title}</title>${iconContent}` : iconContent;
+---
+<svg
+  stroke-width='0'
+  viewBox={`0 0 ${iconWidth} ${iconHeight}`}
+  width={iconWidth}
+  height={iconHeight}
+  aria-label={title}
+  class:list={classIcon}
+  xmlns='http://www.w3.org/2000/svg'
+  set:html={iconRaw}
+/>

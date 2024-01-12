@@ -1,0 +1,9 @@
+---
+type Props =
+{
+  when: null | string | boolean | undefined;
+};
+
+const { when } = Astro.props;
+---
+{ when && <slot /> }

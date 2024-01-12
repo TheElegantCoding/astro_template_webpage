@@ -25,15 +25,15 @@
     "@astrojs/check": "0.4.1",
     "@astrojs/rss": "4.0.2",
     "@astrojs/sitemap": "3.0.4",
-    "astro": "4.1.1"
+    "astro": "4.1.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "5.0.0",
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
-    "@types/node": "20.10.8",
+    "@types/node": "20.11.0",
     "autoprefixer": "10.4.16",
     "eslint": "8.56.0",
-    "eslint-config-elegant-coding": "6.0.2",
+    "eslint-config-elegant-coding": "6.0.4",
     "postcss": "8.4.33",
     "sass": "1.69.7",
     "stylelint": "16.1.0",

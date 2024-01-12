@@ -41,15 +41,29 @@
 - [x] preload font
 - [x] font face in css
 
+## Image
+
+- [x] always add alt
+- [x] lazy load
+- [ ] compress image
+- [ ] transform img to webp and avif
+
 ## SEO
 
 - [x] sitemap generator
+- [x] robots.txt
+- [ ] google analytics
+- [ ] search console
 
 ## Performance
 
 - [ ] non-blocking css
 - [ ] non-blocking js
-- [ ] compress image
 - [ ] compress css
 - [ ] compress html
 - [ ] compress js
+- [ ] lighthouse testing
+
+## Component
+
+- [ ] show component

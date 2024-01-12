@@ -1,0 +1,65 @@
+---
+import Show from '@global/component/show.astro';
+import Skeleton from '@global/component/skeleton.astro';
+import { BASE_URL } from '@global/constant/base';
+import { replaceExtension } from '@global/util/replace_extension';
+
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'img'> &
+{
+  readonly src: string;
+  readonly alt: string;
+  readonly webp?: boolean;
+  readonly avif?: boolean;
+  readonly class?: string;
+  readonly priority?: boolean;
+  readonly disableLoader?: boolean;
+  readonly classStyle?: Partial<Record<'skeleton' | 'container', string>>;
+};
+
+const {
+  alt,
+  avif = true,
+  class: classImage,
+  classStyle,
+  disableLoader,
+  priority = false,
+  src: source,
+  webp = true
+} = Astro.props;
+
+const imageUrl = `${BASE_URL}${source}`;
+---
+<picture
+  class='custom-image'
+  class:list={[ classStyle?.container ]}
+>
+  <Show when={avif}>
+    <source
+      type='image/avif'
+      srcset={replaceExtension(imageUrl, 'avif')}
+    />
+  </Show>
+  <Show when={webp}>
+    <source
+      type='image/webp'
+      srcset={replaceExtension(imageUrl, 'webp')}
+    />
+  </Show>
+  <Show when={!disableLoader}>
+    <Skeleton
+      class='custom-image__skeleton'
+      class:list={[ classStyle?.skeleton ]}
+    />
+  </Show>
+  <img
+    src={imageUrl}
+    alt={alt}
+    loading={priority ? 'eager' : 'lazy'}
+    decoding={priority ? 'auto' : 'async'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    class='custom-image__tag'
+    class:list={[ classImage ]}
+  />
+</picture>

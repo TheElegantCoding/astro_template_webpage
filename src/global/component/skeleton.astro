@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'div'> &
+{
+  class?: string;
+  isLoaded?: boolean;
+};
+
+const { class: classImage, isLoaded } = Astro.props;
+---
+<div
+  class='skeleton'
+  class:list={[ !isLoaded && 'skeleton--active', classImage ]}
+>
+  <slot />
+</div>
