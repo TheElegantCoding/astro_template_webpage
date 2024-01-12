@@ -35,8 +35,8 @@ devDependencies:
     specifier: 8.56.0
     version: 8.56.0
   eslint-config-elegant-coding:
-    specifier: 6.0.4
-    version: 6.0.4(eslint@8.56.0)(typescript@5.3.3)
+    specifier: 6.0.6
+    version: 6.0.6(eslint@8.56.0)(typescript@5.3.3)
   postcss:
     specifier: 8.4.33
     version: 8.4.33
@@ -2324,8 +2324,8 @@ packages:
       eslint: 8.56.0
     dev: true
 
-  /eslint-config-elegant-coding@6.0.4(eslint@8.56.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-kO9vh70lwxZH/VrgbBMK3W+CAWMZ898vRAA1wh6rVF70KekcNBKPT5reqmretjAbblmJHyAzs6EkBIxDMnnP0w==}
+  /eslint-config-elegant-coding@6.0.6(eslint@8.56.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-gdsbDVQmyeCdS2yHmjMsYyTJyPXyEKvHpXhfo33fwWoFdOYua9sK/AVU26XUPpFF9m5qRWwVSnNx86IiMXOyOg==}
     engines: {npm: please-use-pnpm, pnpm: '>=8.6.1', yarn: please-use-pnpm}
     requiresBuild: true
     peerDependencies:
