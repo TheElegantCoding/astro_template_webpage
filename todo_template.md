@@ -45,6 +45,7 @@
 
 - [x] always add alt
 - [x] lazy load
+- [x] always plain svg
 - [ ] compress image
 - [ ] transform img to webp and avif
 
@@ -52,11 +53,13 @@
 
 - [x] sitemap generator
 - [x] robots.txt
+- [x] sitemap in robot
 - [ ] google analytics
 - [ ] search console
 
 ## Performance
 
+- [ ] partytown
 - [ ] non-blocking css
 - [ ] non-blocking js
 - [ ] compress css
@@ -66,4 +69,9 @@
 
 ## Component
 
-- [ ] show component
+- [x] show component
+- [ ] for component
+
+## Readme
+
+- [ ] features

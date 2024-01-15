@@ -67,5 +67,4 @@
   - [ ] link alternate language and x default
   - [ ] og locale
 
-- [ ] readme
 - [ ] validate env

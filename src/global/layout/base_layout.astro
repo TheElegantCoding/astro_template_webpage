@@ -3,9 +3,9 @@ import Favicon from '@global/component/favicon.astro';
 import Og from '@global/component/og.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { BASE_URL } from '@global/constant/base';
+import Font from '@global/component/font.astro';
 
 import './../style/main.scss';
-import Font from '@global/component/font.astro';
 
 type Props =
 {
@@ -85,7 +85,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       image='/asset/og/home.png'
       locale={locale}
     />
-
     <Font />
     <title>{title}</title>
   </head>
