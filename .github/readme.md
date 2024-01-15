@@ -1,6 +1,8 @@
-COVER
+<img src="./asset/cover.svg" alt="edge" width="100%" align="center" />
 
-<h1 id="astro-template-webpage">📦️ Readme generator</h1>
+<br />
+
+<h1 id="astro-template-webpage">📦️ Astro template webpage</h1>
 
 ---
 
