@@ -9,15 +9,9 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@global/*": [
-        "src/global/*"
-      ],
-      "@module/*": [
-        "src/module/*"
-      ],
-      "@public/*": [
-        "public/*"
-      ]
+      "@global/*": [ "src/global/*" ],
+      "@module/*": [ "src/module/*" ],
+      "@public/*": [ "public/*" ]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,

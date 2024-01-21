@@ -1,3 +1,4 @@
+import sitemap from '@astrojs/sitemap';
 import solidJs from '@astrojs/solid-js';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
@@ -9,7 +10,7 @@ export default defineConfig({
     assetsPrefix: process.env.NODE_ENV === 'production' ? environment.BASE_URL : undefined,
     inlineStylesheets: 'never'
   },
-  integrations: [ solidJs() ],
+  integrations: [ solidJs(), sitemap() ],
   site: environment.BASE_URL,
   vite: {
     envDir: './src/global/env',

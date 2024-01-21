@@ -20,7 +20,7 @@ const Skeleton: Component<SkeletonComponent> = (props): JSX.Element =>
 
   return (
     <div
-      class={joinClass('skeleton', local.class, !local.isLoaded && 'skeleton--loading')}
+      class={joinClass('skeleton', local.class, !local.isLoaded && 'skeleton--active')}
       {...rest}
     >
       {local.children}

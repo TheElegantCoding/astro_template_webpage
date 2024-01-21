@@ -14,8 +14,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
-    "staging": "pnpm build-dev && astro preview --mode staging",
-    "build-dev": "astro check && astro build --mode staging",
+    "staging": "astro preview --mode staging",
+    "build-staging": "astro check && astro build --mode staging",
     "build": "astro check && astro build",
     "lint": "pnpm lint-eslint && pnpm lint-stylelint",
     "lint-eslint": "eslint . --fix",
