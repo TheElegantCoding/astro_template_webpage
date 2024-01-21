@@ -1,0 +1,33 @@
+---
+import { CustomImage } from '@global/component/custom_image';
+import BaseLayout from '@global/layout/base_layout.astro';
+---
+<BaseLayout
+  description=''
+  keywords=''
+  title=''
+>
+  <main class='not-found base-layout'>
+    <h1 class='not-found__letter'>404</h1>
+    <div class='not-found__container'>
+      <div class='not-found__container-title'>
+        <p class='not-found__title'>Oops</p>
+        <CustomImage
+          alt='face thinking'
+          src='/asset/image/emoji_thinking_face.png'
+          class='not-found__emoji'
+          avif={false}
+          webp={false}
+        />
+      </div>
+      <p class='not-found__subtitle'>Algo salió mal, creo que estas perdido</p>
+      <p class='not-found__description'>Error 404 página no encontrada</p>
+      <a
+        class='not-found__button'
+        href='/'
+      >
+        Volver al inicio
+      </a>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,11 +1,11 @@
-.layout
+.base-layout
 {
   @include responsive(phone)
   {
-    max-width: 194rem;
     padding: 0 7rem;
   }
 
+  max-width: 192rem;
   margin: auto;
   padding: 0 3.5rem;
 }

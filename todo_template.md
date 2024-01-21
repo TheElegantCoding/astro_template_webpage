@@ -19,7 +19,7 @@
 - [x] twitter card
 - [x] canonical
 - [x] RSS feed
-- [ ] 404 page
+- [x] 404 page
 - [x] semantic elements
 - [x] noopener if target="_blank"
 - [x] css order in head
@@ -71,7 +71,3 @@
 
 - [x] show component
 - [ ] for component
-
-## Readme
-
-- [ ] features

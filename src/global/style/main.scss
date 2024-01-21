@@ -34,10 +34,15 @@
 
 // 6. Layout-related sections
 @import
-  './layout/layout';
+  './layout/base_layout';
 
 // 7. Components
 @import
   './component/skeleton',
   './component/custom_image',
   './component/scrollbar';
+
+// 8. Page
+
+@import
+  './page/not_found';

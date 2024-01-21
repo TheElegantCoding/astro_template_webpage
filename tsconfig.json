@@ -2,6 +2,8 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "target": "ESNext",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@builder.io/qwik",
     "baseUrl": "./",
     "rootDir": "./",
     "module": "ESNext",

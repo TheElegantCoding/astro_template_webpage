@@ -4,7 +4,7 @@
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  background-color: $gray_300;
+  background-color: $gray_200;
   border-radius: $rounded_small;
   transition: opacity 0.5s, visibility 0.5s;
 
@@ -18,7 +18,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, $transparent 0%, $skeleton 50%, $transparent 100%);
-    animation: 2s shimmer infinite;
+    animation: 1.5s shimmer infinite;
   }
 }
 
