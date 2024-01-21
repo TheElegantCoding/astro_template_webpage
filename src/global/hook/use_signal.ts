@@ -1,0 +1,1 @@
+export { createSignal as useSignal } from 'solid-js';

@@ -25,9 +25,11 @@
     "@astrojs/check": "0.4.1",
     "@astrojs/rss": "4.0.2",
     "@astrojs/sitemap": "3.0.5",
+    "@astrojs/solid-js": "^4.0.1",
     "@builder.io/qwik": "1.4.0",
     "@qwikdev/astro": "0.4.4",
     "astro": "4.2.1",
+    "solid-js": "^1.8.11",
     "undici": "6.4.0"
   },
   "devDependencies": {

@@ -2,16 +2,22 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "target": "ESNext",
-    "jsx": "react-jsx",
-    "jsxImportSource": "@builder.io/qwik",
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
     "baseUrl": "./",
     "rootDir": "./",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@global/*": [ "src/global/*" ],
-      "@module/*": [ "src/module/*" ],
-      "@public/*": [ "public/*" ]
+      "@global/*": [
+        "src/global/*"
+      ],
+      "@module/*": [
+        "src/module/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
