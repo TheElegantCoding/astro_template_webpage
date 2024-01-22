@@ -14,8 +14,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
-    "staging": "pnpm build-dev && astro preview --mode staging",
-    "build-dev": "astro check && astro build --mode staging",
+    "staging": "astro preview --mode staging",
+    "build-staging": "astro check && astro build --mode staging",
     "build": "astro check && astro build",
     "lint": "pnpm lint-eslint && pnpm lint-stylelint",
     "lint-eslint": "eslint . --fix",
@@ -25,10 +25,7 @@
     "@astrojs/check": "0.4.1",
     "@astrojs/rss": "4.0.2",
     "@astrojs/sitemap": "3.0.5",
-    "@builder.io/qwik": "1.4.0",
-    "@qwikdev/astro": "0.4.4",
-    "astro": "4.2.1",
-    "undici": "6.4.0"
+    "astro": "4.2.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "5.0.0",

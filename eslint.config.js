@@ -6,7 +6,6 @@ export default elegantCoding({
   ignore: [ 'postcss.config.cjs' ],
   json: true,
   jsxA11y: true,
-  qwik: true,
   stylistic: true,
   typescript: true,
   yml: true
