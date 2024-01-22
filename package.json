@@ -26,7 +26,7 @@
     "@astrojs/rss": "4.0.2",
     "@astrojs/sitemap": "3.0.5",
     "@builder.io/qwik": "1.4.0",
-    "@qwikdev/astro": "0.4.4",
+    "@qwikdev/astro": "0.4.6",
     "astro": "4.2.1",
     "undici": "6.4.0"
   },

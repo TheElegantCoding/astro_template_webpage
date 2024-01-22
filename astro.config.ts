@@ -1,7 +1,8 @@
 import sitemap from '@astrojs/sitemap';
+import qwikdev from '@qwikdev/astro';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
-import qwikdev from "@qwikdev/astro";
+
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
 
 // https://astro.build/config
@@ -10,7 +11,7 @@ export default defineConfig({
     assetsPrefix: process.env.NODE_ENV === 'production' ? environment.BASE_URL : undefined,
     inlineStylesheets: 'never'
   },
-  integrations: [sitemap(), qwikdev()],
+  integrations: [ sitemap(), qwikdev() ],
   site: environment.BASE_URL,
   vite: {
     envDir: './src/global/env',
