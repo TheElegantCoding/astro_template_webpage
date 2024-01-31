@@ -47,6 +47,7 @@
 - [x] lazy load
 - [x] always plain svg
 - [ ] compress image
+- [ ] compress svg
 - [ ] transform img to webp and avif
 
 ## SEO
@@ -54,8 +55,6 @@
 - [x] sitemap generator
 - [x] robots.txt
 - [x] sitemap in robot
-- [ ] google analytics
-- [ ] search console
 
 ## Performance
 
@@ -65,9 +64,34 @@
 - [ ] compress css
 - [ ] compress html
 - [ ] compress js
-- [ ] lighthouse testing
 
 ## Component
 
 - [x] show component
 - [ ] for component
+
+# TODO start the template
+
+## Html
+
+In global configuration put this data
+
+- [ ] default language of the page
+- [ ] author
+- [ ] author email
+- [ ] author web
+- [ ] global description of the web
+- [ ] site name
+- [ ] favicon
+- [ ] open graph
+- [ ] twitter card
+- [ ] make the 404 page with the correct design
+
+## SEO
+
+- [ ] google analytics
+- [ ] search console
+
+## Performance
+
+- [ ] lighthouse test all pages

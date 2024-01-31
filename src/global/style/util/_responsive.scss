@@ -1,3 +1,4 @@
+/* stylelint-disable media-query-no-invalid */
 @mixin responsive($breakpoint)
 {
   @if $breakpoint == small_phone
@@ -9,7 +10,7 @@
     }
   }
 
-  @if $breakpoint == phone
+  @else if $breakpoint == phone
   {
     @media screen and (min-width: 30em)
     {
@@ -18,16 +19,16 @@
     }
   }
 
-  @if $breakpoint == small_tablet
+  @else if $breakpoint == small_tablet
   {
-    @media screen and (min-width: 37.5em)
+    @media screen and (min-width: 48em)
     {
-      /* 600px */
+      /* 768px */
       @content;
     }
   }
 
-  @if $breakpoint == tablet
+  @else if $breakpoint == tablet
   {
     @media screen and (min-width: 50em)
     {
@@ -36,20 +37,28 @@
     }
   }
 
-  @if $breakpoint == small_desktop
+  @else if $breakpoint == small_desktop
   {
-    @media screen and (min-width: 64.06em)
+    @media screen and (min-width: 64em)
     {
-      /* 1025px */
+      /* 1024px */
       @content;
     }
   }
 
-  @if $breakpoint == desktop
+  @else if $breakpoint == desktop
   {
-    @media screen and (min-width: 80em)
+    @media screen and (min-width: 90em)
     {
-      /* 1280px */
+      /* 1440px */
+      @content;
+    }
+  }
+
+  @else
+  {
+    @media screen and (min-width: $breakpoint)
+    {
       @content;
     }
   }
