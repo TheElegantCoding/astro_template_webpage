@@ -30,18 +30,18 @@
 
   @else if $breakpoint == tablet
   {
-    @media screen and (min-width: 50em)
+    @media screen and (min-width: 64em)
     {
-      /* 800px */
+      /* 1024px */
       @content;
     }
   }
 
   @else if $breakpoint == small_desktop
   {
-    @media screen and (min-width: 64em)
+    @media screen and (min-width: 80em)
     {
-      /* 1024px */
+      /* 1280px */
       @content;
     }
   }
