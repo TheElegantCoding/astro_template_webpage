@@ -30,6 +30,8 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 - [⚡️ Requirements](#requirements)
 - [📦 Installation](#installation)
 - [⚙️ Configuration](#configuration)
+  - [Site configuration](#site-configuration)
+  - [Environment Varaibles](#enviroment-varaible)
 - [🚀 Usage](#usage)
 - [⚡️ Scripts](#scripts)
 - [🌎 Browser support](#browser-support)
@@ -56,7 +58,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
   - `✅ ️Robot` - Robot txt configuration
   - `✅ Canonical` - Auto canonical url
   - `✅ Google search console` - For SEO stadistics
-  - `✅ Google analytincs` - For analitics of the webpage
+  - `✅ Google analytic` - For analytics of the webpage
 - `📐 Linter` - Linter and formatting all kind of files
   - `✅ Eslint` - Litner and formatting ts and js files
   - `✅ Stylelint` - Linter css files
@@ -71,7 +73,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 - `🧩 Components`
   - `✅ Image component` - Ready to use optimize image component
   - `✅ Show component` - Ready to use show component
-  - `✅ For component` - Ready to use show
+  - `✅ For component` - Ready to use for map components
 - `️⚡️ Performance`
   - `✅ Bundler analizer` - Analize your bundle size
   - `✅ Compress` - Compress images, font, css, js, and html
@@ -106,26 +108,44 @@ pnpm install
 
 <h2 id="configuration">⚙️ Configuration</h2>
 
-The configuration needed for this project is to set up the env variables here are the examples:
+The configuration needed for this project is to set up the env variables and also the site configuration object here are the examples:
+
+<h3 id="site-configuration">Site configuration</h3>
+
+This file is located in `src/global/configuration/site_configuration.ts`
+
+- `siteName` - Global title of the webpage
+- `description` - Global description of the webpage
+- `defaultLocale` - Default locale of the webpage
+- `autor` - Author object that appears in a meta tag
+  - `author.name` - Name of the author
+  - `author.email` - Email of the author
+  - `author.web` - Web of the author
+- `googleSiteVerificationId` - Id of google search console
+- `googleAnalyticId` - Id of the google analytics
+
+<h3 id="environment-varaible">Evironment varaibles</h3>
+
+This environment variables are located in `src/global/env/**.env`
 
 file: **.example.dev.env**
 
 ```yml
-VITE_PORT=3000
-VITE_BASE_URL=http://localhost:$VITE_PORT
+PORT=3000
+BASE_URL=http://localhost:$VITE_PORT
 ```
 
 file: **.example.prod.env**
 
 ```yml
-VITE_BASE_URL=
+BASE_URL=
 ```
 
 file: **.example.staging.env**
 
 ```yml
-VITE_PORT=4173
-VITE_BASE_URL=http://localhost:$VITE_PORT
+PORT=4173
+BASE_URL=http://localhost:$VITE_PORT
 ```
 
 <p align="right">(<a href="#webpage-pablote-beef">back to top</a>)</p>

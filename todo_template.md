@@ -1,4 +1,4 @@
-# Todo web
+# Todo web template
 
 ## HTMl
 
@@ -56,10 +56,11 @@
 - [x] robots.txt
 - [x] sitemap in robot
 - [x] Google search console
+- [x] Google analytic with party town
 
 ## Performance
 
-- [ ] partytown
+- [x] partytown
 - [ ] non-blocking css
 - [ ] non-blocking js
 - [ ] compress css
@@ -69,30 +70,54 @@
 ## Component
 
 - [x] show component
-- [ ] for component
+- [x] for component
 
-# TODO start the template
+## Github issue template
 
-## Html
+- [x] bug report
+- [x] doc suggestion
+- [x] feature request
+- [x] questions
 
-In global configuration put this data
+## Vscode settings
 
-- [ ] default language of the page
-- [ ] author
-- [ ] author email
-- [ ] author web
-- [ ] global description of the web
-- [ ] site name
-- [ ] favicon
-- [ ] open graph
-- [ ] twitter card
-- [ ] make the 404 page with the correct design
+- [x] recommended extension
+- [x] default settings
 
-## SEO
+## Linter
 
-- [ ] Put google analytics
-- [ ] Register website in search console
+- [x] editor config
+- [x] eslint
+- [x] stylelint css, scss
 
-## Performance
+## Git hook
 
-- [ ] lighthouse test all pages
+- [ ] commit lint
+- [ ] semantic release
+- [ ] changelog
+
+## Configuration files
+
+- [x] gitignore
+- [x] gitattributes
+- [x] stylelint ignore
+- [x] npm config
+- [x] package.json
+  - [x] only pnpm
+  - [x] title
+  - [x] description
+  - [x] scripts
+- [x] browserslist
+- [x] tsconfig.json
+
+- [ ] Better open graph protocol cards
+- <https://ogp.me>
+
+## Env variables
+
+- [ ] validate env
+
+## Security
+
+- [ ] HSTS strict transport security header
+- [ ] SPF records test

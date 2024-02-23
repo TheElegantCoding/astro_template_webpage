@@ -4,9 +4,11 @@ import OpenGraph, { type OpenGraphProps } from '@global/component/open_graph.ast
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { BASE_URL } from '@global/constant/base';
 import Font from '@global/component/font.astro';
+import { joinString } from '@global/util/join_string.ts';
 
 import './../style/main.scss';
 import Show from '@global/component/show.astro';
+import GoogleAnalytic from '@global/component/google_analytic.astro';
 
 type Props =
 {
@@ -31,17 +33,14 @@ const {
 
 const {
   author,
-  authorEmail,
-  authorWeb,
   googleSiteVerificationId
 } = siteConfiguration;
 
-const locale = 'es';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
 <html
-  lang={locale}
+  lang={siteConfiguration.defaultLocale}
   dir='ltr'
 >
   <head>
@@ -56,14 +55,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     />
     <meta
       name='robots'
-      content={`${metaRobot?.noIndex ? 'noindex' : 'index'}, ${
+      content={joinString([
+        metaRobot?.noIndex ? 'noindex' : 'index',
         metaRobot?.noFollow ? 'nofollow' : 'follow'
-      }`}
+      ])}
     />
-    <meta
-      name='author'
-      content={`${author}, ${authorEmail}, ${authorWeb}`}
-    />
+    <Show when={author.name || author.email || author.web}>
+      <meta
+        name='author'
+        content={joinString([author.name, author.email, author.web])}
+      />
+    </Show>
     <meta
       name='description'
       content={description}
@@ -101,7 +103,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <OpenGraph
       title={title}
       description={description}
-      locale={locale}
+      locale={siteConfiguration.defaultLocale}
       image={[
         {
           url: '/asset/og/home.png',
@@ -115,6 +117,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       {...openGraphConfiguration}
     />
     <Font />
+    <GoogleAnalytic />
     <title>{title}</title>
   </head>
   <body>

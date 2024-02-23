@@ -1,9 +1,14 @@
 const siteConfiguration =
 {
-  author: '',
-  authorEmail: '',
-  authorWeb: '',
+  author:
+  {
+    email: '',
+    name: '',
+    web: ''
+  },
+  defaultLocale: 'es',
   description: '',
+  googleAnalyticId: '',
   googleSiteVerificationId: '',
   siteName: ''
 };

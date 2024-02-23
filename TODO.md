@@ -1,73 +1,30 @@
-# TODO
+# TODO start the template
 
-- [x] github issue template
-  - [x] bug report
-  - [x] doc suggestion
-  - [x] feature request
-  - [x] questions
+## Html
 
-- [x] vscode
-  - [x] recommended extension
-  - [x] default settings
+In global configuration put this data
 
-- [x] configuration files
-  - [x] gitignore
-  - [x] gitattributes
-  - [x] stylelint ignore
-  - [x] npm config
-  - [x] package.json
-    - [x] only pnpm
-    - [x] title
-    - [x] description
-    - [x] scripts
-  - [x] browserslist
-  - [x] tsconfig.json
+- [ ] default language of the page
+- [ ] author
+- [ ] author email
+- [ ] author web
+- [ ] global description of the web
+- [ ] site name
+- [ ] set google search console id
+- [ ] set google analytic id
 
-- [x] linter and formatting
-  - [x] editor config
-  - [x] eslint
-  - [x] stylelint css, scss
+Additional information
 
-- [ ] Better open graph protocol cards
-- <https://ogp.me>
+- [ ] favicon
+- [ ] open graph protocol
+- [ ] twitter card type
+- [ ] make the 404 page with the correct design
 
-- [ ] compress
-  - [ ] compress html
-  - [ ] compress css
-  - [ ] compress js
-  - [ ] compress images
-  - [ ] compress documents
+## SEO
 
-- [ ] git hooks
-  - [ ] commit lint
-  - [ ] semantic release
-  - [ ] changelog
+- [ ] Put google analytics
+- [ ] Register website in search console
 
-- [ ] test
-  - [ ] vitest
-  - [ ] playwright
+## Performance
 
-- [ ] performance
-  - [ ] critical css
-  - [ ] async css
-
-- [ ] seo
-  - [ ] description of 150 and 220 characters
-  - [ ] global seo component
-  - [ ] title modification
-  - [ ] description modification
-  - [ ] favicon generator <https://realfavicongenerator.net>
-  - [ ] canonical for each page
-  - [ ] general 404 page
-  - [ ] sitemap generator
-  - [ ] add google analytics
-  - [ ] HSTS strict transport security header
-  - [ ] SPF records test
-  - [ ] ads.txt Authorized Digital Sellers
-
-- [ ] i18n multi language
-  - [ ] html lang
-  - [ ] link alternate language and x default
-  - [ ] og locale
-
-- [ ] validate env
+- [ ] lighthouse test all pages
