@@ -1,0 +1,120 @@
+---
+import Show from '@global/component/show.astro';
+import { siteConfiguration } from '@global/configuration/site_configuration';
+import { BASE_URL } from '@global/constant/base';
+
+import type { OpenGraphType, OpenGraphMedia, OpenGraphTwitter } from '@global/type/open_graph_type.ts';
+
+export type OpenGraphProps =
+{
+  title: string;
+  locale: string;
+  description: string;
+  type?: OpenGraphType;
+  image?: OpenGraphMedia[];
+  twitter?: OpenGraphTwitter;
+  languageAlternate?: string[];
+};
+
+type Props = OpenGraphProps;
+
+const {
+  description,
+  image,
+  languageAlternate,
+  locale,
+  title,
+  twitter =
+  {
+    type: 'summary'
+  },
+  type = 'website'
+} = Astro.props;
+
+const { siteName } = siteConfiguration;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<meta
+  name='twitter:card'
+  content={twitter.type}
+/>
+<Show when={twitter.site}>
+  <meta
+    name='twitter:site'
+    content={twitter.site}
+  />
+</Show>
+<Show when={twitter.creator}>
+  <meta
+    name='twitter:creator'
+    content={twitter.creator}
+  />
+</Show>
+<meta
+  property='og:title'
+  content={title}
+/>
+<meta
+  property='og:type'
+  content={type}
+/>
+<meta
+  property='og:description'
+  content={description}
+/>
+<meta
+  property='og:url'
+  content={canonicalURL}
+/>
+<meta
+  property='og:site_name'
+  content={siteName}
+/>
+<meta
+  property='og:locale'
+  content={locale}
+/>
+{languageAlternate?.map((dataLanguage) => (
+  <meta
+    property='og:locale:alternate'
+    content={dataLanguage}
+  />
+))}
+{image?.map((dataImage) => (
+  <>
+    <meta
+      property='og:image'
+      content={`${BASE_URL}${dataImage.url}`}
+    />
+    <Show when={dataImage.secureUrl}>
+      <meta
+        property='og:image:secure_url'
+        content={dataImage.secureUrl}
+      />
+    </Show>
+    <Show when={dataImage.type}>
+      <meta
+        property='og:image:type'
+        content={dataImage.type}
+      />
+    </Show>
+    <Show when={dataImage.width}>
+      <meta
+        property='og:image:width'
+        content={dataImage.width}
+      />
+    </Show>
+    <Show when={dataImage.height}>
+      <meta
+        property='og:image:height'
+        content={dataImage.height}
+      />
+    </Show>
+    <Show when={dataImage.alt}>
+      <meta
+        property='og:image:alt'
+        content={dataImage.alt}
+      />
+    </Show>
+  </>
+))}

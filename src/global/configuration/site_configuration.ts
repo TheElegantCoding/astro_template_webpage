@@ -4,6 +4,7 @@ const siteConfiguration =
   authorEmail: '',
   authorWeb: '',
   description: '',
+  googleSiteVerificationId: '',
   siteName: ''
 };
 

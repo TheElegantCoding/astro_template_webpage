@@ -1,7 +1,7 @@
 ---
 type Props =
 {
-  when: null | string | boolean | undefined;
+  readonly when: URL | null | string | boolean | undefined;
 };
 
 const { when } = Astro.props;

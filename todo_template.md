@@ -55,6 +55,7 @@
 - [x] sitemap generator
 - [x] robots.txt
 - [x] sitemap in robot
+- [x] Google search console
 
 ## Performance
 
@@ -89,8 +90,8 @@ In global configuration put this data
 
 ## SEO
 
-- [ ] google analytics
-- [ ] search console
+- [ ] Put google analytics
+- [ ] Register website in search console
 
 ## Performance
 

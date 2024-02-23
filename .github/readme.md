@@ -52,9 +52,11 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 - `🌎 SEO` - SEO meta data, open graph and more
   - `✅ Sitemap` - Sitemap generator
   - `✅ RSS` - RSS generator
+  - `✅ Open graph` - Advanced open graph SEO
   - `✅ ️Robot` - Robot txt configuration
   - `✅ Canonical` - Auto canonical url
-  - `✅ Google analytincs` - For positioning the webpage
+  - `✅ Google search console` - For SEO stadistics
+  - `✅ Google analytincs` - For analitics of the webpage
 - `📐 Linter` - Linter and formatting all kind of files
   - `✅ Eslint` - Litner and formatting ts and js files
   - `✅ Stylelint` - Linter css files

@@ -1,31 +1,39 @@
 ---
 import Favicon from '@global/component/favicon.astro';
-import Og from '@global/component/og.astro';
+import OpenGraph, { type OpenGraphProps } from '@global/component/open_graph.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { BASE_URL } from '@global/constant/base';
 import Font from '@global/component/font.astro';
 
 import './../style/main.scss';
+import Show from '@global/component/show.astro';
 
 type Props =
 {
-  title: string;
-  keywords: string;
-  metaRobot?: string;
-  description: string;
+  readonly title: string;
+  readonly keywords: string;
+  readonly metaRobot?:
+  {
+    noIndex: boolean;
+    noFollow: boolean;
+  };
+  readonly description: string;
+  readonly openGraphConfiguration?: OpenGraphProps;
 };
 
 const {
   description,
   keywords,
-  metaRobot = 'index, follow',
-  title
+  metaRobot,
+  title,
+  openGraphConfiguration
 } = Astro.props;
 
 const {
   author,
   authorEmail,
-  authorWeb
+  authorWeb,
+  googleSiteVerificationId
 } = siteConfiguration;
 
 const locale = 'es';
@@ -48,7 +56,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     />
     <meta
       name='robots'
-      content={metaRobot}
+      content={`${metaRobot?.noIndex ? 'noindex' : 'index'}, ${
+        metaRobot?.noFollow ? 'nofollow' : 'follow'
+      }`}
     />
     <meta
       name='author'
@@ -62,11 +72,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       name='keywords'
       content={keywords}
     />
+    <Show when={googleSiteVerificationId}>
+      <meta
+        name="google-site-verification"
+        content={googleSiteVerificationId}
+      />
+    </Show>
     <link
       rel='sitemap'
       href=`${BASE_URL}/sitemap-index.xml`
     />
-    <link rel="alternate" type="application/rss+xml" title={siteConfiguration.siteName} href={`${BASE_URL}/rss.xml`}>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={siteConfiguration.siteName}
+      href={`${BASE_URL}/rss.xml`}
+    />
     <link
       rel='alternate'
       href={canonicalURL}
@@ -77,11 +98,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       href={canonicalURL}
     />
     <Favicon />
-    <Og
+    <OpenGraph
       title={title}
       description={description}
-      image='/asset/og/home.png'
       locale={locale}
+      image={[
+        {
+          url: '/asset/og/home.png',
+          type: 'image/png',
+          width: '1200',
+          height: '630',
+          secureUrl: '/asset/og/home.png',
+          alt: 'Logo de loyalty latino'
+        }
+      ]}
+      {...openGraphConfiguration}
     />
     <Font />
     <title>{title}</title>

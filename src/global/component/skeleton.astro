@@ -3,8 +3,8 @@ import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'div'> &
 {
-  class?: string;
-  isLoaded?: boolean;
+  readonly class?: string;
+  readonly isLoaded?: boolean;
 };
 
 const { class: classImage, isLoaded } = Astro.props;

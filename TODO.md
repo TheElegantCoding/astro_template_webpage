@@ -28,6 +28,9 @@
   - [x] eslint
   - [x] stylelint css, scss
 
+- [ ] Better open graph protocol cards
+- <https://ogp.me>
+
 - [ ] compress
   - [ ] compress html
   - [ ] compress css

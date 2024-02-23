@@ -1,4 +1,3 @@
-/* stylelint-disable media-query-no-invalid */
 @mixin responsive($breakpoint)
 {
   @if $breakpoint == small_phone
