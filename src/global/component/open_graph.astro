@@ -1,9 +1,18 @@
 ---
+import For from '@global/component/for.astro';
+import OpenGraphProfile from '@global/component/open_graph_profile.astro';
 import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { BASE_URL } from '@global/constant/base';
 
-import type { OpenGraphType, OpenGraphMedia, OpenGraphTwitter } from '@global/type/open_graph_type.ts';
+import type {
+  OpenGraphType,
+  OpenGraphBookType,
+  OpenGraphMediaType,
+  OpenGraphTwitterType,
+  OpenGraphArticleType,
+  OpenGraphProfileType
+} from '@global/type/open_graph_type.ts';
 
 export type OpenGraphProps =
 {
@@ -11,18 +20,24 @@ export type OpenGraphProps =
   locale: string;
   description: string;
   type?: OpenGraphType;
-  image?: OpenGraphMedia[];
-  twitter?: OpenGraphTwitter;
+  book?: OpenGraphBookType;
+  image: OpenGraphMediaType[];
   languageAlternate?: string[];
+  twitter?: OpenGraphTwitterType;
+  article?: OpenGraphArticleType;
+  profile?: OpenGraphProfileType;
 };
 
 type Props = OpenGraphProps;
 
 const {
+  article,
+  book,
   description,
   image,
   languageAlternate,
   locale,
+  profile,
   title,
   twitter =
   {
@@ -74,47 +89,143 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   property='og:locale'
   content={locale}
 />
-{languageAlternate?.map((dataLanguage) => (
-  <meta
-    property='og:locale:alternate'
-    content={dataLanguage}
-  />
-))}
-{image?.map((dataImage) => (
-  <>
+<For each={languageAlternate}>
+  {(dataLanguage: string) => (
     <meta
-      property='og:image'
-      content={`${BASE_URL}${dataImage.url}`}
+      property='og:locale:alternate'
+      content={dataLanguage}
     />
-    <Show when={dataImage.secureUrl}>
+  )}
+</For>
+<For each={image}>
+  {(dataImage: OpenGraphMediaType) => (
+    <>
       <meta
-        property='og:image:secure_url'
-        content={dataImage.secureUrl}
+        property='og:image'
+        content={`${BASE_URL}${dataImage.url}`}
       />
-    </Show>
-    <Show when={dataImage.type}>
-      <meta
-        property='og:image:type'
-        content={dataImage.type}
-      />
-    </Show>
-    <Show when={dataImage.width}>
-      <meta
-        property='og:image:width'
-        content={dataImage.width}
-      />
-    </Show>
-    <Show when={dataImage.height}>
-      <meta
-        property='og:image:height'
-        content={dataImage.height}
-      />
-    </Show>
-    <Show when={dataImage.alt}>
-      <meta
-        property='og:image:alt'
-        content={dataImage.alt}
-      />
-    </Show>
-  </>
-))}
+      <Show when={dataImage.secureUrl}>
+        <meta
+          property='og:image:secure_url'
+          content={dataImage.secureUrl}
+        />
+      </Show>
+      <Show when={dataImage.type}>
+        <meta
+          property='og:image:type'
+          content={dataImage.type}
+        />
+      </Show>
+      <Show when={dataImage.width}>
+        <meta
+          property='og:image:width'
+          content={dataImage.width}
+        />
+      </Show>
+      <Show when={dataImage.height}>
+        <meta
+          property='og:image:height'
+          content={dataImage.height}
+        />
+      </Show>
+      <Show when={dataImage.alt}>
+        <meta
+          property='og:image:alt'
+          content={dataImage.alt}
+        />
+      </Show>
+    </>
+  )}
+</For>
+<Show when={type === 'article'}>
+  <Show when={article?.publishedTime}>
+    <meta
+      property='article:published_time'
+      content={article?.publishedTime}
+    />
+  </Show>
+  <Show when={article?.modifiedTime}>
+    <meta
+      property='article:modified_time'
+      content={article?.modifiedTime}
+    />
+  </Show>
+  <Show when={article?.expirationTime}>
+    <meta
+      property='article:expiration_time'
+      content={article?.expirationTime}
+    />
+  </Show>
+  <Show when={(article?.author ?? [])?.length > 0}>
+    <For each={article?.author}>
+      {(dataAuthor: OpenGraphProfileType) => (
+        <OpenGraphProfile
+          firstName={dataAuthor?.firstName}
+          gender={dataAuthor?.gender}
+          lastName={dataAuthor?.lastName}
+          username={dataAuthor?.username}
+        />
+      )}
+    </For>
+  </Show>
+  <Show when={article?.section}>
+    <meta
+      property='article:section'
+      content={article?.section}
+    />
+  </Show>
+  <Show when={(article?.tag ?? [])?.length > 0}>
+    <For each={article?.tag}>
+      {(dataTag: string) => (
+        <meta
+          property='article:tag'
+          content={dataTag}
+        />
+      )}
+    </For>
+  </Show>
+</Show>
+<Show when={type === 'book'}>
+  <Show when={(book?.author ?? [])?.length > 0}>
+    <For each={book?.author}>
+      {(dataAuthor: OpenGraphProfileType) => (
+        <OpenGraphProfile
+          firstName={dataAuthor?.firstName}
+          gender={dataAuthor?.gender}
+          lastName={dataAuthor?.lastName}
+          username={dataAuthor?.username}
+        />
+      )}
+    </For>
+  </Show>
+  <Show when={book?.isbn}>
+    <meta
+      property='book:isbn'
+      content={book?.isbn}
+    />
+  </Show>
+  <Show when={book?.releaseDate}>
+    <meta
+      property='book:release_date'
+      content={book?.releaseDate}
+    />
+  </Show>
+  <Show when={(book?.tag ?? [])?.length > 0}>
+    <For each={book?.tag}>
+      {(dataTag: string) => (
+        <meta
+          property='book:tag'
+          content={dataTag}
+        />
+      )}
+    </For>
+  </Show>
+</Show>
+<Show when={type === 'profile'}>
+  <OpenGraphProfile
+    firstName={profile?.firstName}
+    gender={profile?.gender}
+    lastName={profile?.lastName}
+    username={profile?.username}
+  />
+</Show>
