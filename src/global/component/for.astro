@@ -10,16 +10,19 @@ const { each } = Astro.props;
 
 const slots: string[] = [];
 
-// eslint-disable-next-line promise/no-native
-await Promise.all(each.map(async (element: string, index: number) =>
+if(each)
 {
-  slots.push(await Astro.slots.render('default', [ element, index ]));
-}));
+  // eslint-disable-next-line promise/no-native
+  await Promise.all(each.map(async (element: string, index: number) =>
+  {
+    slots.push(await Astro.slots.render('default', [ element, index ]));
+  }));
+}
 ---
-<Show when={each.length > 0}>
+<Show when={each?.length > 0}>
   <Fragment set:html={slots} />
 </Show>
 
-<Show when={each.length === 0}>
+<Show when={each?.length === 0}>
   <slot name='fallback' />
 </Show>

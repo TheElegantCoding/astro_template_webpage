@@ -75,6 +75,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
   - `✅ Show component` - Ready to use show component
   - `✅ For component` - Ready to use for map components
 - `️⚡️ Performance`
+  - `✅ Web worker (partytown)` - For lazy-loaded large libraries
   - `✅ Bundler analizer` - Analize your bundle size
   - `✅ Compress` - Compress images, font, css, js, and html
   - `✅ Non blocking` - Non blocking js, css and more

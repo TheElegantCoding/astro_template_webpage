@@ -22,7 +22,7 @@
 - [x] 404 page
 - [x] semantic elements
 - [x] noopener if target="_blank"
-- [x] css order in head
+- [x] order in head
 
 ## Css
 
@@ -109,9 +109,6 @@
   - [x] scripts
 - [x] browserslist
 - [x] tsconfig.json
-
-- [ ] Better open graph protocol cards
-- <https://ogp.me>
 
 ## Env variables
 

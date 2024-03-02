@@ -1,7 +1,7 @@
 {
   "name": "astro_template_webpage",
   "description": "📦️ This repository that contains an Astro template ready for any website you can imagine. It's like a Swiss Army knife for developers, offering pre-built modules and flexible configurations to kickstart your project, regardless of its type.",
-  "author": "Luis Monsalve <TheElegantCoder>",
+  "author": "Luis Monsalve <TheElegantCoder>, Astralys Software <astralysoftware.com>",
   "version": "0.0.0",
   "private": true,
   "type": "module",

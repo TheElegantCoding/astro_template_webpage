@@ -1,24 +1,8 @@
 ---
-import CustomImage from '@global/component/custom_image.astro';
-import For from '@global/component/for.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
-
-const data = [ 'id: 1', 'id: 2', 'id: 3' ];
-
 ---
 <BaseLayout
   title=''
   description=''
   keywords=''
->
-  <CustomImage
-    alt='placeholder'
-    src='/asset/image/image_placeholder.png'
-  />
-  <For
-    each={data}
-  >
-    {(dataInformation, index) => <div>{dataInformation} {index}</div>}
-    <div slot='fallback'>No hay elementos</div>
-  </For>
-</BaseLayout>
+/>
