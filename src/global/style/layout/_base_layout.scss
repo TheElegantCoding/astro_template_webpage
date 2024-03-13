@@ -1,11 +1,13 @@
 .base-layout
 {
-  @include responsive(phone)
+  @include responsive(small_desktop)
   {
-    padding: 0 7rem;
+    padding-right: $spacing_64;
+    padding-left: $spacing_64;
   }
 
   max-width: 192rem;
   margin: auto;
-  padding: 0 3.5rem;
+  padding-right: $spacing_32;
+  padding-left: $spacing_32;
 }

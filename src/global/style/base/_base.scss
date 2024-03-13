@@ -6,10 +6,11 @@ html
 
 body
 {
+  @include font_weight(regular);
+
   overflow-x: hidden;
   font-family: 'inter', system-ui, sans-serif;
   font-size: $h6;
-  font-weight: 400;
   color: $gray_950;
   background-color: $gray_50;
 }

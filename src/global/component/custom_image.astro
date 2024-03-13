@@ -26,7 +26,8 @@ const {
   disableLoader,
   priority = false,
   src: source,
-  webp = true
+  webp = true,
+  ...rest
 } = Astro.props;
 
 const imageUrl = `${BASE_URL}${source}`;
@@ -61,6 +62,7 @@ const imageUrl = `${BASE_URL}${source}`;
     fetchpriority={priority ? 'high' : 'auto'}
     class='custom-image__tag'
     class:list={[ classImage ]}
+    {...rest}
   />
 </picture>
 
@@ -76,8 +78,6 @@ const imageUrl = `${BASE_URL}${source}`;
       const skeleton = element.querySelector("div");
 
       skeleton?.classList.remove('skeleton--active');
-
-      console.log('yes')
     }
 
     const error = (event: Event) =>

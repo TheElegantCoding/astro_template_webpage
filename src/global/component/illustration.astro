@@ -1,15 +1,18 @@
 ---
-type Props =
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'svg'> &
 {
   readonly name: string;
-  readonly title?: string;
+  readonly title: string;
   readonly class?: string;
 };
 
 const {
   class: classIcon,
   name,
-  title
+  title,
+  ...rest
 } = Astro.props;
 
 const icon = await import(`./../asset/illustration/${name}.svg?raw`);
@@ -20,7 +23,6 @@ const iconHeight = icon.default.match(/height="(.*?)(?="|$)/u)[1];
 const iconRaw = title ? `<title>${title}</title>${iconContent}` : iconContent;
 ---
 <svg
-  stroke-width='0'
   viewBox={`0 0 ${iconWidth} ${iconHeight}`}
   width={iconWidth}
   height={iconHeight}
@@ -28,4 +30,5 @@ const iconRaw = title ? `<title>${title}</title>${iconContent}` : iconContent;
   class:list={classIcon}
   xmlns='http://www.w3.org/2000/svg'
   set:html={iconRaw}
+  {...rest}
 />

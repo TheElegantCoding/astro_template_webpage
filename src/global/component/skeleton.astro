@@ -7,11 +7,12 @@ type Props = HTMLAttributes<'div'> &
   readonly isLoaded?: boolean;
 };
 
-const { class: classImage, isLoaded } = Astro.props;
+const { class: classImage, isLoaded, ...rest } = Astro.props;
 ---
 <div
   class='skeleton'
   class:list={[ !isLoaded && 'skeleton--active', classImage ]}
+  {...rest}
 >
   <slot />
 </div>

@@ -27,22 +27,23 @@
   './base/typography',
   './base/base';
 
-// 5. Helper
-@import
-  './helper/aspect_ratio',
-  './helper/object_fit';
-
-// 6. Layout-related sections
+// 5. Layout-related sections
 @import
   './layout/base_layout';
 
-// 7. Components
+// 6. Components
 @import
   './component/skeleton',
   './component/custom_image',
   './component/scrollbar';
 
-// 8. Page
-
+// 7. Page
 @import
   './page/not_found';
+
+// 8. Modules
+
+// 9. Helper
+@import
+  './helper/aspect_ratio',
+  './helper/object_fit';

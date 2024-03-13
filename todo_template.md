@@ -118,3 +118,9 @@
 
 - [ ] HSTS strict transport security header
 - [ ] SPF records test
+
+### Extra todo
+
+- [ ] Improve js in custom image component making js helpers
+- [ ] Improve stylelint plugin
+- [ ] Improve eslint plugin
