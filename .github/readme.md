@@ -6,6 +6,12 @@
 
 ---
 
+<pre align="center">
+<a href="#instalation">📦 SETUP</a> • <a href="#configuration">⚙️ CONFIGURATION</a> • <a href="#features">️️️🛰️ FEATURES</a>
+</pre>
+
+---
+
 <h2 id="about">📝 About</h2>
 
 <table border>
