@@ -22,7 +22,6 @@ Additional information
 - [ ] change favicon icon for the original
 - [ ] change the font for your requirements
   - [ ] public global asset
-  - [ ] src/global/component/font.astro
   - [ ] src/global/styles/base/typography.scss
 
 ## Git repo
@@ -43,7 +42,14 @@ Additional information
 - [ ] put google analytics
 - [ ] register website in search console
 - [ ] change sitemap url in robots.txt
+- [ ] make structured data for more info see this [guide](https://developers.google.com/search/docs/appearance/structured-data/search-gallery)
+- [ ] test rich result [here](https://search.google.com/test/rich-results)
 
 ## Performance
 
 - [ ] lighthouse test all pages
+
+## Configuration
+
+- [ ] put in .env.production the url
+- [ ] set .htaccess rules correctly

@@ -76,6 +76,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 - `⚙️ Configuration` - Vscode, env variables and more
   - `✅ Vscode configuration` - Vscode recommendations, extensions and more
   - `✅ Env validation` - Enviroment variables validation
+  - `✅ Htaccess snipets` - Differents htaccess for all kind of situations
 - `🧩 Components`
   - `✅ Image component` - Ready to use optimize image component
   - `✅ Show component` - Ready to use show component

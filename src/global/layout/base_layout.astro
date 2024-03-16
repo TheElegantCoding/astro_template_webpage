@@ -3,12 +3,11 @@ import Favicon from '@global/component/favicon.astro';
 import OpenGraph, { type OpenGraphProps } from '@global/component/open_graph.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { BASE_URL } from '@global/constant/base';
-import Font from '@global/component/font.astro';
 import { joinString } from '@global/util/join_string.ts';
 
-import './../style/main.scss';
 import Show from '@global/component/show.astro';
 import GoogleAnalytic from '@global/component/google_analytic.astro';
+import './../style/main.scss';
 
 type Props =
 {
@@ -103,21 +102,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <OpenGraph
       title={title}
       description={description}
-      locale={siteConfiguration.defaultLocale}
       image={[
         {
-          url: '/asset/og/home.png',
+          url: '/asset/opg/home.png',
           type: 'image/png',
           width: '1200',
           height: '630',
-          secureUrl: '/asset/og/home.png',
+          secureUrl: '/asset/opg/home.png',
           alt: 'Logo de loyalty latino'
         }
       ]}
       {...openGraphConfiguration}
     />
-    <Font />
     <GoogleAnalytic />
+    <slot name='head' />
     <title>{title}</title>
   </head>
   <body>

@@ -17,7 +17,7 @@ import type {
 export type OpenGraphProps =
 {
   title: string;
-  locale: string;
+  locale?: string;
   description: string;
   type?: OpenGraphType;
   book?: OpenGraphBookType;
@@ -46,7 +46,7 @@ const {
   type = 'website'
 } = Astro.props;
 
-const { siteName } = siteConfiguration;
+const { defaultLocale, siteName } = siteConfiguration;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <meta
@@ -87,7 +87,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 />
 <meta
   property='og:locale'
-  content={locale}
+  content={locale ?? defaultLocale}
 />
 <For each={languageAlternate}>
   {(dataLanguage: string) => (
