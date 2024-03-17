@@ -107,7 +107,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <Show when={dataImage.secureUrl}>
         <meta
           property='og:image:secure_url'
-          content={dataImage.secureUrl}
+          content={`${BASE_URL}${dataImage.url}`}
         />
       </Show>
       <Show when={dataImage.type}>

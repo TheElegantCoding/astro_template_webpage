@@ -1,0 +1,19 @@
+---
+type Props<T> =
+{
+  schema?: T;
+};
+
+const { schema } = Astro.props;
+
+const structuredData =
+{
+  '@context': 'https://schema.org',
+  ...schema
+};
+---
+<script
+  type='application/ld+json'
+  is:inline
+  set:html={JSON.stringify(structuredData)}
+/>
