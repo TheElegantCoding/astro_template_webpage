@@ -1,0 +1,103 @@
+---
+/* eslint-disable no-duplicate-imports */
+import OpenGraph from '@global/component/open_graph.astro';
+import Show from '@global/component/show.astro';
+import SiteVerification from '@global/component/site_verification.astro';
+import { siteConfiguration } from '@global/configuration/site_configuration';
+import { joinString } from '@global/util/join_string';
+import { BASE_URL } from '@global/constant/base';
+
+import type { OpenGraphProps } from '@global/component/open_graph.astro';
+import type { MetaRobotType } from '@global/type/meta_robot_type';
+
+export type MetaDataProps =
+{
+  readonly title: string;
+  readonly keywords: string[];
+  readonly description: string;
+  readonly metaRobot?: MetaRobotType;
+  readonly openGraph?: OpenGraphProps;
+}
+
+type Props = MetaDataProps;
+
+const {
+  description,
+  keywords,
+  metaRobot =
+  {
+    noFollow: 'follow',
+    noIndex: 'index'
+  },
+  openGraph,
+  title
+} = Astro.props;
+
+const {
+  author
+} = siteConfiguration;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<meta charset='utf-8' />
+<meta
+  name='viewport'
+  content='width=device-width, initial-scale=1, viewport-fit=cover'
+/>
+<meta
+  http-equiv='X-UA-Compatible'
+  content='IE=edge'
+/>
+<meta
+  name='robots'
+  content={joinString([ metaRobot.noIndex, metaRobot.noFollow ])}
+/>
+<Show when={author.name || author.email || author.web}>
+  <meta
+    name='author'
+    content={joinString([ author.name, author.email, author.web ])}
+  />
+</Show>
+<meta
+  name='description'
+  content={description}
+/>
+<meta
+  name='keywords'
+  content={joinString(keywords)}
+/>
+<OpenGraph
+  title={title}
+  description={description}
+  image={[
+    {
+      alt: 'Logo de loyalty latino',
+      height: '630',
+      secureUrl: '/asset/opg/home.png',
+      type: 'image/png',
+      url: '/asset/opg/home.png',
+      width: '1200'
+    }
+  ]}
+  {...openGraph}
+/>
+<SiteVerification />
+<link
+  rel='sitemap'
+  href=`${BASE_URL}/sitemap-index.xml`
+/>
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={siteConfiguration.siteName}
+  href={`${BASE_URL}/rss.xml`}
+/>
+<link
+  rel='alternate'
+  href={canonicalURL}
+  hreflang='x-default'
+/>
+<link
+  rel='canonical'
+  href={canonicalURL}
+/>

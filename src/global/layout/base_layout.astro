@@ -1,41 +1,26 @@
 ---
+/* eslint-disable no-duplicate-imports */
 import Favicon from '@global/component/favicon.astro';
-import OpenGraph, { type OpenGraphProps } from '@global/component/open_graph.astro';
-import { siteConfiguration } from '@global/configuration/site_configuration';
-import { BASE_URL } from '@global/constant/base';
-import { joinString } from '@global/util/join_string.ts';
-
-import Show from '@global/component/show.astro';
 import GoogleAnalytic from '@global/component/google_analytic.astro';
+import MetaData from '@global/component/meta_data.astro';
+import StructuredData from '@global/component/structured_data.astro';
+import { siteConfiguration } from '@global/configuration/site_configuration';
+
 import './../style/main.scss';
 
-type Props =
+import type { MetaDataProps } from '@global/component/meta_data.astro';
+import type { StructuredDataProps } from '@global/type/structured_data/structured_data_props';
+
+type Props<T> =
 {
-  readonly title: string;
-  readonly keywords: string;
-  readonly metaRobot?:
-  {
-    noIndex: boolean;
-    noFollow: boolean;
-  };
-  readonly description: string;
-  readonly openGraphConfiguration?: OpenGraphProps;
+  readonly metaData?: MetaDataProps;
+  readonly structuredData?: StructuredDataProps<T>;
 };
 
 const {
-  description,
-  keywords,
-  metaRobot,
-  title,
-  openGraphConfiguration
+  metaData,
+  structuredData
 } = Astro.props;
-
-const {
-  author,
-  googleSiteVerificationId
-} = siteConfiguration;
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
 <html
@@ -43,80 +28,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   dir='ltr'
 >
   <head>
-    <meta charset='utf-8' />
-    <meta
-      name='viewport'
-      content='width=device-width, initial-scale=1, viewport-fit=cover'
-    />
-    <meta
-      http-equiv='X-UA-Compatible'
-      content='IE=edge'
-    />
-    <meta
-      name='robots'
-      content={joinString([
-        metaRobot?.noIndex ? 'noindex' : 'index',
-        metaRobot?.noFollow ? 'nofollow' : 'follow'
-      ])}
-    />
-    <Show when={author.name || author.email || author.web}>
-      <meta
-        name='author'
-        content={joinString([author.name, author.email, author.web])}
-      />
-    </Show>
-    <meta
-      name='description'
-      content={description}
-    />
-    <meta
-      name='keywords'
-      content={keywords}
-    />
-    <Show when={googleSiteVerificationId}>
-      <meta
-        name="google-site-verification"
-        content={googleSiteVerificationId}
-      />
-    </Show>
-    <link
-      rel='sitemap'
-      href=`${BASE_URL}/sitemap-index.xml`
-    />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={siteConfiguration.siteName}
-      href={`${BASE_URL}/rss.xml`}
-    />
-    <link
-      rel='alternate'
-      href={canonicalURL}
-      hreflang='x-default'
-    />
-    <link
-      rel='canonical'
-      href={canonicalURL}
-    />
+    <MetaData {...metaData} />
     <Favicon />
-    <OpenGraph
-      title={title}
-      description={description}
-      image={[
-        {
-          url: '/asset/opg/home.png',
-          type: 'image/png',
-          width: '1200',
-          height: '630',
-          secureUrl: '/asset/opg/home.png',
-          alt: 'Logo de loyalty latino'
-        }
-      ]}
-      {...openGraphConfiguration}
-    />
+    <StructuredData schema={structuredData} />
     <GoogleAnalytic />
     <slot name='head' />
-    <title>{title}</title>
+    <title>{metaData.title}</title>
   </head>
   <body>
     <slot />

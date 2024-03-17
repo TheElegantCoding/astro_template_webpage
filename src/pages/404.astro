@@ -4,9 +4,11 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
 <BaseLayout
-  description={siteConfiguration.description}
-  keywords='404, pagina no encontrada, volver al inicio, 404 error'
-  title={`${siteConfiguration.siteName} | Pagina no encontrada`}
+  metaData={{
+    description: siteConfiguration.description,
+    keywords: [ '404, pagina no encontrada', 'volver al inicio', '404 error' ],
+    title: `${siteConfiguration.siteName} | Pagina no encontrada`
+  }}
 >
   <main class='not-found base-layout'>
     <h1 class='not-found__letter'>404</h1>

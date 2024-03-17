@@ -1,0 +1,10 @@
+---
+import Show from '@global/component/show.astro';
+import { siteConfiguration } from '@global/configuration/site_configuration';
+---
+<Show when={siteConfiguration.googleSiteVerificationId}>
+  <meta
+    name='google-site-verification'
+    content={siteConfiguration.googleSiteVerificationId}
+  />
+</Show>
