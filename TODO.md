@@ -117,5 +117,5 @@
 ### Extra todo
 
 - [ ] Improve js in custom image component making js helpers
-- [ ] Improve stylelint plugin
-- [ ] Improve eslint plugin
+- [x] Improve stylelint plugin
+- [x] Improve eslint plugin

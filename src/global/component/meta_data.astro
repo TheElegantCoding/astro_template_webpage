@@ -1,11 +1,10 @@
 ---
-/* eslint-disable no-duplicate-imports */
 import OpenGraph from '@global/component/open_graph.astro';
 import Show from '@global/component/show.astro';
 import SiteVerification from '@global/component/site_verification.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
-import { joinString } from '@global/util/join_string';
 import { BASE_URL } from '@global/constant/base';
+import { joinString } from '@global/util/join_string';
 
 import type { OpenGraphProps } from '@global/component/open_graph.astro';
 import type { MetaRobotType } from '@global/type/meta_robot_type';
@@ -17,7 +16,7 @@ export type MetaDataProps =
   readonly description: string;
   readonly metaRobot?: MetaRobotType;
   readonly openGraph?: OpenGraphProps;
-}
+};
 
 type Props = MetaDataProps;
 
@@ -34,7 +33,8 @@ const {
 } = Astro.props;
 
 const {
-  author
+  author,
+  siteName
 } = siteConfiguration;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -87,9 +87,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   href=`${BASE_URL}/sitemap-index.xml`
 />
 <link
-  rel="alternate"
-  type="application/rss+xml"
-  title={siteConfiguration.siteName}
+  rel='alternate'
+  type='application/rss+xml'
+  title={siteName}
   href={`${BASE_URL}/rss.xml`}
 />
 <link

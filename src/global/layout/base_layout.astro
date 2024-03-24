@@ -1,15 +1,14 @@
 ---
-/* eslint-disable no-duplicate-imports */
 import Favicon from '@global/component/favicon.astro';
 import GoogleAnalytic from '@global/component/google_analytic.astro';
 import MetaData from '@global/component/meta_data.astro';
 import StructuredData from '@global/component/structured_data.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 
-import './../style/main.scss';
-
 import type { MetaDataProps } from '@global/component/meta_data.astro';
 import type { StructuredDataProps } from '@global/type/structured_data/structured_data_props';
+
+import './../style/main.scss';
 
 type Props<T> =
 {

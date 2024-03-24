@@ -1,5 +1,11 @@
 .base-layout
 {
+  @include responsive(tablet)
+  {
+    padding-right: $spacing_48;
+    padding-left: $spacing_48;
+  }
+
   @include responsive(small_desktop)
   {
     padding-right: $spacing_64;

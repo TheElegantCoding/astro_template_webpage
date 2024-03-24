@@ -12,7 +12,6 @@ const slots: string[] = [];
 
 if(each)
 {
-  // eslint-disable-next-line promise/no-native
   await Promise.all(each.map(async (element: string, index: number) =>
   {
     slots.push(await Astro.slots.render('default', [ element, index ]));

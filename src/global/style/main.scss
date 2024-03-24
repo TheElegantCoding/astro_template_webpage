@@ -33,6 +33,7 @@
 
 // 6. Components
 @import
+  './component/animation',
   './component/skeleton',
   './component/custom_image',
   './component/scrollbar';
@@ -46,4 +47,5 @@
 // 9. Helper
 @import
   './helper/aspect_ratio',
-  './helper/object_fit';
+  './helper/object_fit',
+  './helper/animation_delay';
