@@ -41,9 +41,6 @@
   "[astro]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[lua]": {
-    "editor.defaultFormatter": "JohnnyMorganz.stylua"
-  },
   "[html]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -55,8 +52,5 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[rust]": {
-    "editor.formatOnSave": false
   }
 }

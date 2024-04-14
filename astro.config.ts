@@ -14,9 +14,7 @@ export default defineConfig({
   integrations:
   [
     sitemap(),
-    partytown({
-      config: { forward: [ 'dataLayer.push' ] }
-    })
+    partytown({ config: { forward: [ 'dataLayer.push' ] } })
   ],
   server:
   {

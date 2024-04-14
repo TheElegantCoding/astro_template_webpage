@@ -68,15 +68,15 @@ const imageUrl = `${BASE_URL}${source}`;
 </picture>
 
 <script>
-  const picture = document.querySelectorAll(".custom-image") as NodeListOf<HTMLPictureElement>;
+  const picture = document.querySelectorAll('.custom-image') as NodeListOf<HTMLPictureElement>;
 
   picture.forEach((element) =>
   {
-    const image = element.querySelector("img")
+    const image = element.querySelector('img')
 
     const loaded = () =>
     {
-      const skeleton = element.querySelector("div");
+      const skeleton = element.querySelector('div');
 
       skeleton?.classList.remove('skeleton--active');
     }
@@ -93,9 +93,8 @@ const imageUrl = `${BASE_URL}${source}`;
     }
     else
     {
-      image?.addEventListener("load", loaded)
-      image?.addEventListener("error", error)
+      image?.addEventListener('load', loaded)
+      image?.addEventListener('error', error)
     }
   })
-
 </script>

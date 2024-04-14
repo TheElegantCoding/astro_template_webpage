@@ -1,5 +1,4 @@
 # Redirect
-
 RewriteEngine on
 
 # Foce www

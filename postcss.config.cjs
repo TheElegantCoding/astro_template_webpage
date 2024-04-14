@@ -1,6 +1,6 @@
 const autoprefixer = require('autoprefixer');
 const mqpacker = require('@hail2u/css-mqpacker');
-const purgecss = require("@fullhuman/postcss-purgecss");
+const purgecss = require('@fullhuman/postcss-purgecss');
 
 module.exports =
 {
@@ -9,15 +9,15 @@ module.exports =
     mqpacker(),
     purgecss({
       content: [
-        "./src/**/*.html",
-        "./src/**/*.astro",
-        "./src/**/*.tsx",
-        "./src/**/*.ts"
+        './src/**/*.html',
+        './src/**/*.astro',
+        './src/**/*.tsx',
+        './src/**/*.ts'
       ],
-      keyframes: true,
+      dynamicAttributes: [ 'data-animate' ],
       fontFace: true,
-      variables: true,
-      dynamicAttributes: ["data-animate"]
+      keyframes: true,
+      variables: true
     })
   ]
 };
