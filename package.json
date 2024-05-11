@@ -22,26 +22,26 @@
     "compress-svg": "svgo -f ./src/global/asset/icon ./src/global/asset/illustration"
   },
   "dependencies": {
-    "@astrojs/check": "0.5.10",
-    "@astrojs/partytown": "2.0.4",
+    "@astrojs/check": "0.6.0",
+    "@astrojs/partytown": "2.1.0",
     "@astrojs/rss": "4.0.5",
-    "@astrojs/sitemap": "3.1.2",
-    "astro": "4.6.1"
+    "@astrojs/sitemap": "3.1.4",
+    "astro": "4.8.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "6.0.0",
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
-    "@types/node": "20.12.7",
+    "@types/node": "20.12.11",
     "autoprefixer": "10.4.19",
     "eslint": "8.57.0",
-    "eslint-config-elegant-coding": "7.0.5",
+    "eslint-config-elegant-coding": "7.1.0",
     "postcss": "8.4.38",
-    "sass": "1.75.0",
+    "sass": "1.77.0",
     "stylelint": "16.3.1",
     "stylelint-config-elegant-coding": "4.1.2",
-    "svgo": "3.2.0",
+    "svgo": "3.3.2",
     "ts-node": "10.9.2",
     "typescript": "5.4.5",
-    "vite": "5.2.8"
+    "vite": "5.2.11"
   }
 }

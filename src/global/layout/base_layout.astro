@@ -1,6 +1,7 @@
 ---
 import Favicon from '@global/component/favicon.astro';
 import GoogleAnalytic from '@global/component/google_analytic.astro';
+import Internazionalization from '@global/component/internazionalization.astro';
 import MetaData from '@global/component/meta_data.astro';
 import StructuredData from '@global/component/structured_data.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
@@ -23,7 +24,7 @@ const {
 ---
 <!doctype html>
 <html
-  lang={siteConfiguration.defaultLocale}
+  lang={siteConfiguration.defaultLanguage}
   dir='ltr'
 >
   <head>
@@ -38,3 +39,5 @@ const {
     <slot />
   </body>
 </html>
+
+<Internazionalization />

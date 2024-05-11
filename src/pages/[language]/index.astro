@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@global/layout/base_layout.astro';
+import { getStaticLanguage } from '@global/util/language';
+
+// eslint-disable-next-line astro/no-exports-from-components
+export const getStaticPaths = () =>
+// eslint-disable-next-line arrow-body-style
+{
+  return getStaticLanguage();
+};
+
+const { language } = Astro.params;
+---
+<BaseLayout
+  metaData={{
+    description: '',
+    keywords: [],
+    title: ''
+  }}
+>
+  <div>The language is, {language}</div>
+</BaseLayout>

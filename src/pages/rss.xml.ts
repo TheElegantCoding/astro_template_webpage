@@ -5,5 +5,6 @@ export const GET = async () => rss({
   description: siteConfiguration.description,
   items: [],
   site: import.meta.env.SITE,
-  title: siteConfiguration.siteName
+  title: siteConfiguration.siteName,
+  trailingSlash: false
 });

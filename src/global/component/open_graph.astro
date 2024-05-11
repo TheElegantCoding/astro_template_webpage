@@ -46,7 +46,7 @@ const {
   type = 'website'
 } = Astro.props;
 
-const { defaultLocale, siteName } = siteConfiguration;
+const { defaultLanguage, siteName } = siteConfiguration;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <meta
@@ -87,7 +87,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 />
 <meta
   property='og:locale'
-  content={locale ?? defaultLocale}
+  content={locale ?? defaultLanguage}
 />
 <For each={languageAlternate}>
   {(dataLanguage: string) => (
