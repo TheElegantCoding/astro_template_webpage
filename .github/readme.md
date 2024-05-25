@@ -1,9 +1,5 @@
 <img src="./asset/wave_header.svg" alt="wave" width="100%" align="center"/>
 
-<img src="./asset/cover.svg" alt="cover" width="100%" align="center" />
-
-<br />
-
 <h1 id="astro-template-webpage">📦️ Astro template webpage</h1>
 
 ---
@@ -13,6 +9,10 @@
 </pre>
 
 ---
+
+<img src="./asset/cover.svg" alt="cover" width="100%" align="center" />
+
+<br />
 
 <h2 id="about">📝 About</h2>
 
@@ -46,7 +46,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 
 ---
 
-<h2 id="features">🛰️ Features</h2>
+<h2 id="features"><img src="./asset/satellite_full.svg" alt="Satellite icon" width="20px" /> Features</h2>
 
 - `🌌 Astro` - Astro Framework
 - `🦾 Typescript` - Extremely strict type checking
@@ -269,3 +269,5 @@ Here is the list of all the browser this website support
 </table>
 
 <p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
+
+<img src="./asset/wave_footer.svg" alt="wave" width="100%" align="center"/>
