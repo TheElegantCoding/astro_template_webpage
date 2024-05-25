@@ -1,11 +1,14 @@
 <img src="./asset/wave_header.svg" alt="wave" width="100%" align="center"/>
 
-<h1 id="astro-template-webpage">📦️ Astro template webpage</h1>
+<h1 id="astro-template-webpage">
+  <img src="./asset/web.svg" alt="Web icon" width="20px" />
+  Astro template webpage
+</h1>
 
 ---
 
 <pre align="center">
-  <a href="#instalation">📦 SETUP</a> • <a href="#configuration">⚙️ CONFIGURATION</a> • <a href="#features">️️️🛰️ FEATURES</a>
+  <a href="#instalation"><img src="./asset/package.svg" alt="Package icon" width="16px" /> SETUP</a> • <a href="#configuration"><img src="./asset/gear.svg" alt="Gear icon" width="16px" /> CONFIGURATION</a> • <a href="#features">️️️<img src="./asset/satellite.svg" alt="Satellite icon" width="16px" /> FEATURES</a>
 </pre>
 
 ---
@@ -14,7 +17,10 @@
 
 <br />
 
-<h2 id="about">📝 About</h2>
+<h2 id="about">
+  <img src="./asset/information.svg" alt="Information icon" width="20px" />
+  About
+</h2>
 
 <table border>
 <tr>
@@ -31,7 +37,10 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 
 ---
 
-## 📚 Table of content
+<h2>
+  <img src="./asset/book.svg" alt="Book icon" width="20px" />
+  Table of content
+</h2>
 
 - [📝 About](#about)
 - [🛰️ Features](#features)
@@ -46,7 +55,10 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 
 ---
 
-<h2 id="features"><img src="./asset/satellite_full.svg" alt="Satellite icon" width="20px" /> Features</h2>
+<h2 id="features">
+  <img src="./asset/satellite.svg" alt="Satellite icon" width="20px" />
+  Features
+</h2>
 
 - `🌌 Astro` - Astro Framework
 - `🦾 Typescript` - Extremely strict type checking
@@ -95,17 +107,23 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 
 ---
 
-<h2 id="requirements">⚡️ Requirements</h2>
+<h2 id="requirements">
+  <img src="./asset/thunder.svg" alt="Thunder icon" width="20px" />
+  Requirements
+</h2>
 
 - node >= **20.10.0**
 - git >= **2.38**
 - pnpm >= **8.2.0**
 
-<p align="right">(<a href="#webpage-pablote-beef">back to top</a>)</p>
+<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
 
 ---
 
-<h2 id="installation">📦 Installation</h2>
+<h2 id="installation">
+  <img src="./asset/package.svg" alt="Package icon" width="20px" />
+  Installation
+</h2>
 
 After cloning the repo run this command to install all the dependencies
 
@@ -113,11 +131,14 @@ After cloning the repo run this command to install all the dependencies
 pnpm install
 ```
 
-<p align="right">(<a href="#webpage-pablote-beef">back to top</a>)</p>
+<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
 
 ---
 
-<h2 id="configuration">⚙️ Configuration</h2>
+<h2 id="configuration">
+  <img src="./asset/gear.svg" alt="Gear icon" width="20px" />
+  Configuration
+</h2>
 
 The configuration needed for this project is to set up the env variables and also the site configuration object here are the examples:
 
@@ -159,11 +180,14 @@ PORT=4173
 BASE_URL=http://localhost:$VITE_PORT
 ```
 
-<p align="right">(<a href="#webpage-pablote-beef">back to top</a>)</p>
+<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
 
 ---
 
-<h2 id="usage">🚀 Usage</h2>
+<h2 id="usage">
+  <img src="./asset/rocket.svg" alt="Rocket icon" width="20px" />
+  Usage
+</h2>
 
 Before installing all the dependencies you can run the project with
 
@@ -185,11 +209,14 @@ The build is minified and the filenames include the hashes, also it compress all
 
 Your app is ready to be deployed.
 
-<p align="right">(<a href="#webpage-pablote-beef">back to top</a>)</p>
+<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
 
 ---
 
-<h2 id="scripts">⚡️ Scripts</h2>
+<h2 id="scripts">
+  <img src="./asset/terminal.svg" alt="Terminal icon" width="20px" />
+  Scripts
+</h2>
 
 The following scripts are available in the `package.json`:
 
@@ -203,11 +230,14 @@ The following scripts are available in the `package.json`:
 - `lint-eslint`: This script is for lint ts, tsx and more files
 - `lint-stylelint`: This script is for lint css files
 
-<p align="right">(<a href="#webpage-pablote-beef">back to top</a>)</p>
+<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
 
 ---
 
-<h2 id="browser-support">🌎 Browser support</h2>
+<h2 id="browser-support">
+  <img src="./asset/world.svg" alt="World icon" width="20px" />
+  Browser support
+</h2>
 
 Here is the list of all the browser this website support
 
