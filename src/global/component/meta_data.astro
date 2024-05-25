@@ -1,10 +1,11 @@
 ---
+import MetaAuthor from '@global/component/meta_author.astro';
 import OpenGraph from '@global/component/open_graph.astro';
-import Show from '@global/component/show.astro';
 import SiteVerification from '@global/component/site_verification.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { BASE_URL } from '@global/constant/base';
 import { joinString } from '@global/util/join_string';
+import { removeTrailingSlash } from '@global/util/link';
 
 import type { OpenGraphProps } from '@global/component/open_graph.astro';
 import type { MetaRobotType } from '@global/type/meta_robot_type';
@@ -32,12 +33,9 @@ const {
   title
 } = Astro.props;
 
-const {
-  author,
-  siteName
-} = siteConfiguration;
+const { siteName } = siteConfiguration;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
 ---
 <meta charset='utf-8' />
 <meta
@@ -52,12 +50,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   name='robots'
   content={joinString([ metaRobot.noIndex, metaRobot.noFollow ])}
 />
-<Show when={author.name || author.email || author.web}>
-  <meta
-    name='author'
-    content={joinString([ author.name, author.email, author.web ])}
-  />
-</Show>
+<MetaAuthor />
 <meta
   name='description'
   content={description}
@@ -71,7 +64,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   description={description}
   image={[
     {
-      alt: 'Logo de loyalty latino',
+      alt: 'Logo de astro',
       height: '630',
       secureUrl: '/asset/opg/home.png',
       type: 'image/png',
@@ -91,11 +84,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   type='application/rss+xml'
   title={siteName}
   href={`${BASE_URL}/rss.xml`}
-/>
-<link
-  rel='alternate'
-  href={canonicalURL}
-  hreflang='x-default'
 />
 <link
   rel='canonical'

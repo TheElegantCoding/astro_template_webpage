@@ -1,3 +1,7 @@
 {
-  "extends": ["stylelint-config-elegant-coding", "stylelint-config-elegant-coding/sass"]
+  "extends":
+  [
+    "stylelint-config-elegant-coding",
+    "stylelint-config-elegant-coding/sass"
+  ]
 }

@@ -6,16 +6,13 @@ const siteConfiguration =
     name: '',
     web: ''
   },
+  copyright: `© ${new Date().getFullYear()} Astralys`,
   defaultLanguage: 'en',
   description: '',
   googleAnalyticId: '',
   googleSiteVerificationId: '',
+  languages: {},
   showDefaultLanguage: false,
-  languages:
-  {
-    en: 'English',
-    es: 'Español'
-  },
   siteName: ''
 };
 

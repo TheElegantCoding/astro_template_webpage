@@ -71,6 +71,7 @@
 
 - [x] show component
 - [x] for component
+- [x] link component
 
 ## Github issue template
 

@@ -1,6 +1,6 @@
 ::-webkit-scrollbar
 {
-  width: $spacing_12;
+  width: 1.3rem;
   border-radius: $rounded_medium;
 }
 
@@ -8,7 +8,7 @@
 {
   background-color: $primary_500;
   background-clip: content-box;
-  border: $spacing_2 solid transparent;
+  border: $spacing_3 solid transparent;
   border-radius: $rounded_medium;
 
   &:hover

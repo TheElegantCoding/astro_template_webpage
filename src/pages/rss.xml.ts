@@ -4,7 +4,7 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
 export const GET = async () => rss({
   description: siteConfiguration.description,
   items: [],
-  site: import.meta.env.SITE,
+  site: import.meta.env.BASE_URL,
   title: siteConfiguration.siteName,
   trailingSlash: false
 });

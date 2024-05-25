@@ -65,10 +65,10 @@ const getI18n = async (json: string, jsonModule: string, currentLocale: string =
 
   if(jsonModule === 'global')
   {
-    jsonLanguage = await import(`./../../../global/locale/${currentLocale}_${json}.json`) as JsonLanguage;
+    jsonLanguage = await import(`./../../../global/locale/${currentLocale}/${currentLocale}_${json}.json`) as JsonLanguage;
   }
 
-  jsonLanguage = await import(`./../../module/${jsonModule}/locale/${currentLocale}_${json}.json`) as JsonLanguage;
+  jsonLanguage = await import(`./../../module/${jsonModule}/locale/${currentLocale}/${currentLocale}_${json}.json`) as JsonLanguage;
 
   return jsonLanguage.default;
 };

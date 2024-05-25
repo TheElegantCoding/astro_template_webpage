@@ -8,15 +8,20 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
     async
     is:inline
     src={`https://www.googletagmanager.com/gtag/js?id=${siteConfiguration.googleAnalyticId}`}
-  >
-  </script>
+  />
   <script
     type='text/partytown'
     is:inline
     define:vars={{ siteConfiguration }}
   >
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    window.dataLayer ||= [];
+
+    const gtag = (...args) =>
+    {
+      // eslint-disable-next-line no-undef
+      dataLayer.push(args);
+    };
+
     gtag('js', new Date());
 
     gtag('config', siteConfiguration.googleAnalyticId);

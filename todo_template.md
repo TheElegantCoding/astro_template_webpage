@@ -8,6 +8,7 @@ In global configuration put this data
 - [ ] author
 - [ ] author email
 - [ ] author web
+- [ ] copyright web
 - [ ] global description of the web
 - [ ] site name
 

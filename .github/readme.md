@@ -1,4 +1,4 @@
-<img src="./asset/cover.svg" alt="edge" width="100%" align="center" />
+<img src="./asset/cover.svg" alt="cover" width="100%" align="center" />
 
 <br />
 
@@ -7,7 +7,7 @@
 ---
 
 <pre align="center">
-<a href="#instalation">📦 SETUP</a> • <a href="#configuration">⚙️ CONFIGURATION</a> • <a href="#features">️️️🛰️ FEATURES</a>
+  <a href="#instalation">📦 SETUP</a> • <a href="#configuration">⚙️ CONFIGURATION</a> • <a href="#features">️️️🛰️ FEATURES</a>
 </pre>
 
 ---
@@ -78,9 +78,10 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
   - `✅ Env validation` - Enviroment variables validation
   - `✅ Htaccess snipets` - Differents htaccess for all kind of situations
 - `🧩 Components`
-  - `✅ Image component` - Ready to use optimize image component
-  - `✅ Show component` - Ready to use show component
-  - `✅ For component` - Ready to use for map components
+  - `✅ Image` - Ready to use optimize image component
+  - `✅ Show` - Ready to use conditional render component
+  - `✅ For` - Ready to use for map components
+  - `✅ Link` - Ready to use for redirect external and internal links
 - `️⚡️ Performance`
   - `✅ Web worker (partytown)` - For lazy-loaded large libraries
   - `✅ Bundler analizer` - Analize your bundle size

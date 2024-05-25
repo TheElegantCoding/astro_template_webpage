@@ -1,0 +1,19 @@
+---
+import Show from '@global/component/show.astro';
+import { siteConfiguration } from '@global/configuration/site_configuration';
+import { joinString } from '@global/util/join_string';
+
+const { author, copyright } = siteConfiguration;
+---
+<Show when={author.name || author.email || author.web}>
+  <meta
+    name='author'
+    content={joinString([ author.name, author.email, author.web ])}
+  />
+</Show>
+<Show when={copyright}>
+  <meta
+    name='copyright'
+    content={copyright}
+  />
+</Show>

@@ -1,0 +1,25 @@
+---
+import For from '@global/component/for.astro';
+import Show from '@global/component/show.astro';
+import { siteConfiguration } from '@global/configuration/site_configuration';
+import { getLanguagePathname } from '@global/util/language';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pathname = getLanguagePathname(canonicalURL);
+---
+<link
+  rel='alternate'
+  href={canonicalURL}
+  hreflang='x-default'
+/>
+<Show when={Object.keys(siteConfiguration.languages).length > 0}>
+  <For each={Object.keys(siteConfiguration.languages)}>
+    {(dataLanguage: string) => (
+      <link
+        rel='alternate'
+        href={new URL(`${dataLanguage}${pathname === '/' ? '' : pathname}/`, Astro.site)}
+        hreflang={dataLanguage}
+      />
+    )}
+  </For>
+</Show>

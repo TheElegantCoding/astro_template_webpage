@@ -4,10 +4,10 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
 ---
 <Show when={Object.keys(siteConfiguration.languages).length > 0}>
   <script>
-    import { getLanguageFromUrl, getLanguagePathname} from "@global/util/language";
+    import { getLanguageFromUrl, getLanguagePathname } from '@global/util/language';
 
     const userLanguage = navigator.language;
-    const currentUrl = new URL(window.location.href)
+    const currentUrl = new URL(window.location.href);
     const currentLanguage = getLanguageFromUrl(currentUrl);
     const currentPath = getLanguagePathname(currentUrl);
     const storageLanguage = localStorage.getItem('language');
@@ -18,10 +18,9 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
       {
         localStorage.setItem('language', userLanguage);
         window.location.href = `/${userLanguage}${currentPath}`;
-        return;
       }
-    }
+    };
 
     changeCurrentLanguage();
-  </script>
+</script>
 </Show>

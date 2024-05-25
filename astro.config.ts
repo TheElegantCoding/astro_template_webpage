@@ -23,15 +23,6 @@ export default defineConfig({
   },
   site: environment.BASE_URL,
   trailingSlash: 'never',
-  i18n:
-  {
-    defaultLocale: 'en',
-    fallback:
-    {
-      'es-Es': 'es'
-    },
-    locales: [ 'es', 'en' ]
-  },
   vite:
   {
     envDir: './src/global/env'

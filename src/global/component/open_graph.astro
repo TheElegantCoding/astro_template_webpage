@@ -4,6 +4,7 @@ import OpenGraphProfile from '@global/component/open_graph_profile.astro';
 import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { BASE_URL } from '@global/constant/base';
+import { removeTrailingSlash } from '@global/util/link';
 
 import type {
   OpenGraphType,
@@ -41,13 +42,13 @@ const {
   title,
   twitter =
   {
-    type: 'summary'
+    type: 'summary_large_image'
   },
   type = 'website'
 } = Astro.props;
 
 const { defaultLanguage, siteName } = siteConfiguration;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
 ---
 <meta
   name='twitter:card'

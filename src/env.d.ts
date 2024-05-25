@@ -1,12 +1,11 @@
-/// <reference types="astro/client" />
-
 type ImportMetaEnv =
 {
   readonly PORT: number;
   readonly BASE_URL: string;
+  readonly MODE: 'staging' | 'production' | 'development';
 };
 
-type ImportMeta =
+interface ImportMeta
 {
   readonly env: ImportMetaEnv;
-};
+}

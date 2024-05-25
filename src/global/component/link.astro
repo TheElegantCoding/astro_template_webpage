@@ -1,0 +1,29 @@
+---
+import { externalLink } from '@global/util/link';
+
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'> &
+{
+  readonly rel?: string;
+  readonly href: URL | string;
+  readonly target?: '_top' | '_self' | '_blank' | '_parent';
+};
+
+const {
+ href,
+ rel: relationship,
+ target,
+ ...rest
+} = Astro.props;
+
+const link = externalLink(href, Astro.site, relationship, target);
+---
+<a
+  href={link.href}
+  rel={link.rel}
+  target={link.target}
+  {...rest}
+>
+  <slot />
+</a>

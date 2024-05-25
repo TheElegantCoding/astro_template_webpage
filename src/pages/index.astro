@@ -1,4 +1,5 @@
 ---
+import Link from '@global/component/link.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
 <BaseLayout
@@ -9,4 +10,10 @@ import BaseLayout from '@global/layout/base_layout.astro';
   }}
 >
   <h1 class='flip-x'>Hola mundo</h1>
+  <Link href='/'>
+    About us
+  </Link>
+  <Link href='https://www.workana.com/jobs?page=4'>
+    Workana
+  </Link>
 </BaseLayout>
