@@ -1,3 +1,5 @@
+<img src="./asset/wave_header.svg" alt="wave" width="100%" align="center"/>
+
 <img src="./asset/cover.svg" alt="cover" width="100%" align="center" />
 
 <br />
