@@ -1,24 +1,34 @@
-<img src="./asset/wave_header.svg" alt="wave" width="100%" align="center"/>
+<img src="./asset/illustration/wave_header.svg" alt="wave" width="100%" align="center"/>
 
 <h1 id="astro-template-webpage">
-  <img src="./asset/web.svg" alt="Web icon" width="20px" />
+  <img src="./asset/icon/web.svg" width="32px" align="center" />
   Astro template webpage
 </h1>
 
 ---
 
 <pre align="center">
-  <a href="#instalation"><img src="./asset/package.svg" alt="Package icon" width="16px" /> SETUP</a> • <a href="#configuration"><img src="./asset/gear.svg" alt="Gear icon" width="16px" /> CONFIGURATION</a> • <a href="#features">️️️<img src="./asset/satellite.svg" alt="Satellite icon" width="16px" /> FEATURES</a>
+  <a href="#instalation">📦 SETUP</a> • <a href="#configuration">⚙️ CONFIGURATION</a> • <a href="#features">️️️🛰️ FEATURES</a>
 </pre>
 
 ---
 
-<img src="./asset/cover.svg" alt="cover" width="100%" align="center" />
+<img src="./asset/illustration/cover.svg" alt="cover" width="100%" align="center" />
 
 <br />
 
+<div align="center">
+  <img src="./asset/badget/astro_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/eslint_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/stylelint_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/bun_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/github_badget.svg" height="32px" />
+</div>
+
+---
+
 <h2 id="about">
-  <img src="./asset/information.svg" alt="Information icon" width="20px" />
+  <img src="./asset/icon/information.svg" width="24px" align="center"/>
   About
 </h2>
 
@@ -30,7 +40,12 @@ Tired of sluggish websites and SEO headaches? Unleash the power of lightning-fas
 
 Ditch the struggle and focus on what matters most - crafting impactful content that drives engagement. Welcome to the future of web development - where SEO and performance work hand-in-hand.
 
-<p align="right">(<a href="#astro-template-webpage">⬆️ back to top</a>)</p>
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 </td>
 </tr>
 </table>
@@ -38,105 +53,131 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 ---
 
 <h2>
-  <img src="./asset/book.svg" alt="Book icon" width="20px" />
+  <img src="./asset/icon/book.svg" width="24px" align="center"/>
   Table of content
 </h2>
 
-- [📝 About](#about)
-- [🛰️ Features](#features)
-- [⚡️ Requirements](#requirements)
-- [📦 Installation](#installation)
-- [⚙️ Configuration](#configuration)
+- [<img src="./asset/icon/information.svg" width="20px" align="center" /> About](#about)
+- [<img src="./asset/icon/satellite.svg" width="20px" align="center" /> Features](#features)
+- [<img src="./asset/icon/thunder.svg" width="20px" align="center" /> Requirements](#requirements)
+- [<img src="./asset/icon/package.svg" width="20px" align="center" /> Installation](#installation)
+- [<img src="./asset/icon/gear.svg" width="20px" align="center" /> Configuration](#configuration)
   - [Site configuration](#site-configuration)
   - [Environment Varaibles](#enviroment-varaible)
-- [🚀 Usage](#usage)
-- [⚡️ Scripts](#scripts)
-- [🌎 Browser support](#browser-support)
+- [<img src="./asset/icon/rocket.svg" width="20px" align="center" /> Usage](#usage)
+- [<img src="./asset/icon/terminal.svg" width="20px" align="center" /> Scripts](#scripts)
+- [<img src="./asset/icon/world.svg" width="20px" align="center" /> Browser support](#browser-support)
+
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 
 ---
 
 <h2 id="features">
-  <img src="./asset/satellite.svg" alt="Satellite icon" width="20px" />
+  <img src="./asset/icon/satellite.svg" width="24px" align="center" />
   Features
 </h2>
 
-- `🌌 Astro` - Astro Framework
-- `🦾 Typescript` - Extremely strict type checking
-  - `✅ Absolute imports` -  No more bad imports
-- `💎 Sass` - Css framework for ui development
-  - `✅ BEMIT` - Arquitecture for sass
-  - `✅ Mobile firts` - Best performance for css
-  - `✅ Reset` - Reset css for match style between browsers
-  - `✅ Join media queries` - Join media queries for small file size
-  - `✅ Vendor prefixes` - Vendor prefixes for all support
-  - `✅ Remove unused css` - Remove unused css in build
-- `🏗️ Clean arquitecture` - For clean code and scalablility
-- `🌎 SEO` - SEO meta data, open graph and more
-  - `✅ Sitemap` - Sitemap generator
-  - `✅ RSS` - RSS generator
-  - `✅ Open graph` - Advanced open graph SEO
-  - `✅ ️Robot` - Robot txt configuration
-  - `✅ Canonical` - Auto canonical url
-  - `✅ Google search console` - For SEO stadistics
-  - `✅ Google analytic` - For analytics of the webpage
-- `📐 Linter` - Linter and formatting all kind of files
-  - `✅ Eslint` - Litner and formatting ts and js files
-  - `✅ Stylelint` - Linter css files
-- `🕹️ Git` - Control version and more
-  - `✅ Github issue template` - Github issues organization
-  - `✅ Githooks` - Git hook for validate code quality
-  - `✅ Changelog` - Changelog and realese for github
-  - `✅ Sematic release` - Automatization of releases
-- `⚙️ Configuration` - Vscode, env variables and more
-  - `✅ Vscode configuration` - Vscode recommendations, extensions and more
-  - `✅ Env validation` - Enviroment variables validation
-  - `✅ Htaccess snipets` - Differents htaccess for all kind of situations
-- `🧩 Components`
-  - `✅ Image` - Ready to use optimize image component
-  - `✅ Show` - Ready to use conditional render component
-  - `✅ For` - Ready to use for map components
-  - `✅ Link` - Ready to use for redirect external and internal links
-- `️⚡️ Performance`
-  - `✅ Web worker (partytown)` - For lazy-loaded large libraries
-  - `✅ Bundler analizer` - Analize your bundle size
-  - `✅ Compress` - Compress images, font, css, js, and html
-  - `✅ Non blocking` - Non blocking js, css and more
-  - `✅ Font optimization` - Font transformation and declaration
-- `📦 Pnpm` - Fast package manager
-- `💯 Perfect lighthouse score` - Because performance matters
+- <img src="./asset/icon/astro.svg" width="24px" align="center" /> `Astro` - Astro Framework
+- <img src="./asset/icon/typescript.svg" width="24px" align="center" /> `Typescript` - Extremely strict type checking
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Absolute imports` -  No more bad imports
+- <img src="./asset/icon/sass.svg" width="24px" align="center" /> `Sass` - Css framework for ui development
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `BEMIT` - Arquitecture for sass
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Mobile firts` - Best performance for css
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Reset` - Reset css for match style between browsers
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Join media queries` - Join media queries for small file size
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Vendor prefixes` - Vendor prefixes for all support
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Remove unused css` - Remove unused css in build
+- <img src="./asset/icon/construction.svg" width="24px" align="center" /> `Clean arquitecture` - For clean code and scalablility
+- <img src="./asset/icon/world_full.svg" width="24px" align="center" /> `SEO` - SEO meta data, open graph and more
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Sitemap` - Sitemap generator
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `RSS` - RSS generator
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Open graph` - Advanced open graph SEO
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Robot` - Robot txt configuration
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Canonical` - Auto canonical url
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Google search console` - For SEO stadistics
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Google analytic` - For analytics of the webpage
+- <img src="./asset/icon/rule.svg" width="24px" align="center" /> `Linter` - Linter and formatting all kind of files
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Eslint` - Litner and formatting ts and js files
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Stylelint` - Linter css files
+- <img src="./asset/icon/git.svg" width="24px" align="center" /> `Git` - Control version and more
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Github issue template` - Github issues organization
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Githooks` - Git hook for validate code quality
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Changelog` - Changelog and realese for github
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Sematic release` - Automatization of releases
+- <img src="./asset/icon/gear_full.svg" width="24px" align="center" /> `Configuration` - Vscode, env variables and more
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Vscode configuration` - Vscode recommendations, extensions and more
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Env validation` - Enviroment variables validation
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Htaccess snipets` - Differents htaccess for all kind of situations
+- <img src="./asset/icon/plugin.svg" width="24px" align="center" /> `Components`
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Image` - Ready to use optimize image component
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Show` - Ready to use conditional render component
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `For` - Ready to use for map components
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Link` - Ready to use for redirect external and internal links
+- <img src="./asset/icon/thunder_full.svg" width="24px" align="center" /> `Performance`
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Web worker (partytown)` - For lazy-loaded large libraries
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Bundler analizer` - Analize your bundle size
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Compress` - Compress images, font, css, js, and html
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Non blocking` - Non blocking js, css and more
+  - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Font optimization` - Font transformation and declaration
+- <img src="./asset/icon/bun.svg" width="24px" align="center" /> `Bun` - Fast package manager
+- <img src="./asset/icon/lighthouse.svg" width="24px" align="center" /> `Perfect lighthouse score` - Because performance matters
+
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 
 ---
 
 <h2 id="requirements">
-  <img src="./asset/thunder.svg" alt="Thunder icon" width="20px" />
+  <img src="./asset/icon/thunder.svg" width="24px" align="center" />
   Requirements
 </h2>
 
-- node >= **20.10.0**
-- git >= **2.38**
-- pnpm >= **8.2.0**
+- <img src="./asset/icon/node.svg" width="20px" align="center" /> node >= **20.10.0**
+- <img src="./asset/icon/git.svg" width="20px" align="center" /> git >= **2.38**
+- <img src="./asset/icon/bun.svg" width="20px" align="center" /> bun >= **1.1.0**
 
-<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 
 ---
 
 <h2 id="installation">
-  <img src="./asset/package.svg" alt="Package icon" width="20px" />
+  <img src="./asset/icon/package.svg" width="20px" align="center" />
   Installation
 </h2>
 
-After cloning the repo run this command to install all the dependencies
+After cloning the repo run this command to install all the dependencies.
+
+<h3><img src="./asset/icon/bun.svg" width="24px" align="center" /> Bun</h3>
 
 ```bash
-pnpm install
+bun i
 ```
 
-<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 
 ---
 
 <h2 id="configuration">
-  <img src="./asset/gear.svg" alt="Gear icon" width="20px" />
+  <img src="./asset/icon/gear.svg" width="24px" align="center" />
   Configuration
 </h2>
 
@@ -180,12 +221,17 @@ PORT=4173
 BASE_URL=http://localhost:$VITE_PORT
 ```
 
-<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 
 ---
 
 <h2 id="usage">
-  <img src="./asset/rocket.svg" alt="Rocket icon" width="20px" />
+  <img src="./asset/icon/rocket.svg" width="24px" align="center" />
   Usage
 </h2>
 
@@ -209,12 +255,17 @@ The build is minified and the filenames include the hashes, also it compress all
 
 Your app is ready to be deployed.
 
-<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 
 ---
 
 <h2 id="scripts">
-  <img src="./asset/terminal.svg" alt="Terminal icon" width="20px" />
+  <img src="./asset/icon/terminal.svg" width="24px" align="center" />
   Scripts
 </h2>
 
@@ -230,12 +281,17 @@ The following scripts are available in the `package.json`:
 - `lint-eslint`: This script is for lint ts, tsx and more files
 - `lint-stylelint`: This script is for lint css files
 
-<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 
 ---
 
 <h2 id="browser-support">
-  <img src="./asset/world.svg" alt="World icon" width="20px" />
+  <img src="./asset/icon/world.svg" alt="World icon" width="24px" align="center" />
   Browser support
 </h2>
 
@@ -245,33 +301,33 @@ Here is the list of all the browser this website support
   <tr>
     <td align="center">
       <div >
-        <img src="./asset/edge.svg" alt="edge" width="24" />
+        <img src="./asset/illustration/edge.svg" alt="edge" width="24" />
         <br />
         <strong>IE / Edge</strong>
       </div>
     </td>
     <td align="center">
-      <img src="./asset/firefox.svg" alt="firefox" width="24" />
+      <img src="./asset/illustration/firefox.svg" alt="firefox" width="24" />
       <br />
       <strong>Firefox</strong>
     </td>
     <td align="center">
-      <img src="./asset/safari.svg" alt="safari" width="24" />
+      <img src="./asset/illustration/safari.svg" alt="safari" width="24" />
       <br />
       <strong>Safari</strong>
     </td>
     <td align="center">
-      <img src="./asset/safari.svg" alt="safari" width="24" />
+      <img src="./asset/illustration/safari.svg" alt="safari" width="24" />
       <br />
       <strong>Safari IOS</strong>
     </td>
     <td align="center">
-      <img src="./asset/samsung_internet.svg" alt="samsung internet" width="24" />
+      <img src="./asset/illustration/samsung_internet.svg" alt="samsung internet" width="24" />
       <br />
       <strong>Samsung</strong>
     </td>
     <td align="center">
-      <img src="./asset/opera.svg" alt="opera" width="24" />
+      <img src="./asset/illustration/opera.svg" alt="opera" width="24" />
       <br />
       <strong>Opera</strong>
     </td>
@@ -298,6 +354,21 @@ Here is the list of all the browser this website support
   </tr>
 </table>
 
-<p align="right">(<a href="#astro-template-webpage">back to top</a>)</p>
+<p align="right">
+  ( <a href="#astro-template-webpage">
+    <img src="./asset/icon/arrow_up.svg" width="20px" align="center" />
+    Back to top
+  </a> )
+</p>
 
-<img src="./asset/wave_footer.svg" alt="wave" width="100%" align="center"/>
+---
+
+<pre align="center">
+  Copyright © All rights reserved,
+  developed by ElegantCoder and
+</pre>
+<div align="center">
+  <img src="./asset/illustration/astralys_logo.svg" width="120px" align="center" />
+</div>
+
+<img src="./asset/illustration/wave_footer.svg" alt="wave" width="100%" align="center"/>
