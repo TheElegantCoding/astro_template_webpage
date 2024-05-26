@@ -189,13 +189,16 @@ This file is located in `src/global/configuration/site_configuration.ts`
 
 - `siteName` - Global title of the webpage
 - `description` - Global description of the webpage
-- `defaultLocale` - Default locale of the webpage
 - `autor` - Author object that appears in a meta tag
   - `author.name` - Name of the author
   - `author.email` - Email of the author
   - `author.web` - Web of the author
-- `googleSiteVerificationId` - Id of google search console
+- `copyright` - Copyright of the owner of the website
+- `googleSiteVerificationId` - Id of google analytics in meta tags
 - `googleAnalyticId` - Id of the google analytics
+- `defaultLocale` - Default locale of the webpage
+- `languages` - Object with all the languages you want to support
+- `showDefaultLanguage` - To show in the url the default language
 
 <h3 id="environment-varaible">Evironment varaibles</h3>
 
@@ -204,8 +207,8 @@ This environment variables are located in `src/global/env/**.env`
 file: **.example.dev.env**
 
 ```yml
-PORT=3000
-BASE_URL=http://localhost:$VITE_PORT
+PORT=4321
+BASE_URL=http://localhost:$PORT
 ```
 
 file: **.example.prod.env**
@@ -217,8 +220,8 @@ BASE_URL=
 file: **.example.staging.env**
 
 ```yml
-PORT=4173
-BASE_URL=http://localhost:$VITE_PORT
+PORT=4321
+BASE_URL=http://localhost:$PORT
 ```
 
 <p align="right">
