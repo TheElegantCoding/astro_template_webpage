@@ -128,7 +128,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
   - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Compress` - Compress images, font, css, js, and html
   - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Non blocking` - Non blocking js, css and more
   - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Font optimization` - Font transformation and declaration
-- <img src="./asset/image/bun.png" width="24px" align="center" /> `Bun` - Fast package manager
+- <img src="./asset/icon/svg.png" width="24px" align="center" /> `Bun` - Fast package manager
 - <img src="./asset/icon/lighthouse.svg" width="24px" align="center" /> `Perfect lighthouse score` - Because performance matters
 
 <p align="right">
@@ -147,7 +147,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 
 - <img src="./asset/icon/node.svg" width="20px" align="center" /> node >= **20.10.0**
 - <img src="./asset/icon/git.svg" width="20px" align="center" /> git >= **2.38**
-- <img src="./asset/icon/bun.png" width="20px" align="center" /> bun >= **1.1.0**
+- <img src="./asset/icon/bun.svg" width="20px" align="center" /> bun >= **1.1.0**
 
 <p align="right">
   ( <a href="#astro-template-webpage">
