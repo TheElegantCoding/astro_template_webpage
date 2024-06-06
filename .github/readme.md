@@ -198,7 +198,6 @@ This file is located in `src/global/configuration/site_configuration.ts`
   - `author.email` - Email of the author
   - `author.web` - Web of the author
 - `copyright` - Copyright of the owner of the website
-- `googleSiteVerificationId` - Id of google analytics in meta tags
 - `googleAnalyticId` - Id of the google analytics
 - `defaultLocale` - Default locale of the webpage
 - `languages` - Object with all the languages you want to support

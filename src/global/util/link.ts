@@ -5,6 +5,8 @@ type LinkType =
   target: string | undefined;
 };
 
+const removeLeadingSlash = (url: URL | string) => url.toString().replace(/^\/+/v, '');
+
 const removeTrailingSlash = (url: URL | string) => url.toString().replace(/\/$/v, '');
 
 const externalLink = (href: URL | string, site: URL | undefined, relationship?: string, target?: string): LinkType =>
@@ -36,4 +38,8 @@ const externalLink = (href: URL | string, site: URL | undefined, relationship?: 
   return link;
 };
 
-export { externalLink, removeTrailingSlash };
+export {
+  externalLink,
+  removeLeadingSlash,
+  removeTrailingSlash
+};

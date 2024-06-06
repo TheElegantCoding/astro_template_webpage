@@ -3,7 +3,6 @@ import For from '@global/component/for.astro';
 import OpenGraphProfile from '@global/component/open_graph_profile.astro';
 import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
-import { BASE_URL } from '@global/constant/base';
 import { removeTrailingSlash } from '@global/util/link';
 
 import type {
@@ -47,8 +46,9 @@ const {
   type = 'website'
 } = Astro.props;
 
-const { defaultLanguage, siteName } = siteConfiguration;
+const baseUrl = removeTrailingSlash(Astro.site as URL);
 const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
+const { defaultLanguage, siteName } = siteConfiguration;
 ---
 <meta
   name='twitter:card'
@@ -103,12 +103,12 @@ const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site)
     <>
       <meta
         property='og:image'
-        content={`${BASE_URL}${dataImage.url}`}
+        content={`${baseUrl}${dataImage.url}`}
       />
       <Show when={dataImage.secureUrl}>
         <meta
           property='og:image:secure_url'
-          content={`${BASE_URL}${dataImage.url}`}
+          content={`${baseUrl}${dataImage.url}`}
         />
       </Show>
       <Show when={dataImage.type}>

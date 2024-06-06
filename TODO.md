@@ -37,7 +37,6 @@
 
 ## Fonts
 
-- [ ] transform font to woff, woff2
 - [x] preload font
 - [x] font face in css
 
@@ -117,6 +116,5 @@
 
 ### Extra todo
 
-- [ ] Improve js in custom image component making js helpers
 - [x] Improve stylelint plugin
 - [x] Improve eslint plugin

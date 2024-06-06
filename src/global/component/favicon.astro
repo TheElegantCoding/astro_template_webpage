@@ -1,87 +1,89 @@
 ---
-import { BASE_URL } from '@global/constant/base';
+import { removeTrailingSlash } from '@global/util/link';
+
+const baseUrl = removeTrailingSlash(Astro.site as URL);
 ---
 <link
   rel='apple-touch-icon'
   sizes='57x57'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-57x57.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-57x57.png`}
 />
 <link
   rel='apple-touch-icon'
   sizes='60x60'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-60x60.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-60x60.png`}
 />
 <link
   rel='apple-touch-icon'
   sizes='72x72'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-72x72.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-72x72.png`}
 />
 <link
   rel='apple-touch-icon'
   sizes='76x76'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-76x76.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-76x76.png`}
 />
 <link
   rel='apple-touch-icon'
   sizes='114x114'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-114x114.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-114x114.png`}
 />
 <link
   rel='apple-touch-icon'
   sizes='120x120'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-120x120.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-120x120.png`}
 />
 <link
   rel='apple-touch-icon'
   sizes='144x144'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-144x144.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-144x144.png`}
 />
 <link
   rel='apple-touch-icon'
   sizes='152x152'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-152x152.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-152x152.png`}
 />
 <link
   rel='apple-touch-icon'
   sizes='180x180'
-  href={`${BASE_URL}/asset/favicon/apple-touch-icon-180x180.png`}
+  href={`${baseUrl}/asset/favicon/apple-touch-icon-180x180.png`}
 />
 <link
   rel='icon'
   type='image/png'
   sizes='32x32'
-  href={`${BASE_URL}/asset/favicon/favicon-32x32.png`}
+  href={`${baseUrl}/asset/favicon/favicon-32x32.png`}
 />
 <link
   rel='icon'
   type='image/png'
   sizes='194x194'
-  href={`${BASE_URL}/asset/favicon/favicon-194x194.png`}
+  href={`${baseUrl}/asset/favicon/favicon-194x194.png`}
 />
 <link
   rel='icon'
   type='image/png'
   sizes='192x192'
-  href={`${BASE_URL}/asset/favicon/android-chrome-192x192.png`}
+  href={`${baseUrl}/asset/favicon/android-chrome-192x192.png`}
 />
 <link
   rel='icon'
   type='image/png'
   sizes='16x16'
-  href={`${BASE_URL}/asset/favicon/favicon-16x16.png`}
+  href={`${baseUrl}/asset/favicon/favicon-16x16.png`}
 />
 <link
   rel='manifest'
-  href={`${BASE_URL}/asset/favicon/site.webmanifest`}
+  href={`${baseUrl}/asset/favicon/site.webmanifest`}
 />
 <link
   rel='mask-icon'
-  href={`${BASE_URL}/asset/favicon/safari-pinned-tab.svg`}
+  href={`${baseUrl}/asset/favicon/safari-pinned-tab.svg`}
   color='#5bbad5'
 />
 <link
   rel='shortcut icon'
-  href={`${BASE_URL}/asset/favicon/favicon.ico`}
+  href={`${baseUrl}/asset/favicon/favicon.ico`}
 />
 <meta
   name='msapplication-TileColor'
@@ -89,11 +91,11 @@ import { BASE_URL } from '@global/constant/base';
 />
 <meta
   name='msapplication-TileImage'
-  content={`${BASE_URL}/asset/favicon/mstile-144x144.png`}
+  content={`${baseUrl}/asset/favicon/mstile-144x144.png`}
 />
 <meta
   name='msapplication-config'
-  content={`${BASE_URL}/asset/favicon/browserconfig.xml`}
+  content={`${baseUrl}/asset/favicon/browserconfig.xml`}
 />
 <meta
   name='theme-color'

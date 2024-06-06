@@ -1,9 +1,7 @@
 ---
 import MetaAuthor from '@global/component/meta_author.astro';
 import OpenGraph from '@global/component/open_graph.astro';
-import SiteVerification from '@global/component/site_verification.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
-import { BASE_URL } from '@global/constant/base';
 import { joinString } from '@global/util/join_string';
 import { removeTrailingSlash } from '@global/util/link';
 
@@ -36,6 +34,7 @@ const {
 const { siteName } = siteConfiguration;
 
 const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
+const baseUrl = removeTrailingSlash(Astro.site as URL);
 ---
 <meta charset='utf-8' />
 <meta
@@ -74,16 +73,15 @@ const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site)
   ]}
   {...openGraph}
 />
-<SiteVerification />
 <link
   rel='sitemap'
-  href=`${BASE_URL}/sitemap-index.xml`
+  href=`${baseUrl}/sitemap-index.xml`
 />
 <link
   rel='alternate'
   type='application/rss+xml'
   title={siteName}
-  href={`${BASE_URL}/rss.xml`}
+  href={`${baseUrl}/rss.xml`}
 />
 <link
   rel='canonical'

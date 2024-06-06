@@ -1,7 +1,7 @@
 ---
 import Show from '@global/component/show.astro';
 import Skeleton from '@global/component/skeleton.astro';
-import { BASE_URL } from '@global/constant/base';
+import { removeTrailingSlash } from '@global/util/link';
 import { replaceExtension } from '@global/util/replace_extension';
 
 import type { HTMLAttributes } from 'astro/types';
@@ -30,7 +30,8 @@ const {
   ...rest
 } = Astro.props;
 
-const imageUrl = `${BASE_URL}${source}`;
+const baseUrl = removeTrailingSlash(Astro.site as URL);
+const imageUrl = `${baseUrl}${source}`;
 ---
 <picture
   class='custom-image'
@@ -64,41 +65,47 @@ const imageUrl = `${BASE_URL}${source}`;
     class:list={[ classImage ]}
     {...rest}
   />
-  <slot />
+  <Show when={Astro.slots.has('default')}>
+    <div class='custom-image__content custom-image__content--disable'>
+      <slot />
+    </div>
+  </Show>
 </picture>
 
 <script>
   const picture = document.querySelectorAll('.custom-image');
 
+  const onImageLoad = (element: Element) =>
+  {
+    const skeleton = element.querySelector('.custom-image__skeleton');
+    const content = element.querySelector('.custom-image__content');
+
+    skeleton?.classList.remove('skeleton--active');
+    content?.classList.remove('custom-image__content--disable');
+  };
+
+  const onImageError = (event: Event, element: HTMLImageElement) =>
+  {
+    const currentImage = event.currentTarget as HTMLImageElement;
+
+    if(element?.src)
+    {
+      currentImage.src = element.src;
+    }
+  };
+
   picture.forEach((element) =>
   {
     const image = element.querySelector('img');
 
-    const loaded = () =>
-    {
-      const skeleton = element.querySelector('div');
-
-      skeleton?.classList.remove('skeleton--active');
-    };
-
-    const error = (event: Event) =>
-    {
-      const currentImage = event.currentTarget as HTMLImageElement;
-
-      if(image?.src)
-      {
-        currentImage.src = image.src;
-      }
-    };
-
     if(image?.complete)
     {
-      loaded();
+      onImageLoad(image);
     }
     else
     {
-      image?.addEventListener('load', loaded);
-      image?.addEventListener('error', error);
+      image?.addEventListener('load', () => onImageLoad(element));
+      image?.addEventListener('error', (event) => onImageError(event, image));
     }
   });
 </script>
