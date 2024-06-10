@@ -1,6 +1,6 @@
 /* eslint-disable security/detect-non-literal-regexp */
 import { siteConfiguration } from '@global/configuration/site_configuration';
-import { removeLeadingSlash } from '@global/util/link';
+import { removeLeadingSlash, removeTrailingSlash } from '@global/util/link';
 
 const { defaultLanguage, languages } = siteConfiguration;
 
@@ -56,11 +56,24 @@ const getLanguagePathname = (url: URL) =>
   return pathname;
 };
 
+const addLanguageToPathname = (url: URL, language: LanguageType) =>
+{
+  const { pathname } = url;
+
+  if(language !== defaultLanguage)
+  {
+    return removeTrailingSlash(`/${language}${pathname}`);
+  }
+
+  return pathname;
+};
+
 const getI18n = <T>(language: LanguageType, languageModule: Record<string, T>): T => languageModule[language] as T;
 
 export {
   getI18n,
   getStaticLanguage,
   getLanguageFromUrl,
-  getLanguagePathname
+  getLanguagePathname,
+  addLanguageToPathname
 };

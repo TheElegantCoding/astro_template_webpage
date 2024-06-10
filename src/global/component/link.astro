@@ -17,7 +17,13 @@ const {
  ...rest
 } = Astro.props;
 
-const link = externalLink(href, Astro.site, relationship, target);
+const link = externalLink({
+  href,
+  relationship,
+  site: Astro.site,
+  target,
+  url: Astro.url
+});
 ---
 <a
   href={link.href}
