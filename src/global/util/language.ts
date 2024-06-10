@@ -1,6 +1,6 @@
 /* eslint-disable security/detect-non-literal-regexp */
 import { siteConfiguration } from '@global/configuration/site_configuration';
-import { removeLeadingSlash, removeTrailingSlash } from '@global/util/link';
+import { removeTrailingSlash } from '@global/util/link';
 
 const { defaultLanguage, languages } = siteConfiguration;
 
@@ -40,32 +40,36 @@ const getStaticLanguage = () =>
 
 const getLanguagePathname = (url: URL) =>
 {
-  let { pathname } = url;
+  const modifiedUrl = url;
 
   const languagePrefixes = Object.keys(languages);
-  const hasLanguagePrefix = languagePrefixes.some((prefix) => pathname.includes(prefix));
+  const hasLanguagePrefix = languagePrefixes.some((prefix) => modifiedUrl.pathname.includes(prefix));
 
   if(hasLanguagePrefix)
   {
-    pathname = pathname.replace(new RegExp(`/(${languagePrefixes.join('|')})`, 'u'), '');
-    pathname = removeLeadingSlash(pathname);
+    modifiedUrl.pathname = modifiedUrl.pathname.replace(new RegExp(`/(${languagePrefixes.join('|')})`, 'u'), '');
 
-    return `/${pathname}`;
+    return modifiedUrl.pathname;
   }
 
-  return pathname;
+  return modifiedUrl.pathname;
 };
 
 const addLanguageToPathname = (url: URL, language: LanguageType) =>
 {
-  const { pathname } = url;
+  const modifiedUrl = url;
 
   if(language !== defaultLanguage)
   {
-    return removeTrailingSlash(`/${language}${pathname}`);
+    modifiedUrl.pathname = `/${language}${modifiedUrl.pathname}`;
+
+    if(modifiedUrl.hash)
+    {
+      modifiedUrl.href = modifiedUrl.href.replaceAll(`/${modifiedUrl.hash}`, modifiedUrl.hash);
+    }
   }
 
-  return pathname;
+  return removeTrailingSlash(modifiedUrl);
 };
 
 const getI18n = <T>(language: LanguageType, languageModule: Record<string, T>): T => languageModule[language] as T;

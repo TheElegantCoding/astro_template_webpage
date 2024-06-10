@@ -41,7 +41,6 @@ const validateExternalLink = (link: LinkType, href: URL | string, relationship?:
 
   if(href.toString().includes('https'))
   {
-    linkReference.href = href;
     linkReference.rel = relationship;
     linkReference.target = target;
 
