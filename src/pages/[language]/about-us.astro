@@ -1,6 +1,10 @@
 ---
 import Link from '@global/component/link.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
+import { getStaticLanguage } from '@global/util/language';
+
+// eslint-disable-next-line astro/no-exports-from-components, unicorn/prefer-export-from
+export const getStaticPaths = getStaticLanguage;
 ---
 <BaseLayout
   metaData={{

@@ -75,37 +75,36 @@ const imageUrl = `${baseUrl}${source}`;
 <script>
   const picture = document.querySelectorAll('.custom-image');
 
-  const onImageLoad = (element: Element) =>
-  {
-    const skeleton = element.querySelector('.custom-image__skeleton');
-    const content = element.querySelector('.custom-image__content');
 
-    skeleton?.classList.remove('skeleton--active');
-    content?.classList.remove('custom-image__content--disable');
-  };
-
-  const onImageError = (event: Event, element: HTMLImageElement) =>
-  {
-    const currentImage = event.currentTarget as HTMLImageElement;
-
-    if(element?.src)
-    {
-      currentImage.src = element.src;
-    }
-  };
 
   picture.forEach((element) =>
   {
     const image = element.querySelector('img');
 
+    const onImageLoad = () =>
+    {
+      const skeleton = element.querySelector('.custom-image__skeleton');
+      const content = element.querySelector('.custom-image__content');
+
+      skeleton?.classList.remove('skeleton--active');
+      content?.classList.remove('custom-image__content--disable');
+    };
+
+    const onImageError = (event: Event) =>
+    {
+      const currentImage = event.currentTarget as HTMLImageElement;
+
+      currentImage.src = image?.src as string;
+    };
+
     if(image?.complete)
     {
-      onImageLoad(image);
+      onImageLoad();
     }
     else
     {
-      image?.addEventListener('load', () => onImageLoad(element));
-      image?.addEventListener('error', (event) => onImageError(event, image));
+      image?.addEventListener('load', onImageLoad);
+      image?.addEventListener('error', onImageError);
     }
   });
 </script>

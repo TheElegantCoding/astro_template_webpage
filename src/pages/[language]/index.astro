@@ -1,5 +1,14 @@
 ---
+import Link from '@global/component/link.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
+import { getI18n, getStaticLanguage, getLanguageFromUrl } from '@global/util/language';
+import { aboutUsLocale } from '@module/landing/locale/about_us';
+
+// eslint-disable-next-line astro/no-exports-from-components
+export const getStaticPaths = getStaticLanguage;
+
+const language = getLanguageFromUrl(Astro.url);
+const i18n = getI18n(language, aboutUsLocale);
 ---
 <BaseLayout
   metaData={{
@@ -9,4 +18,11 @@ import BaseLayout from '@global/layout/base_layout.astro';
   }}
 >
   <h1 class='flip-x'>Hola mundo</h1>
+  <h1 class='flip-x'>{i18n.description}</h1>
+   <Link href='/about-us'>
+    about us
+  </Link>
+  <Link href='/about-us'>
+    home
+  </Link>
 </BaseLayout>
