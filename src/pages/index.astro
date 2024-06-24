@@ -1,4 +1,5 @@
 ---
+import CustomImage from '@global/component/custom_image.astro';
 import Link from '@global/component/link.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
 import { getI18n, getLanguageFromUrl } from '@global/util/language';
@@ -28,4 +29,8 @@ const i18n = getI18n(language, aboutUsLocale);
   <Link href='/about-us#services'>
     services
   </Link>
+  <CustomImage
+    alt='image'
+    src='/asset/image/image_placeholder.png'
+  />
 </BaseLayout>

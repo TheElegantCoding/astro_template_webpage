@@ -15,7 +15,6 @@ const siteConfiguration =
     en: 'English',
     es: 'Español'
   },
-  showDefaultLanguage: false,
   siteName: ''
 };
 
