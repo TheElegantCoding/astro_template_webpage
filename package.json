@@ -16,8 +16,7 @@
   {
     "preinstall": "npx only-allow bun",
     "dev": "astro dev",
-    "staging": "astro preview --mode staging",
-    "build-staging": "astro check && astro build --mode staging",
+    "prod": "astro preview",
     "build": "astro check && astro build",
     "lint": "pnpm lint-eslint && pnpm lint-stylelint",
     "lint-eslint": "eslint . --fix",

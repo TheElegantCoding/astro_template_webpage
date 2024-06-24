@@ -1,11 +1,10 @@
 ---
 import Favicon from '@global/component/favicon.astro';
 import GoogleAnalytic from '@global/component/google_analytic.astro';
-import Internazionalization from '@global/component/internazionalization.astro';
 import LanguageAlternative from '@global/component/language_alternative.astro';
 import MetaData from '@global/component/meta_data.astro';
 import StructuredData from '@global/component/structured_data.astro';
-import { siteConfiguration } from '@global/configuration/site_configuration';
+import { getLanguageFromUrl } from '@global/util/language';
 
 import type { MetaDataProps } from '@global/component/meta_data.astro';
 import type { StructuredDataProps } from '@global/type/structured_data/structured_data_props';
@@ -22,10 +21,12 @@ const {
   metaData,
   structuredData
 } = Astro.props;
+
+const language = getLanguageFromUrl(Astro.url);
 ---
 <!doctype html>
 <html
-  lang={siteConfiguration.defaultLanguage}
+  lang={language}
   dir='ltr'
 >
   <head>
@@ -33,7 +34,6 @@ const {
     <LanguageAlternative />
     <Favicon />
     <StructuredData schema={structuredData} />
-    <Internazionalization />
     <GoogleAnalytic />
     <slot name='head' />
     <title>{metaData.title}</title>

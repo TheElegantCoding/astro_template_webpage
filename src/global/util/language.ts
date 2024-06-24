@@ -72,6 +72,13 @@ const addLanguageToPathname = (url: URL, language: LanguageType) =>
   return removeTrailingSlash(modifiedUrl);
 };
 
+const validateDefaultLanguage = (url: URL) =>
+{
+  const urlLang = url.pathname.split('/')[1];
+
+  return urlLang === defaultLanguage;
+};
+
 const getI18n = <T>(language: LanguageType, languageModule: Record<string, T>): T => languageModule[language] as T;
 
 export {
@@ -79,5 +86,10 @@ export {
   getStaticLanguage,
   getLanguageFromUrl,
   getLanguagePathname,
-  addLanguageToPathname
+  addLanguageToPathname,
+  validateDefaultLanguage
+};
+
+export type {
+  LanguageType
 };

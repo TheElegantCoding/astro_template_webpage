@@ -3,6 +3,7 @@ import For from '@global/component/for.astro';
 import OpenGraphProfile from '@global/component/open_graph_profile.astro';
 import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
+import { getLanguageFromUrl } from '@global/util/language';
 import { removeTrailingSlash } from '@global/util/link';
 
 import type {
@@ -17,12 +18,10 @@ import type {
 export type OpenGraphProps =
 {
   title: string;
-  locale?: string;
   description: string;
   type?: OpenGraphType;
   book?: OpenGraphBookType;
   image: OpenGraphMediaType[];
-  languageAlternate?: string[];
   twitter?: OpenGraphTwitterType;
   article?: OpenGraphArticleType;
   profile?: OpenGraphProfileType;
@@ -35,8 +34,6 @@ const {
   book,
   description,
   image,
-  languageAlternate,
-  locale,
   profile,
   title,
   twitter =
@@ -48,7 +45,8 @@ const {
 
 const baseUrl = removeTrailingSlash(Astro.site as URL);
 const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
-const { defaultLanguage, siteName } = siteConfiguration;
+const { languages, siteName } = siteConfiguration;
+const currentLanguage = getLanguageFromUrl(Astro.url);
 ---
 <meta
   name='twitter:card'
@@ -88,16 +86,18 @@ const { defaultLanguage, siteName } = siteConfiguration;
 />
 <meta
   property='og:locale'
-  content={locale ?? defaultLanguage}
+  content={currentLanguage}
 />
-<For each={languageAlternate}>
-  {(dataLanguage: string) => (
-    <meta
-      property='og:locale:alternate'
-      content={dataLanguage}
-    />
-  )}
-</For>
+<Show when={Object.keys(languages).length > 0}>
+  <For each={Object.keys(languages)}>
+    {(dataLanguage: string) => (
+      <meta
+        property='og:locale:alternate'
+        content={dataLanguage}
+      />
+    )}
+  </For>
+</Show>
 <For each={image}>
   {(dataImage: OpenGraphMediaType) => (
     <>
