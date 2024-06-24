@@ -2,7 +2,7 @@
 import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 ---
-<Show when={siteConfiguration.googleAnalyticId}>
+<Show when={siteConfiguration.googleAnalyticId && import.meta.env.MODE !== 'development'}>
   <script
     type='text/partytown'
     async

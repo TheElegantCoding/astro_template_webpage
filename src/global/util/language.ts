@@ -29,10 +29,7 @@ const getStaticLanguage = () =>
 
   Object.keys(languages).forEach((key) =>
   {
-    if(key !== defaultLanguage)
-    {
-      language.push({ params: { language: key } });
-    }
+    language.push({ params: { language: key } });
   });
 
   return language;

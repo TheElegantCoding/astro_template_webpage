@@ -68,6 +68,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 - [<img src="./asset/icon/gear.svg" width="20px" align="center" /> Configuration](#configuration)
   - [Site configuration](#site-configuration)
   - [Environment varaibles](#enviroment-varaible)
+  - [i18n configuration](#i18n-configuration)
 - [<img src="./asset/icon/rocket.svg" width="20px" align="center" /> Usage](#usage)
 - [<img src="./asset/icon/terminal.svg" width="20px" align="center" /> Scripts](#scripts)
 - [<img src="./asset/icon/world.svg" width="20px" align="center" /> Browser support](#browser-support)
@@ -105,6 +106,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
   - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Canonical` - Auto canonical url
   - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Google search console` - For SEO stadistics
   - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Google analytic` - For analytics of the webpage
+- <img src="./asset/icon/language.svg" width="24px" align="center" /> `i18n` - Internationalization and translations
 - <img src="./asset/icon/rule.svg" width="24px" align="center" /> `Linter` - Linter and formatting all kind of files
   - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Eslint` - Litner and formatting ts and js files
   - <img src="./asset/icon/check.svg" width="20px" align="center" /> `Stylelint` - Linter css files
@@ -226,6 +228,103 @@ file: **.example.staging.env**
 PORT=4321
 BASE_URL=http://localhost:$PORT
 ```
+
+<h3 id="i18n-configuration">i18n configuration</h3>
+
+1.- To start using i18n in this project you have to add the languages you want to support in the configuration file `src/global/configuration/site_configuration.ts`, here you will find an object with the key `languages`, also remenber to ser the default language to your preferences, you can set the languages like this:
+
+```ts
+const siteConfiguration =
+{
+  defaultLanguage: 'en',
+  languages:
+  {
+    en: 'English',
+    es: 'Español'
+  }
+}
+```
+
+2.- Next you will create in the `src/pages` a directory called `[language]`, here you will duplicate and put all the pages of your project, this is an example:
+
+```
+- /pages
+  - /[language]
+    - about-us.astro
+    - index.astro
+  - 404.astro
+  - about-us.astro
+  - index.astro
+```
+
+3.- The pages inside this directory will need to add an aditionnal validation for know if the language is correct and it is listeng in the configuration, you can add tis like this
+
+`pages/[language]/index.astro`
+
+```ts
+---
+import { getStaticLanguage } from '@global/util/language';
+
+export const getStaticPaths = getStaticLanguage;
+---
+```
+
+4.- Next you will create the translation files, we recommend to use ts files instead of json but you can aslo use json files
+
+```ts
+const aboutUsLocale =
+{
+  en:
+  {
+    welcome: 'Hello world',
+  },
+  es:
+  {
+    welcome: 'Hola mundo',
+  }
+};
+
+export { aboutUsLocale };
+```
+
+
+5.- To end you will use this file and make the translation, use this inside you component page and not in the `pages/**` components
+
+```ts
+---
+import { getI18n, getStaticLanguage, getLanguageFromUrl } from '@global/util/language';
+import { aboutUsLocale } from '@module/landing/locale/about_us';
+
+const language = getLanguageFromUrl(Astro.url);
+const i18n = getI18n(language, aboutUsLocale);
+---
+
+<h1>{i18n.welcome}</h1>
+```
+
+6.- Create the file `src/middleware.ts` and add the following code, this will redirect the default language urls to the base urls, and examples of this is, `/en/about-us` redirect to `/about-us`
+
+```ts
+import { getLanguagePathname, validateDefaultLanguage } from '@global/util/language';
+import { defineMiddleware } from 'astro/middleware';
+
+const onRequest = defineMiddleware(async (context, next) =>
+{
+  if(validateDefaultLanguage(context.url))
+  {
+    const pathname = getLanguagePathname(context.url);
+    const redirectCode = 302;
+
+    return Response.redirect(new URL(pathname, context.url), redirectCode);
+  }
+
+  return next();
+});
+
+export { onRequest };
+```
+
+That's all the configuration nedeed for i18n in this project.
 
 <p align="right">
   ( <a href="#astro-template-webpage">

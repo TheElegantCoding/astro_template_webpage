@@ -1,3 +1,4 @@
+import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
@@ -11,8 +12,11 @@ export default defineConfig({
     inlineStylesheets: 'never'
   },
   integrations:
-  [ sitemap() ],
-  output: 'server',
+  [
+    sitemap(),
+    partytown({ config: { forward: [ 'dataLayer.push' ] } })
+  ],
+  output: 'static',
   server:
   {
     host: true,
