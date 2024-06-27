@@ -23,7 +23,6 @@
 
 // 4. Base
 @import
-  './base/z_index',
   './base/typography',
   './base/base';
 
@@ -47,10 +46,13 @@
 // 9. Helper
 @import
   './helper/aspect_ratio',
+  './helper/z_index',
   './helper/object_fit',
   './helper/animation_delay',
   './helper/cursor',
   './helper/opacity',
   './helper/pointer_event',
   './helper/rotate',
+  './helper/overflow',
+  './helper/position',
   './helper/text_align';

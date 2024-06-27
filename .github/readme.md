@@ -1,11 +1,7 @@
 <img src="./asset/illustration/wave_header.svg" alt="wave" width="100%" align="center"/>
 
 <h1 id="astro-template-webpage">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./asset/icon/web.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./asset/icon/web.svg" />
-    <img src="./asset/icon/web.svg" width="32px" align="center" />
-  </picture>
+  <img src="./asset/icon/web.svg" width="32px" align="center" />
   Astro template webpage
 </h1>
 

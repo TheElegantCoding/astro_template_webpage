@@ -1,19 +1,13 @@
 @use 'sass:list';
 @use 'sass:string';
 
-@mixin font_face($name, $path, $weight: null, $style: null, $extension: woff2 woff ttf, $local_name: null)
+@mixin font_face($name, $path, $weight: null, $style: null, $extension: woff2 woff ttf, $local: null)
 {
   $source: null;
-  $local: null;
-
-  @if($local_name)
-  {
-    $local: local($local_name);
-  }
 
   @each $ext in $extension
   {
-    $source: list.append($source, local($name) url(string.quote($path + "." + $ext)) format(string.quote($ext)), comma);
+    $source: list.append($source, url(string.quote($path + "." + $ext)) format(string.quote($ext)), comma);
   }
 
   @font-face
@@ -22,6 +16,6 @@
     font-weight: $weight;
     font-style: $style;
     font-display: swap;
-    src: list.append($local, $source, comma);
+    src: local($local), list.append(null, $source, comma);
   }
 }

@@ -10,11 +10,7 @@ const siteConfiguration =
   defaultLanguage: 'en',
   description: '',
   googleAnalyticId: '',
-  languages:
-  {
-    en: 'English',
-    es: 'Español'
-  },
+  languages: {},
   siteName: ''
 };
 
