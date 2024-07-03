@@ -1,3 +1,4 @@
+/* eslint-disable github/prefer-observers */
 const momentumScroll = () =>
 {
   const scrollContainer = document.querySelector<HTMLDivElement>('.scroll-momentum');
@@ -21,10 +22,14 @@ const momentumScroll = () =>
     window.requestAnimationFrame(render);
   };
 
-  // eslint-disable-next-line github/prefer-observers
   window.addEventListener('scroll', () =>
   {
     scrollPosition = window.scrollY;
+  });
+
+  window.addEventListener('resize', () =>
+  {
+    document.body.style.height = `${scrollContainer?.clientHeight}px`;
   });
 
   window.requestAnimationFrame(render);
