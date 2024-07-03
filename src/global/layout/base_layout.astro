@@ -39,6 +39,14 @@ const language = getLanguageFromUrl(Astro.url);
     <title>{metaData.title}</title>
   </head>
   <body>
-    <slot />
+    <div class='scroll-momentum'>
+      <slot />
+    </div>
   </body>
 </html>
+
+<script>
+  import { momentumScroll } from '@global/util/scroll';
+
+  momentumScroll();
+</script>
