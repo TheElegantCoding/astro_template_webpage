@@ -1,5 +1,6 @@
 import elegantCoding from 'eslint-config-elegant-coding';
 
+// eslint-disable-next-line ts/no-unsafe-call
 export default elegantCoding({
   astro: true,
   html: true,

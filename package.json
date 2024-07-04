@@ -15,33 +15,35 @@
     "preinstall": "npx only-allow bun",
     "dev": "astro dev",
     "prod": "astro preview",
-    "build": "astro check && astro build",
-    "lint": "pnpm lint-eslint && pnpm lint-stylelint",
-    "lint-eslint": "eslint . --fix",
-    "lint-stylelint": "stylelint ./src/**/*.{scss,css} --fix",
-    "compress-svg": "svgo -f ./src/global/asset/icon ./src/global/asset/illustration"
+    "build": "rimraf ./dist && pnpm lint && astro check && astro build",
+    "lint": "pnpm lint:eslint && pnpm lint:stylelint",
+    "lint:eslint": "eslint . --fix",
+    "lint:stylelint": "stylelint ./src/**/*.{scss,css} --fix",
+    "compress:svg": "svgo -f ./src/global/asset/icon ./src/global/asset/illustration",
+    "deploy": "pnpm build && pnpm deploy:sync",
+    "deploy:sync": "aws s3 sync ./dist 's3://BUCKECT-NAME.com/'",
+    "deploy:invalidate": "aws cloudfront create-invalidation --distribution-id DISTRIBUTION-ID --paths '/*'"
   },
-  "dependencies": {
+  "devDependencies": {
     "@astrojs/check": "0.7.0",
     "@astrojs/partytown": "2.1.1",
     "@astrojs/rss": "4.0.7",
     "@astrojs/sitemap": "3.1.6",
-    "astro": "4.11.1"
-  },
-  "devDependencies": {
     "@fullhuman/postcss-purgecss": "6.0.0",
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
-    "@types/node": "20.14.8",
+    "@types/node": "20.14.9",
+    "astro": "4.11.5",
     "autoprefixer": "10.4.19",
     "eslint": "8.57.0",
     "eslint-config-elegant-coding": "8.1.0",
-    "postcss": "8.4.38",
+    "postcss": "8.4.39",
+    "rimraf": "5.0.7",
     "sass": "1.77.6",
     "stylelint": "16.6.1",
     "stylelint-config-elegant-coding": "4.1.3",
     "svgo": "3.3.2",
     "ts-node": "10.9.2",
-    "typescript": "5.5.2",
-    "vite": "5.3.1"
+    "typescript": "5.5.3",
+    "vite": "5.3.3"
   }
 }

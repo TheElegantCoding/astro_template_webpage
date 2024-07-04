@@ -17,21 +17,21 @@ type StructuredDataQuantitativeValue =
 
 type StructuredDataOrganization =
 {
-  url?: string;
-  name?: string;
+  url: string;
+  name: string;
   duns?: string;
   email?: string;
   naics?: string;
   vatID?: string;
+  sameAs?: URL[];
   leiCode?: string;
-  sameAs?: string[];
+  logo: URL | URL[];
   legalName?: string;
   telephone?: string;
   foundingData?: Date;
-  description?: string;
+  description: string;
   iso6523Code?: string;
   alternateName?: string;
-  logo: string | string[];
   '@type': 'Organization';
   globalLocationNumber?: string;
   contactPoint?: StructuredDataContactPoint;

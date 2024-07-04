@@ -146,6 +146,7 @@ Ditch the struggle and focus on what matters most - crafting impactful content t
 - <img src="./asset/icon/node.svg" width="20px" align="center" /> node >= **20.10.0**
 - <img src="./asset/icon/git.svg" width="20px" align="center" /> git >= **2.38**
 - <img src="./asset/icon/bun.svg" width="20px" align="center" /> bun >= **1.1.0**
+- <img src="./asset/icon/aws.svg" width="20px" align="center" /> aws cli >= **2.17.8**
 
 <p align="right">
   ( <a href="#astro-template-webpage">

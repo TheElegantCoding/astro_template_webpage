@@ -22,8 +22,8 @@ const {
 const icon = await import(`./../asset/icon/${name}.svg?raw`);
 
 const iconContent = icon.default.slice(icon.default.indexOf('>') + 1, icon.default.indexOf('</svg>'));
-const iconFormat = iconContent.replaceAll(/fill=".*"/gv, '');
-const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : undefined;
+const iconFormat = iconContent.replaceAll(/fill=".*?"/gv, '');
+const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : '';
 const iconRaw = `${iconTitle}${iconFormat}`;
 ---
 <svg
