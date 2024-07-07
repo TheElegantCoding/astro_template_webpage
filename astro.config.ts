@@ -12,10 +12,7 @@ export default defineConfig({
     inlineStylesheets: 'never'
   },
   integrations:
-  [
-    sitemap(),
-    partytown({ config: { forward: [ 'dataLayer.push' ] } })
-  ],
+  [ sitemap(), partytown({ config: { forward: [ 'dataLayer.push' ] } }) ],
   output: 'static',
   server:
   {

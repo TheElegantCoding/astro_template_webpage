@@ -19,9 +19,9 @@ const defaultAlternate = removeTrailingSlash(new URL(pathname, Astro.site));
     {(dataLanguage: string) => (
       <link
         rel='alternate'
-        href={dataLanguage === siteConfiguration.defaultLanguage ?
-          defaultAlternate :
-          removeTrailingSlash(new URL(`${dataLanguage}${pathname}`, Astro.site))}
+        href={dataLanguage === siteConfiguration.defaultLanguage
+          ? defaultAlternate
+          : removeTrailingSlash(new URL(`${dataLanguage}${pathname}`, Astro.site))}
         hreflang={dataLanguage}
       />
     )}

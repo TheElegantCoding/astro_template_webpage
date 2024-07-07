@@ -10,10 +10,12 @@ const animateElement = (element: HTMLElement, animation: string, observer: Inter
   observer.unobserve(element);
 };
 
-const animateImageOnLoad = (animation: string,
+const animateImageOnLoad = (
+  animation: string,
   image: HTMLImageElement,
   observer: IntersectionObserver,
-  filterImageChild: FilterImageChild[]) =>
+  filterImageChild: FilterImageChild[]
+) =>
 {
   const pictureContent = image.parentNode?.querySelector('.custom-image__content');
   const children = pictureContent?.querySelectorAll<HTMLElement>('[data-animate]');

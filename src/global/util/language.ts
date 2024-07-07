@@ -1,4 +1,3 @@
-/* eslint-disable security/detect-non-literal-regexp */
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { removeTrailingSlash } from '@global/util/link';
 

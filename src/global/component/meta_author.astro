@@ -8,7 +8,11 @@ const { author, copyright } = siteConfiguration;
 <Show when={author.name || author.email || author.web}>
   <meta
     name='author'
-    content={joinString([ author.name, author.email, author.web ])}
+    content={joinString([
+ author.name,
+author.email,
+author.web
+])}
   />
 </Show>
 <Show when={copyright}>

@@ -6,7 +6,7 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
   <script>
     import { getLanguageFromUrl, getLanguagePathname } from '@global/util/language';
 
-    const userLanguage = navigator.language;
+    const userLanguage = window.navigator.language;
     const currentUrl = new URL(window.location.href);
     const currentLanguage = getLanguageFromUrl(currentUrl);
     const currentPath = getLanguagePathname(currentUrl);
