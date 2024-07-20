@@ -260,3 +260,122 @@
     stroke-width: 1;
   }
 }
+
+.heart-beat
+{
+  animation: 1s heartBeat ease-in-out both;
+}
+
+@keyframes heartBeat
+{
+  0%
+  {
+    transform: scale(1);
+  }
+
+  14%
+  {
+    transform: scale(1.3);
+  }
+
+  28%
+  {
+    transform: scale(1);
+  }
+
+  42%
+  {
+    transform: scale(1.3);
+  }
+
+  70%
+  {
+    transform: scale(1);
+  }
+}
+
+.tada
+{
+  animation: 1s tada both;
+}
+
+@keyframes tada
+{
+  0%
+  {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20%
+  {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90%
+  {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80%
+  {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  100%
+  {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounce-in
+{
+  animation: 1.25s bounceIn both;
+}
+
+@keyframes bounceIn
+{
+  0%
+  {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+
+  20%
+  {
+    transform: scale3d(1.1, 1.1, 1.1);
+    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+
+  40%
+  {
+    transform: scale3d(0.9, 0.9, 0.9);
+    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+
+  60%
+  {
+    transform: scale3d(1.03, 1.03, 1.03);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+
+  80%
+  {
+    transform: scale3d(0.97, 0.97, 0.97);
+    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+
+  100%
+  {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+}
