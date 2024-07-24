@@ -5,19 +5,18 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "engines":
-  {
+  "engines": {
     "node": ">=20.10.0",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm",
     "pnpm": ">=8.0.0"
   },
-  "scripts":
-  {
+  "scripts": {
     "preinstall": "npx only-allow bun",
     "dev": "astro dev",
     "prod": "astro preview",
     "build": "rimraf ./dist && pnpm lint && astro check && astro build",
+    "build:test": "rimraf ./dist && astro build",
     "lint": "pnpm lint:eslint && pnpm lint:stylelint",
     "lint:eslint": "eslint . --fix",
     "lint:stylelint": "stylelint ./src/**/*.{scss,css} --fix",
@@ -26,27 +25,29 @@
     "deploy:sync": "aws s3 sync ./dist 's3://BUCKECT-NAME.com/'",
     "deploy:invalidate": "aws cloudfront create-invalidation --distribution-id DISTRIBUTION-ID --paths '/*'"
   },
-  "devDependencies":
-  {
-    "@astrojs/check": "0.7.0",
+  "devDependencies": {
+    "@astrojs/check": "0.8.2",
     "@astrojs/partytown": "2.1.1",
     "@astrojs/rss": "4.0.7",
     "@astrojs/sitemap": "3.1.6",
     "@fullhuman/postcss-purgecss": "6.0.0",
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
-    "@types/node": "20.14.10",
-    "astro": "4.11.5",
+    "@playform/inline": "0.0.7",
+    "@types/node": "20.14.12",
+    "astro": "4.12.2",
     "autoprefixer": "10.4.19",
+    "critical": "7.1.2",
+    "critters": "0.0.24",
     "eslint": "9.6.0",
     "eslint-config-elegant-coding": "9.0.4",
     "postcss": "8.4.39",
-    "rimraf": "5.0.8",
+    "rimraf": "6.0.1",
     "sass": "1.77.6",
     "stylelint": "16.6.1",
     "stylelint-config-elegant-coding": "4.1.4",
     "svgo": "3.3.2",
     "ts-node": "10.9.2",
-    "typescript": "5.5.3",
-    "vite": "5.3.3"
+    "typescript": "5.5.4",
+    "vite": "5.3.4"
   }
 }

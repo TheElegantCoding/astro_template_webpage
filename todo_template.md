@@ -50,7 +50,8 @@ Additional information
 
 - [ ] lighthouse test all pages
 
-## Configuration
+## Deploy
 
 - [ ] put in .env.production the url
 - [ ] set .htaccess rules correctly
+- [ ] set deploy variables in package.json

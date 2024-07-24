@@ -3,6 +3,8 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
 
+import { inline } from './script/module/inline/inline';
+
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
 
 export default defineConfig({
@@ -12,7 +14,11 @@ export default defineConfig({
     inlineStylesheets: 'never'
   },
   integrations:
-  [ sitemap(), partytown({ config: { forward: [ 'dataLayer.push' ] } }) ],
+  [
+    sitemap(),
+    partytown({ config: { forward: [ 'dataLayer.push' ] } }),
+    inline()
+  ],
   output: 'static',
   server:
   {
