@@ -22,7 +22,7 @@
     "lint:stylelint": "stylelint ./src/**/*.{scss,css} --fix",
     "compress:svg": "svgo -f ./src/global/asset/icon ./src/global/asset/illustration",
     "deploy": "pnpm build && pnpm deploy:sync",
-    "deploy:sync": "aws s3 sync ./dist 's3://BUCKECT-NAME.com/'",
+    "deploy:sync": "aws s3 sync ./dist 's3://BUCKECT-NAME.com/' --cache-control max-age=604800",
     "deploy:invalidate": "aws cloudfront create-invalidation --distribution-id DISTRIBUTION-ID --paths '/*'"
   },
   "devDependencies": {
@@ -32,11 +32,9 @@
     "@astrojs/sitemap": "3.1.6",
     "@fullhuman/postcss-purgecss": "6.0.0",
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
-    "@playform/inline": "0.0.7",
     "@types/node": "20.14.12",
     "astro": "4.12.2",
     "autoprefixer": "10.4.19",
-    "critical": "7.1.2",
     "critters": "0.0.24",
     "eslint": "9.6.0",
     "eslint-config-elegant-coding": "9.0.4",

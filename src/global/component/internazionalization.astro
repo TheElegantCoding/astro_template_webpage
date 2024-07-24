@@ -3,7 +3,7 @@ import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 ---
 <Show when={Object.keys(siteConfiguration.languages).length > 0}>
-  <script>
+  <script async>
     import { getLanguageFromUrl, getLanguagePathname } from '@global/util/language';
 
     const userLanguage = window.navigator.language;

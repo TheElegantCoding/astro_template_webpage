@@ -72,7 +72,7 @@ const imageUrl = `${baseUrl}${source}`;
   </Show>
 </picture>
 
-<script>
+<script async>
   const picture = document.querySelectorAll('.custom-image');
 
   picture.forEach((element) =>
@@ -88,11 +88,11 @@ const imageUrl = `${baseUrl}${source}`;
       content?.classList.remove('custom-image__content--disable');
     };
 
-    const onImageError = (event: Event) =>
+    const onImageError = (event) =>
     {
-      const currentImage = event.currentTarget as HTMLImageElement;
+      const currentImage = event.currentTarget;
 
-      currentImage.src = image?.src as string;
+      currentImage.src = image?.src;
     };
 
     if(image?.complete)

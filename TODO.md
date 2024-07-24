@@ -31,9 +31,9 @@
 - [x] vendor prefixes
 - [x] remove unused css
 - [x] join media queries
+- [x] critical css
 - [ ] class name shortener
-- [ ] critical css
-- [ ] split media query render (only large project)
+- [ ] split media queries (large project)
 
 ## Fonts
 
@@ -60,11 +60,11 @@
 ## Performance
 
 - [x] partytown
-- [ ] non-blocking css
-- [ ] non-blocking js
-- [ ] compress css
-- [ ] compress html
-- [ ] compress js
+- [x] non-blocking css
+- [x] non-blocking js
+- [x] compress css
+- [x] compress html
+- [x] compress js
 
 ## Component
 

@@ -17,7 +17,7 @@ export default defineConfig({
   [
     sitemap(),
     partytown({ config: { forward: [ 'dataLayer.push' ] } }),
-    inline()
+    inline({ prefixPath: environment.BASE_URL })
   ],
   output: 'static',
   server:
