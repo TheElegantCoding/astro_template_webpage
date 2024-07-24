@@ -15,7 +15,6 @@ In global configuration put this data
 Additional information
 
 - [ ] open graph protocol information for all pages
-- [ ] twitter card type
 - [ ] make the 404 page with the correct design
 
 ## Assets
