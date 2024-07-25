@@ -1,8 +1,8 @@
 @include font_face($name: 'Inter', $path: '/asset/font/inter/Inter-Light', $weight: 300, $local: 'Inter Light');
 @include font_face($name: 'Inter', $path: '/asset/font/inter/Inter-Regular', $weight: 400, $local: 'Inter');
 @include font_face($name: 'Inter', $path: '/asset/font/inter/Inter-SemiBold', $weight: 600, $local: 'Inter SemiBold');
-@include font_face($name: 'Inter', $path: '/asset/font/inter/Inter-Bold', $weight: 700, $local: 'Inter');
-@include font_face($name: 'Inter', $path: '/asset/font/inter/Inter-ExtraBold', $weight: 800, $local: 'Inter ExtraBold');
+@include font_face($name: 'Inter', $path: '/asset/font/inter/Inter-Bold', $weight: 700, $local: 'Inter Bold');
+@include font_face($name: 'Inter', $path: '/asset/font/inter/Inter-Black', $weight: 800, $local: 'Inter Black');
 
 h1
 {
