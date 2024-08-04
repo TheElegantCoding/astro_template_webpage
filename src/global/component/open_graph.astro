@@ -88,7 +88,7 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
   property='og:locale'
   content={currentLanguage}
 />
-<Show when={Object.keys(languages).length > 0}>
+<Show when={Object.keys(languages).length > 1}>
   <For each={Object.keys(languages)}>
     {(dataLanguage: string) => (
       <meta

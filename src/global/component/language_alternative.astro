@@ -14,7 +14,7 @@ const defaultAlternate = removeTrailingSlash(new URL(pathname, Astro.site));
   href={defaultAlternate}
   hreflang='x-default'
 />
-<Show when={Object.keys(siteConfiguration.languages).length > 0}>
+<Show when={Object.keys(siteConfiguration.languages).length > 1}>
   <For each={Object.keys(siteConfiguration.languages)}>
     {(dataLanguage: string) => (
       <link
