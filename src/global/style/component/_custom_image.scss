@@ -1,26 +1,16 @@
 .custom-image
 {
   position: relative;
-  display: block;
-}
-
-.custom-image__tag
-{
-  display: block;
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.custom-image__tag--illustration
-{
-  aspect-ratio: auto;
+  display: inline-block;
+  border-radius: $rounded_small;
+  transition: opacity 0.5s, visibility 0.5s;
 }
 
 .custom-image__skeleton
 {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }

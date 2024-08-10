@@ -15,13 +15,15 @@ import BaseLayout from '@global/layout/base_layout.astro';
     title: `${siteConfiguration.siteName} | Pagina no encontrada`
   }}
 >
-  <main class='not-found base-layout'>
+  <div class='not-found base-layout'>
     <h1 class='not-found__letter'>404</h1>
     <div class='not-found__container'>
       <div class='not-found__container-title'>
         <p class='not-found__title'>Oops</p>
         <CustomImage
           alt='face thinking'
+          width={120}
+          height={120}
           src='/asset/image/emoji_thinking_face.png'
           class='not-found__emoji'
         />
@@ -35,5 +37,5 @@ import BaseLayout from '@global/layout/base_layout.astro';
         Volver al inicio
     </Link>
     </div>
-  </main>
+  </div>
 </BaseLayout>

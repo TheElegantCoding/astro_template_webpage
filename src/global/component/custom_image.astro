@@ -10,67 +10,60 @@ type Props = HTMLAttributes<'img'> &
 {
   readonly src: string;
   readonly alt: string;
-  readonly webp?: boolean;
-  readonly avif?: boolean;
+  readonly width: number;
   readonly class?: string;
+  readonly height: number;
   readonly priority?: boolean;
   readonly disableLoader?: boolean;
+  readonly formats?: Array<'avif' | 'webp'>;
   readonly classStyle?: Partial<Record<'skeleton' | 'container', string>>;
 };
 
 const {
   alt,
-  avif = true,
   class: classImage,
   classStyle,
   disableLoader,
+  formats = [ 'avif', 'webp' ],
+  height,
   priority = false,
   src: source,
-  webp = true,
+  width,
   ...rest
 } = Astro.props;
 
 const baseUrl = removeTrailingSlash(Astro.site as URL);
 const imageUrl = `${baseUrl}${source}`;
 ---
-<picture
-  class='custom-image'
-  class:list={[ classStyle?.container ]}
->
-  <Show when={avif}>
-    <source
-      type='image/avif'
-      srcset={replaceExtension(imageUrl, 'avif')}
+<div class='custom-image' class:list={[ classStyle?.container ]}>
+  <picture>
+    <Show when={formats.includes('avif')}>
+      <source type='image/avif' srcset={replaceExtension(imageUrl, 'avif')} />
+    </Show>
+    <Show when={formats.includes('webp')}>
+      <source type='image/webp' srcset={replaceExtension(imageUrl, 'webp')} />
+    </Show>
+    <img
+      src={imageUrl}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding={priority ? 'auto' : 'async'}
+      fetchpriority={priority ? 'high' : 'auto'}
+      class:list={classImage}
+      {...rest}
     />
-  </Show>
-  <Show when={webp}>
-    <source
-      type='image/webp'
-      srcset={replaceExtension(imageUrl, 'webp')}
-    />
-  </Show>
+  </picture>
   <Show when={!disableLoader}>
-    <Skeleton
-      class='custom-image__skeleton'
-      class:list={[ classStyle?.skeleton ]}
-    />
+    <Skeleton class='custom-image__skeleton' class:list={[ classStyle?.skeleton ]} />
   </Show>
-  <img
-    src={imageUrl}
-    alt={alt}
-    loading={priority ? 'eager' : 'lazy'}
-    decoding={priority ? 'auto' : 'async'}
-    fetchpriority={priority ? 'high' : 'auto'}
-    class='custom-image__tag'
-    class:list={[ classImage ]}
-    {...rest}
-  />
   <Show when={Astro.slots.has('default')}>
     <div class='custom-image__content custom-image__content--disable'>
       <slot />
     </div>
   </Show>
-</picture>
+</div>
 
 <script>
   const picture = document.querySelectorAll('.custom-image');

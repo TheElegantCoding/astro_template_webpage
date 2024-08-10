@@ -1,4 +1,5 @@
 ---
+import CustomImage from '@global/component/custom_image.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
 <BaseLayout
@@ -9,4 +10,20 @@ import BaseLayout from '@global/layout/base_layout.astro';
   }}
 >
   <h1 class='header'>Hola mundo</h1>
+  <div class='test-custom-image__container'>
+    <CustomImage
+      src='/asset/image/image_placeholder.png'
+      alt=''
+      height={100}
+      width={100}
+    >
+      <p data-animate='fade-in-up'>Hola</p>
+    </CustomImage>
+  </div>
 </BaseLayout>
+
+<script>
+  import { animate } from '@global/util/animation';
+
+  animate();
+</script>
