@@ -1,6 +1,6 @@
 ---
 import CustomImage from '@global/component/custom_image.astro';
-import Link from '@global/component/link.astro';
+import CustomLink from '@global/component/custom_link.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
@@ -30,12 +30,12 @@ import BaseLayout from '@global/layout/base_layout.astro';
       </div>
       <p class='not-found__subtitle'>Algo salió mal, creo que estas perdido</p>
       <p class='not-found__description'>Error 404 página no encontrada</p>
-      <Link
+      <CustomLink
         class='not-found__button'
         href='/'
       >
         Volver al inicio
-    </Link>
+      </CustomLink>
     </div>
   </div>
 </BaseLayout>
