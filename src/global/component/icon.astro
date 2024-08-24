@@ -24,13 +24,13 @@ const icon = await import(`./../asset/icon/${name}.svg?raw`);
 const iconContent = icon.default.slice(icon.default.indexOf('>') + 1, icon.default.indexOf('</svg>'));
 const iconFormat = iconContent.replaceAll(/fill=".*?"/gv, '');
 const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : '';
-const iconRaw = `${iconTitle}${iconFormat}`;
+const iconRaw = title ? `${iconTitle}${iconFormat}` : iconFormat;
 ---
 <svg
   viewBox='0 0 64 64'
   width={size}
   height={size}
-  aria-label={capitalizeFirst(title ?? '')}
+  aria-label={title && capitalizeFirst(title)}
   class:list={classIcon}
   xmlns='http://www.w3.org/2000/svg'
   set:html={iconRaw}

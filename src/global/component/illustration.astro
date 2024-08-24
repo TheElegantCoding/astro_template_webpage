@@ -6,7 +6,7 @@ import type { HTMLAttributes } from 'astro/types';
 type Props = HTMLAttributes<'svg'> &
 {
   readonly name: string;
-  readonly title: string;
+  readonly title?: string;
   readonly class?: string;
 };
 
@@ -23,13 +23,13 @@ const iconContent = icon.default.slice(icon.default.indexOf('>') + 1, icon.defau
 const iconWidth = icon.default.match(/width="(?<width>.*?)(?="|$)/v)[1];
 const iconHeight = icon.default.match(/height="(?<height>.*?)(?="|$)/v)[1];
 const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : undefined;
-const iconRaw = `${iconTitle}${iconContent}`;
+const iconRaw = iconTitle ? `${iconTitle}${iconContent}` : iconContent;
 ---
 <svg
   viewBox={`0 0 ${iconWidth} ${iconHeight}`}
   width={iconWidth}
   height={iconHeight}
-  aria-label={capitalizeFirst(title)}
+  aria-label={title && capitalizeFirst(title)}
   class:list={classIcon}
   xmlns='http://www.w3.org/2000/svg'
   set:html={iconRaw}

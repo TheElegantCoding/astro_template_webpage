@@ -6,16 +6,11 @@ import MetaData from '@global/component/meta_data.astro';
 import StructuredData from '@global/component/structured_data.astro';
 import { getLanguageFromUrl } from '@global/util/language';
 
-import type { MetaDataProps } from '@global/component/meta_data.astro';
-import type { StructuredDataProps } from '@global/type/structured_data/structured_data_props';
+import type { BaseLayoutProps } from '@global/type/base_layout_type';
 
 import '../style/main.scss';
 
-type Props<T> =
-{
-  readonly metaData?: MetaDataProps;
-  readonly structuredData?: StructuredDataProps<T>;
-};
+type Props<T> = BaseLayoutProps<T>;
 
 const {
   metaData,
