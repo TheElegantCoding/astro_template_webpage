@@ -4,14 +4,14 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
 ---
 <Show when={siteConfiguration.googleAnalyticId && import.meta.env.MODE !== 'development'}>
   <script
-    type='text/partytown'
     async
     is:inline
+    type='text/partytown'
     src={`https://www.googletagmanager.com/gtag/js?id=${siteConfiguration.googleAnalyticId}`}
   />
   <script
-    type='text/partytown'
     is:inline
+    type='text/partytown'
     define:vars={{ siteConfiguration }}
   >
     window.dataLayer ||= [];

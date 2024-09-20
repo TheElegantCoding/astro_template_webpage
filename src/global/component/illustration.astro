@@ -26,12 +26,12 @@ const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : undefined
 const iconRaw = iconTitle ? `${iconTitle}${iconContent}` : iconContent;
 ---
 <svg
-  viewBox={`0 0 ${iconWidth} ${iconHeight}`}
   width={iconWidth}
+  set:html={iconRaw}
   height={iconHeight}
-  aria-label={title && capitalizeFirst(title)}
   class:list={classIcon}
   xmlns='http://www.w3.org/2000/svg'
-  set:html={iconRaw}
+  viewBox={`0 0 ${iconWidth} ${iconHeight}`}
+  aria-label={title && capitalizeFirst(title)}
   {...rest}
 />

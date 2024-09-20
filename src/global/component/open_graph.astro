@@ -36,11 +36,11 @@ const {
   image,
   profile,
   title,
+  type = 'website',
   twitter =
   {
     type: 'summary_large_image'
-  },
-  type = 'website'
+  }
 } = Astro.props;
 
 const baseUrl = removeTrailingSlash(Astro.site as URL);
@@ -65,24 +65,24 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
   />
 </Show>
 <meta
-  property='og:title'
   content={title}
+  property='og:title'
 />
 <meta
-  property='og:type'
   content={type}
+  property='og:type'
 />
 <meta
-  property='og:description'
   content={description}
+  property='og:description'
 />
 <meta
   property='og:url'
   content={canonicalURL}
 />
 <meta
-  property='og:site_name'
   content={siteName}
+  property='og:site_name'
 />
 <meta
   property='og:locale'
@@ -92,8 +92,8 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
   <For each={Object.keys(languages)}>
     {(dataLanguage: string) => (
       <meta
-        property='og:locale:alternate'
         content={dataLanguage}
+        property='og:locale:alternate'
       />
     )}
   </For>
@@ -141,30 +141,30 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
 <Show when={type === 'article'}>
   <Show when={article?.publishedTime}>
     <meta
-      property='article:published_time'
       content={article?.publishedTime}
+      property='article:published_time'
     />
   </Show>
   <Show when={article?.modifiedTime}>
     <meta
-      property='article:modified_time'
       content={article?.modifiedTime}
+      property='article:modified_time'
     />
   </Show>
   <Show when={article?.expirationTime}>
     <meta
-      property='article:expiration_time'
       content={article?.expirationTime}
+      property='article:expiration_time'
     />
   </Show>
   <Show when={(article?.author ?? [])?.length > 0}>
     <For each={article?.author}>
       {(dataAuthor: OpenGraphProfileType) => (
         <OpenGraphProfile
-          firstName={dataAuthor?.firstName}
           gender={dataAuthor?.gender}
           lastName={dataAuthor?.lastName}
           username={dataAuthor?.username}
+          firstName={dataAuthor?.firstName}
         />
       )}
     </For>
@@ -179,8 +179,8 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
     <For each={article?.tag}>
       {(dataTag: string) => (
         <meta
-          property='article:tag'
           content={dataTag}
+          property='article:tag'
         />
       )}
     </For>
@@ -191,10 +191,10 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
     <For each={book?.author}>
       {(dataAuthor: OpenGraphProfileType) => (
         <OpenGraphProfile
-          firstName={dataAuthor?.firstName}
           gender={dataAuthor?.gender}
           lastName={dataAuthor?.lastName}
           username={dataAuthor?.username}
+          firstName={dataAuthor?.firstName}
         />
       )}
     </For>
@@ -207,16 +207,16 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
   </Show>
   <Show when={book?.releaseDate}>
     <meta
-      property='book:release_date'
       content={book?.releaseDate}
+      property='book:release_date'
     />
   </Show>
   <Show when={(book?.tag ?? [])?.length > 0}>
     <For each={book?.tag}>
       {(dataTag: string) => (
         <meta
-          property='book:tag'
           content={dataTag}
+          property='book:tag'
         />
       )}
     </For>
@@ -224,9 +224,9 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
 </Show>
 <Show when={type === 'profile'}>
   <OpenGraphProfile
-    firstName={profile?.firstName}
     gender={profile?.gender}
     lastName={profile?.lastName}
     username={profile?.username}
+    firstName={profile?.firstName}
   />
 </Show>

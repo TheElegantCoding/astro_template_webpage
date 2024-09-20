@@ -44,14 +44,14 @@ const imageUrl = `${baseUrl}${source}`;
       <source type='image/webp' srcset={replaceExtension(imageUrl, 'webp')} />
     </Show>
     <img
-      src={imageUrl}
       alt={alt}
       width={width}
+      src={imageUrl}
       height={height}
+      class:list={classImage}
       loading={priority ? 'eager' : 'lazy'}
       decoding={priority ? 'auto' : 'async'}
       fetchpriority={priority ? 'high' : 'auto'}
-      class:list={classImage}
       {...rest}
     />
   </picture>
