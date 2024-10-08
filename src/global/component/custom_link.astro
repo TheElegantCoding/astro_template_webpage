@@ -11,10 +11,10 @@ type Props = HTMLAttributes<'a'> &
 };
 
 const {
- href,
- rel: relationship,
- target,
- ...rest
+  href,
+  rel: relationship,
+  target,
+  ...rest
 } = Astro.props;
 
 const link = externalLink({

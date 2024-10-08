@@ -1,3 +1,4 @@
+/// <reference path="../.astro/types.d.ts" />
 type ImportMetaEnv =
 {
   readonly PORT: number;
