@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
-import Critters from 'critters';
+import Beasties from 'beasties';
 
 import { getAllFile } from '../../global/util/file';
 
@@ -17,7 +17,7 @@ const inlineCss = async ({ directory, prefixPath }: InlineCss) =>
   const distributionPath = fileURLToPath(directory);
   const htmlFile = getAllFile(distributionPath, [ '.html' ]);
 
-  const critters = new Critters({
+  const beasties = new Beasties({
     inlineFonts: true,
     logLevel: 'silent',
     path: distributionPath,
@@ -29,9 +29,9 @@ const inlineCss = async ({ directory, prefixPath }: InlineCss) =>
   {
     const fileContent = fs.readFileSync(file).toString();
 
-    const inlined = await critters.process(fileContent);
+    const inlined = await beasties.process(fileContent);
 
-    await writeFile(file, Buffer.from(inlined.replace('data-critters-container', ''), 'utf8'));
+    await writeFile(file, Buffer.from(inlined.replace('data-beasties-container', ''), 'utf8'));
   }));
 };
 
