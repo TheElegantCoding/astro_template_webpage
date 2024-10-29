@@ -9,6 +9,7 @@
     "mrmlnc.vscode-scss",
     "streetsidesoftware.code-spell-checker-spanish",
     "stylelint.vscode-stylelint",
+    "oxc.oxc-vscode",
     "redhat.vscode-yaml"
   ]
 }
