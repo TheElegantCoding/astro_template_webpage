@@ -1,5 +1,6 @@
 {
-  "recommendations": [
+  "recommendations":
+  [
     "astro-build.astro-vscode",
     "streetsidesoftware.code-spell-checker",
     "webben.browserslist",
@@ -10,6 +11,7 @@
     "streetsidesoftware.code-spell-checker-spanish",
     "stylelint.vscode-stylelint",
     "oxc.oxc-vscode",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "bradlc.vscode-tailwindcss"
   ]
 }

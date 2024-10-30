@@ -1,0 +1,78 @@
+@font-face
+{
+  font-family: 'Inter';
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter'),
+    url('/asset/font/inter/Inter-Regular.woff2') format('woff2'),
+    url('/asset/font/inter/Inter-Regular.woff') format('woff'),
+    url('/asset/font/inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face
+{
+  font-family: 'Inter';
+  font-weight: 600;
+  font-display: swap;
+  src: local('Inter SemiBold'),
+    url('/asset/font/inter/Inter-SemiBold.woff2') format('woff2'),
+    url('/asset/font/inter/Inter-SemiBold.woff') format('woff'),
+    url('/asset/font/inter/Inter-SemiBold.ttf') format('truetype');
+}
+
+@font-face
+{
+  font-family: 'Inter';
+  font-weight: 700;
+  font-display: swap;
+  src: local('Inter Bold'),
+    url('/asset/font/inter/Inter-bold.woff2') format('woff2'),
+    url('/asset/font/inter/Inter-bold.woff') format('woff'),
+    url('/asset/font/inter/Inter-bold.ttf') format('truetype');
+}
+
+@font-face
+{
+  font-family: 'Inter';
+  font-weight: 800;
+  font-display: swap;
+  src: local('Inter Black'),
+    url('/asset/font/Inter/Inter-Black.woff2') format('woff2'),
+    url('/asset/font/Inter/Inter-Black.woff') format('woff'),
+    url('/asset/font/Inter/Inter-Black.ttf') format('truetype');
+}
+
+h1
+{
+  @apply text-h1;
+}
+
+h2
+{
+  @apply text-h2;
+}
+
+h3
+{
+  @apply text-h3;
+}
+
+h4
+{
+  @apply text-h4;
+}
+
+h5
+{
+  @apply text-h5;
+}
+
+h6
+{
+  @apply text-base;
+}
+
+p
+{
+  @apply text-base;
+}

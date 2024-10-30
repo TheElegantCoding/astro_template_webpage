@@ -1,0 +1,9 @@
+@import './base/base.css';
+@import './base/typography.css';
+
+@import './component/animation.css';
+@import './helper/animation_delay.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

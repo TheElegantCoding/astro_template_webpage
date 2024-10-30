@@ -1,5 +1,6 @@
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
 
@@ -16,8 +17,14 @@ export default defineConfig({
   integrations:
   [
     sitemap(),
-    partytown({ config: { forward: [ 'dataLayer.push' ] } }),
-    inline({ prefixPath: environment.BASE_URL })
+    partytown({
+      config:
+      {
+        forward: [ 'dataLayer.push' ]
+      }
+    }),
+    inline({ prefixPath: environment.BASE_URL }),
+    tailwind({ applyBaseStyles: false })
   ],
   output: 'static',
   server:
