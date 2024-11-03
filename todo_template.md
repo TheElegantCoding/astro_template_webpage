@@ -20,6 +20,7 @@ Additional information
 ## Assets
 
 - [ ] change favicon icon for the original
+- [ ] change the site name in the site.webmanifest inside favicon folder
 - [ ] change the font for your requirements
   - [ ] public global asset
   - [ ] src/global/styles/base/typography.scss
