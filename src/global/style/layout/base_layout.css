@@ -1,0 +1,10 @@
+@layer utilities
+{
+  .base-layout
+  {
+    @apply px-32;
+    @apply xl:px-48;
+    @apply 2xl:px-64;
+    @apply max-w-196;
+  }
+}

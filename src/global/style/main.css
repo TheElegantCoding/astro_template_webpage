@@ -2,6 +2,7 @@
 @import './base/typography.css';
 
 @import './component/animation.css';
+@import './layout/base_layout.css';
 @import './helper/animation_delay.css';
 
 @tailwind base;
