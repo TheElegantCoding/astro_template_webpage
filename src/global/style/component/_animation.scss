@@ -1,3 +1,5 @@
+@use '@global/style/global' as *;
+
 .fade-in
 {
   opacity: 0;
@@ -252,21 +254,53 @@
   }
 }
 
-.flip-x
+.flip-in-x
 {
   transform: scaleX(-1);
 }
 
-.flip-x-animation
+.flip-in-x-animation
 {
-  animation: flipX 1.2s ease-out both;
+  animation: flipInX 1.2s ease-out both;
 }
 
-@keyframes flipX
+@keyframes flipInX
 {
+  0%
+  {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+
   100%
   {
-    transform: scaleX(1);
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.flip-in-y
+{
+  transform: scaleX(-1);
+}
+
+.flip-in-y-animation
+{
+  animation: flipInY 1.2s ease-out both;
+}
+
+@keyframes flipInY
+{
+  0%
+  {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+
+  100%
+  {
+    transform: rotateX(0deg);
+    opacity: 1;
   }
 }
 
@@ -361,86 +395,229 @@
 
 .tada
 {
-  transform: scale3d(1, 1, 1);
+  transform: scale(1);
 }
 
 .tada-animation
 {
-  animation: 1s tada both;
+  animation: tada 1s ease-in-out both;
 }
 
 @keyframes tada
 {
-  10%,
+  0%
+  {
+    transform: scale(1);
+  }
+
+  10%
+  {
+    transform: scale(0.9) rotate(-3deg);
+  }
+
   20%
   {
-    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale(0.9) rotate(-3deg);
   }
 
-  30%,
-  50%,
-  70%,
-  90%
+  30%
   {
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-  }
-
-  40%,
-  60%,
-  80%
-  {
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-  }
-
-  100%
-  {
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.bounce-in
-{
-  transform: scale3d(0.3, 0.3, 0.3);
-  opacity: 0;
-  animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
-}
-
-.bounce-in-animation
-{
-  animation: 1.25s bounceIn both;
-}
-
-@keyframes bounceIn
-{
-  20%
-  {
-    transform: scale3d(1.1, 1.1, 1.1);
-    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+    transform: scale(1.1) rotate(3deg);
   }
 
   40%
   {
-    transform: scale3d(0.9, 0.9, 0.9);
-    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  50%
+  {
+    transform: scale(1.1) rotate(3deg);
   }
 
   60%
   {
-    transform: scale3d(1.03, 1.03, 1.03);
-    opacity: 1;
-    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  70%
+  {
+    transform: scale(1.1) rotate(3deg);
   }
 
   80%
   {
-    transform: scale3d(0.97, 0.97, 0.97);
-    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  90%
+  {
+    transform: scale(1.1) rotate(3deg);
   }
 
   100%
   {
-    transform: scale3d(1, 1, 1);
+    transform: scale(1) rotate(0);
+  }
+}
+
+.float
+{
+  transform: translateY(0);
+}
+
+.float-animation
+{
+  animation: float 1s ease-in-out both;
+}
+
+@keyframes float
+{
+  0%
+  {
+    transform: translateY(0);
+  }
+
+  50%
+  {
+    transform: translateY(-10px);
+  }
+
+  100%
+  {
+    transform: translateY(0);
+  }
+}
+
+.jiggle
+{
+  transform: translateY(0);
+}
+
+.jiggle-animation
+{
+  animation: jiggle 0.5s ease-in-out both;
+}
+
+@keyframes jiggle
+{
+  0%
+  {
+    transform: rotate(-3deg);
+  }
+
+  50%
+  {
+    transform: rotate(3deg);
+  }
+
+  100%
+  {
+    transform: rotate(-3deg);
+  }
+}
+
+.sink
+{
+  transform: translateY(0);
+}
+
+.sink-animation
+{
+  animation: sink 1s ease-in-out both;
+}
+
+@keyframes sink
+{
+  0%
+  {
+    transform: translateY(-10px);
+  }
+
+  50%
+  {
+    transform: translateY(0);
+  }
+
+  100%
+  {
+    transform: translateY(-10px);
+  }
+}
+
+.slide-rotate-in
+{
+  transform: translateX(-20px) rotate(-90deg);
+  opacity: 0;
+}
+
+.slide-rotate-in-animation
+{
+  animation: slideRotateIn 0.6s ease-out both;
+}
+
+@keyframes slideRotateIn
+{
+  0%
+  {
+    transform: translateX(-20px) rotate(-90deg);
+    opacity: 0;
+  }
+
+  100%
+  {
+    transform: translateX(0) rotate(0deg);
     opacity: 1;
-    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+}
+
+.slide-rotate-out
+{
+  transform: translateY(0);
+}
+
+.slide-rotate-out-animation
+{
+  animation: slideRotateOut 0.6s ease-out both;
+}
+
+@keyframes slideRotateOut
+{
+  0%
+  {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    transform: translateX(20px) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+.swing-drop-in
+{
+  transform: rotate(-30deg) translateY(-50px);
+  opacity: 0;
+}
+
+.swing-drop-in-animation
+{
+  animation: swingDropIn  0.6s ease-out both;
+}
+
+@keyframes swingDropIn
+{
+  0%
+  {
+    transform: rotate(-30deg) translateY(-50px);
+    opacity: 0;
+  }
+
+  100%
+  {
+    transform: rotate(0deg) translateY(0);
+    opacity: 1;
   }
 }

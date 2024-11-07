@@ -1,5 +1,13 @@
+/* stylelint-disable order/order */
+@use '@global/style/global' as *;
+
 .base-layout
 {
+  max-width: 192rem;
+  margin: auto;
+  padding-right: $spacing_32;
+  padding-left: $spacing_32;
+
   @include responsive(tablet)
   {
     padding-right: $spacing_48;
@@ -11,9 +19,4 @@
     padding-right: $spacing_64;
     padding-left: $spacing_64;
   }
-
-  max-width: 192rem;
-  margin: auto;
-  padding-right: $spacing_32;
-  padding-left: $spacing_32;
 }

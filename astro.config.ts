@@ -1,3 +1,5 @@
+import { resolve } from 'node:path';
+
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
@@ -6,6 +8,8 @@ import { loadEnv } from 'vite';
 import { inline } from './script/module/inline/inline';
 
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
+
+const dirname = resolve();
 
 export default defineConfig({
   build:
@@ -29,6 +33,24 @@ export default defineConfig({
   trailingSlash: 'never',
   vite:
   {
-    envDir: './src/global/env'
+    css:
+    {
+      preprocessorOptions:
+      {
+        scss:
+        {
+          api: 'modern-compiler'
+        }
+      }
+    },
+    envDir: './src/global/env',
+    resolve:
+    {
+      alias:
+      {
+        '@global/': resolve(dirname, './src/global'),
+        '@module/': resolve(dirname, './src/module')
+      }
+    }
   }
 });

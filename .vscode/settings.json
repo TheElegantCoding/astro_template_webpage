@@ -1,6 +1,7 @@
 {
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
+  "editor.codeActionsOnSave":
+  {
     "source.fixAll": "explicit",
     "source.addMissingImports": "explicit",
     "source.fixAll.eslint": "explicit",
@@ -12,7 +13,8 @@
   "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "eslint.validate": [
+  "eslint.validate":
+  [
     "javascript",
     "javascriptreact",
     "astro",
@@ -34,6 +36,11 @@
     },
     {
       "rule": "tailwind/*",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "perfectionist/*",
       "severity": "off",
       "fixable": true
     },

@@ -1,3 +1,5 @@
+@use './color' as *;
+
 $shadow_down_black_100: 0 0.2rem 2rem 0 rgba($black, 0.05);
 $shadow_down_black_200: 0 0.1rem 0.3rem rgba($black, 0.1), 0 0.1rem 0.2rem rgba($black, 0.1);
 $shadow_down_black_300: 0 0.4rem 0.6rem rgba($black, 0.1), 0 0.2rem 0.4rem rgba($black, 0.1);
@@ -27,7 +29,7 @@ $shadow_left_black_500: -2.5rem 0 2rem rgba($black, 0.1), -1rem 0 0.8rem rgba($b
 $shadow_left_black_600: -2.5rem 0 5rem rgba($black, 0.25);
 
 $shadow_center_black_100: 0 0.2rem 0.2rem 0 rgba($black, 0.05);
-$shadow_center_black_200: 0 0.1rem 0.2rem -0.1px rgba($black, 0.1), 0 0.1rem 0.3rem 0 rgba($black, 0.1);
+$shadow_center_black_200: 0 0.1rem 0.2rem -0.1rem rgba($black, 0.1), 0 0.1rem 0.3rem 0 rgba($black, 0.1);
 $shadow_center_black_300: 0 0.2rem 0.4rem -0.2rem rgba($black, 0.1), 0 0.4rem 0.6rem -0.1rem rgba($black, 0.1);
 $shadow_center_black_400: 0 0.4rem 0.6rem -0.4rem rgba($black, 0.1), 0 1.5rem 1rem -0.3rem rgba($black, 0.1);
 $shadow_center_black_500: 0 1rem 0.8rem -0.6rem rgba($black, 0.1), 0 2.5rem 2rem -0.5rem rgba($black, 0.1);
