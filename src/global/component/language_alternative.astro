@@ -7,7 +7,7 @@ import { removeTrailingSlash } from '@global/util/link';
 
 const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
 const pathname = getLanguagePathname(new URL(canonicalURL));
-const defaultAlternate = removeTrailingSlash(new URL(pathname, Astro.site));
+const defaultAlternate = removeTrailingSlash(new URL(siteConfiguration.defaultLanguage, Astro.site));
 ---
 <link
   rel='alternate'
