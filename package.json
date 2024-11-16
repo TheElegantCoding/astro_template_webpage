@@ -32,21 +32,20 @@
     "@astrojs/rss": "4.0.9",
     "@astrojs/sitemap": "3.2.1",
     "@fullhuman/postcss-purgecss": "6.0.0",
-    "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
     "@types/node": "22.9.0",
-    "astro": "4.16.10",
+    "astro": "4.16.13",
     "autoprefixer": "10.4.20",
     "beasties": "^0.1.0",
     "eslint": "9.14.0",
     "eslint-config-elegant-coding": "9.8.0",
-    "postcss": "8.4.47",
+    "postcss": "8.4.49",
     "rimraf": "6.0.1",
-    "sass": "1.80.6",
+    "sass": "1.81.0",
     "stylelint": "16.10.0",
     "stylelint-config-elegant-coding": "6.0.0",
     "svgo": "3.3.2",
     "ts-node": "10.9.2",
     "typescript": "5.6.3",
-    "vite": "5.4.10"
+    "vite": "5.4.11"
   }
 }

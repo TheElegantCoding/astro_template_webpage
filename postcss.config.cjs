@@ -1,12 +1,10 @@
 const autoprefixer = require('autoprefixer');
-const mqpacker = require('@hail2u/css-mqpacker');
 const purgecss = require('@fullhuman/postcss-purgecss');
 
 module.exports =
 {
   plugins: [
     autoprefixer(),
-    mqpacker(),
     purgecss({
       content: [
         './src/**/*.html',

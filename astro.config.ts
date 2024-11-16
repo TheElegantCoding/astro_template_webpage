@@ -19,7 +19,7 @@ export default defineConfig({
   },
   integrations:
   [
-    sitemap(),
+    sitemap({ lastmod: new Date() }),
     partytown({ config: { forward: [ 'dataLayer.push' ] } }),
     inline({ prefixPath: environment.BASE_URL })
   ],
