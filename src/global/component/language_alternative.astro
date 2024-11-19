@@ -7,22 +7,19 @@ import { removeTrailingSlash } from '@global/util/link';
 
 const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
 const pathname = getLanguagePathname(new URL(canonicalURL));
-const defaultAlternate = removeTrailingSlash(new URL(siteConfiguration.defaultLanguage, Astro.site));
 ---
 <link
   rel='alternate'
+  href={canonicalURL}
   hreflang='x-default'
-  href={defaultAlternate}
 />
 <Show when={Object.keys(siteConfiguration.languages).length > 1}>
   <For each={Object.keys(siteConfiguration.languages)}>
-    {(dataLanguage: string) => (
+    {(dataLanguage: string) => dataLanguage !== siteConfiguration.defaultLanguage && (
       <link
         rel='alternate'
         hreflang={dataLanguage}
-        href={dataLanguage === siteConfiguration.defaultLanguage
-          ? defaultAlternate
-          : removeTrailingSlash(new URL(`${dataLanguage}${pathname}`, Astro.site))}
+        href={removeTrailingSlash(new URL(`${dataLanguage}${pathname}`, Astro.site))}
       />
     )}
   </For>

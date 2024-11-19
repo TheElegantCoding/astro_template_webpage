@@ -1,12 +1,14 @@
 import fs from 'node:fs';
 
-import { getAllFile } from 'script/global/util/file';
+import { getAllFile } from '@script/global/util/file';
 import { optimize } from 'svgo';
 
 const compressSvg = () =>
 {
   const publicSvgImage = getAllFile('./public', [ '.svg' ]);
   const assetSvgImage = getAllFile('./src/global/asset', [ '.svg' ]);
+
+  console.log('svg public images', publicSvgImage);
 
   const svg = [ ...publicSvgImage, ...assetSvgImage ];
 

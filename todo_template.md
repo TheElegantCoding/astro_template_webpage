@@ -41,7 +41,6 @@ Additional information
 
 - [ ] put google analytics
 - [ ] register website in search console
-- [ ] change sitemap url in robots.txt
 - [ ] make structured data for more info see this [guide](https://developers.google.com/search/docs/appearance/structured-data/search-gallery)
 - [ ] test rich result [here](https://search.google.com/test/rich-results)
 

@@ -45,8 +45,8 @@
 - [x] always add alt
 - [x] lazy load
 - [x] always plain svg
-- [ ] compress image
 - [ ] compress svg
+- [ ] compress image
 - [ ] transform img to webp and avif
 
 ## SEO

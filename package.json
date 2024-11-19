@@ -21,7 +21,7 @@
     "lint": "pnpm lint:eslint && pnpm lint:stylelint",
     "lint:eslint": "eslint . --fix",
     "lint:stylelint": "stylelint ./src/**/*.{scss,css} --fix",
-    "compress:svg": "svgo -f ./src/global/asset/icon ./src/global/asset/illustration",
+    "compress:svg": "node --loader ts-node/esm ./script/module/compression/svg.ts",
     "deploy": "pnpm build && pnpm deploy:sync",
     "deploy:sync": "aws s3 sync ./dist 's3://BUCKECT-NAME.com/' --cache-control max-age=604800",
     "deploy:invalidate": "aws cloudfront create-invalidation --distribution-id DISTRIBUTION-ID --paths '/*'"
@@ -44,7 +44,6 @@
     "stylelint": "16.10.0",
     "stylelint-config-elegant-coding": "6.0.0",
     "svgo": "3.3.2",
-    "ts-node": "10.9.2",
     "typescript": "5.6.3",
     "vite": "5.4.11"
   }

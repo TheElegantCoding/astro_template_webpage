@@ -9,7 +9,8 @@
     "paths": {
       "@global/*": [ "src/global/*" ],
       "@module/*": [ "src/module/*" ],
-      "@public/*": [ "public/*" ]
+      "@public/*": [ "public/*" ],
+      "@script/*": [ "script/*" ]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
