@@ -51,7 +51,7 @@
 
 ## SEO
 
-- [x] sitemap generator
+- [ ] sitemap generator
 - [x] robots.txt
 - [x] sitemap in robot
 - [x] Google search console

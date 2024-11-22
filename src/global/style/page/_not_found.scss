@@ -60,6 +60,7 @@
 {
   font-size: $h1;
   text-align: center;
+
   @include font_weight(extra_bold);
 
   @include responsive(desktop)

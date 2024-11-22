@@ -13,5 +13,6 @@ body
   font-size: $h6;
   color: $gray_950;
   background-color: $gray_100;
+
   @include font_weight(regular);
 }
