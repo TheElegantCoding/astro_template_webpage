@@ -7,7 +7,8 @@ import BaseLayout from '@global/layout/base_layout.astro';
 <BaseLayout
   metaData={{
     description: 'La página que solicitaste parece haberse tomado unas vacaciones. Regrese a la página de inicio y continúe su viaje.',
-    keywords: [
+    keywords:
+    [
       '404, pagina no encontrada',
       'volver al inicio',
       '404 error'
@@ -16,26 +17,40 @@ import BaseLayout from '@global/layout/base_layout.astro';
   }}
 >
   <div class='not-found base-layout'>
-    <h1 class='not-found__letter'>404</h1>
+    <h1 data-animate='zoom-in-animation' class='not-found__letter zoom-in'>404</h1>
     <div class='not-found__container'>
       <div class='not-found__container-title'>
-        <p class='not-found__title'>Oops</p>
+        <p class='not-found__title fade-in-up' data-animate='fade-in-up-animation animation-delay-20'>
+          Oops
+        </p>
         <CustomImage
           width={120}
           height={120}
           alt='face thinking'
-          class='not-found__emoji'
+          class='not-found__emoji fade-in-up'
           src='/asset/image/emoji_thinking_face.png'
+          data-animate='fade-in-up-animation animation-delay-20'
         />
       </div>
-      <p class='not-found__subtitle'>Algo salió mal, creo que estas perdido</p>
-      <p class='not-found__description'>Error 404 página no encontrada</p>
+      <p class='not-found__subtitle fade-in-up' data-animate='fade-in-up-animation animation-delay-40'>
+        Algo salió mal, creo que estas perdido
+      </p>
+      <p class='not-found__description fade-in-up' data-animate='fade-in-up-animation animation-delay-60'>
+        Error 404 página no encontrada
+      </p>
       <CustomLink
         href='/'
-        class='not-found__button'
+        class='not-found__button fade-in-up'
+        data-animate='fade-in-up-animation animation-delay-80'
       >
         Volver al inicio
       </CustomLink>
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  import { animate } from "@global/util/animation";
+
+  animate();
+</script>

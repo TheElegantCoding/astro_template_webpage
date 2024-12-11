@@ -31,9 +31,9 @@
   flex-direction: column;
   align-items: center;
   padding: $spacing_40;
-  background-color: rgba($gray_200, 0.5);
+  background-color: rgba($gray_300, 0.5);
   backdrop-filter: blur($spacing_2);
-  border: $spacing_1 solid $gray_100;
+  border: $spacing_1 solid $gray_400;
   border-radius: $rounded_medium;
   box-shadow: $shadow_down_black_200;
 
@@ -113,9 +113,20 @@
 {
   margin-top: $spacing_40;
   padding: $spacing_8 $spacing_32;
-  color: $gray_950;
-  border: $spacing_2 solid $gray_950;
+  color: $gray_100;
+  background-color: $gray_950;
   border-radius: $rounded_large;
+  transition: transform 0.5s;
 
   @include font_weight(semi_bold);
+
+  &:hover
+  {
+    transform: scale(1.05);
+  }
+
+  &:active
+  {
+    transform: scale(0.95);
+  }
 }
