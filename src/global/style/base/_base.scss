@@ -3,12 +3,15 @@
 html
 {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
   font-size: 62.5%;
 }
 
 body
 {
   overflow-x: hidden;
+  width: 100%;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: $h6;
   color: $gray_950;
