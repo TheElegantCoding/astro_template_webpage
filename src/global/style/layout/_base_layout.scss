@@ -19,3 +19,21 @@
     padding-left: $spacing_64;
   }
 }
+
+.section
+{
+  padding-top: $spacing_80;
+  padding-bottom: $spacing_80;
+
+  @include responsive(tablet)
+  {
+    padding-top: $spacing_128;
+    padding-bottom: $spacing_128;
+  }
+
+  @include responsive(small_desktop)
+  {
+    padding-top: $spacing_160;
+    padding-bottom: $spacing_160;
+  }
+}
