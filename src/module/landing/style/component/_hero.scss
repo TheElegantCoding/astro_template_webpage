@@ -3,4 +3,11 @@
 .hero
 {
   background-color: $amber_100;
+
+  @include font_weight(extra_bold);
+
+  @include responsive(tablet)
+  {
+    background-color: $amber_200;
+  }
 }
