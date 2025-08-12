@@ -1,28 +1,21 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
+    "jsx": "preserve",
     "baseUrl": "./",
     "rootDir": "./",
-    "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-
     "paths": {
       "@global/*": [ "src/global/*" ],
       "@module/*": [ "src/module/*" ],
       "@public/*": [ "public/*" ],
       "@script/*": [ "script/*" ]
     },
-    "strict": true,
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
     "allowJs": true,
-    "jsx": "preserve",
+    "strict": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
@@ -41,8 +34,14 @@
     "noUnusedParameters": true,
     "useUnknownInCatchVariables": true,
     "newLine": "lf",
+    "noEmit": true,
     "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
   },
-  "exclude": ["./dist"],
-  "include": ["./.astro/types.d.ts", "./**/*"]
+  "include": [ "./.astro/types.d.ts", "./**/*" ],
+  "exclude": [ "./dist" ]
 }
