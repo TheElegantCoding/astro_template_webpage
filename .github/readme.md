@@ -1,7 +1,7 @@
 <img src="./asset/illustration/wave_header.svg" alt="wave" width="100%" align="center"/>
 
 <h1 id="astro-template-webpage">
-  <img src="./asset/icon/web.svg" width="32px" align="center" />
+  <img src="./asset/icon/web.svg" width="40px" align="center" />
   Astro template webpage
 </h1>
 
@@ -18,29 +18,29 @@
 <br />
 
 <div align="center">
-  <img src="./asset/badget/node_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/vite_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/npm_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/bun_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/markdown_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/typescript_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/astro_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/browserlist_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/editorconfig_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/eslint_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/stylelint_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/css_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/postcss_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/sass_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/autoprefixer_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/normalize_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/svgo_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/i18n_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/git_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/github_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/aws_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/s3_badget.svg" height="32px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/badget/cloudfront_badget.svg" height="32px" />
+  <img src="./asset/badget/node_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/vite_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/npm_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/bun_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/markdown_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/typescript_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/astro_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/browserlist_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/editorconfig_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/eslint_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/stylelint_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/css_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/postcss_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/sass_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/autoprefixer_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/normalize_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/svgo_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/i18n_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/git_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/github_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/aws_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/s3_badget.svg" height="40px" />&nbsp;&nbsp;&nbsp;
+  <img src="./asset/badget/cloudfront_badget.svg" height="40px" />
 </div>
 
 ---
