@@ -1,4 +1,4 @@
-const socialMedia =
+const socialNetwork =
 {
   gmail: '',
   instagram: '',
@@ -6,4 +6,4 @@ const socialMedia =
   whatsapp: ''
 };
 
-export { socialMedia };
+export { socialNetwork };

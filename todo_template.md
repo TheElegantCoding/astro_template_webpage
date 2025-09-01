@@ -27,6 +27,7 @@ Additional information
 ## Git repo
 
 - [ ] change cover image in readme
+- [ ] add cover social preview in github
 - [ ] change description in readme
 - [ ] put tags in github repo
 - [ ] put description in github repo
