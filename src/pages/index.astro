@@ -1,5 +1,4 @@
 ---
-import CustomImage from '@global/component/custom_image.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
 <BaseLayout
@@ -10,20 +9,12 @@ import BaseLayout from '@global/layout/base_layout.astro';
   }}
 >
   <h1 class='header'>Hola mundo</h1>
-  <div class='test-custom-image__container'>
-    <CustomImage
-      alt=''
-      width={100}
-      height={100}
-      src='/asset/image/image_placeholder.png'
-    >
-      <p data-animate='fade-in-up'>Hola</p>
-    </CustomImage>
-  </div>
 </BaseLayout>
 
 <script>
   import { animate } from '@global/util/animation';
+  import { smoothScroll } from '@global/util/scroll';
 
   animate();
+  smoothScroll();
 </script>
