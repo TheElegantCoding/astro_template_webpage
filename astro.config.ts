@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
 
-import { inline } from './script/module/inline/inline';
+import { inline } from './script/inline/inline';
 
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
 

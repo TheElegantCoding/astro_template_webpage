@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 import Beasties from 'beasties';
 
-import { getAllFile } from '../../global/util/file';
+import { getAllFile } from '../../util/file';
 
 type InlineCss =
 {
