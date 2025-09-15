@@ -4,18 +4,18 @@ import { fileURLToPath } from 'node:url';
 
 import Beasties from 'beasties';
 
-import { getAllFile } from '../../util/file';
+import { findAllFiles } from '../util/file';
 
 type InlineCss =
-{
-  directory: URL;
-  prefixPath?: string;
-};
+  {
+    directory: URL;
+    prefixPath?: string;
+  };
 
 const inlineCss = async ({ directory, prefixPath }: InlineCss) =>
 {
   const distributionPath = fileURLToPath(directory);
-  const htmlFile = getAllFile(distributionPath, [ '.html' ]);
+  const htmlFile = findAllFiles('.html', 'dist');
 
   const beasties = new Beasties({
     inlineFonts: true,
