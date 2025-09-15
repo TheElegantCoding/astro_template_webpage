@@ -391,15 +391,39 @@ Your app is ready to be deployed.
 
 The following scripts are available in the `package.json`:
 
-- `preinstall`: This script is for only allow pnpm as package manager
-- `postinstall`: This script is for setting up the git hooks and validate the error after commit to github
-- `dev`: This script is for see the webpage in dev mode
-- `staging`: This script is for see production, this run the env variables an set the webpage with all the settings
-- `build-dev`: This script compile the project in dev mode
-- `build`: This script is for build in production
-- `lint`: This script is for format and lint all the files
-- `lint-eslint`: This script is for lint ts, tsx and more files
-- `lint-stylelint`: This script is for lint css files
+### Project Management & Quality Control
+
+- **`preinstall`**: Enforces the use of **pnpm** as the exclusive package manager.
+- **`postinstall`**: Sets up Git hooks to validate code on commit.
+- **`check`**: Performs a comprehensive type check for the entire project.
+- **`lint`**: A combined script for formatting and linting all files.
+- **`lint:eslint`**: Specifically lints and formats TypeScript and JavaScript files.
+- **`lint:stylelint`**: Lints and formats CSS and related stylesheet files.
+
+---
+
+### Development & Production
+
+- **`dev`**: Starts the development server with live reloading.
+- **`prod`**: Runs a full production pipeline: type checks, linting, asset compression, and a final build.
+- **`build`**: Creates a production-ready build of the project.
+
+---
+
+### Asset Optimization
+
+- **`compress:convert`**: A master script for optimizing typography, images, and illustrations.
+- **`compress:svg`**: Compresses SVG images, icons, and illustrations.
+- **`convert:typography`**: Converts TTF font files to WOFF and WOFF2 formats.
+- **`convert:image`**: Converts PNG images to WebP and AVIF formats.
+
+---
+
+### Deployment Pipeline
+
+- **`deploy`**: Runs a production build and synchronizes the output to an S3 bucket.
+- **`deploy:sync`**: Syncs the build output to an S3 bucket.
+- **`deploy:invalidate`**: Invalidates the CloudFront cache to propagate changes.
 
 <p align="right">
   ( <a href="#astro-template-webpage">
