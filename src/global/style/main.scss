@@ -2,7 +2,6 @@
 
 // Base
 @use './base/typography';
-
 @use './base/base';
 
 // Layout
@@ -10,11 +9,8 @@
 
 // Component
 @use './component/animation';
-
 @use './component/skeleton';
-
 @use './component/custom_image';
-
 @use './component/scrollbar';
 
 // Page
@@ -25,25 +21,14 @@
 
 // Helper
 @use './helper/aspect_ratio';
-
 @use './helper/z_index';
-
 @use './helper/object_fit';
-
 @use './helper/animation_delay';
-
 @use './helper/cursor';
-
 @use './helper/opacity';
-
 @use './helper/pointer_event';
-
 @use './helper/rotate';
-
 @use './helper/overflow';
-
 @use './helper/position';
-
 @use './helper/text_align';
-
 @use './helper/display';

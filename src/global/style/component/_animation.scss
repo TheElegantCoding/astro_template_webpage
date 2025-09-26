@@ -1,118 +1,74 @@
 @use '@global/style/global' as *;
 
-.fade-in
+.text-in-up
 {
-  opacity: 0;
+  transform: translateY(100%);
 }
 
-.fade-in-animation
+.text-in-up-animation
 {
-  animation: fadeIn 1.2s ease-in both;
+  animation: textInUp 1.2s ease-in-out both;
 }
 
-@keyframes fadeIn
-{
-  100%
-  {
-    opacity: 1;
-  }
-}
-
-.fade-out
-{
-  opacity: 1;
-}
-
-.fade-out-animation
-{
-  animation: fadeOut 1.2s ease-in both;
-}
-
-@keyframes fadeOut
-{
-  100%
-  {
-    opacity: 0;
-  }
-}
-
-.fade-in-up
-{
-  transform: translateY($spacing_32);
-  opacity: 0;
-}
-
-.fade-in-up-animation
-{
-  animation: fadeInUp 1.2s ease-in-out both;
-}
-
-@keyframes fadeInUp
+@keyframes textInUp
 {
   100%
   {
     transform: translateY(0);
-    opacity: 1;
   }
 }
 
-.fade-in-down
+.text-in-down
 {
-  transform: translateY(-$spacing_32);
-  opacity: 0;
+  transform: translateY(-100%);
 }
 
-.fade-in-down-animation
+.text-in-down-animation
 {
-  animation: fadeInDown 1.2s ease-in-out both;
+  animation: textInDown 1.2s ease-in-out both;
 }
 
-@keyframes fadeInDown
+@keyframes textInDown
+{
+  100%
+  {
+    transform: translateX(0);
+  }
+}
+
+.text-in-left
+{
+  transform: translateX(-100%);
+}
+
+.text-in-left-animation
+{
+  animation: textInLeft 1.2s ease-in-out both;
+}
+
+@keyframes textInLeft
 {
   100%
   {
     transform: translateY(0);
-    opacity: 1;
   }
 }
 
-.fade-in-left
+.text-in-right
 {
-  transform: translateX(-$spacing_32);
-  opacity: 0;
+  transform: translateX(100%);
 }
 
-.fade-in-left-animation
+.text-in-right-animation
 {
-  animation: fadeInLeft 1.2s ease-in-out both;
+  animation: textInLeft 1.2s ease-in-out both;
 }
 
-@keyframes fadeInLeft
+@keyframes textInRight
 {
   100%
   {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.fade-in-right
-{
-  transform: translateX($spacing_32);
-  opacity: 0;
-}
-
-.fade-in-right-animation
-{
-  animation: fadeInRight 1.2s ease-in-out both;
-}
-
-@keyframes fadeInRight
-{
-  100%
-  {
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -225,6 +181,86 @@
   {
     transform: scale(0.5);
     opacity: 0;
+  }
+}
+
+.zoom-in-down
+{
+  transform: scale(0.5) translateY(100%);
+  opacity: 0;
+}
+
+.zoom-in-down-animation
+{
+  animation: zoomInDown 1.2s ease-out both;
+}
+
+@keyframes zoomInDown
+{
+  100%
+  {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.zoom-in-up
+{
+  transform: scale(0.5) translateY(-100%);
+  opacity: 0;
+}
+
+.zoom-in-up-animation
+{
+  animation: zoomInUp 1.2s ease-out both;
+}
+
+@keyframes zoomInUp
+{
+  100%
+  {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.zoom-in-left
+{
+  transform: scale(0.5) translateX(-100%);
+  opacity: 0;
+}
+
+.zoom-in-left-animation
+{
+  animation: zoomInLeft 1.2s ease-out both;
+}
+
+@keyframes zoomInLeft
+{
+  100%
+  {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+.zoom-in-right
+{
+  transform: scale(0.5) translateX(-100%);
+  opacity: 0;
+}
+
+.zoom-in-right-animation
+{
+  animation: zoomInRight 1.2s ease-out both;
+}
+
+@keyframes zoomInRight
+{
+  100%
+  {
+    transform: scale(1) translateX(0);
+    opacity: 1;
   }
 }
 
@@ -619,5 +655,201 @@
   {
     transform: rotate(0deg) translateY(0);
     opacity: 1;
+  }
+}
+
+.bounce-animation
+{
+  animation: bounce 1s ease-in-out both;
+}
+
+@keyframes bounce
+{
+  0%,
+  20%,
+  53%,
+  100%
+  {
+    transform: translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+
+  40%,
+  43%
+ {
+    transform: translate3d(0, -30px, 0) scaleY(1.1);
+    animation-timing-function: cubic-bezier(0.75, 0.05, 0.85, 0.06);
+  }
+
+  70%
+ {
+    transform: translate3d(0, -15px, 0) scaleY(1.05);
+    animation-timing-function: cubic-bezier(0.75, 0.05, 0.85, 0.06);
+  }
+
+  80%
+ {
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+    transition-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+  }
+
+  90%
+  {
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
+  }
+}
+
+.text-blur
+{
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-animation
+{
+  animation: textBlur 1.2s ease-in-out both;
+}
+
+@keyframes textBlur
+{
+  100%
+  {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.text-blur-down
+{
+  transform: translateY(-100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-down-animation
+{
+  animation: textBlurDown 1.2s ease-in-out both;
+}
+
+@keyframes textBlurDown
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.text-blur-up
+{
+  transform: translateY(100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-up-animation
+{
+  animation: textBlurUp 1.2s ease-in-out both;
+}
+
+@keyframes textBlurUp
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.text-blur-right
+{
+  transform: translateX(100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-right-animation
+{
+  animation: textBlurRight 1.2s ease-in-out both;
+}
+
+@keyframes textBlurRight
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.text-blur-left
+{
+  transform: translateX(100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-left-animation
+{
+  animation: textBlurLeft 1.2s ease-in-out both;
+}
+
+@keyframes textBlurLeft
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.container
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: $xl4;
+}
+
+.text-split
+{
+  transform: translate3d(0, 30%, 0);
+  display: inline-block;
+  font-size: $xl4;
+  white-space: nowrap;
+  animation: paragraphSplit 0.6s both;
+}
+
+@keyframes paragraphSplit
+{
+  20%
+  {
+    transform: translate3d(-20%);
+  }
+
+  40%
+  {
+    transform: translate3d(0, 20%, 0);
+  }
+
+  60%
+  {
+    transform: translate3d(0, -10%, 0);
+  }
+
+  80%
+  {
+    transform: translate3d(0, 10%, 0);
+  }
+
+  100%
+  {
+    transform: translate3d(0, 0, 0);
   }
 }

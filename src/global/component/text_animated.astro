@@ -1,0 +1,26 @@
+---
+type Props = {
+  text: string;
+  class?: string;
+  classContainer?: string;
+};
+
+const {
+  class: classTextAnimated,
+  classContainer,
+  text,
+  ...rest
+} = Astro.props;
+const animationDelay = 0.04;
+---
+<p class:list={classContainer}>
+  {text.split(' ').map((word, index) => (
+    <span
+      class:list={classTextAnimated}
+      style={`animation-delay: ${index * animationDelay}s`}
+      {...rest}
+    >
+      {word}
+    </span>
+  ))}
+</p>
