@@ -19,3 +19,10 @@ body
 
   @include font_weight(regular);
 }
+
+[data-animate]
+{
+  transform: none;
+  opacity: 0;
+  transition: none;
+}

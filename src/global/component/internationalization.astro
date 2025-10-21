@@ -2,22 +2,24 @@
 import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 ---
-<Show when={Object.keys(siteConfiguration.languages).length > 0}>
-  <script>
-    import { getLanguageFromUrl, getLanguagePathname } from '@global/util/language';
+<Show when={Object.keys(siteConfiguration.languages).length > 1}>
+  <script is:inline>
+    import { getLanguageFromUrl, getLanguagePathname, validateLanguage } from '@global/util/language';
+    import { removeTrailingSlash } from '@global/util/link';
 
-    const userLanguage = window.navigator.language;
+    const userLanguage = validateLanguage(window.navigator.language);
     const currentUrl = new URL(window.location.href);
     const currentLanguage = getLanguageFromUrl(currentUrl);
     const currentPath = getLanguagePathname(currentUrl);
     const storageLanguage = localStorage.getItem('language');
+    console.log('User Language:', userLanguage);
 
     const changeCurrentLanguage = () =>
     {
       if(userLanguage !== currentLanguage && !storageLanguage)
       {
         localStorage.setItem('language', userLanguage);
-        window.location.href = `/${userLanguage}${currentPath}`;
+        window.location.replace(removeTrailingSlash(`/${userLanguage}${currentPath}`));
       }
     };
 

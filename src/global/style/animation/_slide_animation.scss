@@ -1,0 +1,129 @@
+@use '@global/style/global' as *;
+
+[data-animate].slide-in-up-animation
+{
+  transform: translateY($spacing_32);
+}
+
+.slide-in-up-animation
+{
+  animation: slideInUp 1.2s ease-in-out both;
+}
+
+@keyframes slideInUp
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].slide-in-down-animation
+{
+  transform: translateY(-$spacing_32);
+}
+
+.slide-in-down-animation
+{
+  animation: slideInDown 1.2s ease-in-out both;
+}
+
+@keyframes slideInDown
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].slide-in-left-animation
+{
+  transform: translateX(-$spacing_32);
+}
+
+.slide-in-left-animation
+{
+  animation: slideInLeft 1.2s ease-in-out both;
+}
+
+@keyframes slideInLeft
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].slide-in-right-animation
+{
+  transform: translateX($spacing_32);
+}
+
+.slide-in-right-animation
+{
+  animation: slideInRight 1.2s ease-in-out both;
+}
+
+@keyframes slideInRight
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].slide-rotate-in-animation
+{
+  transform: translateX(-20px) rotate(-90deg);
+  opacity: 0;
+}
+
+.slide-rotate-in-animation
+{
+  animation: slideRotateIn 0.6s ease-out both;
+}
+
+@keyframes slideRotateIn
+{
+  0%
+  {
+    transform: translateX(-20px) rotate(-90deg);
+    opacity: 0;
+  }
+
+  100%
+  {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+[data-animate].slide-rotate-out-animation
+{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-rotate-out-animation
+{
+  animation: slideRotateOut 0.6s ease-out both;
+}
+
+@keyframes slideRotateOut
+{
+  0%
+  {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    transform: translateX(20px) rotate(90deg);
+    opacity: 0;
+  }
+}

@@ -3,8 +3,7 @@ import { removeTrailingSlash } from '@global/util/link';
 
 const { defaultLanguage, languages } = siteConfiguration;
 
-type LanguageParameters =
-{
+type LanguageParameters = {
   params: Record<string, string>;
 };
 
@@ -17,6 +16,16 @@ const getLanguageFromUrl = (url: URL): LanguageType =>
   if(urlLang && urlLang in languages)
   {
     return urlLang as LanguageType;
+  }
+
+  return defaultLanguage as LanguageType;
+};
+
+const validateLanguage = (language: string): LanguageType =>
+{
+  if(language in languages)
+  {
+    return language as LanguageType;
   }
 
   return defaultLanguage as LanguageType;
@@ -79,6 +88,7 @@ const getI18n = <T>(language: LanguageType, languageModule: Record<string, T>): 
 
 export {
   getI18n,
+  validateLanguage,
   getStaticLanguage,
   getLanguageFromUrl,
   getLanguagePathname,

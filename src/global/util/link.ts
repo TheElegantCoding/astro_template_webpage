@@ -1,15 +1,13 @@
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { getLanguageFromUrl, addLanguageToPathname } from '@global/util/language';
 
-type LinkType =
-{
+type LinkType = {
   href: URL | string;
   rel: string | undefined;
   target: string | undefined;
 };
 
-type ExternalLinkParameter =
-{
+type ExternalLinkParameter = {
   url: URL;
   target?: string;
   href: URL | string;
@@ -25,7 +23,7 @@ const languageLink = (url: URL, link: LinkType) =>
 {
   const languageHref = link;
 
-  if(Object.keys(siteConfiguration.languages).length > 0)
+  if(Object.keys(siteConfiguration.languages).length > 1)
   {
     const language = getLanguageFromUrl(url);
 
@@ -66,8 +64,7 @@ const externalLink = ({
   url
 }: ExternalLinkParameter): LinkType =>
 {
-  let link: LinkType =
-  {
+  let link: LinkType = {
     href: removeTrailingSlash(new URL(href, site)),
     rel: undefined,
     target: undefined

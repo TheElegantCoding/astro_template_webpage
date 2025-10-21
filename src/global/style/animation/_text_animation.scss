@@ -1,0 +1,223 @@
+@use '@global/style/global' as *;
+
+[data-animate].text-in-up-animation
+{
+  transform: translateY(100%);
+}
+
+.text-in-up-animation
+{
+  animation: textInUp 1.2s ease-in-out both;
+}
+
+@keyframes textInUp
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].text-in-down-animation
+{
+  transform: translateY(-100%);
+}
+
+.text-in-down-animation
+{
+  animation: textInDown 1.2s ease-in-out both;
+}
+
+@keyframes textInDown
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].text-in-left-animation
+{
+  transform: translateX(-100%);
+}
+
+.text-in-left-animation
+{
+  animation: textInLeft 1.2s ease-in-out both;
+}
+
+@keyframes textInLeft
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].text-in-right-animation
+{
+  transform: translateX(100%);
+}
+
+.text-in-right-animation
+{
+  animation: textInRight 1.2s ease-in-out both;
+}
+
+@keyframes textInRight
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].text-blur-animation
+{
+  transform: none;
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-animation
+{
+  animation: textBlur 1.2s ease-in-out both;
+}
+
+@keyframes textBlur
+{
+  100%
+  {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+[data-animate].text-blur-down-animation
+{
+  transform: translateY(-100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-down-animation
+{
+  animation: textBlurDown 1.2s ease-in-out both;
+}
+
+@keyframes textBlurDown
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+[data-animate].text-blur-up-animation
+{
+  transform: translateY(100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-up-animation
+{
+  animation: textBlurUp 1.2s ease-in-out both;
+}
+
+@keyframes textBlurUp
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+[data-animate].text-blur-right-animation
+{
+  transform: translateX(100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-right-animation
+{
+  animation: textBlurRight 1.2s ease-in-out both;
+}
+
+@keyframes textBlurRight
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+[data-animate].text-blur-left-animation
+{
+  transform: translateX(-100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-left-animation
+{
+  animation: textBlurLeft 1.2s ease-in-out both;
+}
+
+@keyframes textBlurLeft
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.text-split
+{
+  transform: translate3d(0, 30%, 0);
+  display: inline-block;
+  font-size: $xl4;
+  white-space: nowrap;
+  animation: paragraphSplit 0.6s both;
+}
+
+@keyframes paragraphSplit
+{
+  20%
+  {
+    transform: translate3d(-20%);
+  }
+
+  40%
+  {
+    transform: translate3d(0, 20%, 0);
+  }
+
+  60%
+  {
+    transform: translate3d(0, -10%, 0);
+  }
+
+  80%
+  {
+    transform: translate3d(0, 10%, 0);
+  }
+
+  100%
+  {
+    transform: translate3d(0, 0, 0);
+  }
+}

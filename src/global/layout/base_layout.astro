@@ -1,6 +1,7 @@
 ---
 import Favicon from '@global/component/favicon.astro';
 import GoogleAnalytic from '@global/component/google_analytic.astro';
+import Internationalization from '@global/component/internationalization.astro';
 import LanguageAlternative from '@global/component/language_alternative.astro';
 import MetaData from '@global/component/meta_data.astro';
 import StructuredData from '@global/component/structured_data.astro';
@@ -29,6 +30,7 @@ const language = getLanguageFromUrl(Astro.url);
     <LanguageAlternative />
     <Favicon />
     <StructuredData schema={structuredData} />
+    <Internationalization />
     <GoogleAnalytic />
     <slot name='head' />
     <title>{metaData.title}</title>

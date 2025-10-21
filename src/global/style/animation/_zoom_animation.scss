@@ -1,0 +1,121 @@
+@use '@global/style/global' as *;
+
+[data-animate].zoom-in-animation
+{
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+.zoom-in-animation
+{
+  animation: zoomIn 1.2s ease-out both;
+}
+
+@keyframes zoomIn
+{
+  100%
+  {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+[data-animate].zoom-out-animation
+{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.zoom-out-animation
+{
+  animation: zoomOut 1.2s ease-out both;
+}
+
+@keyframes zoomOut
+{
+  100%
+  {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+[data-animate].zoom-in-down-animation
+{
+  transform: scale(0.5) translateY(100%);
+  opacity: 0;
+}
+
+.zoom-in-down-animation
+{
+  animation: zoomInDown 1.2s ease-out both;
+}
+
+@keyframes zoomInDown
+{
+  100%
+  {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].zoom-in-up-animation
+{
+  transform: scale(0.5) translateY(-100%);
+  opacity: 0;
+}
+
+.zoom-in-up-animation
+{
+  animation: zoomInUp 1.2s ease-out both;
+}
+
+@keyframes zoomInUp
+{
+  100%
+  {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].zoom-in-left-animation
+{
+  transform: scale(0.5) translateX(-100%);
+  opacity: 0;
+}
+
+.zoom-in-left-animation
+{
+  animation: zoomInLeft 1.2s ease-out both;
+}
+
+@keyframes zoomInLeft
+{
+  100%
+  {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].zoom-in-right-animation
+{
+  transform: scale(0.5) translateX(100%);
+  opacity: 0;
+}
+
+.zoom-in-right-animation
+{
+  animation: zoomInRight 1.2s ease-out both;
+}
+
+@keyframes zoomInRight
+{
+  100%
+  {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}

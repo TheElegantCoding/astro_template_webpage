@@ -7,8 +7,14 @@
 // Layout
 @use './layout/base_layout';
 
+// Animation
+@use './animation/fade_animation';
+@use './animation/slide_animation';
+@use './animation/text_animation';
+@use './animation/special_animation';
+@use './animation/zoom_animation';
+
 // Component
-@use './component/animation';
 @use './component/skeleton';
 @use './component/custom_image';
 @use './component/scrollbar';

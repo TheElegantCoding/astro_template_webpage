@@ -1,0 +1,136 @@
+@use '@global/style/global' as *;
+
+.fade-in-animation
+{
+  animation: fadeIn 1.2s ease-in both;
+}
+
+@keyframes fadeIn
+{
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+[data-animate].fade-out-animation
+{
+  opacity: 1;
+}
+
+.fade-out-animation
+{
+  animation: fadeOut 1.2s ease-in both;
+}
+
+@keyframes fadeOut
+{
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+[data-animate].fade-in-up-animation
+{
+  transform: translateY($spacing_32);
+}
+
+.fade-in-up-animation
+{
+  animation: fadeInUp 1.2s ease-in-out both;
+}
+
+@keyframes fadeInUp
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].fade-in-down-animation
+{
+  transform: translateY(-$spacing_32);
+}
+
+.fade-in-down-animation
+{
+  animation: fadeInDown 1.2s ease-in-out both;
+}
+
+@keyframes fadeInDown
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].fade-in-left-animation
+{
+  transform: translateX(-$spacing_32);
+}
+
+.fade-in-left-animation
+{
+  animation: fadeInLeft 1.2s ease-in-out both;
+}
+
+@keyframes fadeInLeft
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].fade-in-right-animation
+{
+  transform: translateX($spacing_32);
+}
+
+.fade-in-right-animation
+{
+  animation: fadeInRight 1.2s ease-in-out both;
+}
+
+@keyframes fadeInRight
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-animate].fade-in-stroke-animation
+{
+  fill-opacity: 0;
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+}
+
+.fade-in-stroke-animation
+{
+  animation: fadeInStroke 2s ease-in forwards;
+}
+
+@keyframes fadeInStroke
+{
+  70%
+  {
+    fill-opacity: 0;
+  }
+
+  100%
+  {
+    fill-opacity: 1;
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+  }
+}

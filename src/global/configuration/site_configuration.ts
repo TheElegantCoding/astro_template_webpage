@@ -1,5 +1,4 @@
-const siteConfiguration =
-{
+const siteConfiguration = {
   author:
   {
     email: '',
@@ -7,11 +6,12 @@ const siteConfiguration =
     web: ''
   },
   copyright: `© ${new Date().getFullYear()} Astralys`,
-  defaultLanguage: 'en',
+  defaultLanguage: 'es',
   description: '',
   googleAnalyticId: '',
   languages:
   {
+    en: 'English',
     es: 'Español'
   },
   siteName: ''
