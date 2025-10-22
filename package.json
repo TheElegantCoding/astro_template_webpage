@@ -16,7 +16,7 @@
     "dev": "astro dev",
     "check": "astro check",
     "prod": "astro preview",
-    "build": "rimraf ./dist && astro check && pnpm compress:convert && astro build",
+    "build": "rimraf ./dist && astro check && astro build",
     "lint": "pnpm lint:eslint && pnpm lint:stylelint",
     "lint:eslint": "eslint . --fix",
     "lint:stylelint": "stylelint ./src/**/*.{scss,css} --fix",
