@@ -6,16 +6,15 @@ import Beasties from 'beasties';
 
 import { findAllFiles } from '../util/file';
 
-type InlineCss =
-  {
-    directory: URL;
-    prefixPath?: string;
-  };
+type InlineCss = {
+  directory: URL;
+  prefixPath?: string;
+};
 
 const inlineCss = async ({ directory, prefixPath }: InlineCss) =>
 {
   const distributionPath = fileURLToPath(directory);
-  const htmlFile = findAllFiles('.html', 'dist');
+  const htmlFile = findAllFiles('.html', distributionPath);
 
   const beasties = new Beasties({
     inlineFonts: true,
