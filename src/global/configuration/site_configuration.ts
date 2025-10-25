@@ -11,7 +11,6 @@ const siteConfiguration = {
   googleAnalyticId: '',
   languages:
   {
-    en: 'English',
     es: 'Español'
   },
   siteName: ''
