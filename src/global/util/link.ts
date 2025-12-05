@@ -12,6 +12,7 @@ type ExternalLinkParameter = {
   target?: string;
   href: URL | string;
   site: URL | undefined;
+  addLanguage?: boolean;
   relationship?: string;
 };
 
@@ -57,6 +58,7 @@ const validateExternalLink = (link: LinkType, href: URL | string, relationship?:
 };
 
 const externalLink = ({
+  addLanguage,
   href,
   relationship,
   site,
@@ -72,7 +74,10 @@ const externalLink = ({
 
   link = validateExternalLink(link, href, relationship, target);
 
-  link = languageLink(url, link);
+  if(addLanguage)
+  {
+    link = languageLink(url, link);
+  }
 
   return link;
 };

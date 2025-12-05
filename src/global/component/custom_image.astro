@@ -10,9 +10,7 @@ type Props = HTMLAttributes<'img'> &
 {
   readonly src: string;
   readonly alt: string;
-  readonly width: number;
   readonly class?: string;
-  readonly height: number;
   readonly priority?: boolean;
   readonly disableLoader?: boolean;
   readonly formats?: Array<'avif' | 'webp'>;
@@ -25,45 +23,34 @@ const {
   classStyle,
   disableLoader,
   formats = [ 'avif', 'webp' ],
-  height,
   priority = false,
   src: source,
-  width,
   ...rest
 } = Astro.props;
 
 const baseUrl = removeTrailingSlash(Astro.site as URL);
 const imageUrl = `${baseUrl}${source}`;
 ---
-<div class='custom-image' class:list={[ classStyle?.container ]}>
-  <picture>
-    <Show when={formats.includes('avif')}>
-      <source type='image/avif' srcset={replaceExtension(imageUrl, 'avif')} />
-    </Show>
-    <Show when={formats.includes('webp')}>
-      <source type='image/webp' srcset={replaceExtension(imageUrl, 'webp')} />
-    </Show>
-    <img
-      alt={alt}
-      width={width}
-      src={imageUrl}
-      height={height}
-      class:list={classImage}
-      loading={priority ? 'eager' : 'lazy'}
-      decoding={priority ? 'auto' : 'async'}
-      fetchpriority={priority ? 'high' : 'auto'}
-      {...rest}
-    />
-  </picture>
+<picture class='custom-image' class:list={[ classStyle?.container ]}>
+  <Show when={formats.includes('avif')}>
+    <source type='image/avif' srcset={replaceExtension(imageUrl, 'avif')} />
+  </Show>
+  <Show when={formats.includes('webp')}>
+    <source type='image/webp' srcset={replaceExtension(imageUrl, 'webp')} />
+  </Show>
+  <img
+    alt={alt}
+    src={imageUrl}
+    class:list={classImage}
+    loading={priority ? 'eager' : 'lazy'}
+    decoding={priority ? 'auto' : 'async'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    {...rest}
+  />
   <Show when={!disableLoader}>
     <Skeleton class='custom-image__skeleton' class:list={[ classStyle?.skeleton ]} />
   </Show>
-  <Show when={Astro.slots.has('default')}>
-    <div class='custom-image__content custom-image__content--disable'>
-      <slot />
-    </div>
-  </Show>
-</div>
+</picture>
 
 <script>
   const picture = document.querySelectorAll('.custom-image');
@@ -75,10 +62,8 @@ const imageUrl = `${baseUrl}${source}`;
     const onImageLoad = () =>
     {
       const skeleton = element.querySelector('.custom-image__skeleton');
-      const content = element.querySelector('.custom-image__content');
 
       skeleton?.classList.remove('skeleton--active');
-      content?.classList.remove('custom-image__content--disable');
     };
 
     const onImageError = (event: Event) =>
