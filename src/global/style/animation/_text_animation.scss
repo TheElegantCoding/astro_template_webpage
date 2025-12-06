@@ -1,11 +1,11 @@
 @use '@global/style/global' as *;
 
-[data-animate].text-in-up-animation
+[data-animate].text-in-up
 {
   transform: translateY(100%);
 }
 
-.text-in-up-animation
+.text-in-up
 {
   animation: textInUp 1.2s ease-in-out both;
 }
@@ -19,12 +19,12 @@
   }
 }
 
-[data-animate].text-in-down-animation
+[data-animate].text-in-down
 {
   transform: translateY(-100%);
 }
 
-.text-in-down-animation
+.text-in-down
 {
   animation: textInDown 1.2s ease-in-out both;
 }
@@ -38,12 +38,12 @@
   }
 }
 
-[data-animate].text-in-left-animation
+[data-animate].text-in-left
 {
   transform: translateX(-100%);
 }
 
-.text-in-left-animation
+.text-in-left
 {
   animation: textInLeft 1.2s ease-in-out both;
 }
@@ -57,12 +57,12 @@
   }
 }
 
-[data-animate].text-in-right-animation
+[data-animate].text-in-right
 {
   transform: translateX(100%);
 }
 
-.text-in-right-animation
+.text-in-right
 {
   animation: textInRight 1.2s ease-in-out both;
 }
@@ -76,14 +76,14 @@
   }
 }
 
-[data-animate].text-blur-animation
+[data-animate].text-blur
 {
   transform: none;
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.text-blur-animation
+.text-blur
 {
   animation: textBlur 1.2s ease-in-out both;
 }
@@ -97,14 +97,14 @@
   }
 }
 
-[data-animate].text-blur-down-animation
+[data-animate].text-blur-down
 {
   transform: translateY(-100%);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.text-blur-down-animation
+.text-blur-down
 {
   animation: textBlurDown 1.2s ease-in-out both;
 }
@@ -119,14 +119,14 @@
   }
 }
 
-[data-animate].text-blur-up-animation
+[data-animate].text-blur-up
 {
   transform: translateY(100%);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.text-blur-up-animation
+.text-blur-up
 {
   animation: textBlurUp 1.2s ease-in-out both;
 }
@@ -141,14 +141,14 @@
   }
 }
 
-[data-animate].text-blur-right-animation
+[data-animate].text-blur-right
 {
   transform: translateX(100%);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.text-blur-right-animation
+.text-blur-right
 {
   animation: textBlurRight 1.2s ease-in-out both;
 }
@@ -163,14 +163,14 @@
   }
 }
 
-[data-animate].text-blur-left-animation
+[data-animate].text-blur-left
 {
   transform: translateX(-100%);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.text-blur-left-animation
+.text-blur-left
 {
   animation: textBlurLeft 1.2s ease-in-out both;
 }

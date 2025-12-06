@@ -1,12 +1,12 @@
 @use '@global/style/global' as *;
 
-[data-animate].pulse-fade-in-animation
+[data-animate].pulse-fade-in
 {
   transform: scale(0.9);
   opacity: 0;
 }
 
-.pulse-fade-in-animation
+.pulse-fade-in
 {
   animation: pulseFadeIn 1.2s ease-out both;
 }
@@ -26,12 +26,12 @@
   }
 }
 
-[data-animate].flip-in-x-animation
+[data-animate].flip-in-x
 {
   transform: scaleX(-1);
 }
 
-.flip-in-x-animation
+.flip-in-x
 {
   animation: flipInX 1.2s ease-out both;
 }
@@ -51,12 +51,12 @@
   }
 }
 
-[data-animate].flip-in-y-animation
+[data-animate].flip-in-y
 {
   transform: scaleX(-1);
 }
 
-.flip-in-y-animation
+.flip-in-y
 {
   animation: flipInY 1.2s ease-out both;
 }
@@ -76,14 +76,14 @@
   }
 }
 
-[data-animate].twister-in-down-animation
+[data-animate].twister-in-down
 {
   transform-origin: 0 100%;
   transform: scale(0, 0) rotate(360deg) translateY(-100%);
   opacity: 0;
 }
 
-.twister-in-down-animation
+.twister-in-down
 {
   animation: twisterInDown 1.2s ease-out both;
 }
@@ -104,13 +104,13 @@
   }
 }
 
-[data-animate].heart-beat-animation
+[data-animate].heart-beat
 {
   transform: scale(1);
   opacity: 1;
 }
 
-.heart-beat-animation
+.heart-beat
 {
   animation: 1s heartBeat ease-in-out both;
 }
@@ -138,13 +138,13 @@
   }
 }
 
-[data-animate].tada-animation
+[data-animate].tada
 {
   transform: scale(1);
   opacity: 1;
 }
 
-.tada-animation
+.tada
 {
   animation: tada 1s ease-in-out both;
 }
@@ -207,13 +207,13 @@
   }
 }
 
-[data-animate].float-animation
+[data-animate].float
 {
   transform: translateY(0);
   opacity: 1;
 }
 
-.float-animation
+.float
 {
   animation: float 1s ease-in-out both;
 }
@@ -236,13 +236,13 @@
   }
 }
 
-[data-animate].jiggle-animation
+[data-animate].jiggle
 {
   transform: translateY(0);
   opacity: 1;
 }
 
-.jiggle-animation
+.jiggle
 {
   animation: jiggle 0.5s ease-in-out both;
 }
@@ -265,13 +265,13 @@
   }
 }
 
-[data-animate].sink-animation
+[data-animate].sink
 {
   transform: translateY(0);
   opacity: 1;
 }
 
-.sink-animation
+.sink
 {
   animation: sink 1s ease-in-out both;
 }
@@ -294,13 +294,13 @@
   }
 }
 
-[data-animate].swing-drop-in-animation
+[data-animate].swing-drop-in
 {
   transform: rotate(-30deg) translateY(-50px);
   opacity: 0;
 }
 
-.swing-drop-in-animation
+.swing-drop-in
 {
   animation: swingDropIn 0.6s ease-out both;
 }
@@ -320,12 +320,12 @@
   }
 }
 
-[data-animate].bounce-animation
+[data-animate].bounce
 {
   transform: translate3d(0, 0, 0);
 }
 
-.bounce-animation
+.bounce
 {
   animation: bounce 1s ease-in-out both;
 }

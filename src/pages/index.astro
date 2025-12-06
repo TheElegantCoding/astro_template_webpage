@@ -1,5 +1,4 @@
 ---
-import CustomImage from '@global/component/custom_image.astro';
 import TextAnimated from '@global/component/text_animated.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
@@ -10,24 +9,13 @@ import BaseLayout from '@global/layout/base_layout.astro';
     title: ''
   }}
 >
-  <CustomImage
-    alt='image'
-    src='/asset/image/image_placeholder.png'
-  />
-  <div class='container'>
-    <TextAnimated
-      data-animate='text-blur-left-animation'
-      text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    />
-  </div>
-  <div class='container'>
-    <h1 class='text-blur-left' data-animate='text-blur-left-animation'>
-      Hola mundo
-    </h1>
-    <h1 data-animate='fade-in-animation'>
-      Hola mundo
-    </h1>
-  </div>
+  <TextAnimated
+    class='h1'
+    data-animate='text-blur-up'
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </TextAnimated>
 </BaseLayout>
 
 <script>

@@ -1,26 +1,29 @@
 ---
 type Props = {
-  text: string;
   class?: string;
-  classContainer?: string;
+  animationDelay?: number;
 };
 
 const {
+  animationDelay = 0.05,
   class: classTextAnimated,
-  classContainer,
-  text,
   ...rest
 } = Astro.props;
-const animationDelay = 0.04;
+
+const text = await Astro.slots.render('default');
 ---
-<p class:list={classContainer}>
-  {text.split(' ').map((word, index) => (
-    <span
-      class:list={classTextAnimated}
-      style={`animation-delay: ${index * animationDelay}s`}
-      {...rest}
-    >
-      {word}
-    </span>
+<p class:list={classTextAnimated}>
+  {text?.split(' ').map((word, index) => (
+    <>
+      <span class='text-animated'>
+        <span
+          class='text-animated__word'
+          style={`animation-delay: ${index * animationDelay}s`}
+          {...rest}
+        >
+          {word}
+        </span>
+      </span>{' '}
+    </>
   ))}
 </p>

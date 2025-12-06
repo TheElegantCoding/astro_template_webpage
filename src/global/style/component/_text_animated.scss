@@ -1,0 +1,12 @@
+@use '@global/style/global' as *;
+
+.text-animated
+{
+  overflow: hidden;
+  display: inline-block;
+}
+
+.text-animated__word
+{
+  display: inline-block;
+}

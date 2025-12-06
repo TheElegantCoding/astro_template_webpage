@@ -17,34 +17,32 @@ import BaseLayout from '@global/layout/base_layout.astro';
   }}
 >
   <div class='not-found base-layout'>
-    <h1 data-animate='zoom-in-animation' class='not-found__letter zoom-in'>404</h1>
+    <h1 data-animate='zoom-in' class='not-found__letter'>404</h1>
     <div class='not-found__container'>
       <div class='not-found__container-title'>
-        <p class='not-found__title fade-in-up' data-animate='fade-in-up-animation animation-delay-20'>
+        <p class='not-found__title' data-animate='fade-in-up delay-20'>
           Oops
         </p>
         <CustomImage
           width={120}
           height={120}
           alt='face thinking'
-          class='not-found__emoji fade-in-up'
+          class='not-found__emoji'
+          data-animate='fade-in-up delay-20'
           src='/asset/image/emoji_thinking_face.png'
-          data-animate='fade-in-up-animation animation-delay-20'
         />
       </div>
-      <p class='not-found__subtitle fade-in-up' data-animate='fade-in-up-animation animation-delay-40'>
+      <p class='not-found__subtitle' data-animate='fade-in-up delay-40'>
         Algo salió mal, creo que estas perdido
       </p>
-      <p class='not-found__description fade-in-up' data-animate='fade-in-up-animation animation-delay-60'>
+      <p class='not-found__description' data-animate='fade-in-up delay-60'>
         Error 404 página no encontrada
       </p>
-      <CustomLink
-        href='/'
-        class='not-found__button fade-in-up'
-        data-animate='fade-in-up-animation animation-delay-80'
-      >
-        Volver al inicio
-      </CustomLink>
+      <div data-animate='fade-in-up delay-80'>
+        <CustomLink href='/' class='not-found__button'>
+          Volver al inicio
+        </CustomLink>
+      </div>
     </div>
   </div>
 </BaseLayout>

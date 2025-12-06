@@ -1,9 +1,3 @@
-const animateElement = (element: HTMLElement, animation: string, observer: IntersectionObserver) =>
-{
-  element.classList.add(...animation.split(' '));
-  observer.unobserve(element);
-};
-
 const animate = (): void =>
 {
   const observer = new IntersectionObserver((entries) =>
@@ -15,9 +9,13 @@ const animate = (): void =>
         const element = entry.target as HTMLElement;
         const animation = element.dataset.animate ?? '';
 
-        animateElement(element, animation, observer);
+        element.classList.add(...animation.split(' '));
+        observer.unobserve(element);
       }
     });
+  }, {
+    rootMargin: '0px 0px -80px 0px',
+    threshold: 0
   });
 
   const elements = document.querySelectorAll('[data-animate]');

@@ -1,12 +1,12 @@
 @use '@global/style/global' as *;
 
-[data-animate].zoom-in-animation
+[data-animate].zoom-in
 {
   transform: scale(0.5);
   opacity: 0;
 }
 
-.zoom-in-animation
+.zoom-in
 {
   animation: zoomIn 1.2s ease-out both;
 }
@@ -20,13 +20,13 @@
   }
 }
 
-[data-animate].zoom-out-animation
+[data-animate].zoom-out
 {
   transform: scale(1);
   opacity: 1;
 }
 
-.zoom-out-animation
+.zoom-out
 {
   animation: zoomOut 1.2s ease-out both;
 }
@@ -40,13 +40,13 @@
   }
 }
 
-[data-animate].zoom-in-down-animation
+[data-animate].zoom-in-down
 {
   transform: scale(0.5) translateY(100%);
   opacity: 0;
 }
 
-.zoom-in-down-animation
+.zoom-in-down
 {
   animation: zoomInDown 1.2s ease-out both;
 }
@@ -60,13 +60,13 @@
   }
 }
 
-[data-animate].zoom-in-up-animation
+[data-animate].zoom-in-up
 {
   transform: scale(0.5) translateY(-100%);
   opacity: 0;
 }
 
-.zoom-in-up-animation
+.zoom-in-up
 {
   animation: zoomInUp 1.2s ease-out both;
 }
@@ -80,13 +80,13 @@
   }
 }
 
-[data-animate].zoom-in-left-animation
+[data-animate].zoom-in-left
 {
   transform: scale(0.5) translateX(-100%);
   opacity: 0;
 }
 
-.zoom-in-left-animation
+.zoom-in-left
 {
   animation: zoomInLeft 1.2s ease-out both;
 }
@@ -100,13 +100,13 @@
   }
 }
 
-[data-animate].zoom-in-right-animation
+[data-animate].zoom-in-right
 {
   transform: scale(0.5) translateX(100%);
   opacity: 0;
 }
 
-.zoom-in-right-animation
+.zoom-in-right
 {
   animation: zoomInRight 1.2s ease-out both;
 }
