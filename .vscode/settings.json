@@ -7,12 +7,9 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
-  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
-  "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-  "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
-  "javascript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "js/ts.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "js/ts.format.placeOpenBraceOnNewLineForFunctions": true,
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -39,5 +36,5 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
+  }
 }
