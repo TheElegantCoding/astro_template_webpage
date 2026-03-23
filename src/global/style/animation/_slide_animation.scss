@@ -1,4 +1,4 @@
-@use '@global/style/global' as *;
+@use 'global/style/config' as *;
 
 [data-animate].slide-in-up
 {
@@ -7,7 +7,7 @@
 
 .slide-in-up
 {
-  animation: slideInUp 1.2s ease-in-out both;
+  animation: slideInUp $ms_animation $ease_in_out both;
 }
 
 @keyframes slideInUp
@@ -26,7 +26,7 @@
 
 .slide-in-down
 {
-  animation: slideInDown 1.2s ease-in-out both;
+  animation: slideInDown $ms_animation $ease_in_out both;
 }
 
 @keyframes slideInDown
@@ -45,7 +45,7 @@
 
 .slide-in-left
 {
-  animation: slideInLeft 1.2s ease-in-out both;
+  animation: slideInLeft $ms_animation $ease_in_out both;
 }
 
 @keyframes slideInLeft
@@ -64,7 +64,7 @@
 
 .slide-in-right
 {
-  animation: slideInRight 1.2s ease-in-out both;
+  animation: slideInRight $ms_animation $ease_in_out both;
 }
 
 @keyframes slideInRight
@@ -84,7 +84,7 @@
 
 .slide-rotate-in
 {
-  animation: slideRotateIn 0.6s ease-out both;
+  animation: slideRotateIn $ms_slow $ease_out both;
 }
 
 @keyframes slideRotateIn
@@ -110,7 +110,7 @@
 
 .slide-rotate-out
 {
-  animation: slideRotateOut 0.6s ease-out both;
+  animation: slideRotateOut $ms_slow $ease_out both;
 }
 
 @keyframes slideRotateOut
