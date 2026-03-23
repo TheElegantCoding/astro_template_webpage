@@ -1,13 +1,25 @@
-@use '@global/style/global' as *;
+@use 'global/style/config' as *;
 
 .hero
 {
-  background-color: $amber_100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: $gray_950;
+}
 
-  @include font_weight(extra_bold);
+.hero__title
+{
+  margin-top: 2rem;
+  font-size: $h1;
+  color: $white;
+
+  @include font_weight(bold);
 
   @include responsive(tablet)
   {
-    background-color: $amber_200;
+    font-size: $xl;
   }
 }
