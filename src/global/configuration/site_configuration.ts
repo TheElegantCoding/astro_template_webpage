@@ -1,11 +1,11 @@
 const siteConfiguration = {
   author:
   {
-    email: '',
-    name: '',
-    web: ''
+    email: 'astralysoftware@gmail.com',
+    name: 'Astralys Software',
+    web: 'astralysoftware.com'
   },
-  copyright: `© ${new Date().getFullYear()} Astralys`,
+  copyright: `© ${new Date().getFullYear()} Astralys Software`,
   defaultLanguage: 'es',
   description: '',
   googleAnalyticId: '',
@@ -13,7 +13,7 @@ const siteConfiguration = {
   {
     es: 'Español'
   },
-  siteName: ''
+  siteName: 'AstraLight'
 };
 
 export { siteConfiguration };
