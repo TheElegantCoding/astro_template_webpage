@@ -1,4 +1,4 @@
-@use '@global/style/global' as *;
+@use 'global/style/config' as *;
 
 [data-animate].zoom-in
 {
@@ -8,7 +8,7 @@
 
 .zoom-in
 {
-  animation: zoomIn 1.2s ease-out both;
+  animation: zoomIn $ms_animation $ease_out both;
 }
 
 @keyframes zoomIn
@@ -28,7 +28,7 @@
 
 .zoom-out
 {
-  animation: zoomOut 1.2s ease-out both;
+  animation: zoomOut $ms_animation $ease_out both;
 }
 
 @keyframes zoomOut
@@ -48,7 +48,7 @@
 
 .zoom-in-down
 {
-  animation: zoomInDown 1.2s ease-out both;
+  animation: zoomInDown $ms_animation $ease_out both;
 }
 
 @keyframes zoomInDown
@@ -68,7 +68,7 @@
 
 .zoom-in-up
 {
-  animation: zoomInUp 1.2s ease-out both;
+  animation: zoomInUp $ms_animation $ease_out both;
 }
 
 @keyframes zoomInUp
@@ -88,7 +88,7 @@
 
 .zoom-in-left
 {
-  animation: zoomInLeft 1.2s ease-out both;
+  animation: zoomInLeft $ms_animation $ease_out both;
 }
 
 @keyframes zoomInLeft
@@ -108,7 +108,7 @@
 
 .zoom-in-right
 {
-  animation: zoomInRight 1.2s ease-out both;
+  animation: zoomInRight $ms_animation $ease_out both;
 }
 
 @keyframes zoomInRight
