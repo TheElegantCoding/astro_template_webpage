@@ -9,3 +9,12 @@ insert_final_newline = false
 trim_trailing_whitespace = true
 quote_type = single
 max_line_length = 120
+
+[*.{yml,yaml}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.sh]
+end_of_line = lf
