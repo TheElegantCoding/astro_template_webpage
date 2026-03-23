@@ -1,27 +1,30 @@
 ---
-import For from '@global/component/for.astro';
-import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { getLanguagePathname } from '@global/util/language';
 import { removeTrailingSlash } from '@global/util/link';
 
+const { defaultLanguage, languages } = siteConfiguration;
+const languageKeys = Object.keys(languages);
+
 const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
 const pathname = getLanguagePathname(new URL(canonicalURL));
+
+const hasMultipleLanguages = languageKeys.length > 1;
 ---
 <link
   rel='alternate'
   href={canonicalURL}
   hreflang='x-default'
 />
-<Show when={Object.keys(siteConfiguration.languages).length > 1}>
-  <For each={Object.keys(siteConfiguration.languages)}>
-    {(dataLanguage: string) => dataLanguage !== siteConfiguration.defaultLanguage && (
+{hasMultipleLanguages && (
+  <>
+    {languageKeys.map((lang) => lang !== defaultLanguage && (
       <link
         rel='alternate'
-        hreflang={dataLanguage}
-        href={removeTrailingSlash(new URL(`${dataLanguage}${pathname}`, Astro.site))}
+        hreflang={lang}
+        href={removeTrailingSlash(new URL(`${lang}${pathname}`, Astro.site))}
       />
-    )}
-  </For>
-  <meta name="google" content="notranslate">
-</Show>
+    ))}
+    <meta name='google' content='notranslate' />
+  </>
+)}
