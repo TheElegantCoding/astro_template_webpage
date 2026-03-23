@@ -52,7 +52,9 @@ const getLanguagePathname = (url: URL) =>
 
   if(hasLanguagePrefix)
   {
-    modifiedUrl.pathname = modifiedUrl.pathname.replace(new RegExp(`/(${languagePrefixes.join('|')})`, 'u'), '');
+    const regex = new RegExp(`^/(${languagePrefixes.join('|')})(?=/|$)`, 'u');
+
+    modifiedUrl.pathname = modifiedUrl.pathname.replace(regex, '');
 
     return modifiedUrl.pathname;
   }
