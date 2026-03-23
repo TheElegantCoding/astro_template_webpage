@@ -2,7 +2,7 @@ $black: #000;
 $white: #fff;
 $transparent: rgba($black, 0);
 $modal: rgba($black, 0.5);
-$skeleton: rgba(#9ca3af, 0.6);
+$skeleton: rgba(#f9fafb, 0.6);
 
 $gray_950: #030712;
 $gray_900: #111827;
@@ -279,3 +279,6 @@ $primary_300: #91c7ff;
 $primary_200: #bedcff;
 $primary_100: #daebff;
 $primary_50: #eff6ff;
+
+$color_action: $primary_500;
+$color_hover: $primary_700;
