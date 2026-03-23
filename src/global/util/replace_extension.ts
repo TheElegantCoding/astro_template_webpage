@@ -1,14 +1,16 @@
 const replaceExtension = (file: string, extension: string): string =>
 {
-  const url = file.slice(Math.max(0, file.lastIndexOf('/') + 1));
-  const fileExtension = url.split('.')[1];
+  const lastDotIndex = file.lastIndexOf('.');
+  const lastIndex = -1;
 
-  if(fileExtension)
+  if(lastDotIndex === lastIndex || lastDotIndex === 0)
   {
-    return file.replace(fileExtension, extension);
+    return file;
   }
 
-  return file;
+  const cleanExtension = extension.startsWith('.') ? extension.slice(1) : extension;
+
+  return `${file.slice(0, Math.max(0, lastDotIndex))}.${cleanExtension}`;
 };
 
 export { replaceExtension };
