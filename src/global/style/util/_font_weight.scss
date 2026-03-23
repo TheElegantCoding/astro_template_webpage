@@ -1,42 +1,37 @@
 @mixin font_weight($weight)
-{
-  @if($weight == 'light')
+ {
+  @if $weight == 'light'
   {
-    &
-    {
-      font-weight: 300;
-    }
+    font-weight: 300;
   }
 
-  @if($weight == 'regular')
+  @else if $weight == 'regular'
   {
-    &
-    {
-      font-weight: 400;
-    }
+    font-weight: 400;
   }
 
-  @if($weight == 'semi_bold')
+  @else if $weight == 'medium'
   {
-    &
-    {
-      font-weight: 600;
-    }
+    font-weight: 500;
   }
 
-  @if($weight == 'bold')
+  @else if $weight == 'semi_bold'
   {
-    &
-    {
-      font-weight: 700;
-    }
+    font-weight: 600;
   }
 
-  @if($weight == 'extra_bold')
+  @else if $weight == 'bold'
   {
-    &
-    {
-      font-weight: 800;
-    }
+    font-weight: 700;
+  }
+
+  @else if $weight == 'extra_bold'
+  {
+    font-weight: 800;
+  }
+
+  @else
+ {
+    font-weight: $weight;
   }
 }
