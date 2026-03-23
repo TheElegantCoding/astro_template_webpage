@@ -1,0 +1,109 @@
+@use 'global/style/config' as *;
+
+[data-animate].blur
+{
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.blur
+{
+  animation: blur $ms_animation $ease_in_out both;
+}
+
+@keyframes blur
+{
+  100%
+  {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+[data-animate].blur-down
+{
+  transform: translateY(-$spacing_32);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.blur-down
+{
+  animation: blurDown $ms_animation $ease_in_out both;
+}
+
+@keyframes blurDown
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+[data-animate].blur-up
+{
+  transform: translateY($spacing_32);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.blur-up
+{
+  animation: blurUp $ms_animation $ease_in_out both;
+}
+
+@keyframes blurUp
+{
+  100%
+  {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+[data-animate].blur-right
+{
+  transform: translateX($spacing_32);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.blur-right
+{
+  animation: blurRight $ms_animation $ease_in_out both;
+}
+
+@keyframes blurRight
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+[data-animate].blur-left
+{
+  transform: translateX(-$spacing_32);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.blur-left
+{
+  animation: blurLeft $ms_animation $ease_in_out both;
+}
+
+@keyframes blurLeft
+{
+  100%
+  {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
