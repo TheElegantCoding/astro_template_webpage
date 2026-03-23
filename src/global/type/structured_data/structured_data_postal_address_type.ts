@@ -1,5 +1,4 @@
-type StructuredDataPostalAddressType =
-{
+type StructuredDataPostalAddressType = {
   postalCode: string;
   addressRegion: string;
   streetAddress: string;
