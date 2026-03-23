@@ -1,27 +1,29 @@
 ---
-import TextAnimated from '@global/component/text_animated.astro';
+import Illustration from '@global/component/illustration.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
 <BaseLayout
   metaData={{
-    description: '',
-    keywords: [],
-    title: ''
+    description: 'El template de Astro para tu página web personal o portafolio profesional. Rápido, optimizado y fácil de personalizar.',
+    keywords: [
+      'Desarrollo Web',
+      'Astro Framework',
+      'React',
+      'SEO Avanzado'
+    ],
+    title: 'AstraLight'
   }}
 >
-  <TextAnimated
-    class='h1'
-    data-animate='text-blur-up'
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </TextAnimated>
+  <div class='hero'>
+    <Illustration name='logo_astro' />
+    <h1 class='hero__title'>AstraLight</h1>
+  </div>
 </BaseLayout>
 
 <script>
-  import { animate } from '@global/util/animation';
-  import { smoothScroll } from '@global/util/scroll';
+  import { animate } from "@global/util/animation";
+  import { smoothScroll } from "@global/util/scroll";
 
-  animate();
-  smoothScroll();
+  animate()
+  smoothScroll()
 </script>
