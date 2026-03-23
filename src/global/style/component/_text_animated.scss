@@ -1,9 +1,9 @@
-@use '@global/style/global' as *;
-
 .text-animated
 {
   overflow: hidden;
   display: inline-block;
+  white-space: nowrap;
+  vertical-align: bottom;
 }
 
 .text-animated__word
