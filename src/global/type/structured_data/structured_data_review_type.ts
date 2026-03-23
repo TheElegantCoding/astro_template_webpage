@@ -1,34 +1,33 @@
 import type { StructuredDataItemListType } from '@global/type/structured_data/structured_data_list_type';
 
-type StructuredDataItemReviewedType =
-{
+type StructuredDataItemReviewedType = {
   name: string;
-  '@type': 'Review';
+  '@type': 'Review' | 'Product' | 'Organization' | 'CreativeWork' | 'LocalBusiness';
 };
 
-type StructuredDataRatingType =
-{
+type StructuredDataRatingType = {
   '@type': 'Rating';
   bestRating: number;
   ratingValue: number;
   worstRating: number;
 };
 
-type StructuredDataReviewType =
-{
+type StructuredDataReviewType = {
   name?: string;
-  author?: string;
   '@type': 'Review';
   reviewBody?: string;
-  datePublished?: Date;
+  datePublished?: string;
   reviewRating?: StructuredDataRatingType;
   positiveNotes?: StructuredDataItemListType;
   negativeNotes?: StructuredDataItemListType;
   itemReviewed?: StructuredDataItemReviewedType;
+  author?: {
+    name: string;
+    '@type': 'Person' | 'Organization';
+  };
 };
 
-type StructuredDataAggregateRatingType =
-{
+type StructuredDataAggregateRatingType = {
   bestRating?: number;
   ratingValue: number;
   ratingCount: number;
