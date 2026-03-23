@@ -1,22 +1,23 @@
 ---
-import Show from '@global/component/show.astro';
-
 import type { StructuredDataProps } from '@global/type/structured_data/structured_data_props';
 
 type Props<T> = StructuredDataProps<T>;
 
 const { schema } = Astro.props;
 
-const structuredData =
-{
+const structuredData = {
   '@context': 'https://schema.org',
   ...schema
 };
+
+const jsonLd = structuredData
+  ? JSON.stringify(structuredData).replaceAll('<', String.raw `\u003c`)
+  : undefined;
 ---
-<Show when={schema}>
+{schema && (
   <script
     is:inline
+    set:html={jsonLd}
     type='application/ld+json'
-    set:html={JSON.stringify(structuredData)}
   />
-</Show>
+)}
