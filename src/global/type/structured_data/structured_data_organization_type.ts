@@ -1,37 +1,34 @@
 import type { StructuredDataPostalAddressType } from '@global/type/structured_data/structured_data_postal_address_type';
 
-type StructuredDataContactPoint =
-{
+type StructuredDataContactPoint = {
   email: string;
   telephone: string;
   '@type': 'ContactPoint';
 };
 
-type StructuredDataQuantitativeValue =
-{
+type StructuredDataQuantitativeValue = {
   value?: number;
   minValue?: number;
   maxValue?: number;
   '@type': 'QuantitativeValue';
 };
 
-type StructuredDataOrganization =
-{
+type StructuredDataOrganization = {
   url: string;
   name: string;
   duns?: string;
   email?: string;
   naics?: string;
   vatID?: string;
-  sameAs?: URL[];
   leiCode?: string;
-  logo: URL | URL[];
+  sameAs?: string[];
   legalName?: string;
   telephone?: string;
   foundingData?: Date;
   description: string;
   iso6523Code?: string;
   alternateName?: string;
+  logo: string | string[];
   '@type': 'Organization';
   globalLocationNumber?: string;
   contactPoint?: StructuredDataContactPoint;
