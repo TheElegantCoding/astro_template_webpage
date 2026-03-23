@@ -13,26 +13,20 @@ import '../style/main.scss';
 
 type Props<T> = BaseLayoutProps<T>;
 
-const {
-  metaData,
-  structuredData
-} = Astro.props;
+const { metaData, structuredData } = Astro.props;
 
 const language = getLanguageFromUrl(Astro.url);
 ---
 <!doctype html>
-<html
-  dir='ltr'
-  lang={language}
->
+<html dir='ltr' lang={language}>
   <head>
     <MetaData {...metaData} />
     <LanguageAlternative />
     <Favicon />
     <StructuredData schema={structuredData} />
+    <slot name='head' />
     <Internationalization />
     <GoogleAnalytic />
-    <slot name='head' />
     <title>{metaData.title}</title>
   </head>
   <body>
