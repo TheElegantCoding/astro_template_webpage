@@ -1,21 +1,19 @@
 import type { StructuredDataReviewType, StructuredDataAggregateRatingType } from '@global/type/structured_data/structured_data_review_type';
 
-type StructuredDataBrandType =
-{
+type StructuredDataBrandType = {
   name: string;
   '@type': 'Brand';
 };
 
-type StructuredDataOfferType =
-{
+type StructuredDataOfferType = {
   price: number;
   '@type': 'Offer';
-  priceCurrency?: string;
-  priceValidUntil?: Date;
+  priceCurrency: string;
+  priceValidUntil?: string;
+  availability?: StructuredDataItemAvailability;
 };
 
-type StructuredDataAggregateOffer =
-{
+type StructuredDataAggregateOffer = {
   lowPrice: number;
   highPrice?: number;
   offerCount?: number;
@@ -36,8 +34,7 @@ type StructuredDataItemAvailability =
   'https://schema.org/Discontinued' |
   'https://schema.org/LimitedAvailability';
 
-type StructuredDataProductType =
-{
+type StructuredDataProductType = {
   name: string;
   '@type': 'Product';
   description?: string;
