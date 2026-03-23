@@ -1,8 +1,8 @@
-@use '@global/style/global' as *;
+@use 'global/style/config' as *;
 
 .fade-in
 {
-  animation: fadeIn 1.2s ease-in both;
+  animation: fadeIn $ms_animation $ease_in both;
 }
 
 @keyframes fadeIn
@@ -20,7 +20,7 @@
 
 .fade-out
 {
-  animation: fadeOut 1.2s ease-in both;
+  animation: fadeOut $ms_animation $ease_in both;
 }
 
 @keyframes fadeOut
@@ -38,7 +38,7 @@
 
 .fade-in-up
 {
-  animation: fadeInUp 1.2s ease-in-out both;
+  animation: fadeInUp $ms_animation $ease_in_out both;
 }
 
 @keyframes fadeInUp
@@ -57,7 +57,7 @@
 
 .fade-in-down
 {
-  animation: fadeInDown 1.2s ease-in-out both;
+  animation: fadeInDown $ms_animation $ease_in_out both;
 }
 
 @keyframes fadeInDown
@@ -76,7 +76,7 @@
 
 .fade-in-left
 {
-  animation: fadeInLeft 1.2s ease-in-out both;
+  animation: fadeInLeft $ms_animation $ease_in_out both;
 }
 
 @keyframes fadeInLeft
@@ -95,7 +95,7 @@
 
 .fade-in-right
 {
-  animation: fadeInRight 1.2s ease-in-out both;
+  animation: fadeInRight $ms_animation $ease_in_out both;
 }
 
 @keyframes fadeInRight
@@ -116,7 +116,7 @@
 
 .fade-in-stroke
 {
-  animation: fadeInStroke 2s ease-in forwards;
+  animation: fadeInStroke 2s $ease_in forwards;
 }
 
 @keyframes fadeInStroke
