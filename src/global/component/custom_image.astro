@@ -1,26 +1,25 @@
 ---
-import Show from '@global/component/show.astro';
 import Skeleton from '@global/component/skeleton.astro';
 import { removeTrailingSlash } from '@global/util/link';
 import { replaceExtension } from '@global/util/replace_extension';
 
 import type { HTMLAttributes } from 'astro/types';
 
-type Props = HTMLAttributes<'img'> &
-{
+type Props = HTMLAttributes<'img'> & {
   readonly src: string;
   readonly alt: string;
-  readonly class?: string;
   readonly priority?: boolean;
+  readonly classSkeleton?: string;
   readonly disableLoader?: boolean;
+  readonly classContainer?: string;
   readonly formats?: Array<'avif' | 'webp'>;
-  readonly classStyle?: Partial<Record<'skeleton' | 'container', string>>;
 };
 
 const {
   alt,
   class: classImage,
-  classStyle,
+  classContainer,
+  classSkeleton,
   disableLoader,
   formats = [ 'avif', 'webp' ],
   priority = false,
@@ -28,58 +27,54 @@ const {
   ...rest
 } = Astro.props;
 
-const baseUrl = removeTrailingSlash(Astro.site as URL);
-const imageUrl = `${baseUrl}${source}`;
+const baseUrl = removeTrailingSlash(Astro.site?.toString() || '');
+const imageUrl = source.startsWith('http') ? source : `${baseUrl}${source}`;
 ---
-<picture class='custom-image' class:list={[ classStyle?.container ]}>
-  <Show when={formats.includes('avif')}>
-    <source type='image/avif' srcset={replaceExtension(imageUrl, 'avif')} />
-  </Show>
-  <Show when={formats.includes('webp')}>
-    <source type='image/webp' srcset={replaceExtension(imageUrl, 'webp')} />
-  </Show>
-  <img
-    alt={alt}
-    src={imageUrl}
-    class:list={classImage}
-    loading={priority ? 'eager' : 'lazy'}
-    decoding={priority ? 'auto' : 'async'}
-    fetchpriority={priority ? 'high' : 'auto'}
-    {...rest}
-  />
-  <Show when={!disableLoader}>
-    <Skeleton class='custom-image__skeleton' class:list={[ classStyle?.skeleton ]} />
-  </Show>
-</picture>
+<Skeleton
+  class='custom-image'
+  isLoading={!disableLoader}
+  class:list={classSkeleton}
+>
+  <picture class:list={classContainer}>
+    {formats.includes('avif') && (
+      <source type='image/avif' srcset={replaceExtension(imageUrl, 'avif')} />
+    )}
+    {formats.includes('webp') && (
+      <source type='image/webp' srcset={replaceExtension(imageUrl, 'webp')} />
+    )}
+    <img
+      alt={alt}
+      src={imageUrl}
+      class='custom-image__tag'
+      class:list={[ classImage ]}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding={priority ? 'auto' : 'async'}
+      fetchpriority={priority ? 'high' : 'auto'}
+      {...rest}
+    />
+  </picture>
+</Skeleton>
 
 <script>
-  const picture = document.querySelectorAll('.custom-image');
+  const skeleton = document.querySelectorAll('.custom-image');
 
-  picture.forEach((element) =>
-  {
-    const image = element.querySelector('img');
-
-    const onImageLoad = () =>
-    {
-      const skeleton = element.querySelector('.custom-image__skeleton');
-
-      skeleton?.classList.remove('skeleton--active');
-    };
+  skeleton.forEach((item) => {
+    const image = item.querySelector('img');
 
     const onImageError = (event: Event) =>
     {
       const currentImage = event.currentTarget as HTMLImageElement;
-
       currentImage.src = image?.src as string;
     };
 
-    if(image?.complete)
-    {
-      onImageLoad();
-    }
-    else
-    {
-      image?.addEventListener('load', onImageLoad);
+    const hideSkeleton = () => {
+      item.classList.remove('skeleton--active');
+    };
+
+    if (image?.complete) {
+      hideSkeleton();
+    } else {
+      image?.addEventListener('load', hideSkeleton);
       image?.addEventListener('error', onImageError);
     }
   });
