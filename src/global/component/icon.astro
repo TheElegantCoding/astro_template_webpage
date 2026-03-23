@@ -19,20 +19,36 @@ const {
   ...rest
 } = Astro.props;
 
-const icon = await import(`./../asset/icon/${name}.svg?raw`);
+const modules = import.meta.glob<{ default: string }>(
+  [ '/src/global/asset/icon/*.svg', '/src/module/**/asset/icon/*.svg' ],
+  {
+    eager: true,
+    query: '?raw'
+  }
+);
 
-const iconContent = icon.default.slice(icon.default.indexOf('>') + 1, icon.default.indexOf('</svg>'));
-const iconFormat = iconContent.replaceAll(/fill=".*?"/gv, '');
+const iconPath = Object.keys(modules).find((path) => path.endsWith(`/${name}.svg`));
+const rawSvg = iconPath ? modules[iconPath]?.default : undefined;
+
+if(!rawSvg)
+{
+  throw new Error(`Icon "${name}" not found in global or module assets.`);
+}
+
+const innerSVG = (rawSvg as string)
+  .replace(/<svg[^>]*>/, '')
+  .replace(/<\/svg>/, '')
+  .replaceAll(/fill=".*?"/g, 'fill="currentColor"');
+
 const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : '';
-const iconRaw = title ? `${iconTitle}${iconFormat}` : iconFormat;
 ---
 <svg
   width={size}
   height={size}
-  set:html={iconRaw}
   viewBox='0 0 64 64'
   class:list={classIcon}
   xmlns='http://www.w3.org/2000/svg'
-  aria-label={title && capitalizeFirst(title)}
+  set:html={`${iconTitle}${innerSVG}`}
+  aria-hidden={title ? 'false' : 'true'}
   {...rest}
 />
