@@ -1,4 +1,4 @@
-@use '@global/style/global' as *;
+@use 'global/style/config' as *;
 
 html
 {
@@ -12,22 +12,22 @@ body
 {
   overflow-x: hidden;
   width: 100%;
+  min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: $h6;
+  line-height: 1.5;
   color: $gray_950;
   background-color: $gray_100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   @include font_weight(regular);
 }
 
 [data-animate]
 {
+  will-change: transform, opacity;
   transform: none;
   opacity: 0;
   transition: none;
-}
-
-.h1
-{
-  font-size: $h1;
 }
