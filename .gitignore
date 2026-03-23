@@ -1,21 +1,26 @@
-# misc
+# System
 .DS_Store
+Thumbs.db
 *.pem
+*.key
 
-# dependencies
-node_modules
+# Dependencies
+node_modules/
 
-# generated types
+# Build
+dist/
+_astro/
 .astro/
+*.tsbuildinfo
 
-# build
-dist
-
-# env files
+# Env
+.env
 .env.*
+!.env.example
 
-# debug
+# Logs
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+bun-debug.log*
