@@ -1,29 +1,38 @@
 ---
-type Props = {
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'p'> & {
   class?: string;
-  animationDelay?: number;
+  delay?: number;
 };
 
 const {
-  animationDelay = 0.05,
   class: classTextAnimated,
+  delay = 0.05,
   ...rest
 } = Astro.props;
 
-const text = await Astro.slots.render('default');
+const rawText = await Astro.slots.render('default');
+
+const cleanText = rawText
+  ?.replaceAll(/<[^>]*>/g, '')
+  .replaceAll(/[\t\n\r]/g, ' ')
+  .replaceAll(/\s+/g, ' ')
+  .trim();
+
+const words = cleanText ? cleanText.split(' ') : [];
 ---
-<p class:list={classTextAnimated}>
-  {text?.split(' ').map((word, index) => (
-    <>
+<p aria-label={cleanText} class:list={classTextAnimated}>
+  <span aria-hidden='true'>
+    {words.map((word, index) => (
       <span class='text-animated'>
         <span
           class='text-animated__word'
-          style={`animation-delay: ${index * animationDelay}s`}
+          style={`animation-delay: ${index * delay}s`}
           {...rest}
-        >
-          {word}
-        </span>
-      </span>{' '}
-    </>
-  ))}
+          set:html={`${word.replaceAll(' ', '&nbsp;')}&nbsp;`}
+        />
+      </span>
+    ))}
+  </span>
 </p>
