@@ -1,8 +1,12 @@
 @charset 'UTF-8';
 
+// Vendors
+@use './vendor/normalize';
+@use './vendor/reset';
+
 // Base
-@use './base/typography';
 @use './base/base';
+@use './base/typography';
 
 // Layout
 @use './layout/base_layout';
@@ -13,20 +17,21 @@
 @use './animation/text_animation';
 @use './animation/special_animation';
 @use './animation/zoom_animation';
+@use './animation/blur_animation';
 
-// Component
+// Components
 @use './component/skeleton';
 @use './component/custom_image';
 @use './component/scrollbar';
+@use './component/illustration';
+@use './component/icon';
 @use './component/text_animated';
 
-// Page
+// Modules and pages
 @use './page/not_found';
+@use 'module/landing/style/landing';
 
-// Modules
-@use '@module/landing/style/landing';
-
-// Helper
+// Helpers
 @use './helper/aspect_ratio';
 @use './helper/z_index';
 @use './helper/object_fit';
