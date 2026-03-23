@@ -1,6 +1,4 @@
 ---
-import Show from '@global/component/show.astro';
-
 import type { OpenGraphProfileType } from '@global/type/open_graph_type';
 
 type Props = OpenGraphProfileType;
@@ -12,27 +10,7 @@ const {
   username
 } = Astro.props;
 ---
-<Show when={firstName}>
-  <meta
-    content={firstName}
-    property='profile:firts_name'
-  />
-</Show>
-<Show when={lastName}>
-  <meta
-    content={lastName}
-    property='profile:last_name'
-  />
-</Show>
-<Show when={username}>
-  <meta
-    content={username}
-    property='profile:username'
-  />
-</Show>
-<Show when={gender}>
-  <meta
-    content={gender}
-    property='profile:gender'
-  />
-</Show>
+{firstName && (<meta content={firstName} property='profile:first_name' />)}
+{lastName && (<meta content={lastName} property='profile:last_name' />)}
+{username && (<meta content={username} property='profile:username' />)}
+{gender && (<meta content={gender} property='profile:gender' />)}
