@@ -1,34 +1,55 @@
-@use '@global/style/global' as *;
+@use 'global/style/config' as *;
 
 .skeleton
 {
   position: relative;
   overflow: hidden;
-  display: block;
-  visibility: hidden;
-  opacity: 0;
-  background-color: $gray_200;
-  border-radius: $rounded_small;
-  transition: opacity 0.5s, visibility 0.5s;
+  display: inline-block;
+  width: auto;
+  transition: opacity $ms_base, visibility $ms_base;
 
-  &::before
+  &::after
   {
     content: '';
     position: absolute;
+    z-index: $z_10;
     top: 0;
-    left: 0;
-    transform: translate(-100%);
+    right: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, $transparent 0%, $skeleton 50%, $transparent 100%);
-    animation: 1.5s shimmer infinite;
+    visibility: hidden;
+    opacity: 0;
+    background-color: $gray_300;
+    border-radius: $rounded_small;
+    transition: opacity $ms_base, visibility $ms_base;
   }
 }
 
 .skeleton--active
 {
-  visibility: visible;
-  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+  border-radius: $rounded_small;
+
+  &::after
+  {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &::before
+  {
+    content: '';
+    position: absolute;
+    z-index: $z_20;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, $transparent 0%, $skeleton 40%, $transparent 100%);
+    animation: 1.5s shimmer infinite;
+  }
 }
 
 @keyframes shimmer
