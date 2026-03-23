@@ -1,4 +1,4 @@
-@use '@global/style/global' as *;
+@use 'global/style/config' as *;
 
 [data-animate].text-in-up
 {
@@ -7,7 +7,7 @@
 
 .text-in-up
 {
-  animation: textInUp 1.2s ease-in-out both;
+  animation: textInUp $ms_animation $ease_in_out both;
 }
 
 @keyframes textInUp
@@ -26,7 +26,7 @@
 
 .text-in-down
 {
-  animation: textInDown 1.2s ease-in-out both;
+  animation: textInDown $ms_animation $ease_in_out both;
 }
 
 @keyframes textInDown
@@ -45,7 +45,7 @@
 
 .text-in-left
 {
-  animation: textInLeft 1.2s ease-in-out both;
+  animation: textInLeft $ms_animation $ease_in_out both;
 }
 
 @keyframes textInLeft
@@ -64,7 +64,7 @@
 
 .text-in-right
 {
-  animation: textInRight 1.2s ease-in-out both;
+  animation: textInRight $ms_animation $ease_in_out both;
 }
 
 @keyframes textInRight
@@ -85,7 +85,7 @@
 
 .text-blur
 {
-  animation: textBlur 1.2s ease-in-out both;
+  animation: textBlur $ms_animation $ease_in_out both;
 }
 
 @keyframes textBlur
@@ -106,7 +106,7 @@
 
 .text-blur-down
 {
-  animation: textBlurDown 1.2s ease-in-out both;
+  animation: textBlurDown $ms_animation $ease_in_out both;
 }
 
 @keyframes textBlurDown
@@ -128,7 +128,7 @@
 
 .text-blur-up
 {
-  animation: textBlurUp 1.2s ease-in-out both;
+  animation: textBlurUp $ms_animation $ease_in_out both;
 }
 
 @keyframes textBlurUp
@@ -150,7 +150,7 @@
 
 .text-blur-right
 {
-  animation: textBlurRight 1.2s ease-in-out both;
+  animation: textBlurRight $ms_animation $ease_in_out both;
 }
 
 @keyframes textBlurRight
@@ -172,7 +172,7 @@
 
 .text-blur-left
 {
-  animation: textBlurLeft 1.2s ease-in-out both;
+  animation: textBlurLeft $ms_animation $ease_in_out both;
 }
 
 @keyframes textBlurLeft
@@ -198,7 +198,7 @@
 {
   20%
   {
-    transform: translate3d(-20%);
+    transform: translate3d(-20%, 0, 0);
   }
 
   40%
