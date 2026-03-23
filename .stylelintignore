@@ -1,8 +1,13 @@
-# dependencies
+# Dependencies
 node_modules
-
-# build
 dist
+.astro
 
-# vendor
+# Vendor
 _normalize.scss
+_reset.scss
+vendor/
+
+# Logs
+*.log
+.DS_Store
