@@ -1,11 +1,23 @@
 ---
-import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { joinString } from '@global/util/string';
 
-const { author, copyright } = siteConfiguration;
+type Props = {
+  readonly copyright?: string;
+  readonly author?:
+  {
+    readonly web?: string;
+    readonly name?: string;
+    readonly email?: string;
+  };
+};
+
+const {
+  author = siteConfiguration.author,
+  copyright = siteConfiguration.copyright
+} = Astro.props;
 ---
-<Show when={author.name || author.email || author.web}>
+{(author.name || author.email || author.web) && (
   <meta
     name='author'
     content={joinString([
@@ -14,10 +26,5 @@ const { author, copyright } = siteConfiguration;
       author.web
     ])}
   />
-</Show>
-<Show when={copyright}>
-  <meta
-    name='copyright'
-    content={copyright}
-  />
-</Show>
+)}
+{copyright && (<meta name='copyright' content={copyright} />)}
