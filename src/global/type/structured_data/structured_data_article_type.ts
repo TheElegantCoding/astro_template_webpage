@@ -1,18 +1,16 @@
 import type { StructuredDataOrganization } from '@global/type/structured_data/structured_data_organization_type';
 
-type StructuredDataPersonType =
-{
+type StructuredDataPersonType = {
   url?: string;
   name: string;
   '@type': 'Person';
 };
 
-type StructuredDataArticleType =
-{
+type StructuredDataArticleType = {
   headline?: string;
-  dateModified?: Date;
-  datePublished?: Date;
   description?: string;
+  dateModified?: string;
+  datePublished?: string;
   image: string | string[];
   '@type': 'Article' | 'NewsArticle' | 'BlogPosting';
   author?: StructuredDataPersonType[] | StructuredDataOrganization[];
