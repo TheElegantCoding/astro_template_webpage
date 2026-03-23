@@ -2,23 +2,24 @@ import type { StructuredDataPostalAddressType } from '@global/type/structured_da
 import type { StructuredDataProductType } from '@global/type/structured_data/structured_data_product_type';
 import type { StructuredDataReviewType, StructuredDataAggregateRatingType } from '@global/type/structured_data/structured_data_review_type';
 
-type StructuredDataGeoCoordinatesType =
-{
+type DayOfWeek =
+  | 'Monday' | 'Friday' | 'Sunday' | 'Tuesday' |
+  'Thursday' | 'Saturday' | 'Wednesday';
+
+type StructuredDataGeoCoordinatesType = {
   latitude: number;
   longitude: number;
-  '@type'?: 'GeoCoordinates';
+  '@type': 'GeoCoordinates';
 };
 
-type StructuredDataOpeningHoursSpecificationType =
-{
+type StructuredDataOpeningHoursSpecificationType = {
   opens: string;
   closes: string;
-  dayOfWeek: string[];
+  dayOfWeek: DayOfWeek[];
   '@type': 'OpeningHoursSpecification';
 };
 
-type StructuredDataLocalBusinessType =
-{
+type StructuredDataLocalBusinessType = {
   url?: string;
   name: string;
   email?: string;
