@@ -1,8 +1,9 @@
 ---
-import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
+
+const shouldRender = siteConfiguration.googleAnalyticId && import.meta.env.PROD;
 ---
-<Show when={siteConfiguration.googleAnalyticId && import.meta.env.MODE !== 'development'}>
+{shouldRender && (
   <script
     async
     is:inline
@@ -15,16 +16,11 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
     define:vars={{ siteConfiguration }}
   >
     window.dataLayer ||= [];
-
     const gtag = (...args) =>
     {
-      // eslint-disable-next-line no-undef
       dataLayer.push(args);
     };
-
     gtag('js', new Date());
-
-    // oxlint-disable-next-line no-undef
     gtag('config', siteConfiguration.googleAnalyticId);
   </script>
-</Show>
+)}
