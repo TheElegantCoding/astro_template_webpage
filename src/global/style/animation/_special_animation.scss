@@ -1,4 +1,4 @@
-@use '@global/style/global' as *;
+@use 'global/style/config' as *;
 
 [data-animate].pulse-fade-in
 {
@@ -8,7 +8,7 @@
 
 .pulse-fade-in
 {
-  animation: pulseFadeIn 1.2s ease-out both;
+  animation: pulseFadeIn $ms_animation $ease_out both;
 }
 
 @keyframes pulseFadeIn
@@ -33,7 +33,7 @@
 
 .flip-in-x
 {
-  animation: flipInX 1.2s ease-out both;
+  animation: flipInX $ms_animation $ease_out both;
 }
 
 @keyframes flipInX
@@ -58,7 +58,7 @@
 
 .flip-in-y
 {
-  animation: flipInY 1.2s ease-out both;
+  animation: flipInY $ms_animation $ease_out both;
 }
 
 @keyframes flipInY
@@ -85,7 +85,7 @@
 
 .twister-in-down
 {
-  animation: twisterInDown 1.2s ease-out both;
+  animation: twisterInDown $ms_animation $ease_out both;
 }
 
 @keyframes twisterInDown
@@ -112,7 +112,7 @@
 
 .heart-beat
 {
-  animation: 1s heartBeat ease-in-out both;
+  animation: heartBeat $ms_animation $ease_in_out both;
 }
 
 @keyframes heartBeat
@@ -146,7 +146,7 @@
 
 .tada
 {
-  animation: tada 1s ease-in-out both;
+  animation: tada $ms_animation $ease_in_out both;
 }
 
 @keyframes tada
@@ -156,49 +156,19 @@
     transform: scale(1);
   }
 
-  10%
+  10%, 20%
   {
     transform: scale(0.9) rotate(-3deg);
   }
 
-  20%
-  {
-    transform: scale(0.9) rotate(-3deg);
-  }
-
-  30%
+  30%, 50%, 70%, 90%
   {
     transform: scale(1.1) rotate(3deg);
   }
 
-  40%
+  40%, 60%, 80%
   {
     transform: scale(1.1) rotate(-3deg);
-  }
-
-  50%
-  {
-    transform: scale(1.1) rotate(3deg);
-  }
-
-  60%
-  {
-    transform: scale(1.1) rotate(-3deg);
-  }
-
-  70%
-  {
-    transform: scale(1.1) rotate(3deg);
-  }
-
-  80%
-  {
-    transform: scale(1.1) rotate(-3deg);
-  }
-
-  90%
-  {
-    transform: scale(1.1) rotate(3deg);
   }
 
   100%
@@ -215,12 +185,12 @@
 
 .float
 {
-  animation: float 1s ease-in-out both;
+  animation: float $ms_animation $ease_in_out both;
 }
 
 @keyframes float
 {
-  0%
+  0%, 100%
   {
     transform: translateY(0);
   }
@@ -228,11 +198,6 @@
   50%
   {
     transform: translateY(-10px);
-  }
-
-  100%
-  {
-    transform: translateY(0);
   }
 }
 
@@ -244,12 +209,12 @@
 
 .jiggle
 {
-  animation: jiggle 0.5s ease-in-out both;
+  animation: jiggle $ms_slow $ease_in_out both;
 }
 
 @keyframes jiggle
 {
-  0%
+  0%, 100%
   {
     transform: rotate(-3deg);
   }
@@ -257,11 +222,6 @@
   50%
   {
     transform: rotate(3deg);
-  }
-
-  100%
-  {
-    transform: rotate(-3deg);
   }
 }
 
@@ -273,12 +233,12 @@
 
 .sink
 {
-  animation: sink 1s ease-in-out both;
+  animation: sink $ms_animation $ease_in_out both;
 }
 
 @keyframes sink
 {
-  0%
+  0%, 100%
   {
     transform: translateY(-10px);
   }
@@ -286,11 +246,6 @@
   50%
   {
     transform: translateY(0);
-  }
-
-  100%
-  {
-    transform: translateY(-10px);
   }
 }
 
@@ -302,7 +257,7 @@
 
 .swing-drop-in
 {
-  animation: swingDropIn 0.6s ease-out both;
+  animation: swingDropIn $ms_slow $ease_out both;
 }
 
 @keyframes swingDropIn
@@ -327,22 +282,18 @@
 
 .bounce
 {
-  animation: bounce 1s ease-in-out both;
+  animation: bounce $ms_animation $ease_in_out both;
 }
 
 @keyframes bounce
 {
-  0%,
-  20%,
-  53%,
-  100%
+  0%, 20%, 53%, 100%
   {
     transform: translate3d(0, 0, 0);
     animation-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
   }
 
-  40%,
-  43%
+  40%, 43%
   {
     transform: translate3d(0, -30px, 0) scaleY(1.1);
     animation-timing-function: cubic-bezier(0.75, 0.05, 0.85, 0.06);
