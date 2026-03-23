@@ -1,6 +1,6 @@
 ---
 import CustomImage from '@global/component/custom_image.astro';
-import CustomLink from '@global/component/custom_link.astro';
+import Link from '@global/component/link.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
@@ -39,9 +39,9 @@ import BaseLayout from '@global/layout/base_layout.astro';
         Error 404 página no encontrada
       </p>
       <div data-animate='fade-in-up delay-80'>
-        <CustomLink href='/' class='not-found__button'>
+        <Link href='/' class='not-found__button'>
           Volver al inicio
-        </CustomLink>
+        </Link>
       </div>
     </div>
   </div>
