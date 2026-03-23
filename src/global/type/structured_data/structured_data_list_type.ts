@@ -1,12 +1,10 @@
-type StructuredDataListItemType =
-{
+type StructuredDataListItemType = {
   name: string;
   position: number;
   '@type': 'ListItem';
 };
 
-type StructuredDataItemListType =
-{
+type StructuredDataItemListType = {
   '@type': 'ItemList';
   itemListElement: StructuredDataListItemType[];
 };
