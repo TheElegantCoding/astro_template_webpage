@@ -1,7 +1,5 @@
 ---
-import For from '@global/component/for.astro';
 import OpenGraphProfile from '@global/component/open_graph_profile.astro';
-import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 import { getLanguageFromUrl } from '@global/util/language';
 import { removeTrailingSlash } from '@global/util/link';
@@ -15,8 +13,7 @@ import type {
   OpenGraphProfileType
 } from '@global/type/open_graph_type.ts';
 
-export type OpenGraphProps =
-{
+export type OpenGraphProps = {
   title: string;
   description: string;
   type?: OpenGraphType;
@@ -38,195 +35,79 @@ const {
   title,
   type = 'website',
   twitter =
-  {
-    type: 'summary_large_image'
-  }
+    {
+      type: 'summary_large_image'
+    }
 } = Astro.props;
 
 const baseUrl = removeTrailingSlash(Astro.site as URL);
 const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site));
 const { languages, siteName } = siteConfiguration;
+const languageKeys = Object.keys(languages);
 const currentLanguage = getLanguageFromUrl(Astro.url);
 ---
-<meta
-  name='twitter:card'
-  content={twitter.type}
-/>
-<Show when={twitter.site}>
+<meta name='twitter:card' content={twitter.type} />
+{twitter.site && (<meta name='twitter:site' content={twitter.site} />)}
+{twitter.creator && (<meta name='twitter:creator' content={twitter.creator} />)}
+<meta content={title} property='og:title' />
+<meta content={type} property='og:type' />
+<meta content={description} property='og:description' />
+<meta property='og:url' content={canonicalURL} />
+<meta content={siteName} property='og:site_name' />
+<meta property='og:locale' content={currentLanguage} />
+{languageKeys.length > 1 && languageKeys.map((dataLanguage: string) => (
   <meta
-    name='twitter:site'
-    content={twitter.site}
+    content={dataLanguage}
+    property='og:locale:alternate'
   />
-</Show>
-<Show when={twitter.creator}>
-  <meta
-    name='twitter:creator'
-    content={twitter.creator}
-  />
-</Show>
-<meta
-  content={title}
-  property='og:title'
-/>
-<meta
-  content={type}
-  property='og:type'
-/>
-<meta
-  content={description}
-  property='og:description'
-/>
-<meta
-  property='og:url'
-  content={canonicalURL}
-/>
-<meta
-  content={siteName}
-  property='og:site_name'
-/>
-<meta
-  property='og:locale'
-  content={currentLanguage}
-/>
-<Show when={Object.keys(languages).length > 1}>
-  <For each={Object.keys(languages)}>
-    {(dataLanguage: string) => (
-      <meta
-        content={dataLanguage}
-        property='og:locale:alternate'
+))}
+{image.map((dataImage) => (
+  <>
+    <meta property='og:image' content={`${baseUrl}${dataImage.url}`} />
+    {dataImage.secureUrl && (<meta property='og:image:secure_url' content={`${baseUrl}${dataImage.url}`} />)}
+    {dataImage.type && (<meta property='og:image:type' content={dataImage.type} />)}
+    {dataImage.width && (<meta property='og:image:width' content={dataImage.width} />)}
+    {dataImage.height && (<meta property='og:image:height' content={dataImage.height} />)}
+    {dataImage.alt && (<meta property='og:image:alt' content={dataImage.alt} />)}
+  </>
+))}
+{type === 'article' && (
+  <>
+    {article?.publishedTime && <meta content={article.publishedTime} property='article:published_time' />}
+    {article?.modifiedTime && <meta content={article.modifiedTime} property='article:modified_time' />}
+    {article?.expirationTime && <meta content={article.expirationTime} property='article:expiration_time' />}
+    {article?.author?.map((dataAuthor) => (
+      <OpenGraphProfile
+        gender={dataAuthor?.gender}
+        lastName={dataAuthor?.lastName}
+        username={dataAuthor?.username}
+        firstName={dataAuthor?.firstName}
       />
-    )}
-  </For>
-</Show>
-<For each={image}>
-  {(dataImage: OpenGraphMediaType) => (
-    <>
-      <meta
-        property='og:image'
-        content={`${baseUrl}${dataImage.url}`}
+    ))}
+    {article?.section && <meta content={article.section} property='article:section' />}
+    {article?.tag?.map((dataTag) => (<meta content={dataTag} property='article:tag' />))}
+  </>
+)}
+{type === 'book' && (
+  <>
+    {book?.author?.map((dataAuthor) => (
+      <OpenGraphProfile
+        gender={dataAuthor?.gender}
+        lastName={dataAuthor?.lastName}
+        username={dataAuthor?.username}
+        firstName={dataAuthor?.firstName}
       />
-      <Show when={dataImage.secureUrl}>
-        <meta
-          property='og:image:secure_url'
-          content={`${baseUrl}${dataImage.url}`}
-        />
-      </Show>
-      <Show when={dataImage.type}>
-        <meta
-          property='og:image:type'
-          content={dataImage.type}
-        />
-      </Show>
-      <Show when={dataImage.width}>
-        <meta
-          property='og:image:width'
-          content={dataImage.width}
-        />
-      </Show>
-      <Show when={dataImage.height}>
-        <meta
-          property='og:image:height'
-          content={dataImage.height}
-        />
-      </Show>
-      <Show when={dataImage.alt}>
-        <meta
-          property='og:image:alt'
-          content={dataImage.alt}
-        />
-      </Show>
-    </>
-  )}
-</For>
-<Show when={type === 'article'}>
-  <Show when={article?.publishedTime}>
-    <meta
-      content={article?.publishedTime}
-      property='article:published_time'
-    />
-  </Show>
-  <Show when={article?.modifiedTime}>
-    <meta
-      content={article?.modifiedTime}
-      property='article:modified_time'
-    />
-  </Show>
-  <Show when={article?.expirationTime}>
-    <meta
-      content={article?.expirationTime}
-      property='article:expiration_time'
-    />
-  </Show>
-  <Show when={(article?.author ?? [])?.length > 0}>
-    <For each={article?.author}>
-      {(dataAuthor: OpenGraphProfileType) => (
-        <OpenGraphProfile
-          gender={dataAuthor?.gender}
-          lastName={dataAuthor?.lastName}
-          username={dataAuthor?.username}
-          firstName={dataAuthor?.firstName}
-        />
-      )}
-    </For>
-  </Show>
-  <Show when={article?.section}>
-    <meta
-      property='article:section'
-      content={article?.section}
-    />
-  </Show>
-  <Show when={(article?.tag ?? [])?.length > 0}>
-    <For each={article?.tag}>
-      {(dataTag: string) => (
-        <meta
-          content={dataTag}
-          property='article:tag'
-        />
-      )}
-    </For>
-  </Show>
-</Show>
-<Show when={type === 'book'}>
-  <Show when={(book?.author ?? [])?.length > 0}>
-    <For each={book?.author}>
-      {(dataAuthor: OpenGraphProfileType) => (
-        <OpenGraphProfile
-          gender={dataAuthor?.gender}
-          lastName={dataAuthor?.lastName}
-          username={dataAuthor?.username}
-          firstName={dataAuthor?.firstName}
-        />
-      )}
-    </For>
-  </Show>
-  <Show when={book?.isbn}>
-    <meta
-      property='book:isbn'
-      content={book?.isbn}
-    />
-  </Show>
-  <Show when={book?.releaseDate}>
-    <meta
-      content={book?.releaseDate}
-      property='book:release_date'
-    />
-  </Show>
-  <Show when={(book?.tag ?? [])?.length > 0}>
-    <For each={book?.tag}>
-      {(dataTag: string) => (
-        <meta
-          content={dataTag}
-          property='book:tag'
-        />
-      )}
-    </For>
-  </Show>
-</Show>
-<Show when={type === 'profile'}>
+    ))}
+    {book?.isbn && <meta content={book.isbn} property='book:isbn' />}
+    {book?.releaseDate && <meta content={book.releaseDate} property='book:release_date' />}
+    {book?.tag?.map((dataTag) => (<meta content={dataTag} property='book:tag' />))}
+  </>
+)}
+{type === 'profile' && (
   <OpenGraphProfile
     gender={profile?.gender}
     lastName={profile?.lastName}
     username={profile?.username}
     firstName={profile?.firstName}
   />
-</Show>
+)}
