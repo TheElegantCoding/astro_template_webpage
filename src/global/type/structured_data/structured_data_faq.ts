@@ -1,20 +1,17 @@
-type StructuredDataAnswerType =
-{
+type StructuredDataAnswerType = {
   text: string;
   '@type': 'Answer';
 };
 
-type StructuredDataQuestionType =
-{
+type StructuredDataQuestionType = {
   name: string;
   '@type': 'Question';
   acceptedAnswer: StructuredDataAnswerType;
 };
 
-type StructuredDataFaqType =
-{
+type StructuredDataFaqType = {
   '@type': 'FAQPage';
-  mainEntity?: StructuredDataQuestionType[];
+  mainEntity: StructuredDataQuestionType[];
 };
 
 export type {
