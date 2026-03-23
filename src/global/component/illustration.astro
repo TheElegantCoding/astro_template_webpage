@@ -3,35 +3,53 @@ import { capitalizeFirst } from '@global/util/string';
 
 import type { HTMLAttributes } from 'astro/types';
 
-type Props = HTMLAttributes<'svg'> &
+interface Props extends HTMLAttributes<'svg'>
 {
   readonly name: string;
   readonly title?: string;
-  readonly class?: string;
-};
+}
 
 const {
-  class: classIcon,
+  class: classIllustration,
   name,
   title,
   ...rest
 } = Astro.props;
 
-const icon = await import(`./../asset/illustration/${name}.svg?raw`);
+const modules = import.meta.glob<{ default: string }>(
+  [ '/src/global/asset/illustration/*.svg', '/src/module/**/asset/illustration/*.svg' ],
+  {
+    eager: true,
+    query: '?raw'
+  }
+);
 
-const iconContent = icon.default.slice(icon.default.indexOf('>') + 1, icon.default.indexOf('</svg>')) as string;
-const iconWidth = icon.default.match(/width="(?<width>.*?)(?="|$)/v)[1];
-const iconHeight = icon.default.match(/height="(?<height>.*?)(?="|$)/v)[1];
-const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : undefined;
-const iconRaw = iconTitle ? `${iconTitle}${iconContent}` : iconContent;
+const path = Object.keys(modules).find((illustration) => illustration.endsWith(`/${name}.svg`));
+const rawSvg = (path ? modules[path]?.default : undefined) as string;
+
+if(!rawSvg)
+{
+  throw new Error(`Illustration "${name}" not found in global or module assets.`);
+}
+
+const widthMatch = rawSvg.match(/width="(?<width>.*?)"/);
+const heightMatch = rawSvg.match(/height="(?<height>.*?)"/);
+
+const iconWidth = widthMatch ? widthMatch.groups?.width : '500';
+const iconHeight = heightMatch ? heightMatch.groups?.height : '500';
+
+const iconContent = rawSvg.slice(rawSvg.indexOf('>') + 1, rawSvg.indexOf('</svg>'));
+const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : '';
+const iconRaw = `${iconTitle}${iconContent}`;
 ---
 <svg
   width={iconWidth}
   set:html={iconRaw}
   height={iconHeight}
-  class:list={classIcon}
+  aria-hidden={!title}
   xmlns='http://www.w3.org/2000/svg'
   viewBox={`0 0 ${iconWidth} ${iconHeight}`}
   aria-label={title && capitalizeFirst(title)}
+  class:list={[ 'illustration', classIllustration ]}
   {...rest}
 />
