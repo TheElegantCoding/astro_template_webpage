@@ -1,8 +1,9 @@
 ---
-import Show from '@global/component/show.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
+
+const shouldRender = siteConfiguration.languages && Object.keys(siteConfiguration.languages).length > 1;
 ---
-<Show when={Object.keys(siteConfiguration.languages).length > 1}>
+{shouldRender && (
   <script is:inline>
     import { getLanguageFromUrl, getLanguagePathname, validateLanguage } from '@global/util/language';
     import { removeTrailingSlash } from '@global/util/link';
@@ -21,7 +22,6 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
         window.location.replace(removeTrailingSlash(`/${userLanguage}${currentPath}`));
       }
     };
-
     changeCurrentLanguage();
   </script>
-</Show>
+)}
