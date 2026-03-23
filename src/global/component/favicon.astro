@@ -1,33 +1,27 @@
 ---
 import { removeTrailingSlash } from '@global/util/link';
 
-const baseUrl = removeTrailingSlash(Astro.site as URL);
+const siteUrl = Astro.site ? removeTrailingSlash(Astro.site) : '';
+const faviconPath = `${siteUrl}/asset/favicon`;
 ---
 <link
   rel='icon'
   sizes='96x96'
   type='image/png'
-  href={`${baseUrl}/asset/favicon/favicon-96x96.png`}
+  href={`${faviconPath}/favicon-96x96.png`}
 />
 <link
   rel='icon'
   type='image/svg+xml'
-  href={`${baseUrl}/asset/favicon/favicon.svg`}
+  href={`${faviconPath}/favicon.svg`}
 />
 <link
   rel='shortcut icon'
-  href={`${baseUrl}/asset/favicon/favicon.ico`}
+  href={`${faviconPath}/favicon.ico`}
 />
 <link
   sizes='180x180'
   rel='apple-touch-icon'
-  href={`${baseUrl}/asset/favicon/apple-touch-icon.png`}
+  href={`${faviconPath}/apple-touch-icon.png`}
 />
-<meta
-  content='Astro'
-  name='apple-mobile-web-app-title'
-/>
-<link
-  rel='manifest'
-  href={`${baseUrl}/asset/favicon/site.webmanifest`}
-/>
+<link rel='manifest' href={`${faviconPath}/site.webmanifest`} />
