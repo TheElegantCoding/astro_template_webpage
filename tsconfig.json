@@ -7,10 +7,10 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@global/*": [ "src/global/*" ],
-      "@module/*": [ "src/module/*" ],
-      "@public/*": [ "public/*" ],
-      "@script/*": [ "script/*" ]
+      "@global/*": ["src/global/*"],
+      "@module/*": ["src/module/*"],
+      "@public/*": ["public/*"],
+      "@script/*": ["script/*"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
@@ -42,6 +42,6 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": [ "./.astro/types.d.ts", "./**/*" ],
-  "exclude": [ "./dist" ]
+  "include": ["./.astro/types.d.ts", "./**/*"],
+  "exclude": ["./dist"]
 }
