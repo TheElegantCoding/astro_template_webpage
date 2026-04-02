@@ -1,49 +1,49 @@
 import type { StructuredDataReviewType, StructuredDataAggregateRatingType } from '@global/type/structured_data/structured_data_review_type';
 
 type StructuredDataBrandType = {
-  name: string;
-  '@type': 'Brand';
+  readonly name: string;
+  readonly '@type': 'Brand';
 };
 
 type StructuredDataOfferType = {
-  price: number;
-  '@type': 'Offer';
-  priceCurrency: string;
-  priceValidUntil?: string;
-  availability?: StructuredDataItemAvailability;
+  readonly price: number;
+  readonly '@type': 'Offer';
+  readonly priceCurrency: string;
+  readonly priceValidUntil?: string;
+  readonly availability?: StructuredDataItemAvailability;
 };
 
 type StructuredDataAggregateOffer = {
-  lowPrice: number;
-  highPrice?: number;
-  offerCount?: number;
-  priceCurrency: string;
-  '@type': 'AggregateOffer';
-  offers?: StructuredDataOfferType[];
+  readonly lowPrice: number;
+  readonly highPrice?: number;
+  readonly offerCount?: number;
+  readonly priceCurrency: string;
+  readonly '@type': 'AggregateOffer';
+  readonly offers?: StructuredDataOfferType[];
 };
 
 type StructuredDataItemAvailability =
-  'https://schema.org/InStock' |
-  'https://schema.org/PreSale' |
-  'https://schema.org/SoldOut' |
-  'https://schema.org/PreOrder' |
-  'https://schema.org/BackOrder' |
-  'https://schema.org/OnlineOnly' |
-  'https://schema.org/OutOfStock' |
-  'https://schema.org/InStoreOnly' |
-  'https://schema.org/Discontinued' |
-  'https://schema.org/LimitedAvailability';
+  'https://schema.org/InStock'
+  | 'https://schema.org/PreSale'
+  | 'https://schema.org/SoldOut'
+  | 'https://schema.org/PreOrder'
+  | 'https://schema.org/BackOrder'
+  | 'https://schema.org/OnlineOnly'
+  | 'https://schema.org/OutOfStock'
+  | 'https://schema.org/InStoreOnly'
+  | 'https://schema.org/Discontinued'
+  | 'https://schema.org/LimitedAvailability';
 
 type StructuredDataProductType = {
-  name: string;
-  '@type': 'Product';
-  description?: string;
-  image?: string | string[];
-  brand?: StructuredDataBrandType;
-  review?: StructuredDataReviewType;
-  availability?: StructuredDataItemAvailability;
-  aggregateRating?: StructuredDataAggregateRatingType;
-  offers?: StructuredDataOfferType | StructuredDataAggregateOffer;
+  readonly name: string;
+  readonly '@type': 'Product';
+  readonly description?: string;
+  readonly image?: string | string[];
+  readonly brand?: StructuredDataBrandType;
+  readonly review?: StructuredDataReviewType;
+  readonly availability?: StructuredDataItemAvailability;
+  readonly aggregateRating?: StructuredDataAggregateRatingType;
+  readonly offers?: StructuredDataOfferType | StructuredDataAggregateOffer;
 };
 
 export type {
