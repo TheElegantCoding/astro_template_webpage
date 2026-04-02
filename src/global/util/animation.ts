@@ -1,11 +1,7 @@
-const animate = (): void =>
-{
-  const observer = new IntersectionObserver((entries) =>
-  {
-    entries.forEach((entry) =>
-    {
-      if(entry.isIntersecting)
-      {
+const animate = (): void => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
         const element = entry.target as HTMLElement;
         const animation = element.dataset.animate ?? '';
 
@@ -20,8 +16,7 @@ const animate = (): void =>
 
   const elements = document.querySelectorAll('[data-animate]');
 
-  elements.forEach((element) =>
-  {
+  elements.forEach((element) => {
     observer.observe(element);
   });
 };
