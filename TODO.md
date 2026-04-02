@@ -32,7 +32,7 @@
 - [x] remove unused css
 - [x] join media queries
 - [x] critical css
-- [ ] class name shortener
+- [x] class name shortener
 - [ ] split media queries (large project)
 
 ## Fonts
