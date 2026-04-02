@@ -11,7 +11,7 @@ const structuredData = {
 };
 
 const jsonLd = structuredData
-  ? JSON.stringify(structuredData).replaceAll('<', String.raw `\u003c`)
+  ? JSON.stringify(structuredData).replaceAll('<', String.raw`\u003c`)
   : undefined;
 ---
 {schema && (
