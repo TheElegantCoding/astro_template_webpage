@@ -16,8 +16,7 @@ const shouldRender = siteConfiguration.googleAnalyticId && import.meta.env.PROD;
     define:vars={{ siteConfiguration }}
   >
     window.dataLayer ||= [];
-    const gtag = (...args) =>
-    {
+    const gtag = (...args) => {
       dataLayer.push(args);
     };
     gtag('js', new Date());
