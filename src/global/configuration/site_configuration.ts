@@ -1,3 +1,5 @@
+import { pwaConfiguration } from './pwa_configuration';
+
 const siteConfiguration = {
   author: {
     email: 'astralysoftware@gmail.com',
@@ -8,10 +10,8 @@ const siteConfiguration = {
   defaultLanguage: 'es',
   description: '',
   googleAnalyticId: '',
-  languages: {
-    es: 'Español'
-  },
-  siteName: 'AstraLight'
+  languages: { es: 'Español' },
+  ...pwaConfiguration
 };
 
 export { siteConfiguration };
