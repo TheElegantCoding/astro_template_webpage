@@ -1,14 +1,12 @@
 import Lenis from 'lenis';
 
-const smoothScroll = () =>
-{
+const smoothScroll = () => {
   const lenis = new Lenis({
     duration: 1,
-    smoothWheel: true,
+    smoothWheel: true
   });
 
-  const raf = (time: number) =>
-  {
+  const raf = (time: number) => {
     lenis.raf(time);
     requestAnimationFrame(raf);
   };
