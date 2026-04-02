@@ -1,45 +1,39 @@
-import { resolve } from 'node:path';
-
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
+import { classShortener } from 'astro-class-shortener';
+import { inlineCss } from 'astro-inline-css';
 import { defineConfig } from 'astro/config';
+import { resolve } from 'node:path';
 import { loadEnv } from 'vite';
-
-import { inline } from './script/inline/inline';
 
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
 const dirname = resolve();
 
 export default defineConfig({
-  build:
-  {
+  build: {
     assetsPrefix: process.env.NODE_ENV === 'production' ? environment.BASE_URL : undefined,
     inlineStylesheets: 'never'
   },
-  integrations:
-  [
+  integrations: [
     sitemap({ lastmod: new Date() }),
-    partytown({ config: { forward: [ 'gtag', 'dataLayer.push' ] } }),
-    inline({ prefixPath: environment.BASE_URL })
+    partytown({ config: { forward: ['gtag', 'dataLayer.push'] } }),
+    inlineCss({ prefixPath: environment.BASE_URL }),
+    classShortener()
   ],
   security: { csp: true },
   output: 'static',
-  server:
-  {
+  server: {
     host: true,
     open: true
   },
   site: environment.BASE_URL,
   trailingSlash: 'never',
-  vite:
-  {
+  vite: {
     envDir: './src/global/env',
     css: {
       preprocessorOptions: {
-        scss: {
-          loadPaths: [resolve(dirname, 'src')]
-        }
+        scss: { loadPaths: [resolve(dirname, 'src')] }
       }
-    },
+    }
   }
 });
