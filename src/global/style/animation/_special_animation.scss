@@ -29,6 +29,7 @@
 [data-animate].flip-in-x
 {
   transform: scaleX(-1);
+  opacity: 0;
 }
 
 .flip-in-x
@@ -54,6 +55,7 @@
 [data-animate].flip-in-y
 {
   transform: scaleX(-1);
+  opacity: 0;
 }
 
 .flip-in-y
@@ -107,7 +109,6 @@
 [data-animate].heart-beat
 {
   transform: scale(1);
-  opacity: 1;
 }
 
 .heart-beat
@@ -141,7 +142,6 @@
 [data-animate].tada
 {
   transform: scale(1);
-  opacity: 1;
 }
 
 .tada
@@ -180,7 +180,6 @@
 [data-animate].float
 {
   transform: translateY(0);
-  opacity: 1;
 }
 
 .float
@@ -204,7 +203,6 @@
 [data-animate].jiggle
 {
   transform: translateY(0);
-  opacity: 1;
 }
 
 .jiggle
@@ -228,7 +226,6 @@
 [data-animate].sink
 {
   transform: translateY(0);
-  opacity: 1;
 }
 
 .sink
