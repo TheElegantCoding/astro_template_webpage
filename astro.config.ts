@@ -10,7 +10,7 @@ import { loadEnv } from 'vite';
 import { siteConfiguration } from './src/global/configuration/site_configuration';
 
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
-const BASE_URL = environment.BASE_URL ?? '/';
+const BASE_URL = process.env.NODE_ENV === 'production' ? environment.BASE_URL : '/';
 const dirname = resolve();
 
 export default defineConfig({
