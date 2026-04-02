@@ -20,7 +20,7 @@ const modules = import.meta.glob<{ default: string }>(['/src/global/asset/illust
   query: '?raw'
 });
 
-const path = Object.keys(modules).find((illustration) => illustration.endsWith(`/${name}.svg`));
+const path = Object.keys(modules).find((illustration) => { return illustration.endsWith(`/${name}.svg`); });
 const rawSvg = (path ? modules[path]?.default : undefined) as string;
 
 if (!rawSvg) {
