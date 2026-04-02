@@ -3,8 +3,7 @@ import { capitalizeFirst } from '@global/util/string';
 
 import type { HTMLAttributes } from 'astro/types';
 
-type Props = HTMLAttributes<'svg'> &
-{
+type Props = HTMLAttributes<'svg'> & {
   readonly name: string;
   readonly size?: number;
   readonly title?: string;
@@ -19,19 +18,15 @@ const {
   ...rest
 } = Astro.props;
 
-const modules = import.meta.glob<{ default: string }>(
-  [ '/src/global/asset/icon/*.svg', '/src/module/**/asset/icon/*.svg' ],
-  {
-    eager: true,
-    query: '?raw'
-  }
-);
+const modules = import.meta.glob<{ default: string }>(['/src/global/asset/icon/*.svg', '/src/module/**/asset/icon/*.svg'], {
+  eager: true,
+  query: '?raw'
+});
 
 const iconPath = Object.keys(modules).find((path) => path.endsWith(`/${name}.svg`));
 const rawSvg = iconPath ? modules[iconPath]?.default : undefined;
 
-if(!rawSvg)
-{
+if (!rawSvg) {
   throw new Error(`Icon "${name}" not found in global or module assets.`);
 }
 
