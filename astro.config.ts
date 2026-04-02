@@ -7,11 +7,8 @@ import { defineConfig } from 'astro/config';
 import { resolve } from 'node:path';
 import { loadEnv } from 'vite';
 
-import { siteConfiguration } from './src/global/configuration/site_configuration';
-
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
 const dirname = resolve();
-const hasGoogleAnalytics = Boolean(siteConfiguration.googleAnalyticId);
 
 export default defineConfig({
   build: {
@@ -39,13 +36,6 @@ export default defineConfig({
   security: {
     csp: {
       directives: ["object-src 'none'"],
-      scriptDirective: {
-        resources: [
-          `${environment.BASE_URL}/_astro/*`,
-          hasGoogleAnalytics ? 'https://www.googletagmanager.com' : '',
-          hasGoogleAnalytics ? 'https://www.google-analytics.com' : ''
-        ]
-      },
       styleDirective: {
         hashes: ['sha256-INLINE_CSS_HASH']
       }
