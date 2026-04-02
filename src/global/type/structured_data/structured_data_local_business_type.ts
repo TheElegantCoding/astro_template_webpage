@@ -3,37 +3,37 @@ import type { StructuredDataProductType } from '@global/type/structured_data/str
 import type { StructuredDataReviewType, StructuredDataAggregateRatingType } from '@global/type/structured_data/structured_data_review_type';
 
 type DayOfWeek =
-  | 'Monday' | 'Friday' | 'Sunday' | 'Tuesday' |
-  'Thursday' | 'Saturday' | 'Wednesday';
+  | 'Monday' | 'Friday' | 'Sunday' | 'Tuesday'
+  | 'Thursday' | 'Saturday' | 'Wednesday';
 
 type StructuredDataGeoCoordinatesType = {
-  latitude: number;
-  longitude: number;
-  '@type': 'GeoCoordinates';
+  readonly latitude: number;
+  readonly longitude: number;
+  readonly '@type': 'GeoCoordinates';
 };
 
 type StructuredDataOpeningHoursSpecificationType = {
-  opens: string;
-  closes: string;
-  dayOfWeek: DayOfWeek[];
-  '@type': 'OpeningHoursSpecification';
+  readonly opens: string;
+  readonly closes: string;
+  readonly dayOfWeek: DayOfWeek[];
+  readonly '@type': 'OpeningHoursSpecification';
 };
 
 type StructuredDataLocalBusinessType = {
-  url?: string;
-  name: string;
-  email?: string;
-  sameAs?: string[];
-  telephone: string;
-  priceRange: string;
-  image: string | string[];
-  '@type': 'LocalBusiness';
-  review?: StructuredDataReviewType;
-  geo?: StructuredDataGeoCoordinatesType;
-  products?: StructuredDataProductType[];
-  address: StructuredDataPostalAddressType;
-  aggregateRating?: StructuredDataAggregateRatingType;
-  openingHoursSpecification?: StructuredDataOpeningHoursSpecificationType[];
+  readonly url?: string;
+  readonly name: string;
+  readonly email?: string;
+  readonly sameAs?: string[];
+  readonly telephone: string;
+  readonly priceRange: string;
+  readonly image: string | string[];
+  readonly '@type': 'LocalBusiness';
+  readonly review?: StructuredDataReviewType;
+  readonly geo?: StructuredDataGeoCoordinatesType;
+  readonly products?: StructuredDataProductType[];
+  readonly address: StructuredDataPostalAddressType;
+  readonly aggregateRating?: StructuredDataAggregateRatingType;
+  readonly openingHoursSpecification?: StructuredDataOpeningHoursSpecificationType[];
 };
 
 export type {
