@@ -23,7 +23,7 @@
     "convert:typography": "npx tsx ./script/conversion/typography.ts",
     "convert:image": "npx tsx ./script/conversion/image.ts",
     "deploy": "pnpm build && pnpm deploy:sync",
-    "deploy:sync": "aws s3 sync ./dist 's3://BUCKECT-NAME.com/' --cache-control max-age=604800",
+    "deploy:sync": "aws s3 sync ./dist 's3://BUCKECT-NAME/' --cache-control max-age=604800",
     "deploy:invalidate": "aws cloudfront create-invalidation --distribution-id DISTRIBUTION-ID --paths '/*'"
   },
   "devDependencies": {
@@ -40,9 +40,10 @@
     "astro-inline-css": "^1.1.0",
     "autoprefixer": "10.4.27",
     "beasties": "^0.4.1",
-    "eslint-config-universal-code": "^1.0.5",
+    "eslint-config-universal-code": "^1.0.9",
     "lenis": "^1.3.21",
     "postcss": "8.5.8",
+    "postcss-combine-media-query": "^2.1.0",
     "rimraf": "6.1.3",
     "sass": "1.98.0",
     "sharp": "^0.34.5",
