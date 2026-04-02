@@ -10,11 +10,12 @@ import { loadEnv } from 'vite';
 import { siteConfiguration } from './src/global/configuration/site_configuration';
 
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
+const BASE_URL = environment.BASE_URL ?? '/';
 const dirname = resolve();
 
 export default defineConfig({
   build: {
-    assetsPrefix: process.env.NODE_ENV === 'production' ? environment.BASE_URL : undefined,
+    assetsPrefix: BASE_URL,
     inlineStylesheets: 'never'
   },
   integrations: [
@@ -27,14 +28,14 @@ export default defineConfig({
     }),
     classShortener(),
     astroPWA({
-      base: '/',
+      base: BASE_URL,
       registerType: 'autoUpdate',
       manifest: {
         name: siteConfiguration.siteName,
         short_name: siteConfiguration.shortName,
         description: siteConfiguration.description,
         orientation: siteConfiguration.orientation,
-        start_url: environment.BASE_URL,
+        start_url: BASE_URL,
         theme_color: siteConfiguration.themeColor,
         background_color: siteConfiguration.backgroundColor,
         lang: siteConfiguration.defaultLanguage,
