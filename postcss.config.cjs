@@ -1,5 +1,6 @@
 const autoprefixer = require('autoprefixer');
 const purgecss = require('@fullhuman/postcss-purgecss');
+const combineQueries = require('postcss-combine-media-query');
 
 module.exports = {
   plugins: [
@@ -7,7 +8,8 @@ module.exports = {
       content: [
         './src/**/*.astro',
         './src/**/*.{tsx,ts,jsx,js}',
-        './src/**/*.html'
+        './src/**/*.html',
+        './public/**/*.html',
       ],
       safelist: {
         standard: [
@@ -23,6 +25,7 @@ module.exports = {
       variables: true,
       rejected: true
     }),
-    autoprefixer()
+    autoprefixer(),
+    combineQueries()
   ]
 };
