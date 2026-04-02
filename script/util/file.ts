@@ -1,8 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const findAllFiles = (extension: string, directory = 'public') =>
-{
+const findAllFiles = (extension: string, directory = 'public') => {
   const filesPath = directory;
   const resultFiles = fs.readdirSync(filesPath, { recursive: true });
   const filterFiles = resultFiles.filter((element) => element.includes(extension.toLowerCase()));
