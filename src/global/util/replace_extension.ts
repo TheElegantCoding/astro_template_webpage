@@ -1,10 +1,8 @@
-const replaceExtension = (file: string, extension: string): string =>
-{
+const replaceExtension = (file: string, extension: string): string => {
   const lastDotIndex = file.lastIndexOf('.');
   const lastIndex = -1;
 
-  if(lastDotIndex === lastIndex || lastDotIndex === 0)
-  {
+  if (lastDotIndex === lastIndex || lastDotIndex === 0) {
     return file;
   }
 
