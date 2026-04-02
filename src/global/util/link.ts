@@ -20,12 +20,10 @@ const removeLeadingSlash = (url: URL | string) => url.toString().replace(/^\/+/v
 
 const removeTrailingSlash = (url: URL | string) => url.toString().replace(/\/$/v, '');
 
-const languageLink = (url: URL, link: LinkType) =>
-{
+const languageLink = (url: URL, link: LinkType) => {
   const updatedLink = { ...link };
 
-  if(Object.keys(siteConfiguration.languages).length > 1)
-  {
+  if (Object.keys(siteConfiguration.languages).length > 1) {
     const language = getLanguageFromUrl(url);
 
     updatedLink.href = addLanguageToPathname(new URL(link.href, url.origin), language);
@@ -34,13 +32,16 @@ const languageLink = (url: URL, link: LinkType) =>
   return updatedLink;
 };
 
-const validateExternalLink = (link: LinkType, href: URL | string, relationship?: string, target?: string) =>
-{
+const validateExternalLink = (
+  link: LinkType,
+  href: URL | string,
+  relationship?: string,
+  target?: string
+) => {
   const updatedLink = { ...link };
   const isExternal = href.toString().startsWith('http') || href.toString().startsWith('//');
 
-  if(isExternal)
-  {
+  if (isExternal) {
     updatedLink.rel = relationship ?? 'noopener noreferrer';
     updatedLink.target = target ?? '_blank';
   }
@@ -55,8 +56,7 @@ const externalLink = ({
   site,
   target,
   url
-}: ExternalLinkParameter): LinkType =>
-{
+}: ExternalLinkParameter): LinkType => {
   const finalHref = removeTrailingSlash(new URL(href, site ?? url.origin));
 
   let link: LinkType = {
@@ -65,10 +65,14 @@ const externalLink = ({
     target: undefined
   };
 
-  link = validateExternalLink(link, href, relationship, target);
+  link = validateExternalLink(
+    link,
+    href,
+    relationship,
+    target
+  );
 
-  if(addLanguage && !link.target)
-  {
+  if (addLanguage && !link.target) {
     link = languageLink(url, link);
   }
 
