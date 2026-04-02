@@ -1,6 +1,5 @@
 const siteConfiguration = {
-  author:
-  {
+  author: {
     email: 'astralysoftware@gmail.com',
     name: 'Astralys Software',
     web: 'astralysoftware.com'
@@ -9,8 +8,7 @@ const siteConfiguration = {
   defaultLanguage: 'es',
   description: '',
   googleAnalyticId: '',
-  languages:
-  {
+  languages: {
     es: 'Español'
   },
   siteName: 'AstraLight'
