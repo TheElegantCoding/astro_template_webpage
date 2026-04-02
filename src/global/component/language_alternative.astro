@@ -18,13 +18,15 @@ const hasMultipleLanguages = languageKeys.length > 1;
 />
 {hasMultipleLanguages && (
   <>
-    {languageKeys.map((lang) => lang !== defaultLanguage && (
-      <link
-        rel='alternate'
-        hreflang={lang}
-        href={removeTrailingSlash(new URL(`${lang}${pathname}`, Astro.site))}
-      />
-    ))}
+    {languageKeys.map((lang) => {
+      return lang !== defaultLanguage && (
+        <link
+          rel='alternate'
+          hreflang={lang}
+          href={removeTrailingSlash(new URL(`${lang}${pathname}`, Astro.site))}
+        />
+      );
+    })}
     <meta name='google' content='notranslate' />
   </>
 )}
