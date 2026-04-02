@@ -48,6 +48,7 @@
 - [x] compress svg
 - [x] compress image
 - [x] transform img to webp and avif
+- [ ] Image Source Set
 
 ## SEO
 
@@ -62,15 +63,10 @@
 - [x] partytown
 - [x] non-blocking css
 - [x] non-blocking js
+- [ ] PWA Support
 - [x] compress css
 - [x] compress html
 - [x] compress js
-
-## Component
-
-- [x] show component
-- [x] for component
-- [x] link component
 
 ## Github issue template
 
@@ -100,7 +96,6 @@
 
 - [x] gitignore
 - [x] gitattributes
-- [x] stylelint ignore
 - [x] npm config
 - [x] package.json
   - [x] only pnpm
@@ -110,11 +105,7 @@
 - [x] browserslist
 - [x] tsconfig.json
 
-## Env variables
+## Deploy
 
 - [ ] validate env
-
-### Extra todo
-
-- [x] Improve stylelint plugin
-- [x] Improve eslint plugin
+- [ ] Security Headers
