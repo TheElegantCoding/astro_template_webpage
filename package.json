@@ -13,7 +13,7 @@
     "preinstall": "npx only-allow bun",
     "dev": "astro dev",
     "check": "astro check",
-    "prod": "astro preview",
+    "preview": "astro preview",
     "build": "rimraf ./dist && astro check && astro build",
     "lint": "pnpm lint:eslint && pnpm lint:stylelint",
     "lint:eslint": "eslint . --fix",
@@ -34,9 +34,10 @@
     "@fullhuman/postcss-purgecss": "8.0.0",
     "@types/node": "25.5.0",
     "@types/ttf2woff": "^2.0.4",
+    "@vite-pwa/astro": "^1.2.0",
     "astro": "6.1.3",
     "astro-class-shortener": "^1.0.3",
-    "astro-inline-css": "^1.0.0",
+    "astro-inline-css": "^1.1.0",
     "autoprefixer": "10.4.27",
     "beasties": "^0.4.1",
     "eslint-config-universal-code": "^1.0.5",
@@ -51,6 +52,6 @@
     "ttf2woff": "^3.0.0",
     "ttf2woff2": "^8.0.0",
     "typescript": "5.9.3",
-    "vite": "8.0.3"
+    "vite": "7.3.1"
   }
 }
