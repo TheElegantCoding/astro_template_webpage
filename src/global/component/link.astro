@@ -3,8 +3,7 @@ import { externalLink } from '@global/util/link';
 
 import type { HTMLAttributes } from 'astro/types';
 
-type Props = HTMLAttributes<'a'> &
-{
+type Props = HTMLAttributes<'a'> & {
   readonly rel?: string;
   readonly href: URL | string;
   readonly addLanguage?: boolean;
