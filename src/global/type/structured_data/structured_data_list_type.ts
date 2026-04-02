@@ -1,12 +1,12 @@
 type StructuredDataListItemType = {
-  name: string;
-  position: number;
-  '@type': 'ListItem';
+  readonly name: string;
+  readonly position: number;
+  readonly '@type': 'ListItem';
 };
 
 type StructuredDataItemListType = {
-  '@type': 'ItemList';
-  itemListElement: StructuredDataListItemType[];
+  readonly '@type': 'ItemList';
+  readonly itemListElement: StructuredDataListItemType[];
 };
 
 export type {
