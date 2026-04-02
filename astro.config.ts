@@ -7,6 +7,8 @@ import { defineConfig } from 'astro/config';
 import { resolve } from 'node:path';
 import { loadEnv } from 'vite';
 
+import { siteConfiguration } from './src/global/configuration/site_configuration';
+
 const environment = loadEnv(process.env.NODE_ENV ?? 'development', './src/global/env', '');
 const dirname = resolve();
 
@@ -25,9 +27,28 @@ export default defineConfig({
     }),
     classShortener(),
     astroPWA({
-      base: environment.BASE_URL,
+      base: '/',
       registerType: 'autoUpdate',
+      manifest: {
+        name: siteConfiguration.siteName,
+        short_name: siteConfiguration.shortName,
+        description: siteConfiguration.description,
+        orientation: siteConfiguration.orientation,
+        start_url: environment.BASE_URL,
+        theme_color: siteConfiguration.themeColor,
+        background_color: siteConfiguration.backgroundColor,
+        lang: siteConfiguration.defaultLanguage,
+        display: siteConfiguration.display,
+        icons: siteConfiguration.icons,
+        screenshots: siteConfiguration.screenshots
+      },
+      devOptions: {
+        enabled: true,
+        type: 'module',
+        navigateFallback: 'index.html'
+      },
       workbox: {
+        importScripts: ['https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js'],
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,avif}'],
         navigateFallback: '/404'
       }
