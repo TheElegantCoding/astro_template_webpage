@@ -54,52 +54,60 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
 <meta property='og:url' content={canonicalURL} />
 <meta content={siteName} property='og:site_name' />
 <meta property='og:locale' content={currentLanguage} />
-{languageKeys.length > 1 && languageKeys.map((dataLanguage: string) => (
-  <meta
-    content={dataLanguage}
-    property='og:locale:alternate'
-  />
-))}
-{image.map((dataImage) => (
-  <>
-    <meta property='og:image' content={`${baseUrl}${dataImage.url}`} />
-    {dataImage.secureUrl && (<meta property='og:image:secure_url' content={`${baseUrl}${dataImage.secureUrl}`} />)}
-    {dataImage.type && (<meta property='og:image:type' content={dataImage.type} />)}
-    {dataImage.width && (<meta property='og:image:width' content={dataImage.width} />)}
-    {dataImage.height && (<meta property='og:image:height' content={dataImage.height} />)}
-    {dataImage.alt && (<meta property='og:image:alt' content={dataImage.alt} />)}
-  </>
-))}
+{languageKeys.length > 1 && languageKeys.map((dataLanguage: string) => {
+  return (
+    <meta
+      content={dataLanguage}
+      property='og:locale:alternate'
+    />
+  );
+})}
+{image.map((dataImage) => {
+  return (
+    <>
+      <meta property='og:image' content={`${baseUrl}${dataImage.url}`} />
+      {dataImage.secureUrl && (<meta property='og:image:secure_url' content={`${baseUrl}${dataImage.secureUrl}`} />)}
+      {dataImage.type && (<meta property='og:image:type' content={dataImage.type} />)}
+      {dataImage.width && (<meta property='og:image:width' content={dataImage.width} />)}
+      {dataImage.height && (<meta property='og:image:height' content={dataImage.height} />)}
+      {dataImage.alt && (<meta property='og:image:alt' content={dataImage.alt} />)}
+    </>
+  );
+})}
 {type === 'article' && (
   <>
     {article?.publishedTime && <meta content={article.publishedTime} property='article:published_time' />}
     {article?.modifiedTime && <meta content={article.modifiedTime} property='article:modified_time' />}
     {article?.expirationTime && <meta content={article.expirationTime} property='article:expiration_time' />}
-    {article?.author?.map((dataAuthor) => (
-      <OpenGraphProfile
-        gender={dataAuthor?.gender}
-        lastName={dataAuthor?.lastName}
-        username={dataAuthor?.username}
-        firstName={dataAuthor?.firstName}
-      />
-    ))}
+    {article?.author?.map((dataAuthor) => {
+      return (
+        <OpenGraphProfile
+          gender={dataAuthor?.gender}
+          lastName={dataAuthor?.lastName}
+          username={dataAuthor?.username}
+          firstName={dataAuthor?.firstName}
+        />
+      );
+    })}
     {article?.section && <meta content={article.section} property='article:section' />}
-    {article?.tag?.map((dataTag) => (<meta content={dataTag} property='article:tag' />))}
+    {article?.tag?.map((dataTag) => { return (<meta content={dataTag} property='article:tag' />); })}
   </>
 )}
 {type === 'book' && (
   <>
-    {book?.author?.map((dataAuthor) => (
-      <OpenGraphProfile
-        gender={dataAuthor?.gender}
-        lastName={dataAuthor?.lastName}
-        username={dataAuthor?.username}
-        firstName={dataAuthor?.firstName}
-      />
-    ))}
+    {book?.author?.map((dataAuthor) => {
+      return (
+        <OpenGraphProfile
+          gender={dataAuthor?.gender}
+          lastName={dataAuthor?.lastName}
+          username={dataAuthor?.username}
+          firstName={dataAuthor?.firstName}
+        />
+      );
+    })}
     {book?.isbn && <meta content={book.isbn} property='book:isbn' />}
     {book?.releaseDate && <meta content={book.releaseDate} property='book:release_date' />}
-    {book?.tag?.map((dataTag) => (<meta content={dataTag} property='book:tag' />))}
+    {book?.tag?.map((dataTag) => { return (<meta content={dataTag} property='book:tag' />); })}
   </>
 )}
 {type === 'profile' && (
