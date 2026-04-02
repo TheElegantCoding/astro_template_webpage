@@ -34,10 +34,9 @@ const {
   profile,
   title,
   type = 'website',
-  twitter =
-    {
-      type: 'summary_large_image'
-    }
+  twitter = {
+    type: 'summary_large_image'
+  }
 } = Astro.props;
 
 const baseUrl = removeTrailingSlash(Astro.site as URL);
@@ -64,7 +63,7 @@ const currentLanguage = getLanguageFromUrl(Astro.url);
 {image.map((dataImage) => (
   <>
     <meta property='og:image' content={`${baseUrl}${dataImage.url}`} />
-    {dataImage.secureUrl && (<meta property='og:image:secure_url' content={`${baseUrl}${dataImage.url}`} />)}
+    {dataImage.secureUrl && (<meta property='og:image:secure_url' content={`${baseUrl}${dataImage.secureUrl}`} />)}
     {dataImage.type && (<meta property='og:image:type' content={dataImage.type} />)}
     {dataImage.width && (<meta property='og:image:width' content={dataImage.width} />)}
     {dataImage.height && (<meta property='og:image:height' content={dataImage.height} />)}
