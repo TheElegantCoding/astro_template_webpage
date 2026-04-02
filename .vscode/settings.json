@@ -1,15 +1,31 @@
 {
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave":
-  {
+  "editor.formatOnSave": false,
+  "editor.suggest.showWords": false,
+  "eslint.run": "onSave",
+  "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.addMissingImports": "explicit",
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
-  "js/ts.format.placeOpenBraceOnNewLineForControlBlocks": true,
-  "js/ts.format.placeOpenBraceOnNewLineForFunctions": true,
-  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "json",
+    "jsonc",
+    "json5",
+    "yaml",
+    "github-actions-workflow"
+  ],
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "error", "fixable": true },
+    { "rule": "tailwind/*", "severity": "error", "fixable": true },
+    { "rule": "perfectionist/*", "severity": "error", "fixable": true }
+  ],
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -36,5 +52,6 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  }
+  },
+  "cSpell.words": ["gtag", "partytown"]
 }
