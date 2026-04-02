@@ -1,16 +1,16 @@
 type StructuredDataSearchAction = {
-  target: string;
-  'query-input': string;
-  '@type': 'SearchAction';
+  readonly target: string;
+  readonly 'query-input': string;
+  readonly '@type': 'SearchAction';
 };
 
 type StructuredDataWebsiteType<T> = {
-  url: string;
-  name: string;
-  mainEntity?: T[];
-  '@type': 'WebSite';
-  alternateName?: string[];
-  potentialAction?: StructuredDataSearchAction;
+  readonly url: string;
+  readonly name: string;
+  readonly mainEntity?: T[];
+  readonly '@type': 'WebSite';
+  readonly alternateName?: string[];
+  readonly potentialAction?: StructuredDataSearchAction;
 };
 
 export type {
