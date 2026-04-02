@@ -14,10 +14,8 @@ const shouldRender = siteConfiguration.languages && Object.keys(siteConfiguratio
     const currentPath = getLanguagePathname(currentUrl);
     const storageLanguage = localStorage.getItem('language');
 
-    const changeCurrentLanguage = () =>
-    {
-      if(userLanguage !== currentLanguage && !storageLanguage)
-      {
+    const changeCurrentLanguage = () => {
+      if(userLanguage !== currentLanguage && !storageLanguage) {
         localStorage.setItem('language', userLanguage);
         window.location.replace(removeTrailingSlash(`/${userLanguage}${currentPath}`));
       }
