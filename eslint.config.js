@@ -8,7 +8,7 @@ const config = eslintConfig({
   yml: true,
   perfectionist: true,
   typescript: true,
-  ignore: ['postcss.config.cjs']
+  ignore: ['postcss.config.cjs', 'dev-dist']
 });
 
 export default config;
