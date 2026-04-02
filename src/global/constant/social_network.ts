@@ -1,5 +1,4 @@
-const socialNetwork =
-{
+const socialNetwork = {
   gmail: '',
   instagram: '',
   tiktok: '',
