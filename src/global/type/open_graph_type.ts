@@ -1,11 +1,10 @@
 type OpenGraphType =
-'book' |
-'website' |
-'article' |
-'profile';
+  'book'
+  | 'website'
+  | 'article'
+  | 'profile';
 
-type OpenGraphMediaType =
-{
+type OpenGraphMediaType = {
   readonly url: string;
   readonly alt?: string;
   readonly type?: string;
@@ -14,23 +13,20 @@ type OpenGraphMediaType =
   readonly height?: URL | null | string | undefined;
 };
 
-type OpenGraphTwitterType =
-{
+type OpenGraphTwitterType = {
   readonly site?: string;
   readonly creator?: string;
   readonly type?: 'app' | 'player' | 'summary' | 'summary_large_image';
 };
 
-type OpenGraphProfileType =
-{
+type OpenGraphProfileType = {
   readonly lastName?: string;
   readonly username?: string;
   readonly firstName?: string;
   readonly gender?: 'male' | 'female';
 };
 
-type OpenGraphArticleType =
-{
+type OpenGraphArticleType = {
   readonly tag?: string[];
   readonly section?: string;
   readonly modifiedTime?: string;
@@ -39,8 +35,7 @@ type OpenGraphArticleType =
   readonly author?: OpenGraphProfileType[];
 };
 
-type OpenGraphBookType =
-{
+type OpenGraphBookType = {
   readonly isbn?: string;
   readonly tag?: string[];
   readonly releaseDate?: string;
