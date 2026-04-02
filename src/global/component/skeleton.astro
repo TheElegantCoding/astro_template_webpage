@@ -1,8 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
-type Props = HTMLAttributes<'span'> &
-{
+type Props = HTMLAttributes<'span'> & {
   readonly class?: string;
   readonly isLoading?: boolean;
 };
@@ -11,8 +10,8 @@ const { class: classImage, isLoading = false, ...rest } = Astro.props;
 ---
 <span
   class='skeleton'
-  class:list={[ isLoading && 'skeleton--active', classImage ]}
-  aria-hidden={isLoading ? "true" : "false"}
+  aria-hidden={isLoading ? 'true' : 'false'}
+  class:list={[isLoading && 'skeleton--active', classImage]}
   {...rest}
 >
   <slot />
