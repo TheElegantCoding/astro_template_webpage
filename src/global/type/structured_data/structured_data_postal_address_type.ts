@@ -1,10 +1,10 @@
 type StructuredDataPostalAddressType = {
-  postalCode: string;
-  addressRegion: string;
-  streetAddress: string;
-  addressCountry: string;
-  addressLocality: string;
-  '@type': 'PostalAddress';
+  readonly postalCode: string;
+  readonly addressRegion: string;
+  readonly streetAddress: string;
+  readonly addressCountry: string;
+  readonly addressLocality: string;
+  readonly '@type': 'PostalAddress';
 };
 
 export type {
