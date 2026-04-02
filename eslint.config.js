@@ -1,11 +1,14 @@
-import elegantCoding from 'eslint-config-elegant-coding';
+import eslintConfig from 'eslint-config-universal-code';
 
-export default elegantCoding({
+const config = eslintConfig({
   astro: true,
-  html: true,
-  ignore: [ 'postcss.config.cjs' ],
   json: true,
   stylistic: true,
+  unicorn: true,
+  yml: true,
+  perfectionist: true,
   typescript: true,
-  yml: true
+  ignore: ['postcss.config.cjs']
 });
+
+export default config;
