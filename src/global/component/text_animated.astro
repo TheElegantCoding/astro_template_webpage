@@ -24,15 +24,17 @@ const words = cleanText ? cleanText.split(' ') : [];
 ---
 <p aria-label={cleanText} class:list={classTextAnimated}>
   <span aria-hidden='true'>
-    {words.map((word, index) => (
-      <span class='text-animated'>
-        <span
-          class='text-animated__word'
-          style={`animation-delay: ${index * delay}s`}
-          {...rest}
-          set:html={`${word.replaceAll(' ', '&nbsp;')}&nbsp;`}
-        />
-      </span>
-    ))}
+    {words.map((word, index) => {
+      return (
+        <span class='text-animated'>
+          <span
+            class='text-animated__word'
+            style={`animation-delay: ${index * delay}s`}
+            {...rest}
+            set:html={`${word.replaceAll(' ', '&nbsp;')}&nbsp;`}
+          />
+        </span>
+      );
+    })}
   </span>
 </p>
