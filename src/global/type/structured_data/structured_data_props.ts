@@ -1,5 +1,4 @@
-type StructuredDataProps<T> =
-{
+type StructuredDataProps<T> = {
   readonly schema?: T;
 };
 
