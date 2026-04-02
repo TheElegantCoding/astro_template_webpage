@@ -1,17 +1,17 @@
 type StructuredDataAnswerType = {
-  text: string;
-  '@type': 'Answer';
+  readonly text: string;
+  readonly '@type': 'Answer';
 };
 
 type StructuredDataQuestionType = {
-  name: string;
-  '@type': 'Question';
-  acceptedAnswer: StructuredDataAnswerType;
+  readonly name: string;
+  readonly '@type': 'Question';
+  readonly acceptedAnswer: StructuredDataAnswerType;
 };
 
 type StructuredDataFaqType = {
-  '@type': 'FAQPage';
-  mainEntity: StructuredDataQuestionType[];
+  readonly '@type': 'FAQPage';
+  readonly mainEntity: StructuredDataQuestionType[];
 };
 
 export type {
