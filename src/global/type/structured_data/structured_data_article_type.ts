@@ -1,19 +1,19 @@
 import type { StructuredDataOrganization } from '@global/type/structured_data/structured_data_organization_type';
 
 type StructuredDataPersonType = {
-  url?: string;
-  name: string;
-  '@type': 'Person';
+  readonly url?: string;
+  readonly name: string;
+  readonly '@type': 'Person';
 };
 
 type StructuredDataArticleType = {
-  headline?: string;
-  description?: string;
-  dateModified?: string;
-  datePublished?: string;
-  image: string | string[];
-  '@type': 'Article' | 'NewsArticle' | 'BlogPosting';
-  author?: StructuredDataPersonType[] | StructuredDataOrganization[];
+  readonly headline?: string;
+  readonly description?: string;
+  readonly dateModified?: string;
+  readonly datePublished?: string;
+  readonly image: string | string[];
+  readonly '@type': 'Article' | 'NewsArticle' | 'BlogPosting';
+  readonly author?: StructuredDataPersonType[] | StructuredDataOrganization[];
 };
 
 export type {
