@@ -8,25 +8,23 @@ import { joinString } from '@global/util/string';
 import type { OpenGraphProps } from '@global/component/open_graph.astro';
 import type { MetaRobotType } from '@global/type/meta_robot_type';
 
-export type MetaDataProps =
-  {
-    readonly title: string;
-    readonly keywords: string[];
-    readonly description: string;
-    readonly metaRobot?: MetaRobotType;
-    readonly openGraph?: OpenGraphProps;
-  };
+export type MetaDataProps = {
+  readonly title: string;
+  readonly keywords: string[];
+  readonly description: string;
+  readonly metaRobot?: MetaRobotType;
+  readonly openGraph?: OpenGraphProps;
+};
 
 type Props = MetaDataProps;
 
 const {
   description,
   keywords,
-  metaRobot =
-    {
-      noFollow: 'follow',
-      noIndex: 'index'
-    },
+  metaRobot = {
+    noFollow: 'follow',
+    noIndex: 'index'
+  },
   openGraph,
   title
 } = Astro.props;
@@ -39,23 +37,21 @@ const baseUrl = removeTrailingSlash(Astro.site as URL);
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover' />
 <meta content='IE=edge' http-equiv='X-UA-Compatible' />
-<meta name='robots' content={joinString([ metaRobot.noIndex, metaRobot.noFollow ])} />
+<meta name='robots' content={joinString([metaRobot.noIndex, metaRobot.noFollow])} />
 <MetaAuthor />
 <meta name='description' content={description} />
 <meta name='keywords' content={joinString(keywords)} />
 <OpenGraph
   title={title}
   description={description}
-  image={[
-    {
-      alt: siteName,
-      height: '630',
-      secureUrl: '/asset/opg/opg.png',
-      type: 'image/png',
-      url: '/asset/opg/opg.png',
-      width: '1200'
-    }
-  ]}
+  image={[{
+    alt: siteName,
+    height: '630',
+    secureUrl: '/asset/opg/opg.png',
+    type: 'image/png',
+    url: '/asset/opg/opg.png',
+    width: '1200'
+  }]}
   {...openGraph}
 />
 <link rel='sitemap' href={`${baseUrl}/sitemap-index.xml`} />
