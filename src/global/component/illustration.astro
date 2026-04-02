@@ -3,11 +3,10 @@ import { capitalizeFirst } from '@global/util/string';
 
 import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<'svg'>
-{
+type Props = HTMLAttributes<'svg'> & {
   readonly name: string;
   readonly title?: string;
-}
+};
 
 const {
   class: classIllustration,
@@ -16,19 +15,15 @@ const {
   ...rest
 } = Astro.props;
 
-const modules = import.meta.glob<{ default: string }>(
-  [ '/src/global/asset/illustration/*.svg', '/src/module/**/asset/illustration/*.svg' ],
-  {
-    eager: true,
-    query: '?raw'
-  }
-);
+const modules = import.meta.glob<{ default: string }>(['/src/global/asset/illustration/*.svg', '/src/module/**/asset/illustration/*.svg'], {
+  eager: true,
+  query: '?raw'
+});
 
 const path = Object.keys(modules).find((illustration) => illustration.endsWith(`/${name}.svg`));
 const rawSvg = (path ? modules[path]?.default : undefined) as string;
 
-if(!rawSvg)
-{
+if (!rawSvg) {
   throw new Error(`Illustration "${name}" not found in global or module assets.`);
 }
 
@@ -50,6 +45,6 @@ const iconRaw = `${iconTitle}${iconContent}`;
   xmlns='http://www.w3.org/2000/svg'
   viewBox={`0 0 ${iconWidth} ${iconHeight}`}
   aria-label={title && capitalizeFirst(title)}
-  class:list={[ 'illustration', classIllustration ]}
+  class:list={['illustration', classIllustration]}
   {...rest}
 />
