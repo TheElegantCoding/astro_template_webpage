@@ -41,7 +41,7 @@ const getLanguagePathname = (url: URL) => {
   const modifiedUrl = url;
 
   const languagePrefixes = Object.keys(languages);
-  const hasLanguagePrefix = languagePrefixes.some((prefix) => modifiedUrl.pathname.includes(prefix));
+  const hasLanguagePrefix = languagePrefixes.some((prefix) => { return modifiedUrl.pathname.includes(prefix); });
 
   if (hasLanguagePrefix) {
     const regex = new RegExp(`^/(${languagePrefixes.join('|')})(?=/|$)`, 'u');
@@ -74,7 +74,9 @@ const validateDefaultLanguage = (url: URL) => {
   return urlLang === defaultLanguage;
 };
 
-const getI18n = <T>(language: LanguageType, languageModule: Record<string, T>): T => languageModule[language] as T;
+const getI18n = <T>(language: LanguageType, languageModule: Record<string, T>): T => {
+  return languageModule[language] as T;
+};
 
 export {
   getI18n,
