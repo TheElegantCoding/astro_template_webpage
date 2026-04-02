@@ -1,23 +1,20 @@
-import fs from 'node:fs';
-
 import { findAllFiles } from '@script/util/file';
+import fs from 'node:fs';
 import { optimize } from 'svgo';
 
-const compressSvg = () =>
-{
+const compressSvg = () => {
   const publicSvgFiles = findAllFiles('.svg');
   const sourceSvgFiles = findAllFiles('.svg', '/src');
 
-  const svg = [ ...publicSvgFiles, ...sourceSvgFiles ];
+  const svg = [...publicSvgFiles, ...sourceSvgFiles];
 
-  svg.forEach((file) =>
-  {
+  svg.forEach((file) => {
     const svgString = fs.readFileSync(file, 'utf8');
 
     const result = optimize(svgString, {
       multipass: true,
       path: file,
-      plugins: [ 'preset-default' ]
+      plugins: ['preset-default']
     });
 
     fs.writeFileSync(file, result.data);
