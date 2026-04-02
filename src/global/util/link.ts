@@ -16,9 +16,13 @@ type ExternalLinkParameter = {
   relationship?: string;
 };
 
-const removeLeadingSlash = (url: URL | string) => url.toString().replace(/^\/+/v, '');
+const removeLeadingSlash = (url: URL | string) => {
+  return url.toString().replace(/^\/+/v, '');
+};
 
-const removeTrailingSlash = (url: URL | string) => url.toString().replace(/\/$/v, '');
+const removeTrailingSlash = (url: URL | string) => {
+  return url.toString().replace(/\/$/v, '');
+};
 
 const languageLink = (url: URL, link: LinkType) => {
   const updatedLink = { ...link };
