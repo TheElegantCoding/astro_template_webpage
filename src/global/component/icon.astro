@@ -23,7 +23,7 @@ const modules = import.meta.glob<{ default: string }>(['/src/global/asset/icon/*
   query: '?raw'
 });
 
-const iconPath = Object.keys(modules).find((path) => path.endsWith(`/${name}.svg`));
+const iconPath = Object.keys(modules).find((path) => { return path.endsWith(`/${name}.svg`); });
 const rawSvg = iconPath ? modules[iconPath]?.default : undefined;
 
 if (!rawSvg) {
