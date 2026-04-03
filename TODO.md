@@ -13,7 +13,7 @@
 - [x] description
 - [x] keyword
 - [x] favicon
-- [x] favicon Apple
+- [x] favicon apple
 - [x] window tiles
 - [x] open graph
 - [x] twitter card
@@ -33,12 +33,12 @@
 - [x] join media queries
 - [x] critical css
 - [x] class name shortener
-- [ ] split media queries (large project)
 
 ## Fonts
 
 - [x] preload font
 - [x] font face in css
+- [x] preload en HTML
 
 ## Image
 
@@ -48,7 +48,7 @@
 - [x] compress svg
 - [x] compress image
 - [x] transform img to webp and avif
-- [ ] Image Source Set
+- [x] modern formats webp and avif
 
 ## SEO
 
@@ -63,17 +63,10 @@
 - [x] partytown
 - [x] non-blocking css
 - [x] non-blocking js
-- [ ] PWA Support
+- [x] PWA Support
 - [x] compress css
 - [x] compress html
 - [x] compress js
-
-## Github issue template
-
-- [x] bug report
-- [x] doc suggestion
-- [x] feature request
-- [x] questions
 
 ## Vscode settings
 
@@ -86,8 +79,16 @@
 - [x] eslint
 - [x] stylelint css, scss
 
-## Git hook
+## Git
 
+- [x] issue template
+- [x] code of conduct
+- [x] pull request template 
+- [x] bug report template
+- [x] doc suggestion template
+- [x] feature request template
+- [x] questions template
+- [x] codeowners
 - [ ] commit lint
 - [ ] semantic release
 - [ ] changelog
@@ -98,7 +99,7 @@
 - [x] gitattributes
 - [x] npm config
 - [x] package.json
-  - [x] only pnpm
+  - [x] only bun
   - [x] title
   - [x] description
   - [x] scripts
@@ -107,5 +108,6 @@
 
 ## Deploy
 
-- [ ] validate env
-- [ ] Security Headers
+- [x] validate env
+- [ ] terraform config
+- [ ] security headers
