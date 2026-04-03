@@ -1,0 +1,20 @@
+---
+import { removeTrailingSlash } from '@global/util/link';
+
+const siteUrl = Astro.site ? removeTrailingSlash(Astro.site) : '';
+const fontPath = `${siteUrl}/asset/font/inter`;
+---
+<link
+  as='font'
+  crossorigin
+  rel='preload'
+  type='font/woff2'
+  href={`${fontPath}/inter_regular.woff2`}
+/>
+<link
+  as='font'
+  crossorigin
+  rel='preload'
+  type='font/woff2'
+  href={`${fontPath}/inter_bold.woff2`}
+/>
