@@ -6,9 +6,11 @@ import LanguageAlternative from '@global/component/language_alternative.astro';
 import MetaData from '@global/component/meta_data.astro';
 import Pwa from '@global/component/pwa.astro';
 import StructuredData from '@global/component/structured_data.astro';
-import { getLanguageFromUrl } from '@global/util/language';
+import Typography from '@global/component/typography.astro';
 
 import '../style/main.scss';
+import { getLanguageFromUrl } from '@global/util/language';
+
 import type { BaseLayoutProps } from '@global/type/base_layout_type';
 
 type Props<T> = BaseLayoutProps<T>;
@@ -21,14 +23,15 @@ const language = getLanguageFromUrl(Astro.url);
 <html dir='ltr' lang={language}>
   <head>
     <MetaData {...metaData} />
-    <LanguageAlternative />
+    <title>{metaData.title}</title>
+    <Typography />
     <Favicon />
+    <Pwa />
+    <LanguageAlternative />
+    <Internationalization />
     <StructuredData schema={structuredData} />
     <slot name='head' />
-    <Internationalization />
     <GoogleAnalytic />
-    <Pwa />
-    <title>{metaData.title}</title>
   </head>
   <body>
     <slot />
