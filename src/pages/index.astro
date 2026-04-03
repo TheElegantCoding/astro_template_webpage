@@ -1,6 +1,13 @@
 ---
 import Illustration from '@global/component/illustration.astro';
 import BaseLayout from '@global/layout/base_layout.astro';
+import { logger } from '@global/util/logger';
+
+logger.error('Error de ejemplo: Esto es solo una demostración de logging en Astro.');
+logger.warning('Advertencia de ejemplo: Esto es solo una demostración de logging en Astro.');
+logger.info('Información de ejemplo: Esto es solo una demostración de logging en Astro.');
+logger.success('Éxito de ejemplo: Esto es solo una demostración de logging en Astro.');
+logger.debug('Depuración de ejemplo: Esto es solo una demostración de logging en Astro.');
 ---
 <BaseLayout
   metaData={{
@@ -19,3 +26,13 @@ import BaseLayout from '@global/layout/base_layout.astro';
     <h1 class='hero__title'>AstraLight</h1>
   </div>
 </BaseLayout>
+
+<script>
+  import { logger } from "@global/util/logger";
+
+  logger.error('Error de ejemplo en el script: Esto es solo una demostración de logging en Astro.');
+  logger.info('Información de ejemplo en el script: Esto es solo una demostración de logging en Astro.');
+  logger.success('Éxito de ejemplo en el script: Esto es solo una demostración de logging en Astro.');
+  logger.warning('Advertencia de ejemplo en el script: Esto es solo una demostración de logging en Astro.');
+  logger.debug('Depuración de ejemplo en el script: Esto es solo una demostración de logging en Astro.');
+</script>
