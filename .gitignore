@@ -7,6 +7,14 @@ Thumbs.db
 # Dependencies
 node_modules/
 
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+dev.tfplan
+prod.tfplan
+
 # Build
 dist/
 dev-dist/
