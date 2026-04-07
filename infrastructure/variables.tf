@@ -8,7 +8,7 @@ variable "astralys_email" {
   type        = string
 }
 
-variable "domain" {
+variable "domains" {
   description = "The domain names for the cloudfront distribution"
   type        = list(string)
 }
