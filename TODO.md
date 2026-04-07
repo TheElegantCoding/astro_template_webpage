@@ -109,5 +109,10 @@
 ## Deploy
 
 - [x] validate env
-- [ ] terraform config
-- [ ] security headers
+- [x] terraform config
+- [x] security headers
+
+## Other
+
+- [ ] custom logs for deploy 
+- [ ] script to create files automatically
