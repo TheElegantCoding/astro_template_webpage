@@ -19,7 +19,12 @@ export default defineConfig({
   },
   integrations: [
     sitemap({ lastmod: new Date() }),
-    partytown({ config: { forward: ['gtag', 'dataLayer.push'] } }),
+    partytown({
+      config: {
+        forward: ['gtag', 'dataLayer.push'],
+        debug: ENV === 'development'
+      }
+    }),
     inlineCss({
       prefixPath: BASE_URL,
       csp: true,
@@ -28,6 +33,7 @@ export default defineConfig({
     classShortener(),
     astroPWA({
       base: ENV === 'production' ? `${BASE_URL}/` : '/',
+      injectRegister: 'script',
       registerType: 'autoUpdate',
       disable: ENV === 'development',
       manifest: {
@@ -44,11 +50,22 @@ export default defineConfig({
         screenshots: siteConfiguration.screenshots
       },
       devOptions: {
-        enabled: true,
+        enabled: ENV === 'development',
         type: 'module',
         navigateFallback: 'index.html'
       },
       workbox: {
+        globIgnores: [
+          '**/404.html',
+          '404.html',
+          '404'
+        ],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        navigateFallback: '/index.html',
+        runtimeCaching: [{
+          urlPattern: /\/404/,
+          handler: 'NetworkOnly'
+        }],
         importScripts: ['https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js']
       }
     })
@@ -71,6 +88,19 @@ export default defineConfig({
   trailingSlash: 'never',
   vite: {
     envDir: './src/global/env',
+    build: {
+      assetsInlineLimit: 0,
+      rollupOptions: {
+        output: {
+          manualChunks (id) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+            return null;
+          }
+        }
+      }
+    },
     css: {
       preprocessorOptions: {
         scss: { loadPaths: [resolve(dirname, 'src')] }
