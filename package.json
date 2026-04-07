@@ -18,13 +18,16 @@
     "lint": "pnpm lint:eslint && pnpm lint:stylelint",
     "lint:eslint": "eslint . --fix",
     "lint:stylelint": "stylelint ./src/**/*.{scss,css} --fix",
+    "lint:terraform": "terraform validate",
     "compress:convert": "pnpm compress:svg && pnpm convert:image && pnpm convert:typography",
     "compress:svg": "npx tsx ./script/compression/svg.ts",
     "convert:typography": "npx tsx ./script/conversion/typography.ts",
     "convert:image": "npx tsx ./script/conversion/image.ts",
-    "deploy": "pnpm build && pnpm deploy:sync",
-    "deploy:sync": "aws s3 sync ./dist 's3://BUCKECT-NAME/' --cache-control max-age=604800",
-    "deploy:invalidate": "aws cloudfront create-invalidation --distribution-id DISTRIBUTION-ID --paths '/*'"
+    "tf:init": "terraform -chdir=infrastructure init",
+    "tf:plan:dev": "terraform -chdir=infrastructure plan -var-file=dev.tfvars -out=dev.tfplan",
+    "tf:apply:dev": "terraform -chdir=infrastructure apply \"dev.tfplan\"",
+    "tf:destroy:dev": "terraform -chdir=infrastructure destroy -var-file=dev.tfvars",
+    "deploy": "npx tsx ./infrastructure/deploy.ts"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.8",
@@ -55,6 +58,6 @@
     "ttf2woff": "^3.0.0",
     "ttf2woff2": "^8.0.0",
     "typescript": "5.9.3",
-    "vite": "7.3.1"
+    "vite": "7.3.2"
   }
 }
