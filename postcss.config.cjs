@@ -15,6 +15,7 @@ module.exports = {
         standard: [
           /^delay-/,
           /active$/,
+          /lenis/,
           /loading$/,
           /visible$/
         ]
