@@ -35,7 +35,7 @@ export default defineConfig({
       base: ENV === 'production' ? `${BASE_URL}/` : '/',
       injectRegister: 'script',
       registerType: 'autoUpdate',
-      disable: ENV === 'development',
+      disable: true,
       manifest: {
         name: siteConfiguration.siteName,
         short_name: siteConfiguration.shortName,
@@ -72,7 +72,11 @@ export default defineConfig({
   ],
   security: {
     csp: {
-      directives: ["object-src 'none'"],
+      directives: [
+        "object-src 'none'",
+        "frame-ancestors 'none'",
+        "base-uri 'self'"
+      ],
       styleDirective: {
         hashes: ['sha256-INLINE_CSS_HASH']
       }
