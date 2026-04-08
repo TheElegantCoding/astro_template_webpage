@@ -49,6 +49,8 @@
 - [x] compress image
 - [x] transform img to webp and avif
 - [x] modern formats webp and avif
+- [ ] aspect ratio
+- [ ] responsive images with srcset and sizes
 
 ## SEO
 
@@ -114,5 +116,15 @@
 
 ## Other
 
+- [ ] update readme
+- [ ] setup vitest
+- [ ] add testing
+- [ ] testing de siteConfiguration (all obligated properties are correctly placed) include pwa config
+- [ ] add testing for string.ts
+- [ ] add testing for link.ts
+- [ ] add testing for replace_extension.ts
+- [ ] add testing for language.ts
+- [ ] add testing for animation.ts
 - [ ] custom logs for deploy 
 - [ ] script to create files automatically
+- [ ] diagonal skeleton and change color of skeleton (should skeleton be just one class and not a component ?)
