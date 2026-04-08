@@ -3,8 +3,13 @@
 /// <reference types="vite-pwa/client" />
 
 type ImportMetaEnv = {
-  readonly PORT: number;
+  readonly PORT: string;
+  readonly MODE: string;
+  readonly DEV: boolean;
+  readonly SSR: boolean;
+  readonly PROD: boolean;
   readonly BASE_URL: string;
+  readonly NODE_ENV: 'test' | 'production' | 'development';
 };
 
 declare module 'virtual:pwa-info' {
