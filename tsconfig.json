@@ -2,6 +2,11 @@
   "compilerOptions": {
     "target": "ESNext",
     "jsx": "preserve",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "baseUrl": "./",
     "rootDir": "./",
     "module": "ESNext",
@@ -12,6 +17,7 @@
       "@public/*": ["public/*"],
       "@script/*": ["script/*"]
     },
+    "ignoreDeprecations": "6.0",
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "allowJs": true,
