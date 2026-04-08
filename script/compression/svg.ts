@@ -1,5 +1,6 @@
 import { findAllFiles } from '@script/util/file';
 import fs from 'node:fs';
+import path from 'node:path';
 import { optimize } from 'svgo';
 
 const compressSvg = () => {
@@ -9,7 +10,9 @@ const compressSvg = () => {
   const svg = [...publicSvgFiles, ...sourceSvgFiles];
 
   svg.forEach((file) => {
-    const svgString = fs.readFileSync(file, 'utf8');
+    const cleanRelativePath = file.replace(/^[/\\]+/, '');
+    const filePath = path.resolve(process.cwd(), cleanRelativePath);
+    const svgString = fs.readFileSync(filePath, 'utf8');
 
     const result = optimize(svgString, {
       multipass: true,
@@ -17,7 +20,7 @@ const compressSvg = () => {
       plugins: ['preset-default']
     });
 
-    fs.writeFileSync(file, result.data);
+    fs.writeFileSync(filePath, result.data);
   });
 };
 
