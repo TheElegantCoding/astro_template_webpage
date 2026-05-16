@@ -1,37 +1,35 @@
 ---
-import Favicon from '@global/component/favicon.astro';
-import GoogleAnalytic from '@global/component/google_analytic.astro';
-import Internationalization from '@global/component/internationalization.astro';
-import LanguageAlternative from '@global/component/language_alternative.astro';
-import MetaData from '@global/component/meta_data.astro';
-import Pwa from '@global/component/pwa.astro';
-import StructuredData from '@global/component/structured_data.astro';
 import Typography from '@global/component/typography.astro';
+import { siteConfiguration } from '@global/configuration/site_configuration';
 
 import '../style/main.scss';
-import { getLanguageFromUrl } from '@global/util/language';
 
-import type { BaseLayoutProps } from '@global/type/base_layout_type';
+import { Seo } from 'astro-meta-engine';
 
-type Props<T> = BaseLayoutProps<T>;
+import type { SeoProps } from 'astro-meta-engine';
 
-const { metaData, structuredData } = Astro.props;
+type Props = SeoProps;
 
-const language = getLanguageFromUrl(Astro.url);
+const {
+  openGraph = siteConfiguration.openGraph,
+  favicon = siteConfiguration.favicon,
+  languageAlternative = siteConfiguration.i18n,
+  metaAuthor = siteConfiguration.metaAuthor,
+  ...rest
+} = Astro.props;
 ---
 <!doctype html>
-<html dir='ltr' lang={language}>
+<html dir='ltr' lang='es'>
   <head>
-    <MetaData {...metaData} />
-    <title>{metaData.title}</title>
+    <Seo
+      favicon={favicon}
+      openGraph={openGraph}
+      metaAuthor={metaAuthor}
+      languageAlternative={languageAlternative}
+      {...rest}
+    />
     <Typography />
-    <Favicon />
-    <Pwa />
-    <LanguageAlternative />
-    <Internationalization />
-    <StructuredData schema={structuredData} />
     <slot name='head' />
-    <GoogleAnalytic />
   </head>
   <body>
     <slot />
