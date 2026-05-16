@@ -1,0 +1,16 @@
+{
+  "lintStaged": {
+    "*.astro": "bunx astro check",
+    "*.{ts,js,jsx,tsx,json,html,yml,yaml,astro}": "bunx eslint --fix",
+    "*.{css,scss}": "bunx stylelint --fix",
+    "*.{tf,tfvars}": "terraform fmt -recursive"
+  },
+  "release": {
+    "releaseToGithub": true
+  },
+  "changelog": {
+    "changelogPath": "CHANGELOG.md",
+    "generateChangelog": true
+  },
+  "packageManager": "bun"
+}
