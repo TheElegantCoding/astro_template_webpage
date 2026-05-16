@@ -45,7 +45,7 @@
     "astro-crush": "1.0.0",
     "astro-inline-css": "^1.1.1",
     "astro-lang-i18n": "1.0.0",
-    "astro-meta-engine": "1.0.4",
+    "astro-meta-engine": "1.0.5",
     "autoprefixer": "10.5.0",
     "envlys": "1.0.2",
     "eslint-config-universal-code": "1.0.19",
