@@ -1,10 +1,15 @@
 RewriteEngine on
 
-# 1. Force HTTPS and Non-WWW (Cleanest URL for SEO)
-RewriteCond %{HTTP_HOST} ^(www\.)(.+) [OR]
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^(www\.)?(.+)
-RewriteRule ^ https://%2%{REQUEST_URI} [R=301,L]
+# 1. Forzar HTTPS y eliminar WWW en una sola regla
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# 2. Eliminar el Trailing Slash (la barra al final /)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
 
 # 2. HSTS (Strict Transport Security)
 <IfModule mod_headers.c>
