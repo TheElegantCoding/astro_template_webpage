@@ -5,16 +5,13 @@ import { siteConfiguration } from '@global/configuration/site_configuration';
 import BaseLayout from '@global/layout/base_layout.astro';
 ---
 <BaseLayout
-  metaData={{
-    description: 'La página que solicitaste parece haberse tomado unas vacaciones. Regrese a la página de inicio y continúe su viaje.',
-    keywords:
-    [
-      '404, pagina no encontrada',
-      'volver al inicio',
-      '404 error'
-    ],
-    title: `${siteConfiguration.siteName} | Pagina no encontrada`
-  }}
+  title={`${siteConfiguration.siteName} | Pagina no encontrada`}
+  keywords={[
+    '404, pagina no encontrada',
+    'volver al inicio',
+    '404 error'
+  ]}
+  description='La página que solicitaste parece haberse tomado unas vacaciones. Regrese a la página de inicio y continúe su viaje.'
 >
   <div class='not-found base-layout'>
     <h1 data-animate='zoom-in' class='not-found__letter'>404</h1>
