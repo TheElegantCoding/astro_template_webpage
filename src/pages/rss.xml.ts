@@ -7,7 +7,7 @@ export const GET = async () => {
     items: [],
     site: import.meta.env.BASE_URL,
     title: siteConfiguration.siteName,
-    customData: `<language>${siteConfiguration.defaultLanguage}</language>`,
+    customData: `<language>${siteConfiguration.i18n.defaultLanguage}</language>`,
     trailingSlash: false
   });
 };
