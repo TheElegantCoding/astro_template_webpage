@@ -29,6 +29,7 @@ const siteConfiguration = {
     png: '/asset/favicon/favicon.png',
     svg: '/asset/favicon/favicon.svg'
   },
+  siteName: 'Astralight',
   description: '',
   googleAnalyticId: ''
 };
