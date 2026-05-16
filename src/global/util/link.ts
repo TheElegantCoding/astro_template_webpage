@@ -1,6 +1,3 @@
-import { siteConfiguration } from '@global/configuration/site_configuration';
-import { getLanguageFromUrl, addLanguageToPathname } from '@global/util/language';
-
 type LinkType = {
   href: URL | string;
   rel: string | undefined;
@@ -24,18 +21,6 @@ const removeTrailingSlash = (url: URL | string) => {
   return url.toString().replace(/\/$/v, '');
 };
 
-const languageLink = (url: URL, link: LinkType) => {
-  const updatedLink = { ...link };
-
-  if (Object.keys(siteConfiguration.languages).length > 1) {
-    const language = getLanguageFromUrl(url);
-
-    updatedLink.href = addLanguageToPathname(new URL(link.href, url.origin), language);
-  }
-
-  return updatedLink;
-};
-
 const validateExternalLink = (
   link: LinkType,
   href: URL | string,
@@ -54,7 +39,6 @@ const validateExternalLink = (
 };
 
 const externalLink = ({
-  addLanguage,
   href,
   relationship,
   site,
@@ -75,10 +59,6 @@ const externalLink = ({
     relationship,
     target
   );
-
-  if (addLanguage && !link.target) {
-    link = languageLink(url, link);
-  }
 
   return link;
 };
