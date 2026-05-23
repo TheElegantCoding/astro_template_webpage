@@ -4,12 +4,32 @@
 @use './vendor/normalize';
 @use './vendor/reset';
 
-// Base
+// Base styles
 @use './base/base';
 @use './base/typography';
 
 // Layout
 @use './layout/base_layout';
+
+// Components
+@use './component/custom_image';
+@use './component/illustration';
+@use './component/scrollbar';
+@use './component/skeleton';
+@use './component/icon';
+@use './component/input';
+@use './component/alert';
+@use './component/modal';
+@use './component/scroll';
+@use './component/navbar';
+@use './component/navbar_link';
+@use './component/button';
+@use './component/overlay';
+@use './component/accordion';
+@use './component/text_animated';
+
+// Modules and pages
+@use './page/index';
 
 // Animation
 @use './animation/fade_animation';
@@ -18,18 +38,6 @@
 @use './animation/special_animation';
 @use './animation/zoom_animation';
 @use './animation/blur_animation';
-
-// Components
-@use './component/skeleton';
-@use './component/custom_image';
-@use './component/scrollbar';
-@use './component/illustration';
-@use './component/icon';
-@use './component/text_animated';
-
-// Modules and pages
-@use './page/not_found';
-@use 'module/landing/style/landing';
 
 // Helpers
 @use './helper/aspect_ratio';
