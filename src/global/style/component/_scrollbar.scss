@@ -1,35 +1,29 @@
 @use 'global/style/config' as *;
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 1.3rem;
   border-radius: $rounded_medium;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background-color: $primary_500;
   background-clip: content-box;
   border: $spacing_3 solid transparent;
   border-radius: $rounded_medium;
 
-  &:hover
-  {
+  &:hover {
     background-color: $primary_400;
   }
 
-  &:active
-  {
+  &:active {
     background-color: $primary_700;
   }
 }
 
-::-webkit-scrollbar-track
-{
+::-webkit-scrollbar-track {
   background: $gray_200;
 }
 
-::-webkit-scrollbar-corner
-{
+::-webkit-scrollbar-corner {
   background: $gray_200;
 }
