@@ -1,14 +1,12 @@
 @use 'global/style/config' as *;
 
-.custom-image
-{
+.custom-image {
   position: relative;
   display: inline-block;
   line-height: 0;
 }
 
-.custom-image__tag
-{
+.custom-image__tag {
   display: block;
   object-fit: cover;
 }
