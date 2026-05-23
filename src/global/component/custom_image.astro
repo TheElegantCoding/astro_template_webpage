@@ -1,63 +1,77 @@
 ---
-import Skeleton from '@global/component/skeleton.astro';
-import { removeTrailingSlash } from '@global/util/link';
-import { replaceExtension } from '@global/util/replace_extension';
+import { handleImage } from '@global/util/handle_image';
 
+import Skeleton from './skeleton.astro';
+
+import type { ImageQuality } from 'astro';
 import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'img'> & {
   readonly src: string;
   readonly alt: string;
+  readonly class?: string;
+  readonly sizes?: string;
+  readonly width?: number;
+  readonly height?: number;
+  readonly formats?: string[];
   readonly priority?: boolean;
   readonly classSkeleton?: string;
+  readonly quality?: ImageQuality;
   readonly disableLoader?: boolean;
-  readonly classContainer?: string;
-  readonly formats?: Array<'avif' | 'webp'>;
+  readonly layout?: 'none' | 'fixed' | 'full-width' | 'constrained';
 };
 
 const {
-  alt,
-  class: classImage,
-  classContainer,
-  classSkeleton,
-  disableLoader,
-  formats = ['avif', 'webp'],
-  priority = false,
   src: source,
+  alt,
+  sizes,
+  formats = ['avif', 'webp'],
+  layout,
+  width,
+  height,
+  quality,
+  priority,
+  classSkeleton,
+  class: classImage,
+  disableLoader,
   ...rest
 } = Astro.props;
 
-const baseUrl = removeTrailingSlash(Astro.site?.toString() || '');
-const imageUrl = source.startsWith('http') ? source : `${baseUrl}${source}`;
+const { image, sources } = await handleImage({
+  source,
+  sizes,
+  formats,
+  layout,
+  quality,
+  width,
+  height
+});
 ---
 <Skeleton
   class='custom-image'
-  isLoading={!disableLoader}
+  visible={!disableLoader}
   class:list={classSkeleton}
 >
-  <picture class:list={classContainer}>
-    <slot />
-    {formats.includes('avif') && (
-      <source
-        type='image/avif'
-        sizes={rest.sizes}
-        srcset={replaceExtension(imageUrl, 'avif')}
-      />
-    )}
-    {formats.includes('webp') && (
-      <source
-        type='image/webp'
-        sizes={rest.sizes}
-        srcset={replaceExtension(imageUrl, 'webp')}
-      />
-    )}
+  <slot />
+  <picture data-animate={rest['data-animate']}>
+    {sources.map((img) => {
+      return (
+        <source
+          type={`image/${img.options.format}`}
+          srcset={img.attributes.srcSet || img.src}
+        />
+      );
+    })}
     <img
       alt={alt}
-      src={imageUrl}
+      src={image.src}
       class='custom-image__tag'
       class:list={[classImage]}
+      width={image.attributes.width}
+      height={image.attributes.height}
       loading={priority ? 'eager' : 'lazy'}
       decoding={priority ? 'auto' : 'async'}
+      sizes={sizes || image.attributes.sizes}
       fetchpriority={priority ? 'high' : 'auto'}
       {...rest}
     />
