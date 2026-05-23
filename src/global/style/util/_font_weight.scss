@@ -1,37 +1,18 @@
-@mixin font_weight($weight)
- {
-  @if $weight == 'light'
-  {
-    font-weight: 300;
+@use 'sass:map';
+
+$font_weight: (
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semi_bold': 600,
+  'bold': 700,
+  'extra_bold': 800
+);
+
+@function font-weight($weight) {
+  @if map.has-key($font_weight, $weight) {
+    @return map.get($font_weight, $weight);
   }
 
-  @else if $weight == 'regular'
-  {
-    font-weight: 400;
-  }
-
-  @else if $weight == 'medium'
-  {
-    font-weight: 500;
-  }
-
-  @else if $weight == 'semi_bold'
-  {
-    font-weight: 600;
-  }
-
-  @else if $weight == 'bold'
-  {
-    font-weight: 700;
-  }
-
-  @else if $weight == 'extra_bold'
-  {
-    font-weight: 800;
-  }
-
-  @else
- {
-    font-weight: $weight;
-  }
+  @return $weight;
 }
