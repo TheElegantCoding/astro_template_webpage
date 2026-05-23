@@ -1,0 +1,110 @@
+@use 'global/style/config' as *;
+
+@property --angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
+
+.button {
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  display: inline-flex;
+  gap: $spacing_32;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $spacing_20;
+  padding: $spacing_12 $spacing_32;
+  font-weight: font-weight(semi_bold);
+  color: $gray_50;
+  background: $primary_700;
+  border: none;
+  border-radius: $rounded_small;
+  outline: none;
+  box-shadow: $shadow_down_black_200;
+  transition: transform $ms_base, color $ms_base, background-color $ms_base, box-shadow $ms_base;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: $rounded_max;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    transform: skewX(-20deg);
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, $transparent 0%, rgb(255, 255, 255, 0.4) 50%, $transparent 100%);
+  }
+
+  @include responsive(phone) {
+    font-size: $h5;
+  }
+
+  &:hover {
+    transform: scale(1.07);
+    box-shadow: $shadow_down_primary_500;
+  }
+
+  &:hover::before {
+    left: 150%;
+    transition: left 0.8s ease;
+  }
+
+  &:active {
+    transform: scale(0.93);
+  }
+}
+
+.button--rounded {
+  border-radius: $rounded_max;
+}
+
+.button--outline {
+  color: $primary_700;
+  background-color: $gray_100;
+  outline: $spacing_2 solid $primary_700;
+
+  &:hover {
+    color: $gray_50;
+    background-color: $primary_700;
+    outline: none;
+  }
+}
+
+.button--gradient {
+  color: $gray_950;
+  background: $gray_100;
+  background-image: linear-gradient($gray_100, $gray_100),
+    conic-gradient(from var(--angle), #3059e4 0%, #34d1f9 25%, #00d490 50%, #34d1f9 75%, #3059e4 100%);
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  border: $spacing_3 solid transparent;
+  animation: rotate-border 2s linear infinite;
+
+  &::after {
+    display: none;
+  }
+
+  &:hover {
+    color: $gray_50;
+    background-image: linear-gradient($primary_700, $primary_700),
+      conic-gradient(from var(--angle), #3059e4 0%, #34d1f9 25%, #00d490 50%, #34d1f9 75%, #3059e4 100%);
+    animation: none;
+  }
+}
+
+@keyframes rotate-border {
+  100% {
+
+    --angle: 360deg;
+  }
+}
