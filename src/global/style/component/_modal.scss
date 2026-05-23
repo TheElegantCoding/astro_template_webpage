@@ -1,0 +1,108 @@
+/* stylelint-disable selector-no-qualifying-type */
+@use 'global/style/config' as *;
+
+.modal {
+  position: fixed;
+  z-index: $z_popover;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: visibility $ms_slow, opacity $ms_slow;
+}
+
+.modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal--active .modal__overlay {
+  z-index: $z_overlay;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__container {
+  z-index: $z_popover;
+  transform: scale(0.5);
+  width: 100%;
+  max-width: 100rem;
+  padding: $spacing_20;
+  background-color: $gray_100;
+  border-radius: $rounded_small;
+  box-shadow: $shadow_down_black_600;
+  transition: transform $ms_slow;
+}
+
+.modal--active .modal__container {
+  transform: scale(1);
+}
+
+.modal__container-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: $spacing_32;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -$spacing_12;
+    width: 100%;
+    height: $spacing_3;
+    opacity: 0.35;
+    background-color: $primary_500;
+    border-radius: $rounded_small;
+  }
+}
+
+.modal__title {
+  font-size: $h5;
+  font-weight: font-weight(extra_bold);
+
+  @include responsive(phone) {
+    font-size: $h4;
+  }
+}
+
+.modal__icon-close {
+  display: flex;
+  width: $spacing_12;
+  height: $spacing_12;
+  fill: $gray_500;
+  transition: fill $ms_slow;
+}
+
+.modal__button-close {
+  cursor: pointer;
+  padding: $spacing_8;
+  background-color: $gray_200;
+  border-radius: 0.6rem;
+  transition: background-color $ms_slow;
+
+  &:hover {
+    background-color: $gray_300;
+  }
+
+  &:hover .modal__icon-close {
+    fill: $gray_700;
+  }
+}
+
+.modal__content {
+  max-height: 60vh;
+}
+
+body:has(.modal--active) {
+  overflow: hidden;
+}
