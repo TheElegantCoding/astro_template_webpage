@@ -1,0 +1,55 @@
+@use 'global/style/config' as *;
+
+.scroll {
+  position: relative;
+}
+
+.scroll__container {
+  overflow: hidden auto;
+  padding: $spacing_12;
+}
+
+.scroll__container--horizontal {
+  overflow: auto hidden;
+  display: flex;
+}
+
+.scroll__fade {
+  pointer-events: none;
+  position: absolute;
+  z-index: $z_30;
+  top: 0;
+  width: 100%;
+  height: $spacing_32;
+  visibility: hidden;
+  opacity: 0;
+  background: linear-gradient(360deg, rgba($gray_100, 0) 0%, $gray_100 100%);
+  transition: opacity $ms_slow, visibility $ms_slow;
+}
+
+.scroll__fade-bottom {
+  top: auto;
+  bottom: -$spacing_2;
+  left: 0;
+  background: linear-gradient(360deg, $gray_100 0%, rgba($gray_100, 0) 100%);
+}
+
+.scroll__fade--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.scroll__fade-horizontal {
+  top: 0;
+  left: -$spacing_2;
+  width: $spacing_40;
+  height: 100%;
+  background: linear-gradient(90deg, $gray_100 0%, rgba($gray_100, 0) 100%);
+}
+
+.scroll__fade-horizontal-right {
+  right: -$spacing_2;
+  bottom: auto;
+  left: auto;
+  background: linear-gradient(90deg, rgba($gray_100, 0) 0%, $gray_100 100%);
+}
