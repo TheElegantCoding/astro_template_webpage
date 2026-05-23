@@ -1,31 +1,27 @@
 @use 'global/style/config' as *;
 
-html
-{
+html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   width: 100%;
   font-size: 62.5%;
 }
 
-body
-{
+body {
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: $h6;
+  font-weight: font-weight(regular);
   line-height: 1.5;
   color: $gray_950;
   background-color: $gray_100;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @include font_weight(regular);
 }
 
-[data-animate]
-{
+[data-animate] {
   will-change: transform, opacity;
   transform: none;
   transition: none;
