@@ -1,7 +1,6 @@
 @use 'global/style/config' as *;
 
-.hero
-{
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,16 +9,13 @@
   background-color: $gray_950;
 }
 
-.hero__title
-{
+.hero__title {
   margin-top: 2rem;
   font-size: $h1;
+  font-weight: font-weight(bold);
   color: $white;
 
-  @include font_weight(bold);
-
-  @include responsive(tablet)
-  {
+  @include responsive(tablet) {
     font-size: $xl;
   }
 }
