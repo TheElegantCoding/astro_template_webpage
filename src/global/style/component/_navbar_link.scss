@@ -1,0 +1,29 @@
+@use 'global/style/config' as *;
+
+.navbar__link {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -$spacing_4;
+    width: 0;
+    height: $spacing_3;
+    background-color: $primary_600;
+    border-radius: $rounded_medium;
+    transition: width 0.3s ease;
+  }
+
+  @include responsive(phone) {
+    font-size: $h5;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+.navbar__link--active::before {
+  width: 100%;
+}
