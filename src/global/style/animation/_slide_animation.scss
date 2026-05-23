@@ -1,119 +1,151 @@
-@use 'global/style/config' as *;
+@use '../config' as *;
 
-[data-animate].slide-in-up
-{
+[data-animate].slide-in-up {
   transform: translateY($spacing_32);
 }
 
-.slide-in-up
-{
+.slide-in-up {
   animation: slideInUp $ms_animation $ease_in_out both;
 }
 
-@keyframes slideInUp
-{
-  100%
-  {
-    transform: translateY(0);
-  }
-}
-
-[data-animate].slide-in-down
-{
+[data-animate].slide-in-down {
   transform: translateY(-$spacing_32);
 }
 
-.slide-in-down
-{
+.slide-in-down {
   animation: slideInDown $ms_animation $ease_in_out both;
 }
 
-@keyframes slideInDown
-{
-  100%
-  {
+[data-animate].slide-in-left {
+  transform: translateX(-$spacing_32);
+}
+
+.slide-in-left {
+  animation: slideInLeft $ms_animation $ease_in_out both;
+}
+
+[data-animate].slide-in-right {
+  transform: translateX($spacing_32);
+}
+
+.slide-in-right {
+  animation: slideInRight $ms_animation $ease_in_out both;
+}
+
+[data-animate].slide-rotate-in {
+  transform: translateX(-20px) rotate(-90deg);
+}
+
+.slide-rotate-in {
+  animation: slideRotateIn $ms_slow $ease_out both;
+}
+
+[data-animate].slide-rotate-out {
+  transform: translateY(0);
+}
+
+.slide-rotate-out {
+  animation: slideRotateOut $ms_slow $ease_out both;
+}
+
+.scroll-slide-in-up {
+  transform: translateY($spacing_32);
+  animation: slideInUp linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-slide-in-down {
+  transform: translateY(-$spacing_32);
+  animation: slideInDown linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-slide-in-left {
+  transform: translateX(-$spacing_32);
+  animation: slideInLeft linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-slide-in-right {
+  transform: translateX($spacing_32);
+  animation: slideInRight linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-slide-rotate-in {
+  transform: translateX(-20px) rotate(-90deg);
+  animation: slideRotateIn linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-slide-rotate-out {
+  transform: translateY(0);
+  animation: slideRotateOut linear both;
+  animation-range: contain 50% exit 80%;
+  animation-timeline: view();
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY($spacing_32);
+  }
+
+  100% {
     transform: translateY(0);
   }
 }
 
-[data-animate].slide-in-left
-{
-  transform: translateX(-$spacing_32);
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-$spacing_32);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.slide-in-left
-{
-  animation: slideInLeft $ms_animation $ease_in_out both;
-}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-$spacing_32);
+  }
 
-@keyframes slideInLeft
-{
-  100%
-  {
+  100% {
     transform: translateX(0);
   }
 }
 
-[data-animate].slide-in-right
-{
-  transform: translateX($spacing_32);
-}
+@keyframes slideInRight {
+  0% {
+    transform: translateX($spacing_32);
+  }
 
-.slide-in-right
-{
-  animation: slideInRight $ms_animation $ease_in_out both;
-}
-
-@keyframes slideInRight
-{
-  100%
-  {
+  100% {
     transform: translateX(0);
   }
 }
 
-[data-animate].slide-rotate-in
-{
-  transform: translateX(-20px) rotate(-90deg);
-}
-
-.slide-rotate-in
-{
-  animation: slideRotateIn $ms_slow $ease_out both;
-}
-
-@keyframes slideRotateIn
-{
-  0%
-  {
+@keyframes slideRotateIn {
+  0% {
     transform: translateX(-20px) rotate(-90deg);
   }
 
-  100%
-  {
+  100% {
     transform: translateX(0) rotate(0deg);
   }
 }
 
-[data-animate].slide-rotate-out
-{
-  transform: translateY(0);
-}
-
-.slide-rotate-out
-{
-  animation: slideRotateOut $ms_slow $ease_out both;
-}
-
-@keyframes slideRotateOut
-{
-  0%
-  {
+@keyframes slideRotateOut {
+  0% {
     transform: translateX(0) rotate(0deg);
   }
 
-  100%
-  {
+  100% {
     transform: translateX(20px) rotate(90deg);
   }
 }

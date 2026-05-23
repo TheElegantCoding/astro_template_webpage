@@ -1,107 +1,168 @@
-@use 'global/style/config' as *;
+@use '../config' as *;
 
-[data-animate].blur
-{
+[data-animate].blur {
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.blur
-{
+.blur {
   animation: blur $ms_animation $ease_in_out both;
 }
 
-@keyframes blur
-{
-  100%
-  {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-[data-animate].blur-down
-{
+[data-animate].blur-down {
   transform: translateY(-$spacing_32);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.blur-down
-{
+.blur-down {
   animation: blurDown $ms_animation $ease_in_out both;
 }
 
-@keyframes blurDown
-{
-  100%
-  {
-    transform: translateY(0);
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-[data-animate].blur-up
-{
+[data-animate].blur-up {
   transform: translateY($spacing_32);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.blur-up
-{
+.blur-up {
   animation: blurUp $ms_animation $ease_in_out both;
 }
 
-@keyframes blurUp
-{
-  100%
-  {
-    transform: translateY(0);
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-[data-animate].blur-right
-{
+[data-animate].blur-right {
   transform: translateX($spacing_32);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.blur-right
-{
+.blur-right {
   animation: blurRight $ms_animation $ease_in_out both;
 }
 
-@keyframes blurRight
-{
-  100%
-  {
+[data-animate].blur-left {
+  transform: translateX(-$spacing_32);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.blur-left {
+  animation: blurLeft $ms_animation $ease_in_out both;
+}
+
+@keyframes blurLeft {
+  100% {
     transform: translateX(0);
     opacity: 1;
     filter: blur(0);
   }
 }
 
-[data-animate].blur-left
-{
+.scroll-blur {
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: blur linear both;
+  animation-range: cover 0% cover 30%;
+  animation-timeline: view();
+}
+
+.scroll-blur-down {
+  transform: translateY(-$spacing_32);
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: blurDown linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-blur-up {
+  transform: translateY($spacing_32);
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: blurUp linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-blur-right {
+  transform: translateX($spacing_32);
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: blurRight linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-blur-left {
   transform: translateX(-$spacing_32);
   opacity: 0;
   filter: blur($spacing_6);
+  animation: blurLeft linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
 }
 
-.blur-left
-{
-  animation: blurLeft $ms_animation $ease_in_out both;
+@keyframes blur {
+  0% {
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
-@keyframes blurLeft
-{
-  100%
-  {
+@keyframes blurDown {
+  0% {
+    transform: translateY(-$spacing_32);
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes blurUp {
+  0% {
+    transform: translateY($spacing_32);
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes blurRight {
+  0% {
+    transform: translateX($spacing_32);
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes blurLeft {
+  0% {
+    transform: translateX(-$spacing_32);
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
+
+  100% {
     transform: translateX(0);
     opacity: 1;
     filter: blur(0);

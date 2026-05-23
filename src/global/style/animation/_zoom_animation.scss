@@ -1,120 +1,174 @@
-@use 'global/style/config' as *;
+@use '../config' as *;
 
-[data-animate].zoom-in
-{
+[data-animate].zoom-in {
   transform: scale(0.5);
   opacity: 0;
 }
 
-.zoom-in
-{
+.zoom-in {
   animation: zoomIn $ms_animation $ease_out both;
 }
 
-@keyframes zoomIn
-{
-  100%
-  {
+[data-animate].zoom-out {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.zoom-out {
+  animation: zoomOut $ms_animation $ease_out both;
+}
+
+[data-animate].zoom-in-down {
+  transform: scale(0.5) translateY(100%);
+  opacity: 0;
+}
+
+.zoom-in-down {
+  animation: zoomInDown $ms_animation $ease_out both;
+}
+
+[data-animate].zoom-in-up {
+  transform: scale(0.5) translateY(-100%);
+  opacity: 0;
+}
+
+.zoom-in-up {
+  animation: zoomInUp $ms_animation $ease_out both;
+}
+
+[data-animate].zoom-in-left {
+  transform: scale(0.5) translateX(-100%);
+  opacity: 0;
+}
+
+.zoom-in-left {
+  animation: zoomInLeft $ms_animation $ease_out both;
+}
+
+[data-animate].zoom-in-right {
+  transform: scale(0.5) translateX(100%);
+  opacity: 0;
+}
+
+.zoom-in-right {
+  animation: zoomInRight $ms_animation $ease_out both;
+}
+
+.scroll-zoom-in {
+  transform: scale(0.5);
+  opacity: 0;
+  animation: zoomIn linear both;
+  animation-range: cover 0% cover 30%;
+  animation-timeline: view();
+}
+
+.scroll-zoom-out {
+  transform: scale(1);
+  opacity: 1;
+  animation: zoomOut linear both;
+  animation-range: contain 50% exit 100%;
+  animation-timeline: view();
+}
+
+.scroll-zoom-in-down {
+  transform: scale(0.5) translateY(100%);
+  opacity: 0;
+  animation: zoomInDown linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-zoom-in-up {
+  transform: scale(0.5) translateY(-100%);
+  opacity: 0;
+  animation: zoomInUp linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-zoom-in-left {
+  transform: scale(0.5) translateX(-100%);
+  opacity: 0;
+  animation: zoomInLeft linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-zoom-in-right {
+  transform: scale(0.5) translateX(100%);
+  opacity: 0;
+  animation: zoomInRight linear both;
+  animation-range: entry 0% cover 35%;
+  animation-timeline: view();
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
     transform: scale(1);
     opacity: 1;
   }
 }
 
-[data-animate].zoom-out
-{
-  transform: scale(1);
-  opacity: 1;
-}
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
 
-.zoom-out
-{
-  animation: zoomOut $ms_animation $ease_out both;
-}
-
-@keyframes zoomOut
-{
-  100%
-  {
+  100% {
     transform: scale(0.5);
     opacity: 0;
   }
 }
 
-[data-animate].zoom-in-down
-{
-  transform: scale(0.5) translateY(100%);
-  opacity: 0;
-}
+@keyframes zoomInDown {
+  0% {
+    transform: scale(0.5) translateY(100%);
+    opacity: 0;
+  }
 
-.zoom-in-down
-{
-  animation: zoomInDown $ms_animation $ease_out both;
-}
-
-@keyframes zoomInDown
-{
-  100%
-  {
+  100% {
     transform: scale(1) translateY(0);
     opacity: 1;
   }
 }
 
-[data-animate].zoom-in-up
-{
-  transform: scale(0.5) translateY(-100%);
-  opacity: 0;
-}
+@keyframes zoomInUp {
+  0% {
+    transform: scale(0.5) translateY(-100%);
+    opacity: 0;
+  }
 
-.zoom-in-up
-{
-  animation: zoomInUp $ms_animation $ease_out both;
-}
-
-@keyframes zoomInUp
-{
-  100%
-  {
+  100% {
     transform: scale(1) translateY(0);
     opacity: 1;
   }
 }
 
-[data-animate].zoom-in-left
-{
-  transform: scale(0.5) translateX(-100%);
-  opacity: 0;
-}
+@keyframes zoomInLeft {
+  0% {
+    transform: scale(0.5) translateX(-100%);
+    opacity: 0;
+  }
 
-.zoom-in-left
-{
-  animation: zoomInLeft $ms_animation $ease_out both;
-}
-
-@keyframes zoomInLeft
-{
-  100%
-  {
+  100% {
     transform: scale(1) translateX(0);
     opacity: 1;
   }
 }
 
-[data-animate].zoom-in-right
-{
-  transform: scale(0.5) translateX(100%);
-  opacity: 0;
-}
+@keyframes zoomInRight {
+  0% {
+    transform: scale(0.5) translateX(100%);
+    opacity: 0;
+  }
 
-.zoom-in-right
-{
-  animation: zoomInRight $ms_animation $ease_out both;
-}
-
-@keyframes zoomInRight
-{
-  100%
-  {
+  100% {
     transform: scale(1) translateX(0);
     opacity: 1;
   }

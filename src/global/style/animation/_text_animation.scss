@@ -1,180 +1,261 @@
-@use 'global/style/config' as *;
+@use '../config' as *;
 
-[data-animate].text-in-up
-{
+[data-animate].text-in-up {
   transform: translateY(100%);
 }
 
-.text-in-up
-{
+.text-in-up {
   animation: textInUp $ms_animation $ease_in_out both;
 }
 
-@keyframes textInUp
-{
-  100%
-  {
-    transform: translateY(0);
-  }
-}
-
-[data-animate].text-in-down
-{
+[data-animate].text-in-down {
   transform: translateY(-100%);
 }
 
-.text-in-down
-{
+.text-in-down {
   animation: textInDown $ms_animation $ease_in_out both;
 }
 
-@keyframes textInDown
-{
-  100%
-  {
-    transform: translateY(0);
-  }
-}
-
-[data-animate].text-in-left
-{
+[data-animate].text-in-left {
   transform: translateX(-100%);
 }
 
-.text-in-left
-{
+.text-in-left {
   animation: textInLeft $ms_animation $ease_in_out both;
 }
 
-@keyframes textInLeft
-{
-  100%
-  {
-    transform: translateX(0);
-  }
-}
-
-[data-animate].text-in-right
-{
+[data-animate].text-in-right {
   transform: translateX(100%);
 }
 
-.text-in-right
-{
+.text-in-right {
   animation: textInRight $ms_animation $ease_in_out both;
 }
 
-@keyframes textInRight
-{
-  100%
-  {
-    transform: translateX(0);
-  }
-}
-
-[data-animate].text-blur
-{
+[data-animate].text-blur {
   transform: none;
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.text-blur
-{
+.text-blur {
   animation: textBlur $ms_animation $ease_in_out both;
 }
 
-@keyframes textBlur
-{
-  100%
-  {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-[data-animate].text-blur-down
-{
+[data-animate].text-blur-down {
   transform: translateY(-100%);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.text-blur-down
-{
+.text-blur-down {
   animation: textBlurDown $ms_animation $ease_in_out both;
 }
 
-@keyframes textBlurDown
-{
-  100%
-  {
-    transform: translateY(0);
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-[data-animate].text-blur-up
-{
+[data-animate].text-blur-up {
   transform: translateY(100%);
   opacity: 0;
   filter: blur($spacing_6);
 }
 
-.text-blur-up
-{
+.text-blur-up {
   animation: textBlurUp $ms_animation $ease_in_out both;
 }
 
-@keyframes textBlurUp
-{
-  100%
-  {
+[data-animate].text-blur-right {
+  transform: translateX(100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-right {
+  animation: textBlurRight $ms_animation $ease_in_out both;
+}
+
+[data-animate].text-blur-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+}
+
+.text-blur-left {
+  animation: textBlurLeft $ms_animation $ease_in_out both;
+}
+
+.scroll-text-in-up {
+  transform: translateY(100%);
+  animation: textInUp linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-text-in-down {
+  transform: translateY(-100%);
+  animation: textInDown linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-text-in-left {
+  transform: translateX(-100%);
+  animation: textInLeft linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-text-in-right {
+  transform: translateX(100%);
+  animation: textInRight linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-text-blur {
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: textBlur linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-text-blur-down {
+  transform: translateY(-100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: textBlurDown linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-text-blur-up {
+  transform: translateY(100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: textBlurUp linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-text-blur-right {
+  transform: translateX(100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: textBlurRight linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+.scroll-text-blur-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  filter: blur($spacing_6);
+  animation: textBlurLeft linear both;
+  animation-range: cover 0% cover 35%;
+  animation-timeline: view();
+}
+
+@keyframes textInUp {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes textInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes textInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes textInRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes textBlur {
+  0% {
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes textBlurDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
+
+  100% {
     transform: translateY(0);
     opacity: 1;
     filter: blur(0);
   }
 }
 
-[data-animate].text-blur-right
-{
-  transform: translateX(100%);
-  opacity: 0;
-  filter: blur($spacing_6);
+@keyframes textBlurUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
-.text-blur-right
-{
-  animation: textBlurRight $ms_animation $ease_in_out both;
-}
+@keyframes textBlurRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
 
-@keyframes textBlurRight
-{
-  100%
-  {
+  100% {
     transform: translateX(0);
     opacity: 1;
     filter: blur(0);
   }
 }
 
-[data-animate].text-blur-left
-{
-  transform: translateX(-100%);
-  opacity: 0;
-  filter: blur($spacing_6);
-}
+@keyframes textBlurLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    filter: blur($spacing_6);
+  }
 
-.text-blur-left
-{
-  animation: textBlurLeft $ms_animation $ease_in_out both;
-}
-
-@keyframes textBlurLeft
-{
-  100%
-  {
+  100% {
     transform: translateX(0);
     opacity: 1;
     filter: blur(0);

@@ -1,142 +1,185 @@
-@use 'global/style/config' as *;
+@use '../config' as *;
 
-[data-animate].fade-in
-{
+[data-animate].fade-in {
   opacity: 0;
 }
 
-.fade-in
-{
+.fade-in {
   animation: fadeIn $ms_animation $ease_in both;
 }
 
-@keyframes fadeIn
-{
-  100%
-  {
-    opacity: 1;
-  }
-}
-
-[data-animate].fade-out
-{
+[data-animate].fade-out {
   opacity: 1;
 }
 
-.fade-out
-{
+.fade-out {
   animation: fadeOut $ms_animation $ease_in both;
 }
 
-@keyframes fadeOut
-{
-  100%
-  {
-    opacity: 0;
-  }
-}
-
-[data-animate].fade-in-up
-{
+[data-animate].fade-in-up {
   transform: translateY($spacing_32);
   opacity: 0;
 }
 
-.fade-in-up
-{
+.fade-in-up {
   animation: fadeInUp $ms_animation $ease_in_out both;
 }
 
-@keyframes fadeInUp
-{
-  100%
-  {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-[data-animate].fade-in-down
-{
+[data-animate].fade-in-down {
   transform: translateY(-$spacing_32);
   opacity: 0;
 }
 
-.fade-in-down
-{
+.fade-in-down {
   animation: fadeInDown $ms_animation $ease_in_out both;
 }
 
-@keyframes fadeInDown
-{
-  100%
-  {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-[data-animate].fade-in-left
-{
+[data-animate].fade-in-left {
   transform: translateX(-$spacing_32);
   opacity: 0;
 }
 
-.fade-in-left
-{
+.fade-in-left {
   animation: fadeInLeft $ms_animation $ease_in_out both;
 }
 
-@keyframes fadeInLeft
-{
-  100%
-  {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-[data-animate].fade-in-right
-{
+[data-animate].fade-in-right {
   transform: translateX($spacing_32);
   opacity: 0;
 }
 
-.fade-in-right
-{
+.fade-in-right {
   animation: fadeInRight $ms_animation $ease_in_out both;
 }
 
-@keyframes fadeInRight
-{
-  100%
-  {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-[data-animate].fade-in-stroke
-{
+[data-animate].fade-in-stroke {
   fill-opacity: 0;
   stroke-dasharray: 1300;
   stroke-dashoffset: 1300;
 }
 
-.fade-in-stroke
-{
+.fade-in-stroke {
   animation: fadeInStroke 2s $ease_in forwards;
 }
 
-@keyframes fadeInStroke
-{
-  70%
-  {
+.scroll-fade-in {
+  opacity: 0;
+  animation: fadeIn linear both;
+  animation-range: cover 0% cover 25%;
+  animation-timeline: view();
+}
+
+.scroll-fade-in-up {
+  transform: translateY($spacing_32);
+  opacity: 0;
+  animation: fadeInUp linear both;
+  animation-range: entry 0% cover 25%;
+  animation-timeline: view();
+}
+
+.scroll-fade-in-down {
+  transform: translateY(-$spacing_32);
+  opacity: 0;
+  animation: fadeInDown linear both;
+  animation-range: entry 0% cover 25%;
+  animation-timeline: view();
+}
+
+.scroll-fade-in-left {
+  transform: translateX(-$spacing_32);
+  opacity: 0;
+  animation: fadeInLeft linear both;
+  animation-range: entry 0% cover 25%;
+  animation-timeline: view();
+}
+
+.scroll-fade-in-right {
+  transform: translateX($spacing_32);
+  opacity: 0;
+  animation: fadeInRight linear both;
+  animation-range: entry 0% cover 25%;
+  animation-timeline: view();
+}
+
+.scroll-fade-in-stroke {
+  fill-opacity: 0;
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+  animation: fadeInStroke linear both;
+  animation-range: entry 0% cover 25%;
+  animation-timeline: view();
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY($spacing_32);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-$spacing_32);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-$spacing_32);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX($spacing_32);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInStroke {
+  0% {
+    fill-opacity: 0;
+    stroke-dasharray: 1300;
+    stroke-dashoffset: 1300;
+  }
+
+  70% {
     fill-opacity: 0;
   }
 
-  100%
-  {
+  100% {
     fill-opacity: 1;
     stroke-dasharray: 0;
     stroke-dashoffset: 0;

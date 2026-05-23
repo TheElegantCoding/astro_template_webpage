@@ -1,12 +1,51 @@
-.text-animated
-{
+/* stylelint-disable @stylistic/max-line-length */
+@use 'global/style/config' as *;
+
+.text-animated {
   overflow: hidden;
   display: inline-block;
   white-space: nowrap;
   vertical-align: bottom;
 }
 
-.text-animated__word
-{
+.text-animated__word {
   display: inline-block;
+}
+
+.text-gradient {
+  background: linear-gradient(110deg, $gray_950 0%, $gray_950 45%, $primary_500 49%, $primary_300 50%, $primary_500 51%, $gray_950 55%, $gray_950 100%);
+  background-clip: text;
+  background-size: 300% 100%;
+  animation: textGradient 2.5s ease-out forwards;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.text-reveal {
+  background: linear-gradient(to right, $gray_950 50%, $gray_400 50%);
+  background-clip: text;
+  background-size: 200% 100%;
+  animation: textReveal both;
+  animation-range: 0% 20%;
+  animation-timeline: scroll(root);
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes textReveal {
+  0% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
 }
