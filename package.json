@@ -53,7 +53,6 @@
     "postcss": "8.5.14",
     "postcss-combine-media-query": "^2.1.0",
     "sass": "1.98.0",
-    "sharp": "^0.34.5",
     "structured-data-types": "1.0.0",
     "stylelint-config-universal-code": "1.0.8",
     "ttf2woff": "^3.0.0",
