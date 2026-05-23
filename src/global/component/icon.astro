@@ -1,5 +1,5 @@
 ---
-import { capitalizeFirst } from '@global/util/string';
+import { capitalizeFirst } from './../util/string';
 
 import type { HTMLAttributes } from 'astro/types';
 
@@ -32,18 +32,24 @@ if (!rawSvg) {
 
 const innerSVG = (rawSvg as string)
   .replace(/<svg[^>]*>/, '')
-  .replace(/<\/svg>/, '')
-  .replaceAll(/fill=".*?"/g, 'fill="currentColor"');
+  .replace(/<\/svg>/, '');
+
+const widthMatch = rawSvg.match(/width="(?<width>.*?)"/);
+const heightMatch = rawSvg.match(/height="(?<height>.*?)"/);
+
+const iconWidth = widthMatch ? widthMatch.groups?.width : '500';
+const iconHeight = heightMatch ? heightMatch.groups?.height : '500';
 
 const iconTitle = title ? `<title>${capitalizeFirst(title)}</title>` : '';
 ---
 <svg
-  width={size}
-  height={size}
-  viewBox='0 0 64 64'
   class:list={classIcon}
+  width={iconWidth ?? size}
+  height={iconHeight ?? size}
   xmlns='http://www.w3.org/2000/svg'
   set:html={`${iconTitle}${innerSVG}`}
   aria-hidden={title ? 'false' : 'true'}
+  viewBox={`0 0 ${iconWidth} ${iconHeight}`}
+  aria-label={title && capitalizeFirst(title)}
   {...rest}
 />
