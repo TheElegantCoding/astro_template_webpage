@@ -10,6 +10,7 @@
     "bun": ">=1.1.0"
   },
   "scripts": {
+    "postinstall": "gitlys init",
     "preinstall": "npx only-allow bun",
     "dev": "astro dev",
     "check": "astro check",
