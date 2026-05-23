@@ -1,5 +1,4 @@
 ---
-import Typography from '@global/component/typography.astro';
 import { siteConfiguration } from '@global/configuration/site_configuration';
 
 import '../style/main.scss';
@@ -26,9 +25,12 @@ const {
       openGraph={openGraph}
       metaAuthor={metaAuthor}
       languageAlternative={languageAlternative}
+      typography={{ typography: [{
+        type: 'font/woff2',
+        href: '/asset/font/inter/inter_variable.woff2'
+      }] }}
       {...rest}
     />
-    <Typography />
     <slot name='head' />
   </head>
   <body>
